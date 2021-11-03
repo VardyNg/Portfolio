@@ -9,8 +9,8 @@ import { makeStyles } from '@material-ui/core/styles';
 const useStyles = makeStyles((theme) => ({
   greetingText: {
     [theme.breakpoints.up('sm')]: {
-      marginTop: "50%",
-      marginBottom: "50%",
+      marginTop: "25%",
+      marginBottom: "25%",
     },
     [theme.breakpoints.down('xs')]: {
       marginTop: "10%",

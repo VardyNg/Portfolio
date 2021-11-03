@@ -10,6 +10,7 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Contacts from './Section/Contacts'
 import Fade from '@mui/material/Fade';
+import SkillSets from './Section/SkillSets';
 
 function App() {
   return (
@@ -31,6 +32,12 @@ function App() {
       <Grid container align="center" justifyContent="center" style={{backgroundColor: '#A9B4C2'}}>
         <Grid item xs={12} sm={9} md={8} padding={2}>
           <Contacts/>
+        </Grid>
+      </Grid>
+      {/* Skill Sets */}
+      <Grid container align="center" justifyContent="center" style={{backgroundColor: '#'}}>
+        <Grid item xs={12} sm={9} md={8} padding={2}>
+          <SkillSets/>
         </Grid>
       </Grid>
       {/* Education */}
