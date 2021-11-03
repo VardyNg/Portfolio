@@ -7,8 +7,10 @@ import Button from '@mui/material/Button';
 import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
 
+
 const steps = [
   {
+    yearsRange: "2019 - early 2022",
     label: 'The Hong Kong Polytechnic University',
     degree: 'Bsc(Hons) Internet and Multimedia Technologies',
     cGPA: "2.77",
@@ -23,6 +25,7 @@ const steps = [
     
   },
   {
+    yearsRange: "2017 - 2019",
     label: 'Hong Kong Community College, Hong Kong PolyU',
     degree: 'Associate in Information Technology',
     cGPA: "3.36",
@@ -35,10 +38,16 @@ const steps = [
     ],
   },
   {
+    yearsRange: "2011 - 2017",
     label: 'Cheung Chek Che Secondary School',
-    degree: 'Hong Kong Diploma of Secondary Education',
+    degree: '2017 Hong Kong Diploma of Secondary Education (HKDSE)',
     cGPA: "NA",
-    description: [],
+    description: [
+      "Level 5 in Information and Communication Technology (ICT) ",
+      "Level 4 in Mathematics ",
+      "Level 4 in Liberal Studies (LS)",
+      "Level 4 History"
+    ],
   },
 ];
 
@@ -59,10 +68,13 @@ function Education(){
           return(
             <Step key={step.label} active={true} >
               <StepLabel>
-                <Typography variant="h5">
-                  <b>{step.label}</b>
+                <Typography variant="h6" sx={{fontWeight: '' }}>
+                  {step.yearsRange}
                 </Typography>
-                <Typography variant="h6">
+                <Typography variant="h5" sx={{fontWeight: 'bold' }}>
+                  {step.label}
+                </Typography>
+                <Typography variant="h6" sx={{fontWeight: '' }}>
                   {step.degree} {cGPAText}
                 </Typography>
               </StepLabel>
@@ -71,7 +83,9 @@ function Education(){
                   {step.description.map((description, index) => {
                     return(
                       <li>
-                        <Typography>{description}</Typography>
+                        <Typography sx={{ textAlign: 'left' }} >
+                          {description}
+                        </Typography>
                       </li>
                     )
                   })}

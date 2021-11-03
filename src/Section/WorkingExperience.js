@@ -9,19 +9,35 @@ import Typography from '@mui/material/Typography';
 
 const steps = [
   {
+    yearsRange: "Sep 2021 - Present",
     label: 'Banclogix System co. limited, KVB Group',
     degree: 'Software Development Internship (Part Time)',
-    description: `...`,
+    description: [
+      "System installation and maintenance in data centres",
+      "System support for the crypto currency ETD",
+    ],
   },
   {
+    yearsRange: "Jun 2021 - Sep 2021",
     label: 'Crossover Internation Company Limited',
     degree: 'Software Developer Internship (Full Time)',
-    description: `...`,
+    description: [
+      "Designed and developed an online CRUD application to support competitions organising, allow judges to score products and let organisers to view the judging statistical results. Consulted with end users and revised the system.",
+      "Setup and maintained remote server to support company operations.",
+      "Rated “Exceed Expectation” in performance by the supervisor."
+
+    ],
   },
   {
+    yearsRange: "Jun 2020 - Jun",
     label: 'Private Tutor',
     degree: 'Self-Employed',
-    description: `...`,
+    description: [
+      "Private tutored 8 students from IB (International and DSE discipline individually. ",
+      "Concentrated in senior secondary student, IT and Mathematic coaching.",
+      "Designed teaching materials and assessments. ",
+
+    ],
   },
 ];
 
@@ -29,8 +45,8 @@ function WorkingExperience(){
   return(
     <>
       <div style={{alignContent: "left"}}>
-        <Typography variant="h4" sx={{ textAlign: 'left' }} style={{fontFamily: "Raleway"}}>
-          <b>Working Experience</b>
+        <Typography variant="h4" sx={{ textAlign: 'left', fontWeight: 'bold' }} style={{fontFamily: "Raleway"}}>
+          Working Experiences
         </Typography>
       </div>
       <Stepper orientation="vertical"> 
@@ -38,15 +54,28 @@ function WorkingExperience(){
           <Step key={step.label} active={true} >
             <StepLabel
             >
-              <Typography variant="h5">
-                <b>{step.label}</b>
+              <Typography variant="h6">
+                {step.yearsRange}
+              </Typography>
+              <Typography variant="h5" sx={{ fontWeight: 'bold'}}>
+                {step.label}
               </Typography>
               <Typography variant="h6">
                 {step.degree}
               </Typography>
             </StepLabel>
             <StepContent>
-              <Typography>{step.description}</Typography>
+              <ul>
+                  {step.description.map((description, index) => {
+                    return(
+                      <li>
+                        <Typography sx={{ textAlign: 'left' }} >
+                          {description}
+                        </Typography>
+                      </li>
+                    )
+                  })}
+              </ul>
             </StepContent>
           </Step>
         ))}

@@ -8,16 +8,17 @@ import aws from '../Images/aws.png';
 import NodeJS from '../Images/NodeJS.png';
 import Grid from '@material-ui/core/grid'
 import Typography from '@material-ui/core/typography';
+import Grow from '@mui/material/Grow';
+
 const useStyles = makeStyles((theme) => ({
   icons: {
-    height: 50,
+    height: 40,
     margin: 5
   }
 }))
 function SkillSets(){
   const classes = useStyles()
   return(
-    <>
     <Grid container>
       <Grid item xs={12}>
         <Typography variant="h5" sx={{ textAlign: 'left' }} style={{fontFamily: "Raleway"}}>
@@ -27,7 +28,7 @@ function SkillSets(){
       <Grid item xs={12}>
         <img src={Android_Studio_Icon} className={classes.icons}/>
         <img src={Xcode_icon} className={classes.icons}/>
-        <img src={Java_Icon} className={classes.icons}/>
+        {/* <img src={Java_Icon} className={classes.icons}/> */}
         <img src={React_Native_icon} className={classes.icons}/>
         <img src={Unity3D} className={classes.icons}/>
         <img src={aws} className={classes.icons}/>
@@ -35,7 +36,6 @@ function SkillSets(){
 
       </Grid>
     </Grid>
-    </>
   )
 }
 

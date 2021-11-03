@@ -31,6 +31,7 @@ function Contacts(){
       <WhiteTextTypography
         variant="body"
         color="white"
+        sx={{fontSize: 20}}
       >
         wadee@wadeenghoiwa.com
       </WhiteTextTypography>

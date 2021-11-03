@@ -14,20 +14,36 @@ import CardContent from '@mui/material/CardContent';
 import SSM from './Projects/SSM'
 import HAL from './Projects/HAL'
 import ThreeDAnimations from './Projects/3DAnimations'
+import Chip from '@mui/material/Chip';
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 
 const projects = [
   {
+    chip: ["Side Projects", "Group"],
     title: 'Signal Sticker Maker',
-    description: `...`,
+    description: "An online application for making sticker for the Signal app, reached over 5000 users since it launces. Available on iOS, Android, and Web",
   },
   {
+    chip: ["Final Year Project", "Individual"],
     title: 'H.A.L. 3000: The School Survival',
-    description: `...`,
+    description: "A 3D game for learing programming. Player will learn and use programming logics to solve problems, dedicated for teenagers or children with or without programming experience.",
   },
   {
+    chip: ["School Projects", "Individual"],
     title: '3D animations with Blender and AutoCAD 3DS MAX',
-    description: `...`,
+    description: "School assignments related to 3D animation, it involves 3D modelling, lighting, animation, and so on.",
+  },
+  {
+    chip: ["School Projects", "Group"],
+    title: "Web game for learning TCP/IP concepts",
+    description: "School assignment for making web game. The game visualize some TCP/IP concepts into games and interact with players."
+  },
+  {
+    chip: ["School Projects", "Group"],
+    title: "VR application for 3D object manipulations using Unity",
+    description: ""
   }
+  
   
 ];
 
@@ -49,33 +65,44 @@ function Projects(){
       <HAL open={showHAL} onClose={closeHAL}/>
       <ThreeDAnimations open={show3D} onClose={close3D}/>
       
-      <Typography variant="h4" sx={{ textAlign: 'left' }} style={{fontFamily: "Raleway"}}>
-        <b>Projects / Previous Works</b>
+      <Typography variant="h4" sx={{ textAlign: 'left', fontWeight: 'bold' }} style={{fontFamily: "Raleway"}}>
+        Projects / Previous Works
       </Typography>
       <div >
         {projects.map((project, index) => {
           return(
-            <Card>
+            <Card style={{margin: 20}}>
               <CardContent>
                 <Grid container>
-                  <Grid item xs={12} sm={8} >
-                    <div style={{backgroundColor: 'lightblue'}}>
-                      <Typography variant="h5">
-                        {project.title}
-                      </Typography>
-                    </div>
+                  <Grid item xs={12} sm={10} >
+                    <Typography variant="h6" sx={{ textAlign: 'left', fontWeight: 'bold'}}>
+                      {project.title}
+                      {project.chip.map((chip, index) => {
+                        return(
+                          <Chip label={chip} variant="outlined" style={{marginLeft: 10}}/>
+                        )
+                      })}
+                    </Typography>
+                    <Typography variant="body1" component="div" sx={{textAlign: 'left'}}>
+                      {project.description}
+                    </Typography>
+                    
+                  </Grid>
+                  <Grid item xs={12} sm={2}>
+                    <Button
+                      style={{height: "100%"}}
+                      onClick={() => {
+                        if(project.title === "Signal Sticker Maker") setShowSSM(true)
+                        else if(project.title === "H.A.L. 3000: The School Survival") setShowHAL(true)
+                        else if(project.title === "3D animations with Blender and AutoCAD 3DS MAX") setShow3D(true)
+                      }}
+                      endIcon={<ArrowForwardIosIcon/>}
+                    >
+                      Details
+                    </Button>
                   </Grid>
                 </Grid>
               </CardContent>
-              <Button
-                onClick={() => {
-                  if(project.title === "Signal Sticker Maker") setShowSSM(true)
-                  else if(project.title === "H.A.L. 3000: The School Survival") setShowHAL(true)
-                  else if(project.title === "3D animations with Blender and AutoCAD 3DS MAX") setShow3D(true)
-                }}
-              >
-                Details
-              </Button>
             </Card>
           )
         })}

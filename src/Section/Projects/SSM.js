@@ -19,6 +19,8 @@ import AccordionDetails from '@mui/material/AccordionDetails';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import WebIcon from '@mui/icons-material/Web';
 import App_Icon from '../../Images/App_Icon.png'
+import Chip from '@mui/material/Chip';
+
 function IOS(props){
   return(
     <>
@@ -86,6 +88,7 @@ function SSM(props) {
       <DialogTitle id="responsive-dialog-title">
         <Typography variant="h4">
           SignalStickerMaker.com
+           <Chip label={"Launched"} variant="outlined" color="primary" style={{marginLeft: 10}}/>
         </Typography>
       </DialogTitle>
       <DialogContent>
