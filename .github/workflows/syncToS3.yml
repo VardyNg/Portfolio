@@ -5,18 +5,13 @@ on:
   push:
     branches:
       - prod
-
+    paths:
+    - '/*'
 jobs:
   build:
-    name: deploy?
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout Git Branch
-        uses: actions/checkout@v2
-        with:
-          ref: 'prod'
-          
-      - name: upload
       - uses: shinyinc/action-aws-cli@v1.2
       - run: aws s3 sync ./build s3://portfolionghoiwa2021/
         env:
