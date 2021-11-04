@@ -5,8 +5,7 @@ on:
   push:
     branches:
       - prod
-    paths:
-    - '/*'
+
 jobs:
   build:
     runs-on: ubuntu-latest
