@@ -1,0 +1,27 @@
+name: DEV Deploy S3
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - prod
+
+jobs:
+  deploy:
+    name: deploy
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Git Branch
+      uses: actions/checkout@v2
+      with:
+        ref: 'dev'
+
+    - name: S3 Sync
+      run: aws s3 cp ./build s3://portfolionghoiwa2021 --recursive
+      # working-directory: ./apiService/functions/uploadSignal
+
+      env:
+        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        AWS_DEFAULT_REGION: "ap-east-1"
