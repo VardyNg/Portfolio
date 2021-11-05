@@ -17,6 +17,7 @@ import react, { useState, useRef } from 'react';
 import { makeStyles, Theme } from "@material-ui/core/styles";
 import Zoom from '@mui/material/Zoom';
 import Button from '@mui/material/Button';
+import LanguageLibraries from './Section/LanguageLibraries';
 
 const useStyles = makeStyles(() => ({
   container: {
@@ -97,12 +98,21 @@ function App() {
         </Grid>
         {/* Contacts */}
         <Grid container align="center" justifyContent="center" style={{backgroundColor: '#9db4c0'}}>
-          <Grid item xs={12} sm={9} md={8} padding={2} >
+          <Grid item xs={12} sm={9} md={8} padding={1} >
             <div ref={contacts}>
               <Contacts/>
             </div>
           </Grid>
         </Grid>
+        {/* Language / Libraries */}
+        <Grid container align="center" justifyContent="center" style={{backgroundColor: '#FFFFFF'}}>
+          <Grid item xs={12} sm={9} md={8} padding={.5} >
+            <div ref={contacts}>
+              <LanguageLibraries/>
+            </div>
+          </Grid>
+        </Grid>
+        
         {/* Education */}
         <Fade in={showEducation}>
           <Grid container align="center" justifyContent="center" style={{backgroundColor: '#e0fbfc'}}>

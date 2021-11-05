@@ -45,7 +45,7 @@ function WorkingExperience(){
   return(
     <>
       <div style={{alignContent: "left"}}>
-        <Typography variant="h4" sx={{ textAlign: 'left', fontWeight: 'bold' }} style={{fontFamily: "Raleway"}}>
+        <Typography variant="h4" sx={{ textAlign: 'left', fontWeight: 'bold' }} style={{fontFamily: "Raleway", padding: 10}}>
           Working Experiences
         </Typography>
       </div>

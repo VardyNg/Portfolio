@@ -16,6 +16,7 @@ import HAL from './Projects/HAL'
 import ThreeDAnimations from './Projects/3DAnimations'
 import Chip from '@mui/material/Chip';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import VR3D from './Projects/VR3D'
 
 const projects = [
   {
@@ -41,7 +42,7 @@ const projects = [
   {
     chip: ["School Projects", "Group"],
     title: "VR application for 3D object manipulations using Unity",
-    description: ""
+    description: "A VR application created by Unity3D and deepmotion, user can use their hands to manipulate 3D object, like scalling, rotation, and transformation."
   }
   
   
@@ -55,17 +56,21 @@ function Projects(){
   const [showSSM, setShowSSM] = useState(false)
   const [showHAL, setShowHAL] = useState(false)
   const [show3D, setShow3D] = useState(false)
+  const [showVR3D, setShowVR3D] = useState(false)
+
   const closeSSM = () => {setShowSSM(false);};
   const closeHAL = () => {setShowHAL(false);};
   const close3D = () => {setShow3D(false)}
+  const closeVR3D = () => {setShowVR3D(false)}
 
   return(
     <>
       <SSM open={showSSM} onClose={closeSSM}/>
       <HAL open={showHAL} onClose={closeHAL}/>
       <ThreeDAnimations open={show3D} onClose={close3D}/>
+      <VR3D open={showVR3D} onClose={closeVR3D}/>
       
-      <Typography variant="h4" sx={{ textAlign: 'left', fontWeight: 'bold' }} style={{fontFamily: "Raleway"}}>
+      <Typography variant="h4" sx={{ textAlign: 'left', fontWeight: 'bold' }} style={{fontFamily: "Raleway", padding: 10}}>
         Projects / Previous Works
       </Typography>
       <div >
@@ -95,6 +100,7 @@ function Projects(){
                         if(project.title === "Signal Sticker Maker") setShowSSM(true)
                         else if(project.title === "H.A.L. 3000: The School Survival") setShowHAL(true)
                         else if(project.title === "3D animations with Blender and AutoCAD 3DS MAX") setShow3D(true)
+                        else if(project.title === "VR application for 3D object manipulations using Unity") setShowVR3D(true)
                       }}
                       endIcon={<ArrowForwardIosIcon/>}
                     >

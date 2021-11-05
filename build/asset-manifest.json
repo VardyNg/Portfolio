@@ -1,32 +1,39 @@
 {
   "files": {
     "main.css": "/static/css/main.93871b73.chunk.css",
-    "main.js": "/static/js/main.3be4df28.chunk.js",
-    "main.js.map": "/static/js/main.3be4df28.chunk.js.map",
+    "main.js": "/static/js/main.ce13d16b.chunk.js",
+    "main.js.map": "/static/js/main.ce13d16b.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.8157de5f.js",
     "runtime-main.js.map": "/static/js/runtime-main.8157de5f.js.map",
-    "static/js/2.2608331d.chunk.js": "/static/js/2.2608331d.chunk.js",
-    "static/js/2.2608331d.chunk.js.map": "/static/js/2.2608331d.chunk.js.map",
+    "static/js/2.a0926ab1.chunk.js": "/static/js/2.a0926ab1.chunk.js",
+    "static/js/2.a0926ab1.chunk.js.map": "/static/js/2.a0926ab1.chunk.js.map",
     "static/js/3.7723f15c.chunk.js": "/static/js/3.7723f15c.chunk.js",
     "static/js/3.7723f15c.chunk.js.map": "/static/js/3.7723f15c.chunk.js.map",
     "index.html": "/index.html",
     "static/css/main.93871b73.chunk.css.map": "/static/css/main.93871b73.chunk.css.map",
-    "static/js/2.2608331d.chunk.js.LICENSE.txt": "/static/js/2.2608331d.chunk.js.LICENSE.txt",
+    "static/js/2.a0926ab1.chunk.js.LICENSE.txt": "/static/js/2.a0926ab1.chunk.js.LICENSE.txt",
     "static/media/Android_Studio_Icon.554010a1.png": "/static/media/Android_Studio_Icon.554010a1.png",
     "static/media/AppStore_download.8c4986ee.svg": "/static/media/AppStore_download.8c4986ee.svg",
     "static/media/App_Icon.7a7fcea2.png": "/static/media/App_Icon.7a7fcea2.png",
+    "static/media/CPlusPlus.02f6416a.png": "/static/media/CPlusPlus.02f6416a.png",
+    "static/media/Csharp_Logo.4369efcb.png": "/static/media/Csharp_Logo.4369efcb.png",
     "static/media/HAL3000.2be65c62.png": "/static/media/HAL3000.2be65c62.png",
+    "static/media/HCJ.cc40ac08.png": "/static/media/HCJ.cc40ac08.png",
     "static/media/Hello.31fafd49.png": "/static/media/Hello.31fafd49.png",
     "static/media/Java_Icon.dbae4f1a.png": "/static/media/Java_Icon.dbae4f1a.png",
+    "static/media/MySQL.5b30c825.png": "/static/media/MySQL.5b30c825.png",
     "static/media/PlayStore_download.eb4f576b.png": "/static/media/PlayStore_download.eb4f576b.png",
     "static/media/React_Native_icon.18031bc4.png": "/static/media/React_Native_icon.18031bc4.png",
     "static/media/Xcode_icon.e5a7f2b0.png": "/static/media/Xcode_icon.e5a7f2b0.png",
-    "static/media/logo.6ce24c58.svg": "/static/media/logo.6ce24c58.svg"
+    "static/media/logo.6ce24c58.svg": "/static/media/logo.6ce24c58.svg",
+    "static/media/php.87f69ff4.png": "/static/media/php.87f69ff4.png",
+    "static/media/python.c460f759.png": "/static/media/python.c460f759.png",
+    "static/media/swift.e0a37c89.png": "/static/media/swift.e0a37c89.png"
   },
   "entrypoints": [
     "static/js/runtime-main.8157de5f.js",
-    "static/js/2.2608331d.chunk.js",
+    "static/js/2.a0926ab1.chunk.js",
     "static/css/main.93871b73.chunk.css",
-    "static/js/main.3be4df28.chunk.js"
+    "static/js/main.ce13d16b.chunk.js"
   ]
 }

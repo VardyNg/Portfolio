@@ -59,8 +59,8 @@ function HAL(props) {
         </Grid>
       </DialogContent>
       <DialogActions>
-        <Button onClick={props.onClose} autoFocus>
-          Agree
+        <Button onClick={props.onClose} autoFocus fullScreen>
+          Close
         </Button>
       </DialogActions>
     </Dialog>
