@@ -24,7 +24,7 @@ jobs:
     #     args: s3 cp ./signalstickermaker/build s3://prod.signalstickermaker.com --recursive
 
     - name: S3 Sync
-      run: aws s3 cp ./build s3://portfolionghoiwa2021 --recursive
+      run: aws s3 cp ./build s3://www.wadeenghoiwa.com --recursive
       # working-directory: ./apiService/functions/uploadSignal
 
       env:
