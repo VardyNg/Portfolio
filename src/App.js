@@ -19,6 +19,8 @@ import Zoom from '@mui/material/Zoom';
 import Button from '@mui/material/Button';
 import LanguageLibraries from './Section/LanguageLibraries';
 
+const appBarColor = ""
+
 const useStyles = makeStyles(() => ({
   container: {
     height: "100vh",
@@ -36,7 +38,7 @@ function Scroller({ className, children, trackIds, onScrollToElement }) {
           const trackedEl = document.getElementById(id);
           const scrollerEl = e.currentTarget;
 
-          if (scrollerEl.scrollTop > trackedEl.offsetTop + trackedEl.offsetHeight/1.5 - scrollerEl.offsetHeight)
+          if (scrollerEl.scrollTop > trackedEl.offsetTop + trackedEl.offsetHeight/3 - scrollerEl.offsetHeight)
             onScrollToElement(trackedEl);
         }
       }}
@@ -59,24 +61,29 @@ function App() {
   const contacts = useRef(null)
   return (
     <>
-      <AppBar position="static">
+      <AppBar position="static" style={{backgroundColor: "#677886"}}>
         <Toolbar>
           <Grid container style={{width: '100%'}}>
-            <Typography variant="h6" color="inherit" component="div" style={{fontFamily: "Raleway"}}>
-              Ng Hoi Wa's Portfolio | 
-            </Typography>
-            <Button onClick={() => contacts.current.scrollIntoView()} color="white">
-              Contacts
-            </Button>
-            <Button onClick={() => education.current.scrollIntoView()} color="white">
-              Education
-            </Button>
-            <Button onClick={() => workingExperience.current.scrollIntoView()} color="white">
-              Working Experiences
-            </Button>
-            <Button onClick={() => projects.current.scrollIntoView()} color="white">
-              Projects
-            </Button>
+            <Grid item>
+              <Typography variant="h6" color="inherit" component="div" style={{fontFamily: "Raleway", marginLeft: 10}}>
+                Ng Hoi Wa's Portfolio | 
+              </Typography>
+            </Grid>
+            <Grid item>
+              <Button onClick={() => contacts.current.scrollIntoView()} color="white">
+                Contacts
+              </Button>
+              <Button onClick={() => projects.current.scrollIntoView()} color="white">
+                Projects
+              </Button>
+              <Button onClick={() => education.current.scrollIntoView()} color="white">
+                Education
+              </Button>
+              <Button onClick={() => workingExperience.current.scrollIntoView()} color="white">
+                Working Experiences
+              </Button>
+            </Grid>
+            
           </Grid>
         </Toolbar>
       </AppBar>
@@ -91,48 +98,21 @@ function App() {
         }}
       >
         {/* Greeting */}
-        <Grid container align="center" justifyContent="center" style={{backgroundColor: '#ffffff'}}>
+        <Grid container align="center" justifyContent="center" style={{backgroundColor: '#D3CBB6'}}>
           <Grid item xs={12} sm={9} md={8} >
             <Greeting/>
           </Grid>
         </Grid>
+
         {/* Contacts */}
-        <Grid container align="center" justifyContent="center" style={{backgroundColor: '#9db4c0'}}>
+        <Grid container align="center" justifyContent="center" style={{backgroundColor: '#AEBFC8'}}>
           <Grid item xs={12} sm={9} md={8} padding={1} >
             <div ref={contacts}>
               <Contacts/>
             </div>
           </Grid>
         </Grid>
-        {/* Language / Libraries */}
-        <Grid container align="center" justifyContent="center" style={{backgroundColor: '#FFFFFF'}}>
-          <Grid item xs={12} sm={9} md={8} padding={.5} >
-            <div ref={contacts}>
-              <LanguageLibraries/>
-            </div>
-          </Grid>
-        </Grid>
         
-        {/* Education */}
-        <Fade in={showEducation}>
-          <Grid container align="center" justifyContent="center" style={{backgroundColor: '#e0fbfc'}}>
-            <Grid item xs={12} sm={9} md={8} style={{margin: 20}}>
-                <div id="education" ref={education}>
-                  <Education/>
-                </div>
-            </Grid>
-          </Grid>
-        </Fade>
-        {/* Working Experiences */}
-        <Fade in={showWorkingExperience}>
-          <Grid container align="center" justifyContent="center" style={{backgroundColor: '#fcd29f'}}>
-            <Grid item xs={12} sm={9} md={8} style={{margin: 20}}>
-                <div id="workingExperience" ref={workingExperience}>
-                  <WorkingExperience/>
-                </div>
-            </Grid>
-          </Grid>
-        </Fade>
         {/* Projects */}
         <Grow in={showProjects}>
           <Grid container align="center" justifyContent="center" style={{backgroundColor: ''}}>
@@ -143,8 +123,37 @@ function App() {
             </Grid>
           </Grid>
         </Grow>
-        {/* Footer */}
+        {/* Language / Libraries */}
         <Grid container align="center" justifyContent="center" style={{backgroundColor: ''}}>
+          <Grid item xs={12} sm={9} md={8} padding={.5} >
+            <div ref={contacts}>
+              <LanguageLibraries/>
+            </div>
+          </Grid>
+        </Grid>
+        {/* Education */}
+        <Fade in={showEducation}>
+          <Grid container align="center" justifyContent="center" style={{backgroundColor: '#E4E5E0'}}>
+            <Grid item xs={12} sm={9} md={8} style={{margin: 20}}>
+                <div id="education" ref={education}>
+                  <Education/>
+                </div>
+            </Grid>
+          </Grid>
+        </Fade>
+        {/* Working Experiences */}
+        <Fade in={showWorkingExperience}>
+          <Grid container align="center" justifyContent="center" style={{backgroundColor: '#D4BFAD'}}>
+            <Grid item xs={12} sm={9} md={8} style={{margin: 20}}>
+                <div id="workingExperience" ref={workingExperience}>
+                  <WorkingExperience/>
+                </div>
+            </Grid>
+          </Grid>
+        </Fade>
+        
+        {/* Footer */}
+        <Grid container align="center" justifyContent="center" style={{backgroundColor: '#677886'}}>
           <Grid item xs={12} sm={9} md={8} >
             <Footer/>
           </Grid>

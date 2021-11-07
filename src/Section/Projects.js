@@ -22,7 +22,7 @@ const projects = [
   {
     chip: ["Side Projects", "Group"],
     title: 'Signal Sticker Maker',
-    description: "An online application for making sticker for the Signal app, reached over 5000 users since it launces. Available on iOS, Android, and Web",
+    description: "An online application for making sticker for the Signal app, reached over 5000 users since it launces. Available on iOS, Android, and Web.",
   },
   {
     chip: ["Final Year Project", "Individual"],

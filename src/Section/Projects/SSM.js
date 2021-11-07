@@ -28,7 +28,7 @@ function IOS(props){
         Downloads: 100＋ | iOS 13 or above | iPhone, iPad, iPod, and Mac (with M1 chips)
       </Typography>
       <Typography variant="body">
-        Developed by using Xcode and Swift, support create sticker with emojis😎, save and add existing stickers, and so on.
+        Developed by using Xcode and Swift, support create sticker with emojis😎, save and add existing stickers, and many other functions.
       </Typography>
     </>
   )
@@ -41,7 +41,7 @@ function Android(props){
         Downloads: <b>1000＋</b> | Android 4.4 or above
       </Typography>
       <Typography variant="body">
-        Previosuly developed by Android Studio and Java. A new version is coming soon by using React Native!
+        Previosuly developed by Android Studio and Java, currently a web app. A new version is coming soon by using React Native!
       </Typography>
     </>
   )
@@ -54,7 +54,7 @@ function Web(props){
         Visits: <b>4000+</b> 
       </Typography>
       <Typography variant="body">
-        Previosuly developed by pure HTML with CSS and JavaScripts, its looks will be refreshed by using ReactJS very soon.
+        Previosuly developed by pure HTML with CSS and JavaScripts, it will be refreshed by using ReactJS very soon.
       </Typography>
     </>
   )
@@ -63,12 +63,21 @@ function Web(props){
 function Backend(props){
   return(
     <>
-      <Typography variant="body" component="div">
-        We use AWS to host the website and the related services, which is to process user uploaded images and convert into Signal sticker packs for all the frontends. 
+      <Typography variant="subtitle2" component="div" color="gray">
+        Main platform: <b>AWS</b> 
       </Typography>
-      <Typography variant="body" component="div">
-        With the benefits of using AWS, the backend is in serverless architecture, in which the services are handled by API Gateways and Lambda functions. It is not only reducing the cost but also make the services more scalable. 
-      </Typography>
+      <ul>
+        <li>
+          <Typography variant="body" component="div">
+            We use AWS to host the website and the related services, which is to process user uploaded images and convert into Signal sticker packs for all the frontends. 
+          </Typography>
+        </li>
+        <li>
+          <Typography variant="body" component="div">
+            With the benefits of using AWS, the backend is in serverless architecture, in which the services are handled by API Gateways and Lambda functions. It is not only reducing the cost but also make the services more scalable. 
+          </Typography>
+        </li>
+      </ul>
     </>
   )
 }
@@ -107,7 +116,7 @@ function SSM(props) {
                       <li><Typography variant="body">An online application for sticker creation for the Signal app. </Typography></li>
                       <li><Typography variant="body">Developed by myself with my partner as a side project and for interest. </Typography></li>
                       <li><Typography variant="body">Served over 5000 users from many countries. </Typography></li>
-                      <li><Typography variant="body">Available on iOS, Android, and Web</Typography></li>
+                      <li><Typography variant="body">Available on iOS, Android, and Web.</Typography></li>
                     </ul>
                   </Grid>
                 </Grid>

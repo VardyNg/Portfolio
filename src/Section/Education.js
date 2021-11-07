@@ -15,11 +15,11 @@ const steps = [
     degree: 'Bsc(Hons) Internet and Multimedia Technologies',
     cGPA: "2.77",
     description: [
-      "Computer game development",
+      "Computer Game Development",
       "Programming and Database",
       "Integrated Circuit (IC)",
-      "Web and mobile application development",
-      "VR technology, 3D animation and modelling",
+      "Web and Mobile Application Development",
+      "VR technology, 3D Animation and Modelling",
       "Internet Technology"
     ]
     
