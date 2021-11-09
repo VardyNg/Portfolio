@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/static/css/main.93871b73.chunk.css",
-    "main.js": "/static/js/main.0f7ba1ee.chunk.js",
-    "main.js.map": "/static/js/main.0f7ba1ee.chunk.js.map",
+    "main.js": "/static/js/main.9bfd1c49.chunk.js",
+    "main.js.map": "/static/js/main.9bfd1c49.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.ffdddd78.js",
     "runtime-main.js.map": "/static/js/runtime-main.ffdddd78.js.map",
-    "static/js/2.12963dcb.chunk.js": "/static/js/2.12963dcb.chunk.js",
-    "static/js/2.12963dcb.chunk.js.map": "/static/js/2.12963dcb.chunk.js.map",
+    "static/js/2.19d5ecb9.chunk.js": "/static/js/2.19d5ecb9.chunk.js",
+    "static/js/2.19d5ecb9.chunk.js.map": "/static/js/2.19d5ecb9.chunk.js.map",
     "static/js/3.188f318b.chunk.js": "/static/js/3.188f318b.chunk.js",
     "static/js/3.188f318b.chunk.js.map": "/static/js/3.188f318b.chunk.js.map",
     "index.html": "/index.html",
     "static/css/main.93871b73.chunk.css.map": "/static/css/main.93871b73.chunk.css.map",
-    "static/js/2.12963dcb.chunk.js.LICENSE.txt": "/static/js/2.12963dcb.chunk.js.LICENSE.txt",
+    "static/js/2.19d5ecb9.chunk.js.LICENSE.txt": "/static/js/2.19d5ecb9.chunk.js.LICENSE.txt",
     "static/media/Android_Studio_Icon.554010a1.png": "/static/media/Android_Studio_Icon.554010a1.png",
     "static/media/AppStore_download.8c4986ee.svg": "/static/media/AppStore_download.8c4986ee.svg",
     "static/media/App_Icon.7a7fcea2.png": "/static/media/App_Icon.7a7fcea2.png",
@@ -23,11 +23,17 @@
     "static/media/Hello.31fafd49.png": "/static/media/Hello.31fafd49.png",
     "static/media/Hello2.513edca8.png": "/static/media/Hello2.513edca8.png",
     "static/media/Java_Icon.dbae4f1a.png": "/static/media/Java_Icon.dbae4f1a.png",
+    "static/media/MainScreen.da88e275.png": "/static/media/MainScreen.da88e275.png",
     "static/media/MySQL.5b30c825.png": "/static/media/MySQL.5b30c825.png",
     "static/media/PlayStore_download.eb4f576b.png": "/static/media/PlayStore_download.eb4f576b.png",
     "static/media/ReactJS.a5c12473.png": "/static/media/ReactJS.a5c12473.png",
     "static/media/React_Native_icon.18031bc4.png": "/static/media/React_Native_icon.18031bc4.png",
     "static/media/SQL_Lite.f8c44ec7.png": "/static/media/SQL_Lite.f8c44ec7.png",
+    "static/media/ScreenCap1.721c84fb.png": "/static/media/ScreenCap1.721c84fb.png",
+    "static/media/ScreenCap1.dfc5f49d.png": "/static/media/ScreenCap1.dfc5f49d.png",
+    "static/media/ScreenCap2.16e4b7f0.png": "/static/media/ScreenCap2.16e4b7f0.png",
+    "static/media/ScreenCap2.c73286c8.png": "/static/media/ScreenCap2.c73286c8.png",
+    "static/media/ScreenCap3.f3c2fa0d.png": "/static/media/ScreenCap3.f3c2fa0d.png",
     "static/media/Unity3D.5749481f.png": "/static/media/Unity3D.5749481f.png",
     "static/media/Xcode_icon.e5a7f2b0.png": "/static/media/Xcode_icon.e5a7f2b0.png",
     "static/media/aws.d8f3ebb8.png": "/static/media/aws.d8f3ebb8.png",
@@ -39,8 +45,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.ffdddd78.js",
-    "static/js/2.12963dcb.chunk.js",
+    "static/js/2.19d5ecb9.chunk.js",
     "static/css/main.93871b73.chunk.css",
-    "static/js/main.0f7ba1ee.chunk.js"
+    "static/js/main.9bfd1c49.chunk.js"
   ]
 }

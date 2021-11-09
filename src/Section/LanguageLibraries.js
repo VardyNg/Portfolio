@@ -92,7 +92,6 @@ function LanguageLibraries(props){
   
   return(
     <>
-    <div style={{alignContent: "left"}}>
       <Typography variant="h4" sx={{ textAlign: 'left', fontWeight: 'bold' }} style={{fontFamily: "Raleway", padding: 10}}>
         Skills
         <FormGroup>
@@ -106,7 +105,7 @@ function LanguageLibraries(props){
           />
         </FormGroup>
       </Typography>
-    </div>
+      
       <ul>
         {skills.map((skill) => {
           return(
@@ -114,7 +113,7 @@ function LanguageLibraries(props){
               <Typography variant="body1" sx={{ textAlign: 'left', fontWeight: 'bold' }} style={{fontFamily: "Raleway", padding: 0}}>
                 {skill.skill}
               </Typography>  
-              <div style={{ float: 'left' }}>
+              <div style={{float:'left'}}>
                 {skill.items.map((item, index) => {
                   
                   if(textMode){
