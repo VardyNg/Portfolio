@@ -17,7 +17,7 @@ import ThreeDAnimations from './Projects/3DAnimations'
 import Chip from '@mui/material/Chip';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import VR3D from './Projects/VR3D'
-
+import TCPIP from './Projects/TCPIP'
 const projects = [
   {
     chip: ["Side Projects", "Group"],
@@ -57,11 +57,13 @@ function Projects(){
   const [showHAL, setShowHAL] = useState(false)
   const [show3D, setShow3D] = useState(false)
   const [showVR3D, setShowVR3D] = useState(false)
+  const [showTCPIP, setShowTCPIP] = useState(false)
 
   const closeSSM = () => {setShowSSM(false);};
   const closeHAL = () => {setShowHAL(false);};
   const close3D = () => {setShow3D(false)}
   const closeVR3D = () => {setShowVR3D(false)}
+  const closeTCPIP = () => {setShowTCPIP(false)}
 
   return(
     <>
@@ -69,7 +71,7 @@ function Projects(){
       <HAL open={showHAL} onClose={closeHAL}/>
       <ThreeDAnimations open={show3D} onClose={close3D}/>
       <VR3D open={showVR3D} onClose={closeVR3D}/>
-      
+      <TCPIP open={showTCPIP} onClose={closeTCPIP}/>
       <Typography variant="h4" sx={{ textAlign: 'left', fontWeight: 'bold' }} style={{fontFamily: "Raleway", padding: 10}}>
         Projects / Previous Works
       </Typography>
@@ -101,6 +103,7 @@ function Projects(){
                         else if(project.title === "H.A.L. 3000: The School Survival") setShowHAL(true)
                         else if(project.title === "3D animations with Blender and AutoCAD 3DS MAX") setShow3D(true)
                         else if(project.title === "VR application for 3D object manipulations using Unity") setShowVR3D(true)
+                        else if(project.title === "Web game for learning TCP/IP concepts") setShowTCPIP(true)
                       }}
                       endIcon={<ArrowForwardIosIcon/>}
                     >

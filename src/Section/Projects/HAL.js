@@ -25,6 +25,14 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
     justifyContent: 'center',
     // backgroundColor: 'pink'
+  },
+  parent: {
+    textAlign: 'center',
+    width: '100%', 
+    display: 'block',
+  },
+  images: {
+    padding: 5
   }
 }))
 
@@ -60,13 +68,14 @@ function HAL(props) {
               </Grid>
               <Grid item xs={12} md={8} style={{backgroundColor: ''}}>
                 <Grid container style={{height: "100%", flex: 1, justifyContent: "center", alignItem: "center", backgroundColor: ''}}>
-                  <Grid item xs={12} style={{backgroundColor: ''}}>
+                  <Typography className={classes.text} variant="h5"> Introduction </Typography>
+                  <Grid item xs={12} style={{backgroundColor: ''}} >
                     <ul>
                       <li><Typography className={classes.text} variant="body">An 3D game dedicated for children or teenagers with or without programming experiences, to learn programming logics and concepts.  </Typography></li>
                       <li><Typography className={classes.text} variant="body">Block base programming, intuituve interface, learn programming progressively. </Typography></li>
                       <li><Typography className={classes.text} variant="body">Available for MacOS, Windows, iOS, and Android. </Typography></li>
                       <li><Typography className={classes.text} variant="body">Developed by using Unity3D and C#. </Typography></li>
-                      <li><Typography className={classes.text} variant="body">Intermediate product for my  </Typography></li>
+                      <li><Typography className={classes.text} variant="body">Intermediate product for my final year project.</Typography></li>
                       
                     </ul>
                   </Grid>
@@ -75,24 +84,37 @@ function HAL(props) {
             </Grid>
           </Grid>
           <Grid container>
-            <Grid item xs={12} md={4} className={classes.imageContainer}>
-              <img src={MainScreen} style={{height: 250}}/>
-            </Grid>
-            <Grid item xs={12} md={4} className={classes.imageContainer}>
-              <img src={ScreenCap1} style={{height: 250}}/>
-            </Grid>
-            <Grid item xs={12} md={4} className={classes.imageContainer}>
-              <img src={ScreenCap2} style={{height: 250}}/>
+            <div className={classes.parent}>
+              <img src={MainScreen} style={{height: 250}} className={classes.images}/>
+              <img src={ScreenCap1} style={{height: 250}} className={classes.images}/>
+              <img src={ScreenCap2} style={{height: 250}} className={classes.images}/>
+            </div>
+          </Grid>
+          <Grid container padding={5}>
+            <Grid xs={12} className={classes.parent}>
+              <Typography className={classes.text} variant="h5" >Main Story</Typography>
+              <Typography className={classes.text} variant="body" >
+                One day, a lazy boy waked up on his bed, struggling for changing his clothes and go to school. 
+                He was hoping for someone who can clone him and replace him to school. 
+                Suddenly, a robot came out from the drawer, looked the same as the boy. 
+                The robot promised to replace him to school, but the boy must control the robot over the internet by programme, and try to avoid being discovered. 
+              </Typography>
             </Grid>
           </Grid>
-          <Grid item xs={12} className={classes.imageContainer}>
-            <iframe width="560" height="315" src="https://youtu.be/6fnqcI7amdk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <Grid container padding={5} >
+            <Grid xs={12} className={classes.parent}>
+              <Typography className={classes.text} variant="h5" >Watch the presentation video</Typography>
+            </Grid>
+            <Grid xs={12} className={classes.parent}>
+              <Grid item xs={12} className={classes.imageContainer}>
+                <iframe width="75%" height="500" src="https://www.youtube.com/embed/6fnqcI7amdk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              </Grid>
+            </Grid>
           </Grid>
-
         </Grid>
       </DialogContent>
       <DialogActions>
-        <Button onClick={props.onClose} autoFocus fullScreen>
+        <Button onClick={props.onClose} autoFocus fullWidth>
           Close
         </Button>
       </DialogActions>

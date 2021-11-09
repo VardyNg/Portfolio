@@ -1,0 +1,472 @@
+<!doctype html> 
+<html lang="en"> 
+<head> 
+    <meta charset="UTF-8" />
+    <title>Making your first Phaser 3 Game - Part 7</title>
+    <script src="//cdn.jsdelivr.net/npm/phaser@3.11.0/dist/phaser.js"></script>
+    <style type="text/css">
+        body {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+<script type="text/javascript">
+var config = {
+    type: Phaser.AUTO,
+    width: 960,
+    height: 540,
+    scene: {
+        preload: preload,
+        create: create,
+		update: update
+    },
+	physics: {
+        default: 'arcade',
+        arcade: {
+            gravity: { y: 0 }, //-50
+            debug: true
+        }
+    },
+	pixelArt: true
+};
+
+var game = new Phaser.Game(config);
+var currentPort = 'telnet';
+var currentPortText;
+var portName = 'http';
+var points = [0, 270, 225, 270]; //points for path in port zone
+var line = new Phaser.Curves.Spline(points); //attach points to a path
+var graphics; //visualize the path
+var segment; //segment to follow the path
+var port; //port image
+var portCount = 1;
+var borders;
+var block;
+var blocks;
+var blockCount = 0;
+var blockList = ['segment0', 'segment1', 'segment2', 'segment3', 'segment4', 
+				'segment5', 'segment6', 'segment7', 'segment8', 'segment9'];
+var dragCount = 0;
+var store;
+var stores;
+var segment0_status = false;
+var segment1_status = false;
+var segment2_status = false;
+var segment3_status = false;
+var segment4_status = false;
+var segment5_status = false;
+var segment6_status = false;
+var segment7_status = false;
+var segment8_status = false;
+var segment9_status = false;
+var orderCorrect = false;
+var blockArray = ['block 0', 'block 1', 'block 2','block 3','block 4',
+				'block 5','block 6','block 7','block 8','block 9'];
+
+function preload ()
+{
+	this.load.image('background', 'assets/background_test.png');
+	this.load.spritesheet('port', 'assets/port_sprite.png', { frameWidth: 70, frameHeight: 45 });
+	this.load.image('segmentIn', 'assets/segment_In.png');
+	this.load.image('segment0', 'assets/segment0.png');
+	this.load.image('segment1', 'assets/segment1.png');
+	this.load.image('segment2', 'assets/segment2.png');
+	this.load.image('segment3', 'assets/segment3.png');
+	this.load.image('segment4', 'assets/segment4.png');
+	this.load.image('segment5', 'assets/segment5.png');
+	this.load.image('segment6', 'assets/segment6.png');
+	this.load.image('segment7', 'assets/segment7.png');
+	this.load.image('segment8', 'assets/segment8.png');
+	this.load.image('segment9', 'assets/segment9.png');
+	this.load.image('segmentStore', 'assets/segment_store.png');
+	this.load.image('orderZone', 'assets/orderZone.png');
+	this.load.image('borderV', 'assets/orderZone_borderV.png');
+	this.load.image('borderH', 'assets/orderZone_borderH.png');
+	this.load.bitmapFont('nokia', 'assets/nokia16black.png', 'assets/nokia16black.xml');
+}
+
+function create ()
+{	
+	this.add.image(480, 270, 'background');//create background image
+	this.add.image(480, 270, 'orderZone');//create order zone
+	currentPortText = this.add.text(16, 16, 'Current Service: ' + currentPort, {fontSize: '16px', fill: '#000'});
+	
+	//create port
+	makePort.call(this);
+	
+	//create order zone
+	borders = this.physics.add.staticGroup();
+	borders.create(480, 5, 'borderH').setScale(1,0.5);
+	borders.create(480, 535, 'borderH').setScale(1,0.5);
+	borders.create(320, 270, 'borderV').setScale(0.5,1);
+	borders.create(640, 270, 'borderV').setScale(0.5,1);
+	
+	blocks = this.physics.add.group();
+	
+	this.physics.add.collider(blocks, borders);
+	//this.physics.add.collider(blocks, blocks);
+	
+	//create store block for segment in order zone
+	stores = this.physics.add.group();
+	for(var storeCount = 0; storeCount < 5; storeCount++)
+	{
+		store = stores.create(354 + 63 * storeCount, 258, 'segmentStore');
+		store.name = 'store' + storeCount;
+		//console.log(store.name);
+	}
+	for(var storeCount = 5; storeCount < 10; storeCount++)
+	{
+		store = stores.create(354 + 63 * (storeCount - 5), 282, 'segmentStore');
+		store.name = 'store' + storeCount;
+		//console.log(store.name);
+	}
+
+	
+
+/*
+	Visualize the line
+	graphics = this.add.graphics();
+    graphics.lineStyle(1, 0xffffff, 0.5);
+    line.draw(graphics, 128);
+    graphics.fillStyle(0xff0000, 0.5);
+    for (var i = 0; i < line.points.length; i++) {
+        graphics.fillCircle(line.points[i].x, line.points[i].y, 4);
+    }
+*/
+	
+}
+function update ()
+{
+	currentPortText.setText('Current Service: ' + currentPort);
+	
+	port.on('pointerdown', switchPort, this);
+	
+	//blocks.setInteractive();
+	
+	if(portName == currentPort)
+	{
+		InPort.call(this);
+		if(blockCount <= 9)
+		{
+			blockArray[blockCount] = blocks.create(350, 270, blockList[blockCount]).setScale(1);
+			blockArray[blockCount].setInteractive();
+			blockArray[blockCount].name = 'segment ' + blockCount;
+			this.input.setDraggable(blockArray[blockCount]);
+			console.log(blockArray[blockCount].name);
+			blockArray[blockCount].setBounce(1);
+			//blockArray[blockCount].setCollideWorldBounds(true);
+			//blockArray[blockCount].setVelocity(Math.random() * 75 + 75, Math.random() * 75 + 75);
+			blockArray[blockCount].setVelocity(0, 0);
+			blockArray[blockCount].allowGravity = true;
+			
+			//this.input.setDraggable(blocks, true);
+			this.input.on('dragstart', function(pointer, obj){
+				//console.log("dragStart");
+				//obj.setVelocity(0, 0);
+				obj.body.move = false;
+			});
+	
+			this.input.on('drag', function(pointer, obj, dragX, dragY){
+				//console.log("dragging");
+				//console.log(dragX, '-', dragY);
+				//set drag position
+				obj.setPosition(dragX, dragY);
+				obj.setVelocity(0, 0);
+				//prevent segements being dragged out the order zone
+				if(dragX <= 320 || dragX >= 640 || dragY <= 0 || dragY >= 540)
+				{
+					//obj.setPosition(480, 270);
+				}
+				
+				if(obj.x == 354 && obj.y == 258 && obj.name == "segment 0")
+				{
+					blockArray[0].setVelocity(0, 0);
+					console.log("Segment 0 ok");
+					segment0_status = true;
+					//obj.destroy();
+				}
+				else if(obj.x == 354 + 63 * 1 && obj.y == 258 && obj.name == "segment 1")
+				{
+					console.log("Segment 1 ok");
+					segment1_status = true;
+					//obj.destroy();
+				}
+				else if(obj.x == 354 + 63 * 2 && obj.y == 258 && obj.name == "segment 2")
+				{
+					console.log("Segment 2 ok");
+					segment2_status = true;
+					//obj.destroy();
+				}
+				else if(obj.x == 354 + 63 * 3 && obj.y == 258 && obj.name == "segment 3")
+				{
+					console.log("Segment 3 ok");
+					segment3_status = true;
+					//obj.destroy();
+				}
+				else if(obj.x == 354 + 63 * 4 && obj.y == 258 && obj.name == "segment 4")
+				{
+					console.log("Segment 4 ok");
+					segment4_status = true;
+					//obj.destroy();
+				}
+				else if(obj.x == 354 && obj.y == 282 && obj.name == "segment 5")
+				{
+					console.log("Segment 5 ok");
+					segment5_status = true;
+					//obj.destroy();
+				}
+				else if(obj.x == 354 + 63 * 1 && obj.y == 282 && obj.name == "segment 6")
+				{
+					console.log("Segment 6 ok");
+					segment6_status = true;
+					//obj.destroy();
+				}
+				else if(obj.x == 354 + 63 * 2 && obj.y == 282 && obj.name == "segment 7")
+				{
+					console.log("Segment 7 ok");
+					segment7_status = true;
+					//obj.destroy();
+				}
+				else if(obj.x == 354 + 63 * 3 && obj.y == 282 && obj.name == "segment 8")
+				{
+					console.log("Segment 8 ok");
+					segment8_status = true;
+					//obj.destroy();
+				}
+				else if(obj.x == 354 + 63 * 4 && obj.y == 282 && obj.name == "segment 9")
+				{
+					console.log("Segment 9 ok");
+					segment9_status = true;
+					//obj.destroy();
+				}
+			});
+	
+			this.input.on('dragend', function(pointer, obj){
+			obj.body.move = false;
+			if(segment0_status == true && obj.name == "segment 0")
+			{	
+				//console.log("hiiiiiiii");
+				//obj.setPosition(354, 258);
+				blockArray[0].setVelocity(0, 0);
+			}
+			else if(segment1_status == true && obj.name == "segment 1")
+			{
+				blockArray[1].setVelocity(0, 0);
+			}
+			else if(segment2_status == true && obj.name == "segment 2")
+			{
+				blockArray[2].setVelocity(0, 0);
+			}
+			else if(segment3_status == true && obj.name == "segment 3")
+			{
+				blockArray[3].setVelocity(0, 0);
+			}
+			else if(segment4_status == true && obj.name == "segment 4")
+			{
+				blockArray[4].setVelocity(0, 0);
+			}
+			else if(segment5_status == true && obj.name == "segment 5")
+			{
+				blockArray[5].setVelocity(0, 0);
+			}
+			else if(segment6_status == true && obj.name == "segment 6")
+			{
+				blockArray[6].setVelocity(0, 0);
+			}
+			else if(segment7_status == true && obj.name == "segment 7")
+			{
+				blockArray[7].setVelocity(0, 0);
+			}
+			else if(segment8_status == true && obj.name == "segment 8")
+			{
+				blockArray[8].setVelocity(0, 0);
+			}
+			else if(segment9_status == true && obj.name == "segment 9")
+			{
+				blockArray[9].setVelocity(0, 0);
+			}
+			else
+			{
+				//obj.setVelocity(Math.random() * 75 + 75, Math.random() * 75 + 75);
+			}
+			});
+			
+		}
+		blockCount++;	
+	}
+	else if(portName != currentPort)
+	{
+		console.log("Port not match");
+	}
+	
+	if(segment0_status == true &&
+		segment1_status == true &&
+		segment2_status == true &&
+		segment3_status == true &&
+		segment4_status == true &&
+		segment5_status == true &&
+		segment6_status == true &&
+		segment7_status == true &&
+		segment8_status == true &&
+		segment9_status == true)
+	{
+		console.log("ALL MATCH!!");
+		orderCorrect = true;
+		//blocks.disableBody(true, true); //problem
+		//blockCount = 0;
+	}
+	
+	if(orderCorrect == true){
+		console.log("orderCorrect");
+		segment0_status = false;
+		segment1_status = false;
+		segment2_status = false;
+		segment3_status = false;
+		segment4_status = false;
+		segment5_status = false;
+		segment6_status = false;
+		segment7_status = false;
+		segment8_status = false;
+		segment9_status = false;
+		orderCorrect = false;
+				
+		for(var i = 0; i < 10; i++)
+		{
+			blockArray[i].destroy();
+		}
+				
+		blockCount = 0;
+	}
+}
+/*
+function makeSegment (name, x, y)
+{
+	block = this.add.image(x, y, 'block');
+	block.setScale(0.5, 0.5);
+	
+	var count = 0;
+	
+	//console.log('2 ', y);
+	
+	var text = this.add.bitmapText(x - 40, y - 8, 'nokia', name, 16);
+    text.x += (block.width - text.width) / 2;
+	
+	let container = this.add.container(x, y, [block, text]).setScale(0.5);
+	
+	//console.log('3 ', name, ' ', y);
+	
+	container.name = name;
+	container.setSize(160, 30);
+	this.physics.world.enable(container);
+	container.body.setVelocity((Math.random() * 50), (Math.random() * 100));
+	container.body.setBounce(1, 1);
+	container.body.setCollideWorldBounds(true);
+	
+	container.setInteractive();
+	this.input.setDraggable(container);
+	
+	this.input.on('dragstart', function(pointer, obj){
+		obj.body.move = false;
+	});
+	
+	this.input.on('drag', function(pointer, obj, dragX, dragY){
+		//console.log(dragX, '-', dragY);
+		obj.setPosition(dragX, dragY);
+		if(count%2 == 0){
+			obj.body.setVelocity(0,0);
+		}else if(count%2 != 0){
+			obj.body.setVelocity((Math.random() * 50), (Math.random() * 100));
+		}
+		console.log("drag count" + count);
+	});
+	
+	this.input.on('dragend', function(pointer, obj){
+		obj.body.move = false;
+		count++;
+	});
+}
+*/
+
+
+function makePort ()
+{
+	port = this.add.image(282, 270, 'port', 0).setInteractive();
+}
+
+function switchPort ()
+{
+	if (portCount == 1)
+		{
+			setPortFrame(port, portCount);
+			portName = 'ftp';
+			console.log(portName);
+			console.log('Current Port is ' + currentPort);
+			portCount = 2;
+		}
+		else if (portCount == 2)
+		{
+			setPortFrame(port, portCount);
+			portName = 'telnet';
+			console.log(portName);
+			console.log('Current Port is ' + currentPort);
+			portCount = 0;
+		}
+		else if (portCount == 0)
+		{
+			setPortFrame(port, portCount);
+			portName = 'http'
+			console.log(portName);
+			console.log('Current Port is ' + currentPort);
+			portCount = 1;
+		}
+}
+
+function setPortFrame(port, frame)
+{
+    port.frame = port.scene.textures.getFrame('port', frame);
+}
+
+function InPort ()
+{
+	//Create a segment
+	segment = this.add.follower(line, 0, 270, 'segmentIn').setScale(0.6);
+	//let the segment follow the line if the port matched
+	console.log(portName + " " + currentPort + " match!");
+	segment.startFollow({duration: 100});
+}
+
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
