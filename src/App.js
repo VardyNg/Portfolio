@@ -21,11 +21,23 @@ import LanguageLibraries from './Section/LanguageLibraries';
 
 const appBarColor = ""
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles((theme) => ({
   container: {
     height: "100vh",
     overflow: "auto"
   },
+  headerTextContainer: {
+    [theme.breakpoints.up('sm')]: {
+      // backgroundColor: 'red'
+    },
+    [theme.breakpoints.down('xs')]: {
+      // backgroundColor: 'blue',
+      alignItems: "center",
+      justifyContent: "center",
+      width: "100%"
+    },
+  },
+  
 }));
 
 function Scroller({ className, children, trackIds, onScrollToElement }) {
@@ -63,23 +75,25 @@ function App() {
     <>
       <AppBar position="static" style={{backgroundColor: "#677886"}}>
         <Toolbar>
-          <Grid container style={{width: '100%'}}>
-            <Grid item>
-              <Typography variant="h6" color="inherit" component="div" style={{fontFamily: "Raleway", marginLeft: 10}}>
-                Ng Hoi Wa's Portfolio | 
-              </Typography>
+          <Grid container style={{width: '100%', marginTop: 10}}>
+            <Grid item >
+              <div className={classes.headerTextContainer}>
+                <Typography variant="h6" color="inherit" component="div" style={{fontFamily: "Raleway"}} className={classes.headerText}>
+                  Ng Hoi Wa's Portfolio
+                </Typography>
+              </div>
             </Grid>
             <Grid item>
-              <Button onClick={() => contacts.current.scrollIntoView()} color="white">
+              <Button onClick={() => contacts.current.scrollIntoView()} color="white" size="small">
                 Contacts
               </Button>
-              <Button onClick={() => projects.current.scrollIntoView()} color="white">
+              <Button onClick={() => projects.current.scrollIntoView()} color="white" size="small">
                 Projects
               </Button>
-              <Button onClick={() => education.current.scrollIntoView()} color="white">
+              <Button onClick={() => education.current.scrollIntoView()} color="white" size="small">
                 Education
               </Button>
-              <Button onClick={() => workingExperience.current.scrollIntoView()} color="white">
+              <Button onClick={() => workingExperience.current.scrollIntoView()} color="white" size="small">
                 Working Experiences
               </Button>
             </Grid>
@@ -98,7 +112,7 @@ function App() {
         }}
       >
         {/* Greeting */}
-        <Grid container align="center" justifyContent="center" style={{backgroundColor: '#D3CBB6'}}>
+        <Grid container align="center" justifyContent="center" style={{backgroundColor: '#FFFFFF'}}>
           <Grid item xs={12} sm={9} md={8} >
             <Greeting/>
           </Grid>
@@ -124,8 +138,11 @@ function App() {
           </Grid>
         </Grow>
         {/* Language / Libraries */}
+        <Grid container align="center" justifyContent="center" style={{backgroundColor: '#D4BFAD', height: '5'}}>
+          <div style={{padding: 35}}> </div>
+        </Grid>
         <Grid container align="center" justifyContent="center" style={{backgroundColor: ''}}>
-          <Grid item xs={12} sm={9} md={8} padding={.5} >
+          <Grid item xs={12} sm={9} md={8} style={{margin: 20}}>
             <div ref={contacts}>
               <LanguageLibraries/>
             </div>
@@ -143,7 +160,7 @@ function App() {
         </Fade>
         {/* Working Experiences */}
         <Fade in={showWorkingExperience}>
-          <Grid container align="center" justifyContent="center" style={{backgroundColor: '#D4BFAD'}}>
+          <Grid container align="center" justifyContent="center">
             <Grid item xs={12} sm={9} md={8} style={{margin: 20}}>
                 <div id="workingExperience" ref={workingExperience}>
                   <WorkingExperience/>

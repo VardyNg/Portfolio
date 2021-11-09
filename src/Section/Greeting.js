@@ -9,6 +9,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Grow from '@mui/material/Grow';
 import SkillSets from './SkillSets'
 import Divider from '@mui/material/Divider';
+
 const useStyles = makeStyles((theme) => ({
   greetingText: {
     [theme.breakpoints.up('sm')]: {

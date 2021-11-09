@@ -11,9 +11,26 @@ import Typography from '@mui/material/Typography';
 import HAL3000 from '../../Images/HAL3000.png'
 import Grid from '@mui/material/Grid';
 import Chip from '@mui/material/Chip';
+import MainScreen from '../../Images/HAL3000/MainScreen.png'
+import ScreenCap1 from '../../Images/HAL3000/ScreenCap1.png'
+import ScreenCap2 from '../../Images/HAL3000/ScreenCap2.png'
+import { makeStyles } from '@material-ui/core/styles';
+
+const useStyles = makeStyles((theme) => ({
+  text: {
+    fontSize: 20
+  },
+  imageContainer:{
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    // backgroundColor: 'pink'
+  }
+}))
 
 function HAL(props) {
   const theme = useTheme();
+  const classes = useStyles()
   const fullScreen = useMediaQuery(theme.breakpoints.down('md'));
   
   return(
@@ -45,10 +62,11 @@ function HAL(props) {
                 <Grid container style={{height: "100%", flex: 1, justifyContent: "center", alignItem: "center", backgroundColor: ''}}>
                   <Grid item xs={12} style={{backgroundColor: ''}}>
                     <ul>
-                      <li><Typography variant="body">An 3D game dedicated for children or teenagers with or without programming experiences.  </Typography></li>
-                      <li><Typography variant="body">Block base programming, intuituve interface, learn programming progressively. </Typography></li>
-                      <li><Typography variant="body">Available for MacOS, Windows, iOS, and Android. </Typography></li>
-                      <li><Typography variant="body">Developed by using Unity3D and C#. </Typography></li>
+                      <li><Typography className={classes.text} variant="body">An 3D game dedicated for children or teenagers with or without programming experiences, to learn programming logics and concepts.  </Typography></li>
+                      <li><Typography className={classes.text} variant="body">Block base programming, intuituve interface, learn programming progressively. </Typography></li>
+                      <li><Typography className={classes.text} variant="body">Available for MacOS, Windows, iOS, and Android. </Typography></li>
+                      <li><Typography className={classes.text} variant="body">Developed by using Unity3D and C#. </Typography></li>
+                      <li><Typography className={classes.text} variant="body">Intermediate product for my  </Typography></li>
                       
                     </ul>
                   </Grid>
@@ -56,6 +74,21 @@ function HAL(props) {
               </Grid>
             </Grid>
           </Grid>
+          <Grid container>
+            <Grid item xs={12} md={4} className={classes.imageContainer}>
+              <img src={MainScreen} style={{height: 250}}/>
+            </Grid>
+            <Grid item xs={12} md={4} className={classes.imageContainer}>
+              <img src={ScreenCap1} style={{height: 250}}/>
+            </Grid>
+            <Grid item xs={12} md={4} className={classes.imageContainer}>
+              <img src={ScreenCap2} style={{height: 250}}/>
+            </Grid>
+          </Grid>
+          <Grid item xs={12} className={classes.imageContainer}>
+            <iframe width="560" height="315" src="https://youtu.be/6fnqcI7amdk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </Grid>
+
         </Grid>
       </DialogContent>
       <DialogActions>
