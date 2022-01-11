@@ -49,7 +49,7 @@ function Greeting(){
             </Typography>
             <Divider style={{margin: 20}}/>
             <Typography variant="body1" component="div" style={{fontFamily: "Raleway"}}>
-              I am a year 5 student from Hong Kong PolyU. Love coding, make useful tools and fun games.
+              I am a recent graduate of The Hong Kong PolyU. Love coding, make useful application and fun games.
             </Typography>
             <Divider style={{margin: 20}}/>
             <SkillSets/>

@@ -10,7 +10,7 @@ import Typography from '@mui/material/Typography';
 
 const steps = [
   {
-    yearsRange: "2019 - early 2022",
+    yearsRange: "Sep 2019 - Dec 2021",
     label: 'The Hong Kong Polytechnic University',
     degree: 'Bsc(Hons) Internet and Multimedia Technologies',
     cGPA: "2.77",
@@ -25,7 +25,7 @@ const steps = [
     
   },
   {
-    yearsRange: "2017 - 2019",
+    yearsRange: "Sep 2017 - Jun 2019",
     label: 'Hong Kong Community College, Hong Kong PolyU',
     degree: 'Associate in Information Technology',
     cGPA: "3.36",
@@ -38,7 +38,7 @@ const steps = [
     ],
   },
   {
-    yearsRange: "2011 - 2017",
+    yearsRange: "Sep 2011 - Jun 2017",
     label: 'Cheung Chek Che Secondary School',
     degree: '2017 Hong Kong Diploma of Secondary Education (HKDSE)',
     cGPA: "NA",
@@ -46,11 +46,12 @@ const steps = [
       "Level 5 in Information and Communication Technology (ICT) ",
       "Level 4 in Mathematics ",
       "Level 4 in Liberal Studies (LS)",
-      "Level 4 History"
+      "Level 4 in History"
     ],
   },
 ];
 
+const showGPA = false
 function Education(){
   return(
     <>
@@ -62,7 +63,7 @@ function Education(){
       <Stepper orientation="vertical"> 
         {steps.map((step, index) => {
           let cGPAText = ""
-          if(step.cGPA !== "NA"){
+          if(step.cGPA !== "NA" && showGPA){
             cGPAText = ", cGPA: "+step.cGPA
           }
           return(

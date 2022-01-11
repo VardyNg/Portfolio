@@ -11,6 +11,8 @@ const WhiteTextTypography = withStyles({
   }
 })(Typography);
 
+const contactEmail = "vardyng1999@gmail.com"
+
 function Contacts(){
   return(
     <div>
@@ -28,13 +30,17 @@ function Contacts(){
       >
         <FaLinkedin/>
       </IconButton>
-      <WhiteTextTypography
-        variant="body"
-        color="white"
-        sx={{fontSize: 20}}
+      <Button
+        onClick={() => window.open("mailto:"+contactEmail, "_blank").focus()}
       >
-        wadee@wadeenghoiwa.com
-      </WhiteTextTypography>
+        <WhiteTextTypography
+          variant="body"
+          color="white"
+          sx={{fontSize: 20}}
+        >
+          {contactEmail}
+        </WhiteTextTypography>
+      </Button>
       
     </div>
   )

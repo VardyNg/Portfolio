@@ -9,27 +9,30 @@ import Typography from '@mui/material/Typography';
 
 const steps = [
   {
-    yearsRange: "Sep 2021 - Present",
-    label: 'Banclogix System co. limited, KVB Group',
-    degree: 'Software Development Internship (Part Time)',
+    yearsRange: "Sep 2021 - Dec 2021",
+    label: 'Banclogix System Co. Limited, KVB Group',
+    degree: 'Software Development Internship (Part Time mode)',
     description: [
-      "System installation and maintenance in data centres",
+      "Develop software for system installation and maintenance in data centres",
       "System support for the crypto currency ETD",
     ],
   },
   {
     yearsRange: "Jun 2021 - Sep 2021",
-    label: 'Crossover Internation Company Limited',
-    degree: 'Software Developer Internship (Full Time)',
+    label: 'Crossover Int. Company Limited',
+    degree: 'Software Developer Internship (Full Time mode)',
     description: [
-      "Designed and developed an online CRUD application to support competitions organising, allow judges to score products and let organisers to view the judging statistical results. Consulted with end users and revised the system.",
+      "Designed and developed an online CRUD application to support competitions scoring, maintain and develop APIs",
+      "Consulted with end users to develop and revised the system.",
       "Setup and maintained remote server to support company operations.",
+      "Proof-of-concept activity",
+      "Implement automation, CI/CD, DevOps development.",
       "Rated “Exceed Expectation” in performance by the supervisor."
 
     ],
   },
   {
-    yearsRange: "Jun 2020 - Jun",
+    yearsRange: "Jun 2020 - Jun 2021",
     label: 'Private Tutor',
     degree: 'Self-Employed',
     description: [
