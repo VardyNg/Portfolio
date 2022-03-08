@@ -33,53 +33,67 @@ const useStyles = makeStyles((theme) => ({
   }
 }))
 
+function createDataForSkill(skill, items){
+  return {skill, items}
+}
+
+function createDataForItem(name, icon){
+  return {name, icon}
+}
+
 const skills = [
-  {
-    skill: "Programming Language",
-    items: [
-      {name: "C#", icon: Csharp_Logo},
-      {name: "C++", icon: CPlusPlus},
-      {name: "HTML, CSS, JavaScript", icon: HCJ},
-      {name: "Swift", icon: Swift},
-      {name: "PHP", icon: php},
-      {name: "Python", icon: python},
-      {name: "Java", icon: Java_Icon},
-    ]
-  },
-  {
-    skill: "Databases",
-    items: [
-      {name: "MySQL", icon: MySQL},
-      {name: "SQLite", icon: SQL_Lite},
-    ]
-  },
-  {
-    skill: "Libraries",
-    items: [
-      {name: "React Native", icon: React_Native_icon},
-      {name: "React JS", icon: ReactJS},
-      {name: "Node JS", icon: NodeJS},
-    ]
-  },
-  {
-    skill: "Tools", 
-    items: [
-      {name: "Xcode", icon: Xcode_icon},
-      {name: "Android Studio", icon: Android_Studio_Icon},
-      {name: "Unity3D", icon: Unity3D},
-      {name: "AWS", icon: aws},
-      {name: "Google Cloud Platform", icon: GCP}
-    ]
-  },
-  {
-    skill: "Operation Systems",
-    items: [
-      {name: "MacOS", icon: Apple},
-      {name: "Windows", icon: Windows},
-      {name: "Ubuntu", icon: ubuntu},
-    ]
-  }
   
+    createDataForSkill("Programming Languages",
+    [
+      createDataForItem("C#",Csharp_Logo),
+      createDataForItem("C++",CPlusPlus),
+      createDataForItem("HTML, CSS, JavaScript",HCJ),
+      createDataForItem("Swift",Swift),
+      createDataForItem("PHP",php),
+      createDataForItem("Python",python),
+      createDataForItem("Java",Java_Icon),
+    ]),
+    createDataForSkill("Databases",
+    [
+      createDataForItem("MySQL",MySQL),
+      createDataForItem("SQLite",SQL_Lite),
+      createDataForItem("DynamoDB",null),
+    ]),
+    createDataForSkill("Libraries",
+    [
+      createDataForItem("React Native",React_Native_icon),
+      createDataForItem("React JS",ReactJS),
+      createDataForItem("Node JS",NodeJS),
+    ]),
+    createDataForSkill("IDEs", 
+    [
+      createDataForItem("Xcode",Xcode_icon),
+      createDataForItem("Android Studio",Android_Studio_Icon),
+      createDataForItem("Unity3D",Unity3D),
+    ]),
+    createDataForSkill("Operation Systems",
+    [
+      createDataForItem("MacOS", Apple),
+      createDataForItem("Windows", Windows),
+      createDataForItem("Ubuntu", ubuntu),
+    ]),
+    createDataForSkill("Cloud Services",
+    [
+      createDataForItem("Amazon Web Service",aws),
+      createDataForItem("Google Cloud Platform",GCP)
+    ]),
+    createDataForSkill("Source Controls",
+    [
+      createDataForItem("Git",null),
+      createDataForItem("GitHub",null),
+      createDataForItem("GitLab",null),
+      createDataForItem("SVN",null),
+    ]),
+    createDataForSkill("IaC",
+    [
+      createDataForItem("Terraform",null),
+      createDataForItem("Serverless framework",null),
+    ]),
 ]
 
 function LanguageLibraries(props){
@@ -92,22 +106,25 @@ function LanguageLibraries(props){
   
   return(
     <>
+    
       <Typography variant="h4" sx={{ textAlign: 'left', fontWeight: 'bold' }} style={{fontFamily: "Raleway", padding: 10}}>
         Skills
-        <FormGroup>
-          <FormControlLabel 
-            control={
-              <Switch 
-                onChange={handleChange}
-              />
-            } 
-            label="Text mode" 
-          />
-        </FormGroup>
+        <FormControlLabel 
+          style={{
+            marginLeft: 10
+          }}
+          control={
+            <Switch 
+              onChange={handleChange}
+            />
+          } 
+          label="Text mode" 
+        />
       </Typography>
-      
+
       <ul>
         {skills.map((skill) => {
+          console.log(skill)
           return(
             <li>
               <Typography variant="body1" sx={{ textAlign: 'left', fontWeight: 'bold' }} style={{fontFamily: "Raleway", padding: 0}}>
