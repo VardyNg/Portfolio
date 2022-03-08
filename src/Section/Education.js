@@ -57,7 +57,7 @@ function Education(){
     <>
       <div style={{alignContent: "left"}}>
         <Typography variant="h4" sx={{ textAlign: 'left' }} style={{fontFamily: "Raleway", padding: 10}}>
-          <b>Education Background</b>
+          <b>Education Background</b> (Test)
         </Typography>
       </div>
       <Stepper orientation="vertical"> 
