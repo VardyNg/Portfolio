@@ -19,7 +19,7 @@ const steps = [
     ],
   ),
   createDataForWorkingExperience(
-    "Sep 2021 - Dec 2021",
+    "Sep 2021 - Dec 2021 (4 months)",
     'Banclogix System Co. Limited, KVB Global',
     'Software Development Internship (Part Time mode)',
     [
@@ -28,7 +28,7 @@ const steps = [
     ],
   ),
   createDataForWorkingExperience(
-  "Jun 2021 - Sep 2021",
+  "Jun 2021 - Sep 2021 (4 months)",
   'Crossover Int. Company Limited',
   'Software Developer Internship (Full Time mode)',
     [
@@ -41,7 +41,7 @@ const steps = [
     ],
   ),
   createDataForWorkingExperience(
-    "Jun 2020 - Jun 2021",
+    "Jun 2020 - Jun 2021 (1 year)",
     'IT & Math Private Tutor',
     'Self-Employed',
     [
