@@ -7,41 +7,49 @@ import Button from '@mui/material/Button';
 import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
 
+function createDataForWorkingExperience(yearsRange, label, degree, description){
+  return {yearsRange, label, degree, description};
+}
 const steps = [
-  {
-    yearsRange: "Sep 2021 - Dec 2021",
-    label: 'Banclogix System Co. Limited, KVB Group',
-    degree: 'Software Development Internship (Part Time mode)',
-    description: [
+  createDataForWorkingExperience(
+    "Jan 2022 - Present",
+    "Armitage Technologies Limited",
+    "Mobile Developer",
+    [
+    ],
+  ),
+  createDataForWorkingExperience(
+    "Sep 2021 - Dec 2021",
+    'Banclogix System Co. Limited, KVB Global',
+    'Software Development Internship (Part Time mode)',
+    [
       "Develop software for system installation and maintenance in data centres",
       "System support for the crypto currency ETD",
     ],
-  },
-  {
-    yearsRange: "Jun 2021 - Sep 2021",
-    label: 'Crossover Int. Company Limited',
-    degree: 'Software Developer Internship (Full Time mode)',
-    description: [
+  ),
+  createDataForWorkingExperience(
+  "Jun 2021 - Sep 2021",
+  'Crossover Int. Company Limited',
+  'Software Developer Internship (Full Time mode)',
+    [
       "Designed and developed an online CRUD application to support competitions scoring, maintain and develop APIs",
       "Consulted with end users to develop and revised the system.",
       "Setup and maintained remote server to support company operations.",
       "Proof-of-concept activity",
       "Implement automation, CI/CD, DevOps development.",
       "Rated “Exceed Expectation” in performance by the supervisor."
-
     ],
-  },
-  {
-    yearsRange: "Jun 2020 - Jun 2021",
-    label: 'Private Tutor',
-    degree: 'Self-Employed',
-    description: [
-      "Private tutored 8 students from IB (International and DSE discipline individually. ",
+  ),
+  createDataForWorkingExperience(
+    "Jun 2020 - Jun 2021",
+    'IT & Math Private Tutor',
+    'Self-Employed',
+    [
+      "Private tutored 8 students from IB International and DSE discipline individually. ",
       "Concentrated in senior secondary student, IT and Mathematic coaching.",
       "Designed teaching materials and assessments. ",
-
     ],
-  },
+  )
 ];
 
 function WorkingExperience(){
