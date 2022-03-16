@@ -142,7 +142,9 @@ function SSM(props) {
             </Grid>
             <Divider style={{marginBottom: 10, marginTop: 10}}/>    
             <Grid xs={12}>
-               <Accordion>
+               <Accordion
+                expanded={true}
+               >
                 <AccordionSummary
                   expandIcon={<ExpandMoreIcon />}
                 >
