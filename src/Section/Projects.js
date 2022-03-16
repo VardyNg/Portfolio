@@ -20,39 +20,15 @@ import ThreeDAnimations from './Projects/3DAnimations'
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import VR3D from './Projects/VR3D'
 import TCPIP from './Projects/TCPIP'
+import SwipeableViews from 'react-swipeable-views';
+import { useTheme } from '@mui/material/styles';
+import Rating from '@mui/material/Rating';
+import Stack from '@mui/material/Stack'
+import { create } from '@mui/material/styles/createTransitions';
 
-function createDataForProjects(title, description, chip){
-  return {title, description, chip}
+function createDataForProjects(title, description, chip, setShowDialog, start){
+  return {title, description, chip, setShowDialog, start}
 }
-
-const sideProjects = [
-  createDataForProjects(
-    "Private Tutor +",
-    "A web application for tutoring students in the private school. The application is built with React, Node.js, Express, MongoDB, and Mongoose.",
-    []
-  ),
-  createDataForProjects(
-    "Signal Sticker Maker",
-    "An online application for making sticker for the Signal app, reached over 5000 users since it launces. Available on iOS, Android, and Web.",
-    []
-  )
-]
-
-const schoolProjects = [
-  createDataForProjects(
-    title: '3D animations with Blender and AutoCAD 3DS MAX',
-    description: "School assignments related to 3D animation, it involves 3D modelling, lighting, animation, and so on.",
-    chip: ["School Projects", "Individual"],
-    createDataForProjects(
-      title: "Web game for learning TCP/IP concepts",
-      description: "School assignment for making web game. The game visualize some TCP/IP concepts into games and interact with players."
-      chip: ["School Projects", "Group"],
-    createDataForProjects(
-      title: "VR application for 3D object manipulations using Unity",
-      description: "A VR application created by Unity3D and deepmotion, user can use their hands to manipulate 3D object, like scalling, rotation, and transformation."
-      chip: ["School Projects", "Group"],
-  }
-];
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -66,21 +42,23 @@ function TabPanel(props) {
       {...other}
     >
       {value === index && (
-        <Box sx={{ p: 3 }}>
-          <Typography>{children}</Typography>
-        </Box>
+        children
       )}
     </div>
   );
 }
 
 function Projects(){
+  const theme = useTheme();
+
+  const [showPPT, setShowPPT] = useState(false)
   const [showSSM, setShowSSM] = useState(false)
   const [showHAL, setShowHAL] = useState(false)
   const [show3D, setShow3D] = useState(false)
   const [showVR3D, setShowVR3D] = useState(false)
   const [showTCPIP, setShowTCPIP] = useState(false)
 
+  const closePPT = () => {setShowPPT(false)}
   const closeSSM = () => {setShowSSM(false);};
   const closeHAL = () => {setShowHAL(false);};
   const close3D = () => {setShow3D(false)}
@@ -93,58 +71,113 @@ function Projects(){
     setValue(newValue);
   };
 
-  return(
-    <>
-      <SSM open={showSSM} onClose={closeSSM}/>
-      <HAL open={showHAL} onClose={closeHAL}/>
-      <ThreeDAnimations open={show3D} onClose={close3D}/>
-      <VR3D open={showVR3D} onClose={closeVR3D}/>
-      <TCPIP open={showTCPIP} onClose={closeTCPIP}/>
-      <Typography variant="h4" sx={{ textAlign: 'left', fontWeight: 'bold' }} style={{fontFamily: "Raleway", padding: 10}}>
-        Projects / Previous Works
-      </Typography>
-      <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-        <Tabs value={value} onChange={handleChange} centered>
-          <Tab label="Side Projects" />
-          <Tab label="School Projects" />
-        </Tabs>
-      </Box>
-      <TabPanel value={value} index={0}>
-        
-      </TabPanel>
-      <TabPanel value={value} index={1}>
-        
-      </TabPanel>
-      <div >
-        {projects.map((project, index) => {
+  const sideProjects = [
+    createDataForProjects(
+      "Private Tutor+",
+      "A web application for private tutors to manage their businese. The application is built with ReactJS, AWS Serverless (S3 + API Gateway + Lambda), Amplify, and MySQL.",
+      ["4 Developers", "Developing"],
+      setShowPPT,
+      true
+    ),
+    createDataForProjects(
+      "Signal Sticker Maker",
+      "An online application for making sticker for the Signal app, reached over 5000 users since it launces. Available on iOS, Android, and Web.",
+      ["2 Developers", "Released"],
+      setShowSSM,
+      true
+    )
+  ]
+
+  const schoolProjects = [
+    createDataForProjects(
+      'H.A.L. 3000: The School Survival',
+      "A 3D game for learing programming. Player will learn and use programming logics to solve problems, dedicated for teenagers or children with or without programming experience.",
+      ["Individual"],
+      setShowHAL,
+      true
+    ),
+    createDataForProjects(
+      '3D animations with Blender and AutoCAD 3DS MAX',
+      "School assignments related to 3D animation, it involves 3D modelling, lighting, animation, and so on.",
+      ["Individual"],
+      setShowVR3D,
+      false,
+    ),
+    createDataForProjects(
+      "VR application for 3D object manipulations using Unity",
+      "A VR application created by Unity3D and deepmotion, user can use their hands to manipulate 3D object, like scalling, rotation, and transformation.",
+      ["Group"],
+      setShowVR3D,
+      false
+    ),
+    createDataForProjects(
+      "Web game for learning TCP/IP concepts",
+      "School assignment for making web game. The game visualize some TCP/IP concepts into games and interact with players.",
+      ["Group"],
+      setShowTCPIP,
+      false
+      ),
+  ];
+
+  const Project = (props) => {
+    const {project} = props;
+    console.log(project)
+    return(
+      <>{
+        project.map((project, index) => {
+          console.log(project.chip.length)
           return(
             <Card style={{margin: 20}}>
               <CardContent>
                 <Grid container>
                   <Grid item xs={12} sm={10} >
-                    <Typography variant="h6" sx={{ textAlign: 'left', fontWeight: 'bold'}}>
-                      {project.title}
-                      {project.chip.map((chip, index) => {
-                        return(
-                          <Chip label={chip} variant="outlined" style={{marginLeft: 10}}/>
-                        )
-                      })}
-                    </Typography>
-                    <Typography variant="body1" component="div" sx={{textAlign: 'left'}}>
+                    <Stack
+                      style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                      }}
+                      direction="row" 
+                      spacing={2}
+                    >
+                      {project.start && 
+                        <Rating
+                          value={1}
+                          max={1}
+                        />
+                      }
+                      <Typography 
+                        variant="h6" 
+                        sx={{ 
+                          textAlign: 'left', 
+                          fontWeight: 'bold',
+                          display: 'flex',
+                          justifyContent: 'center'
+                        }}
+                      >
+                        {project.title}
+                        {project.chip.length > 0 && 
+                          <>
+                            {project.chip.map((chip, index) => {
+                              return(
+                                <Chip 
+                                  label={chip} 
+                                  variant="outlined" 
+                                  style={{marginLeft: 15}}
+                                />
+                              )
+                            })}
+                          </>
+                        }
+                      </Typography>
+                    </Stack>
+                    <Typography variant="body1" component="div" sx={{textAlign: 'left', marginTop: 1}}>
                       {project.description}
                     </Typography>
-                    
                   </Grid>
                   <Grid item xs={12} sm={2}>
                     <Button
                       style={{height: "100%"}}
-                      onClick={() => {
-                        if(project.title === "Signal Sticker Maker") setShowSSM(true)
-                        else if(project.title === "H.A.L. 3000: The School Survival") setShowHAL(true)
-                        else if(project.title === "3D animations with Blender and AutoCAD 3DS MAX") setShow3D(true)
-                        else if(project.title === "VR application for 3D object manipulations using Unity") setShowVR3D(true)
-                        else if(project.title === "Web game for learning TCP/IP concepts") setShowTCPIP(true)
-                      }}
+                      onClick={() => {project.setShowDialog(true)}}
                       endIcon={<ArrowForwardIosIcon/>}
                     >
                       Details
@@ -154,8 +187,40 @@ function Projects(){
               </CardContent>
             </Card>
           )
-        })}
-      </div>
+        })
+      }</>
+    )
+  }
+
+  return(
+    <>
+      <SSM open={showSSM} onClose={closeSSM}/>
+      <HAL open={showHAL} onClose={closeHAL}/>
+      <ThreeDAnimations open={show3D} onClose={close3D}/>
+      <VR3D open={showVR3D} onClose={closeVR3D}/>
+      <TCPIP open={showTCPIP} onClose={closeTCPIP}/>
+      <Typography variant="h4" sx={{ textAlign: 'left', fontWeight: 'bold' }} style={{fontFamily: "Raleway", padding: 10}}>
+        Side Projects / School Projects
+      </Typography>
+
+      <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
+        <Tabs value={value} onChange={handleChange} centered>
+          <Tab label="Side Projects" />
+          <Tab label="School Projects" />
+        </Tabs>
+      </Box>
+      <SwipeableViews
+        axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
+        index={value}
+        onChangeIndex={handleChange}
+      >
+        <TabPanel value={value} index={0}>
+          <Project project={sideProjects}/>
+        </TabPanel>
+        <TabPanel value={value} index={1}>
+          <Project project={schoolProjects}/>
+        </TabPanel>  
+      </SwipeableViews>
     </>
   )
 }

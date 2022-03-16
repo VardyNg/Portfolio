@@ -97,7 +97,7 @@ function SSM(props) {
       <DialogTitle id="responsive-dialog-title">
         <Typography variant="h4">
           SignalStickerMaker.com
-           <Chip label={"Launched"} variant="outlined" color="primary" style={{marginLeft: 10}}/>
+           <Chip label={"released"} variant="outlined" color="primary" style={{marginLeft: 10}}/>
         </Typography>
       </DialogTitle>
       <DialogContent>
