@@ -11,45 +11,67 @@ import Typography from '@mui/material/Typography';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
+import Tabs from '@mui/material/Tabs';
+import Tab from '@mui/material/Tab';
+import Chip from '@mui/material/Chip';
 import SSM from './Projects/SSM'
 import HAL from './Projects/HAL'
 import ThreeDAnimations from './Projects/3DAnimations'
-import Chip from '@mui/material/Chip';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import VR3D from './Projects/VR3D'
 import TCPIP from './Projects/TCPIP'
-const projects = [
-  {
-    chip: ["Side Projects", "Group"],
-    title: 'Signal Sticker Maker',
-    description: "An online application for making sticker for the Signal app, reached over 5000 users since it launces. Available on iOS, Android, and Web.",
-  },
-  {
-    chip: ["Final Year Project", "Individual"],
-    title: 'H.A.L. 3000: The School Survival',
-    description: "A 3D game for learing programming. Player will learn and use programming logics to solve problems, dedicated for teenagers or children with or without programming experience.",
-  },
-  {
-    chip: ["School Projects", "Individual"],
+
+function createDataForProjects(title, description, chip){
+  return {title, description, chip}
+}
+
+const sideProjects = [
+  createDataForProjects(
+    "Private Tutor +",
+    "A web application for tutoring students in the private school. The application is built with React, Node.js, Express, MongoDB, and Mongoose.",
+    []
+  ),
+  createDataForProjects(
+    "Signal Sticker Maker",
+    "An online application for making sticker for the Signal app, reached over 5000 users since it launces. Available on iOS, Android, and Web.",
+    []
+  )
+]
+
+const schoolProjects = [
+  createDataForProjects(
     title: '3D animations with Blender and AutoCAD 3DS MAX',
     description: "School assignments related to 3D animation, it involves 3D modelling, lighting, animation, and so on.",
-  },
-  {
-    chip: ["School Projects", "Group"],
-    title: "Web game for learning TCP/IP concepts",
-    description: "School assignment for making web game. The game visualize some TCP/IP concepts into games and interact with players."
-  },
-  {
-    chip: ["School Projects", "Group"],
-    title: "VR application for 3D object manipulations using Unity",
-    description: "A VR application created by Unity3D and deepmotion, user can use their hands to manipulate 3D object, like scalling, rotation, and transformation."
+    chip: ["School Projects", "Individual"],
+    createDataForProjects(
+      title: "Web game for learning TCP/IP concepts",
+      description: "School assignment for making web game. The game visualize some TCP/IP concepts into games and interact with players."
+      chip: ["School Projects", "Group"],
+    createDataForProjects(
+      title: "VR application for 3D object manipulations using Unity",
+      description: "A VR application created by Unity3D and deepmotion, user can use their hands to manipulate 3D object, like scalling, rotation, and transformation."
+      chip: ["School Projects", "Group"],
   }
-  
-  
 ];
 
-function Dialogs(props){
+function TabPanel(props) {
+  const { children, value, index, ...other } = props;
 
+  return (
+    <div
+      role="tabpanel"
+      hidden={value !== index}
+      id={`simple-tabpanel-${index}`}
+      aria-labelledby={`simple-tab-${index}`}
+      {...other}
+    >
+      {value === index && (
+        <Box sx={{ p: 3 }}>
+          <Typography>{children}</Typography>
+        </Box>
+      )}
+    </div>
+  );
 }
 
 function Projects(){
@@ -65,6 +87,12 @@ function Projects(){
   const closeVR3D = () => {setShowVR3D(false)}
   const closeTCPIP = () => {setShowTCPIP(false)}
 
+  const [value, setValue] = useState(0);
+
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
+  };
+
   return(
     <>
       <SSM open={showSSM} onClose={closeSSM}/>
@@ -75,6 +103,18 @@ function Projects(){
       <Typography variant="h4" sx={{ textAlign: 'left', fontWeight: 'bold' }} style={{fontFamily: "Raleway", padding: 10}}>
         Projects / Previous Works
       </Typography>
+      <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
+        <Tabs value={value} onChange={handleChange} centered>
+          <Tab label="Side Projects" />
+          <Tab label="School Projects" />
+        </Tabs>
+      </Box>
+      <TabPanel value={value} index={0}>
+        
+      </TabPanel>
+      <TabPanel value={value} index={1}>
+        
+      </TabPanel>
       <div >
         {projects.map((project, index) => {
           return(

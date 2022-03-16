@@ -49,7 +49,7 @@ function Greeting(){
             </Typography>
             <Divider style={{margin: 20}}/>
             <Typography variant="body1" component="div" style={{fontFamily: "Raleway"}}>
-              I am a recent graduate of The Hong Kong PolyU. Love coding, make useful application and fun games.
+              I am a Full Stack Developer. Love coding, making useful application and learn new techniques.
             </Typography>
             <Divider style={{margin: 20}}/>
             <SkillSets/>
