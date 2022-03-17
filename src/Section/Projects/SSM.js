@@ -97,7 +97,7 @@ function SSM(props) {
       <DialogTitle id="responsive-dialog-title">
         <Typography variant="h4">
           SignalStickerMaker.com
-           <Chip label={"released"} variant="outlined" color="primary" style={{marginLeft: 10}}/>
+           <Chip label={"Launched"} variant="outlined" color="primary" style={{marginLeft: 10}}/>
         </Typography>
       </DialogTitle>
       <DialogContent>
@@ -143,7 +143,6 @@ function SSM(props) {
             <Divider style={{marginBottom: 10, marginTop: 10}}/>    
             <Grid xs={12}>
                <Accordion
-                expanded={true}
                >
                 <AccordionSummary
                   expandIcon={<ExpandMoreIcon />}

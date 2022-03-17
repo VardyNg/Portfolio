@@ -20,6 +20,7 @@ import ThreeDAnimations from './Projects/3DAnimations'
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import VR3D from './Projects/VR3D'
 import TCPIP from './Projects/TCPIP'
+import PrivateTutorPlus from './Projects/PPT/';
 import SwipeableViews from 'react-swipeable-views';
 import { useTheme } from '@mui/material/styles';
 import Rating from '@mui/material/Rating';
@@ -155,20 +156,20 @@ function Projects(){
                         }}
                       >
                         {project.title}
-                        {project.chip.length > 0 && 
-                          <>
-                            {project.chip.map((chip, index) => {
-                              return(
-                                <Chip 
-                                  label={chip} 
-                                  variant="outlined" 
-                                  style={{marginLeft: 15}}
-                                />
-                              )
-                            })}
-                          </>
-                        }
                       </Typography>
+                      {project.chip.length > 0 && 
+                        <>
+                          {project.chip.map((chip, index) => {
+                            return(
+                              <Chip 
+                                label={chip} 
+                                variant="outlined" 
+                                style={{marginLeft: 15}}
+                              />
+                            )
+                          })}
+                        </>
+                      }
                     </Stack>
                     <Typography variant="body1" component="div" sx={{textAlign: 'left', marginTop: 1}}>
                       {project.description}
@@ -196,6 +197,7 @@ function Projects(){
     <>
       <SSM open={showSSM} onClose={closeSSM}/>
       <HAL open={showHAL} onClose={closeHAL}/>
+      <PrivateTutorPlus open={showPPT} onClose={closePPT}/>
       <ThreeDAnimations open={show3D} onClose={close3D}/>
       <VR3D open={showVR3D} onClose={closeVR3D}/>
       <TCPIP open={showTCPIP} onClose={closeTCPIP}/>

@@ -6,9 +6,15 @@ import StepContent from '@mui/material/StepContent';
 import Button from '@mui/material/Button';
 import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
-
-function createDataForWorkingExperience(yearsRange, label, degree, description){
-  return {yearsRange, label, degree, description};
+import Timeline from '@mui/lab/Timeline';
+import TimelineItem from '@mui/lab/TimelineItem';
+import TimelineSeparator from '@mui/lab/TimelineSeparator';
+import TimelineConnector from '@mui/lab/TimelineConnector';
+import TimelineContent from '@mui/lab/TimelineContent';
+import TimelineDot from '@mui/lab/TimelineDot';
+import TimelineOppositeContent from '@mui/lab/TimelineOppositeContent';
+function createDataForWorkingExperience(yearsRange, label, position, description){
+  return {yearsRange, label, position, description};
 }
 const steps = [
   createDataForWorkingExperience(
@@ -60,23 +66,21 @@ function WorkingExperience(){
           Working Experiences
         </Typography>
       </div>
-      <Stepper orientation="vertical"> 
-        {steps.map((step, index) => (
-          <Step key={step.label} active={true} >
-            <StepLabel
-            >
-              <Typography variant="h6">
-                {step.yearsRange}
-              </Typography>
-              <Typography variant="h5" sx={{ fontWeight: 'bold'}}>
-                {step.label}
-              </Typography>
-              <Typography variant="h6">
-                {step.degree}
-              </Typography>
-            </StepLabel>
-            <StepContent>
-              <ul>
+      <Timeline position="left" style={{backgroundColor: ''}}>
+        {steps.map((step, index) => {
+          return(
+            <TimelineItem >
+              <TimelineContent >
+                <Typography variant="h6" sx={{textAlign: 'left', fontWeight: '' }}>
+                  {step.yearsRange}
+                </Typography>
+                <Typography variant="h5" sx={{textAlign: 'left', fontWeight: 'bold' }}>
+                  {step.label}
+                </Typography>
+                <Typography variant="h6" sx={{textAlign: 'left', fontWeight: '' }}>
+                  {step.position} {" "}
+                </Typography>       
+                <ul>
                   {step.description.map((description, index) => {
                     return(
                       <li>
@@ -86,11 +90,17 @@ function WorkingExperience(){
                       </li>
                     )
                   })}
-              </ul>
-            </StepContent>
-          </Step>
-        ))}
-      </Stepper>
+                </ul>                      
+              </TimelineContent>
+              <TimelineOppositeContent style={{ maxWidth: "1px", paddingLeft: '0px', paddingRight: '0px' }}/>
+              <TimelineSeparator>
+                <TimelineDot/>
+                <TimelineConnector />
+              </TimelineSeparator>
+            </TimelineItem>
+          )
+        })}
+      </Timeline>
     </>
   )
 }

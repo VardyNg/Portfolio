@@ -1,13 +1,16 @@
-import Box from '@mui/material/Box';
-import Stepper from '@mui/material/Stepper';
-import Step from '@mui/material/Step';
-import StepLabel from '@mui/material/StepLabel';
-import StepContent from '@mui/material/StepContent';
-import Button from '@mui/material/Button';
-import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
+import Timeline from '@mui/lab/Timeline';
+import TimelineItem from '@mui/lab/TimelineItem';
+import TimelineSeparator from '@mui/lab/TimelineSeparator';
+import TimelineConnector from '@mui/lab/TimelineConnector';
+import TimelineContent from '@mui/lab/TimelineContent';
+import TimelineDot from '@mui/lab/TimelineDot';
+import TimelineOppositeContent from '@mui/lab/TimelineOppositeContent';
+import { ReactComponent as HKCCLogo } from '../Images/PolyU_HKCC.svg';
+import { ReactComponent as PolyULogo } from '../Images/PolyU.svg';
+import { ReactComponent as CCCSSLogo } from '../Images/CCCSS.svg';
 
-
+const iconSize = 40;
 const steps = [
   {
     yearsRange: "Sep 2019 - Dec 2021",
@@ -21,8 +24,8 @@ const steps = [
       "Web and Mobile Application Development",
       "VR technology, 3D Animation and Modelling",
       "Internet Technology"
-    ]
-    
+    ],
+    icon: <HKCCLogo style={{ height: iconSize, width: iconSize }}/>
   },
   {
     yearsRange: "Sep 2017 - Jun 2019",
@@ -36,23 +39,25 @@ const steps = [
       "Networking",
       "Mobile App Design and Development"
     ],
+    icon: <PolyULogo style={{ height: iconSize, width: iconSize }}/>
   },
   {
     yearsRange: "Sep 2011 - Jun 2017",
-    label: 'Cheung Chek Che Secondary School',
+    label: 'Cheung Chek Chee Secondary School',
     degree: '2017 Hong Kong Diploma of Secondary Education (HKDSE)',
-    cGPA: "NA",
+    cGPA: "",
     description: [
       "Level 5 in Information and Communication Technology (ICT) ",
       "Level 4 in Mathematics ",
       "Level 4 in Liberal Studies (LS)",
       "Level 4 in History"
     ],
+    icon: <CCCSSLogo style={{ height: iconSize, width: iconSize }}/>
   },
 ];
 
-const showGPA = false
 function Education(){
+
   return(
     <>
       <div style={{alignContent: "left"}}>
@@ -60,26 +65,21 @@ function Education(){
           <b>Education Background</b>
         </Typography>
       </div>
-      <Stepper orientation="vertical"> 
+      <Timeline position="left" style={{backgroundColor: ''}}>
         {steps.map((step, index) => {
-          let cGPAText = ""
-          if(step.cGPA !== "NA" && showGPA){
-            cGPAText = ", cGPA: "+step.cGPA
-          }
           return(
-            <Step key={step.label} active={true} >
-              <StepLabel>
-                <Typography variant="h6" sx={{fontWeight: '' }}>
+            <TimelineItem >
+              <TimelineContent >
+                <Typography variant="h6" sx={{textAlign: 'left', fontWeight: '' }}>
                   {step.yearsRange}
                 </Typography>
-                <Typography variant="h5" sx={{fontWeight: 'bold' }}>
+                <Typography variant="h5" sx={{textAlign: 'left', fontWeight: 'bold' }}>
                   {step.label}
                 </Typography>
-                <Typography variant="h6" sx={{fontWeight: '' }}>
-                  {step.degree} {cGPAText}
-                </Typography>
-              </StepLabel>
-              <StepContent>
+                <Typography variant="h6" sx={{textAlign: 'left', fontWeight: '' }}>
+                  {step.degree} {" "}
+                  {step.cGPA !== "" && "cGPA: " + step.cGPA}
+                </Typography>       
                 <ul>
                   {step.description.map((description, index) => {
                     return(
@@ -90,12 +90,21 @@ function Education(){
                       </li>
                     )
                   })}
-                </ul>
-              </StepContent>
-            </Step>
+                </ul>                      
+              </TimelineContent>
+              <TimelineOppositeContent style={{ maxWidth: "1px", paddingLeft: '0px', paddingRight: '0px' }}/>
+              <TimelineSeparator>
+                <TimelineDot
+                  style={{ backgroundColor: '#FFFFFF'}}
+                >
+                  {step.icon}
+                </TimelineDot>
+                <TimelineConnector />
+              </TimelineSeparator>
+            </TimelineItem>
           )
         })}
-      </Stepper>
+      </Timeline>
     </>
   )
 }
