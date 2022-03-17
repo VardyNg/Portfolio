@@ -14,7 +14,8 @@ import Stack from '@mui/material/Stack';
 import Divider from '@mui/material/Divider';
 import SignInWithApple from '../../../Images/PPT/AppleSignIn.png'
 import SignInWithGoogle from '../../../Images/PPT/GoogleSignIn.png'
-
+import { ReactComponent as CloudflareIcon} from '../../../Images/PPT/cloudflare.svg'
+import { ReactComponent as FrontEndArch} from '../../../Images/PPT/FrontEnd-Arch.svg'
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
 
@@ -78,6 +79,18 @@ function Security(props){
       <Typography variant="h4">
         Security
       </Typography>
+      <Stack spacing={3} direction="row" style={{display: 'flex', alignItems: 'center'}}>
+        <div>
+          <Typography variant="h5" style={{display: 'flex', alignItems: 'center'}}>
+            <CloudflareIcon style={{height: 75, width: 75, marginRight: 5}}/>
+            <b>Cloudflare</b>
+          </Typography>
+          <Typography variant="body1">
+            <b>Cloudflare</b> is used as the DNS and provide HTTPS for the website. Its <b>CDN</b> is used to serve the website.
+          </Typography>
+        </div>
+      </Stack>
+      <FrontEndArch style={{width: '100%'}}/>
       <Divider/>
       <div>
         <CognitoIcon style={{height: 75, width: 75}}/>
@@ -91,7 +104,7 @@ function Security(props){
           value={value}
           onChange={handleChange}
           sx={{ 
-            borderTop: 1,
+            // borderTop: 1,
             borderBottom:1,
             borderColor: 'divider' 
           }}

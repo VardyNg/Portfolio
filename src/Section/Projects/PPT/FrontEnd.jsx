@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import { ReactComponent as ReactJSIcon } from '../../../Images/PPT/reactjs.svg'
 import { ReactComponent as FrontEndArch} from '../../../Images/PPT/FrontEnd-Arch.svg'
-import { ReactComponent as CloudflareIcon} from '../../../Images/PPT/cloudflare.svg'
 import { useTheme } from '@mui/styles';
 import Typography from '@mui/material/Typography';
 import PropTypes from 'prop-types';
@@ -43,20 +42,7 @@ function FrontEnd(props){
       <div style={{display: 'flex', justifyContent: 'center'}}>
         <Divider variant="middle" width="50%"/>
       </div>
-      <Stack spacing={3} direction="row" style={{display: 'flex', alignItems: 'center'}}>
-        <div>
-          <Typography variant="h5" style={{display: 'flex', alignItems: 'center'}}>
-            <CloudflareIcon style={{height: 75, width: 75, marginRight: 5}}/>
-            <b>Cloudflare</b>
-          </Typography>
-          <Typography variant="body1">
-            <b>Cloudflare</b> is picked  as the DNS and provide HTTPS for the website. Its <b>CDN</b> is used to serve the website.
-          </Typography>
-        </div>
-      </Stack>
-      <div style={{display: 'flex', justifyContent: 'center'}}>
-        <Divider variant="middle" width="50%"/>
-      </div>
+
       <Stack spacing={3} direction="row" style={{display: 'flex', alignItems: 'center'}}>
         <div>
           <Typography variant="h5" style={{display: 'flex', alignItems: 'center'}}>
