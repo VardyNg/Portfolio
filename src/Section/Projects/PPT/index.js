@@ -14,7 +14,12 @@ import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Box from '@mui/material/Box';
 import SwipeableViews from 'react-swipeable-views';
-
+import Database from './Database'
+import API from './API';
+import IAC from './IAC'
+import FrontEnd from './FrontEnd'
+import Overview from './Overview'
+import Security from './Security'
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
 
@@ -56,19 +61,25 @@ function PrivateTutorPlus(props) {
         }}
       >
         <TabPanel value={value} index={0} >
-          Item One
+          <Overview/>
         </TabPanel>
-        <TabPanel value={value} index={1}>
-          Item Two
+        <TabPanel value={value} index={1} >
+          <FrontEnd/>
         </TabPanel>
         <TabPanel value={value} index={2}>
-          Item Three
+          <API/>
         </TabPanel>
         <TabPanel value={value} index={3}>
-          <DevOps/>
+          <Database/>
         </TabPanel>
         <TabPanel value={value} index={4}>
-          Item Five
+          <DevOps/>
+        </TabPanel>
+        <TabPanel value={value} index={5}>
+          <IAC/>
+        </TabPanel>
+        <TabPanel value={value} index={6}>
+          <Security/>
         </TabPanel>
       </div>
     )
@@ -113,18 +124,20 @@ function PrivateTutorPlus(props) {
           }}
           centered
         >
+          <Tab label="Overview" />
           <Tab label="Front End" />
           <Tab label="API" />
           <Tab label="Database" />
           <Tab label="DevOps" />
           <Tab label="IaC" />
+          <Tab label="Security" />
         </Tabs>
         {!fullScreen && 
-            <TabContent/>
-          }
+          <TabContent/>
+        }
       </Box>
       {fullScreen && 
-          <TabContent/>
+        <TabContent/>
       }
       </DialogContent>
       <DialogActions>

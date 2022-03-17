@@ -78,14 +78,14 @@ function Projects(){
       "A web application for private tutors to manage their businese. The application is built with ReactJS, AWS Serverless (S3 + API Gateway + Lambda), Amplify, and MySQL.",
       ["4 Developers", "Developing"],
       setShowPPT,
-      true
+      3
     ),
     createDataForProjects(
       "Signal Sticker Maker",
       "An online application for making sticker for the Signal app, reached over 5000 users since it launces. Available on iOS, Android, and Web.",
       ["2 Developers", "Released"],
       setShowSSM,
-      true
+      1
     )
   ]
 
@@ -95,28 +95,28 @@ function Projects(){
       "A 3D game for learing programming. Player will learn and use programming logics to solve problems, dedicated for teenagers or children with or without programming experience.",
       ["Individual"],
       setShowHAL,
-      true
+      1
     ),
     createDataForProjects(
       '3D animations with Blender and AutoCAD 3DS MAX',
       "School assignments related to 3D animation, it involves 3D modelling, lighting, animation, and so on.",
       ["Individual"],
       setShowVR3D,
-      false,
+      0,
     ),
     createDataForProjects(
       "VR application for 3D object manipulations using Unity",
       "A VR application created by Unity3D and deepmotion, user can use their hands to manipulate 3D object, like scalling, rotation, and transformation.",
       ["Group"],
       setShowVR3D,
-      false
+      0
     ),
     createDataForProjects(
       "Web game for learning TCP/IP concepts",
       "School assignment for making web game. The game visualize some TCP/IP concepts into games and interact with players.",
       ["Group"],
       setShowTCPIP,
-      false
+      0
       ),
   ];
 
@@ -140,12 +140,17 @@ function Projects(){
                       direction="row" 
                       spacing={2}
                     >
-                      {project.start && 
-                        <Rating
-                          value={1}
-                          max={1}
-                        />
-                      }
+                      <div>
+                        {
+                          Array.from(Array(project.start).keys()).map((item) => (
+                            <Rating
+                              value={1}
+                              max={1}
+                            />
+                          ))
+                        }
+                      </div>
+
                       <Typography 
                         variant="h6" 
                         sx={{ 

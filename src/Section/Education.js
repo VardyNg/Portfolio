@@ -16,7 +16,7 @@ const steps = [
     yearsRange: "Sep 2019 - Dec 2021",
     label: 'The Hong Kong Polytechnic University',
     degree: 'Bsc(Hons) Internet and Multimedia Technologies',
-    cGPA: "2.77",
+    cGPA: "2.86",
     description: [
       "Computer Game Development",
       "Programming and Database",
@@ -77,8 +77,8 @@ function Education(){
                   {step.label}
                 </Typography>
                 <Typography variant="h6" sx={{textAlign: 'left', fontWeight: '' }}>
-                  {step.degree} {" "}
-                  {step.cGPA !== "" && "cGPA: " + step.cGPA}
+                  {step.degree}
+                  {step.cGPA !== "" && ", cGPA: " + step.cGPA}
                 </Typography>       
                 <ul>
                   {step.description.map((description, index) => {

@@ -25,11 +25,23 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import Switch from '@mui/material/Switch';
 import react, {useState} from 'react';
 import ReactJS from '../Images/ReactJS.png'
+import { ReactComponent as ServerlessIcon } from '../Images/PPT/serverless-framework.svg'
+import { ReactComponent as TerraformIcon } from '../Images/PPT/terraform.svg'
+import { ReactComponent as SQLIcon } from '../Images/sql.svg'
+import { ReactComponent as DynamoDBIcon } from '../Images/dynamodb.svg'
+import { ReactComponent as MongoDBIcon } from '../Images/mongodb.svg'
+import { ReactComponent as CentOSIcon } from '../Images/centos.svg'
+import { ReactComponent as GitIcon } from '../Images/git.svg'
+import { ReactComponent as GitHubIcon } from '../Images/github.svg'
+import { ReactComponent as GitLabIcon } from '../Images/gitlab.svg'
+import { ReactComponent as SVNIcon } from '../Images/svn.svg'
+import { ReactComponent as JenkinsIcon } from '../Images/jenkins.svg'
+import { ReactComponent as SonarqubeIcon } from '../Images/sonarqube.svg'
 
 const useStyles = makeStyles((theme) => ({
   icons: {
     height: 40,
-    margin: 5
+    margin: 5,
   }
 }))
 
@@ -37,62 +49,69 @@ function createDataForSkill(skill, items){
   return {skill, items}
 }
 
-function createDataForItem(name, icon){
-  return {name, icon}
+function createDataForItem(name, icon, svg){
+  return {name, icon, svg}
 }
 
 const skills = [
   
-    createDataForSkill("Programming Languages",
+    createDataForSkill("Programming / Languages",
     [
-      createDataForItem("C#",Csharp_Logo),
-      createDataForItem("C++",CPlusPlus),
-      createDataForItem("HTML, CSS, JavaScript",HCJ),
-      createDataForItem("Swift",Swift),
-      createDataForItem("PHP",php),
-      createDataForItem("Python",python),
-      createDataForItem("Java",Java_Icon),
-    ]),
-    createDataForSkill("Databases",
-    [
-      createDataForItem("MySQL",MySQL),
-      createDataForItem("SQLite",SQL_Lite),
-      createDataForItem("DynamoDB",null),
+      createDataForItem("C#",Csharp_Logo, false),
+      createDataForItem("C++",CPlusPlus, false),
+      createDataForItem("HTML, CSS, JavaScript",HCJ, false),
+      createDataForItem("Swift",Swift, false),
+      // createDataForItem("PHP",php),
+      createDataForItem("Python",python, false),
+      createDataForItem("Java",Java_Icon, false),
+      createDataForItem("SQL",SQLIcon, true),
     ]),
     createDataForSkill("Libraries",
     [
-      createDataForItem("React Native",React_Native_icon),
-      createDataForItem("React JS",ReactJS),
-      createDataForItem("Node JS",NodeJS),
+      createDataForItem("React Native",React_Native_icon, false),
+      createDataForItem("React JS",ReactJS, false),
+      createDataForItem("Node JS",NodeJS, false),
     ]),
     createDataForSkill("IDEs", 
     [
-      createDataForItem("Xcode",Xcode_icon),
-      createDataForItem("Android Studio",Android_Studio_Icon),
-      createDataForItem("Unity3D",Unity3D),
-    ]),
-    createDataForSkill("Operation Systems",
-    [
-      createDataForItem("MacOS", Apple),
-      createDataForItem("Windows", Windows),
-      createDataForItem("Ubuntu", ubuntu),
+      createDataForItem("Xcode",Xcode_icon, false),
+      createDataForItem("Android Studio",Android_Studio_Icon, false),
+      createDataForItem("Unity3D",Unity3D, false),
     ]),
     createDataForSkill("Cloud Services",
     [
-      createDataForItem("Amazon Web Service",aws),
-      createDataForItem("Google Cloud Platform",GCP)
+      createDataForItem("Amazon Web Service",aws, false),
+      createDataForItem("Google Cloud Platform",GCP, false)
     ]),
-    createDataForSkill("Source Controls",
+    createDataForSkill("DBMS",
     [
-      createDataForItem("Git",null),
-      createDataForItem("GitHub",null),
-      createDataForItem("GitLab",null),
-      createDataForItem("SVN",null),
+      createDataForItem("MySQL",MySQL, false),
+      createDataForItem("SQLite",SQL_Lite, false),
+      createDataForItem("DynamoDB",DynamoDBIcon, true),
+      createDataForItem("MongoDB",MongoDBIcon, true),
+    ]),
+    createDataForSkill("Operation Systems",
+    [
+      createDataForItem("MacOS", Apple, false),
+      createDataForItem("Windows", Windows, false),
+      createDataForItem("Ubuntu", ubuntu, false),
+      createDataForItem("CentOS", CentOSIcon, true),
+    ]),
+
+    createDataForSkill("DevOps",
+    [
+      createDataForItem("Git",GitIcon, true),
+      createDataForItem("GitHub",GitHubIcon, true),
+      createDataForItem("GitLab",GitLabIcon, true),
+      createDataForItem("SVN",SVNIcon, true),
+      createDataForItem("Jenkins",JenkinsIcon, true),
+      createDataForItem("SonarQube",SonarqubeIcon, true),
+
     ]),
     createDataForSkill("IaC",
     [
-      createDataForItem("Terraform",null),
-      createDataForItem("Serverless framework",null),
+      createDataForItem("Terraform",TerraformIcon, true),
+      createDataForItem("Serverless framework",ServerlessIcon, true),
     ]),
 ]
 
@@ -142,9 +161,15 @@ function LanguageLibraries(props){
                         <> {item.name}{comma}</>
                     )
                   }else{
-                    return(
-                      <img src={item.icon} className={classes.icons}/>
-                    )
+                    if(item.svg){
+                      return(
+                        <item.icon style={{height: 50, width: 50, marginRight: 10 }}/>
+                      )
+                    }else{
+                      return(
+                        <img src={item.icon} className={classes.icons}/>
+                      )
+                    }
                   }
                 })}
               </div>

@@ -11,7 +11,7 @@ function Footer(props){
   return(
     <>
       <WhiteTextTypography variant="subtitle2" component="div" style={{margin: 20, fontColor: 'white'}}>
-        Created by Ng Hoi Wa, 2021. All right reserved | Created by using React JS and hosted on AWS
+        Created by Ng Hoi Wa, 2022. All right reserved | Created by using ReactJS, hosted on AWS, with Cloudflare.
       </WhiteTextTypography>
     </>
   )

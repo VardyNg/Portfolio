@@ -22,6 +22,8 @@ const steps = [
     "Armitage Technologies Limited",
     "Mobile Developer",
     [
+      "Design and development application UI to facilitate digital transformation for logistics clients",
+      "Involved in DevOps development, suggested and implement GitLab to replace SVN, develop workflow to implement CI/CD pipelines"
     ],
   ),
   createDataForWorkingExperience(
@@ -39,11 +41,11 @@ const steps = [
   'Software Developer Internship (Full Time mode)',
     [
       "Designed and developed an online CRUD application to support competitions scoring, maintain and develop APIs",
-      "Consulted with end users to develop and revised the system.",
-      "Setup and maintained remote server to support company operations.",
+      "Consulted with end users to develop and revised the system",
+      "Setup and maintained remote server to support company operations",
       "Proof-of-concept activity",
-      "Implement automation, CI/CD, DevOps development.",
-      "Rated “Exceed Expectation” in performance by the supervisor."
+      "Implement automation workflows, CI/CD, DevOps development",
+      "Rated “Exceed Expectation” in performance by the supervisor"
     ],
   ),
   createDataForWorkingExperience(
@@ -51,9 +53,9 @@ const steps = [
     'IT & Math Private Tutor',
     'Self-Employed',
     [
-      "Private tutored 8 students from IB International and DSE discipline individually. ",
-      "Concentrated in senior secondary student, IT and Mathematic coaching.",
-      "Designed teaching materials and assessments. ",
+      "Private tutored 8 students from IB International and DSE discipline individually ",
+      "Concentrated in senior secondary student, IT and Mathematic coaching",
+      "Designed teaching materials and assessments ",
     ],
   )
 ];
@@ -69,7 +71,7 @@ function WorkingExperience(){
       <Timeline position="left" style={{backgroundColor: ''}}>
         {steps.map((step, index) => {
           return(
-            <TimelineItem >
+            <TimelineItem style={{marginBottom: 15}}>
               <TimelineContent >
                 <Typography variant="h6" sx={{textAlign: 'left', fontWeight: '' }}>
                   {step.yearsRange}
