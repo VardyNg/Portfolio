@@ -52,7 +52,7 @@ function PrivateTutorPlus(props) {
       <div
         style={{
           overflow: 'auto',
-          width: '90%'
+          width: fullScreen ? '100%' : '90%'
         }}
       >
         <TabPanel value={value} index={0} >
@@ -120,23 +120,11 @@ function PrivateTutorPlus(props) {
           <Tab label="IaC" />
         </Tabs>
         {!fullScreen && 
-          <SwipeableViews
-            axis={theme.direction === 'rtl' ? 'y-reverse' : 'y'}
-            index={value}
-            onChangeIndex={handleChange}
-          >
             <TabContent/>
-          </SwipeableViews>
           }
       </Box>
       {fullScreen && 
-        <SwipeableViews
-          axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
-          index={value}
-          onChangeIndex={handleChange}
-        >
           <TabContent/>
-        </SwipeableViews>
       }
       </DialogContent>
       <DialogActions>
