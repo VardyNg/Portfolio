@@ -53,13 +53,13 @@ function Architecture(props){
   return(
     <Stack spacing={2}>
       <Typography variant="body1">
-        <b>Amplify</b> and <b>Cognito</b> are used to handle the authentication and authorization (1, 2). Client Side will hold a JWT issued by Cognito.
+        <b>AWS Cognito</b> is used to handle the authentication and authorization (1, 2). Client Side will request and hold a JWT issued by Cognito.
       </Typography>
       <Typography variant="body1">
         When the client side make requests (3), the token is sent to the <b>API Gateway</b> and be verified (4) by also the <b>Cognito</b>. Then ,the requests is sent to and handled by lambda functions (5, 6). Finally, the requests are sent to the <b>API Gateway</b> and returned to the client side (7).
       </Typography>
       <Typography>
-        With this architecture, the authentication is outsoruced to AWS who are trusted by many others.
+        With this architecture, the authentication is outsoruced to AWS Cognito, which is provide various functions to faciliate user expereicne and security.
       </Typography>
       <AmplifyArch style={{width: '100%', height: 300}}/>
     </Stack>
@@ -86,20 +86,19 @@ function Security(props){
             <b>Cloudflare</b>
           </Typography>
           <Typography variant="body1">
-            <b>Cloudflare</b> is used as the DNS and provide HTTPS for the website. Its <b>CDN</b> is used to serve the website.
+            <b>Cloudflare</b> is used as the DNS and provide HTTPS for the website.
           </Typography>
         </div>
       </Stack>
       <FrontEndArch style={{width: '100%'}}/>
       <Divider/>
       <div>
-        <CognitoIcon style={{height: 75, width: 75}}/>
-        <AmplifyIcon style={{height: 75, width: 75}}/>
+        <Typography variant="h5" style={{display: 'flex', alignItems: 'center'}}>
+          <CognitoIcon style={{height: 75, width: 75,  marginRight: 5}}/>
+          <b>Cognito</b>
+        </Typography>
       </div>
       <div>
-        <Typography variant="body1"> 
-          <b>AWS Amplify and AWS Cognito</b> is used to handle the authentication and authorization.
-        </Typography>
         <Tabs
           value={value}
           onChange={handleChange}

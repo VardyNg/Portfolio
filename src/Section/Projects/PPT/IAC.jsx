@@ -1,18 +1,12 @@
-import React, { useState } from 'react'
-import { ReactComponent as ServerlessIcon } from '../../../Images/PPT/serverless-framework.svg'
-import { ReactComponent as TerraformIcon } from '../../../Images/PPT/terraform.svg'
-import { useTheme } from '@mui/styles';
-import Typography from '@mui/material/Typography';
-import PropTypes from 'prop-types';
-import Tabs from '@mui/material/Tabs';
-import Tab from '@mui/material/Tab';
-import Box from '@mui/material/Box';
-import useMediaQuery from '@mui/material/useMediaQuery';
-import Title from './Title'
-import Stack from '@mui/material/Stack';
 import Divider from '@mui/material/Divider';
-import Grid from '@mui/material/Grid';
-
+import Stack from '@mui/material/Stack';
+import Typography from '@mui/material/Typography';
+import useMediaQuery from '@mui/material/useMediaQuery';
+import { useTheme } from '@mui/styles';
+import React from 'react';
+import { ReactComponent as ServerlessIcon } from '../../../Images/PPT/serverless-framework.svg';
+import { ReactComponent as TerraformIcon } from '../../../Images/PPT/terraform.svg';
+import { ReactComponent as CloudformationIcon } from '../../../Images/cloudformation.svg';
 function IAC(props){
   const theme = useTheme();
   const fullScreen = useMediaQuery(theme.breakpoints.down('md'));
@@ -31,14 +25,16 @@ function IAC(props){
       <Stack spacing={3} direction="row" style={{display: 'flex', alignItems: 'center'}}>
         <div>
           <Typography variant="h6" style={{display: 'flex', alignItems: 'center'}}>
-            <ServerlessIcon style={{height: 75, width: 75}}/>
+            <ServerlessIcon style={{height: 75, width: 75, marginRight: 15}}/>
             <b>Serverless Framework</b>
+            <CloudformationIcon style={{height: 75, width: 75, marginRight: 15, marginLeft: 15}}/>
+            <b>Cloudformation</b>
           </Typography>
           <Typography variant="body1">
             Serverless Framework is used to build the serverless architecture in most CSPs. For this project, it is in AWS.
           </Typography>
           <Typography variant="body1">
-            All the <b>architecture are written in code</b> and deployed to AWS via Serverless Framework, 
+            All the <b>architecture are written in code</b> and deployed to AWS via <b>Serverless Framework</b> and making use of <b>AWS CloudFormation</b>, 
             it makes the architecture reusable and deployed to other AWS region base on demands with minimal efforts.
           </Typography>
         </div>
@@ -49,7 +45,7 @@ function IAC(props){
       <Stack spacing={3} direction="row" style={{display: 'flex', alignItems: 'center'}}>
         <div>
           <Typography variant="h6" style={{display: 'flex', alignItems: 'center'}}>
-            <TerraformIcon style={{height: 75, width: 75}}/>
+            <TerraformIcon style={{height: 75, width: 75, marginRight: 15}}/>
             <b>MySQL and ProxySQL</b>
           </Typography>
           <Typography variant="body1">

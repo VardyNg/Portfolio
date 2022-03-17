@@ -125,7 +125,7 @@ function PrivateTutorPlus(props) {
           centered
         >
           <Tab label="Overview" />
-          <Tab label="Front End" />
+          <Tab label="Web Tech" />
           <Tab label="API" />
           <Tab label="Database" />
           <Tab label="DevOps" />
