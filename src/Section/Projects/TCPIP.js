@@ -55,10 +55,10 @@ function TCPIP(props) {
       </DialogTitle>
       <DialogContent>
         <ul>
-          <li><Typography className={classes.text} variant="body">A 2D web game designed for children to learn the TCP/IP concepts, which is difficult to visualize and having hands on experience.</Typography></li>
-          <li><Typography className={classes.text} variant="body">We try to visualize the complicated concepts of TCP/IP into some simple game tasks, so that the player can learn the concept by solving problems. </Typography></li>
-          <li><Typography className={classes.text} variant="body">The game is also a final project for the subject "SD3985 Computer Game Development" in the Hong Kong Polytechnic University</Typography></li>
-          <li><Typography className={classes.text} variant="body">Developed by using Phaser.io and JavaScript.</Typography></li>
+          <li><Typography className={classes.text} variant="body1">A 2D web game designed for children to learn the TCP/IP concepts, which is difficult to visualize and provide hands on experience.</Typography></li>
+          <li><Typography className={classes.text} variant="body1">We try to visualize the complicated concepts of TCP/IP into some simple game tasks, so that the player can learn the concept by game. </Typography></li>
+          <li><Typography className={classes.text} variant="body1">The game is also a final project for the subject "SD3985 Computer Game Development" in the Hong Kong Polytechnic University</Typography></li>
+          <li><Typography className={classes.text} variant="body1">Developed by using <b>Phaser.io</b> and <b>JavaScript</b>.</Typography></li>
         </ul>
         <div style={{textAlign:'center'}}>
           <img src={ScreenCap1} style={{height: 250}} className={classes.images}/>

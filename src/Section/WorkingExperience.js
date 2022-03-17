@@ -13,6 +13,7 @@ import TimelineConnector from '@mui/lab/TimelineConnector';
 import TimelineContent from '@mui/lab/TimelineContent';
 import TimelineDot from '@mui/lab/TimelineDot';
 import TimelineOppositeContent from '@mui/lab/TimelineOppositeContent';
+import Divider from '@mui/material/Divider'
 function createDataForWorkingExperience(yearsRange, label, position, description){
   return {yearsRange, label, position, description};
 }
@@ -51,7 +52,7 @@ const steps = [
   createDataForWorkingExperience(
     "Jun 2020 - Jun 2021 (1 year)",
     'IT & Math Private Tutor',
-    'Self-Employed',
+    'Self-Employed (Part time)',
     [
       "Private tutored 8 students from IB International and DSE discipline individually ",
       "Concentrated in senior secondary student, IT and Mathematic coaching",
@@ -71,35 +72,37 @@ function WorkingExperience(){
       <Timeline position="left" style={{backgroundColor: ''}}>
         {steps.map((step, index) => {
           return(
-            <TimelineItem style={{marginBottom: 15}}>
-              <TimelineContent >
-                <Typography variant="h6" sx={{textAlign: 'left', fontWeight: '' }}>
-                  {step.yearsRange}
-                </Typography>
-                <Typography variant="h5" sx={{textAlign: 'left', fontWeight: 'bold' }}>
-                  {step.label}
-                </Typography>
-                <Typography variant="h6" sx={{textAlign: 'left', fontWeight: '' }}>
-                  {step.position} {" "}
-                </Typography>       
-                <ul>
-                  {step.description.map((description, index) => {
-                    return(
-                      <li>
-                        <Typography sx={{ textAlign: 'left' }} >
-                          {description}
-                        </Typography>
-                      </li>
-                    )
-                  })}
-                </ul>                      
-              </TimelineContent>
-              <TimelineOppositeContent style={{ maxWidth: "1px", paddingLeft: '0px', paddingRight: '0px' }}/>
-              <TimelineSeparator>
-                <TimelineDot/>
-                <TimelineConnector />
-              </TimelineSeparator>
-            </TimelineItem>
+            <>
+              <TimelineItem style={{marginBottom: 15}}>
+                <TimelineContent >
+                  <Typography variant="h6" sx={{textAlign: 'left', fontWeight: '' }}>
+                    {step.yearsRange}
+                  </Typography>
+                  <Typography variant="h5" sx={{textAlign: 'left', fontWeight: 'bold' }}>
+                    {step.label}
+                  </Typography>
+                  <Typography variant="h6" sx={{textAlign: 'left', fontWeight: '' }}>
+                    {step.position} {" "}
+                  </Typography>       
+                  <ul>
+                    {step.description.map((description, index) => {
+                      return(
+                        <li>
+                          <Typography sx={{ textAlign: 'left' }} >
+                            {description}
+                          </Typography>
+                        </li>
+                      )
+                    })}
+                  </ul>                      
+                </TimelineContent>
+                <TimelineOppositeContent style={{ maxWidth: "1px", paddingLeft: '0px', paddingRight: '0px' }}/>
+                <TimelineSeparator>
+                  <TimelineDot/>
+                  <TimelineConnector />
+                </TimelineSeparator>
+              </TimelineItem>
+            </>
           )
         })}
       </Timeline>

@@ -55,16 +55,16 @@ function VR3D(props) {
       </DialogTitle>
       <DialogContent>
         <Grid container spacing={3}>
-          <Grid item xs={12} style={{backgroundColor: ''}}>
-            <iframe width="100%" height="500" src="https://www.youtube.com/embed/prAfkGpCarI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <Grid item xs={12} style={{display: 'flex', justifyContent: 'center'}}>
+            <iframe width="80%" height="500" src="https://www.youtube.com/embed/prAfkGpCarI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
           </Grid>
           <Grid item xs={12}>
             <ul>
-              <li><Typography className={classes.text} variant="body">A VR application for manipulating 3D objects in virtual place by hands.</Typography></li>
-              <li><Typography className={classes.text} variant="body">Developed by using Unity3D, C#, and LeepMotion.</Typography></li>
-              <li><Typography className={classes.text} variant="body">Support Voice Commands for moving the player.</Typography></li>
-              <li><Typography className={classes.text} variant="body">Also a final project for the subject "EIE3360 Integrated Projects".</Typography></li>
-              <li><Typography className={classes.text} variant="body">Watch the video for more!</Typography></li>
+              <li><Typography className={classes.text} variant="body1">A VR application for manipulating 3D objects in virtual place by hands.</Typography></li>
+              <li><Typography className={classes.text} variant="body1">Developed by using <b>Unity3D</b>, <b>C#</b>, and LeepMotion.</Typography></li>
+              <li><Typography className={classes.text} variant="body1">Support <b>Voice Commands</b> for moving the player.</Typography></li>
+              <li><Typography className={classes.text} variant="body1">Also a final project for the subject "EIE3360 Integrated Projects" in Hong Kong PolyU.</Typography></li>
+              <li><Typography className={classes.text} variant="body1">Watch the video for more!</Typography></li>
             </ul>
           </Grid>
         </Grid>

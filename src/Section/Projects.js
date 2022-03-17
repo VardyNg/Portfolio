@@ -99,7 +99,7 @@ function Projects(){
       '3D animations with Blender and AutoCAD 3DS MAX',
       "School assignments related to 3D animation, it involves 3D modelling, lighting, animation, and so on.",
       ["Individual"],
-      setShowVR3D,
+      setShow3D,
       0,
     ),
     createDataForProjects(

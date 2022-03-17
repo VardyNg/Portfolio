@@ -179,7 +179,7 @@ function LanguageLibraries(props){
         />
       </Typography>
       <Grid container>
-        <Grid item md={12} lg={6} style={{height: textMode ? 300 : 300}}>
+        <Grid item md={12} lg={6} style={{height: textMode ? 300 : 350}}>
           <ul>
             {skills.slice(0, skills.length / 2).map((skill) => {return(<SkillContent skill={skill}/>)})}
           </ul>

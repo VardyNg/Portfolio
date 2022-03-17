@@ -71,11 +71,11 @@ function HAL(props) {
                   <Typography className={classes.text} variant="h5"> Introduction </Typography>
                   <Grid item xs={12} style={{backgroundColor: ''}} >
                     <ul>
-                      <li><Typography className={classes.text} variant="body">An 3D game dedicated for children or teenagers with or without programming experiences, to learn programming logics and concepts.  </Typography></li>
-                      <li><Typography className={classes.text} variant="body">Block base programming, intuitive interface, learn programming progressively. </Typography></li>
-                      <li><Typography className={classes.text} variant="body">Available for MacOS, Windows, iOS, and Android. </Typography></li>
-                      <li><Typography className={classes.text} variant="body">Developed by using Unity3D and C#. </Typography></li>
-                      <li><Typography className={classes.text} variant="body">Intermediate product for my final year project.</Typography></li>
+                      <li><Typography className={classes.text} variant="body1">An 3D game dedicated for children or teenagers with or without programming experiences, to learn programming logics and concepts.  </Typography></li>
+                      <li><Typography className={classes.text} variant="body1">Block base programming, intuitive interface, learn programming progressively. </Typography></li>
+                      <li><Typography className={classes.text} variant="body1">Available for <b>macOS</b>, <b>Windows</b>, <b>iOS</b>, and <b>Android</b>. </Typography></li>
+                      <li><Typography className={classes.text} variant="body1">Developed by using <b>Unity3D</b> and <b>C#</b>. </Typography></li>
+                      <li><Typography className={classes.text} variant="body1">Intermediate product for my final year project.</Typography></li>
                       
                     </ul>
                   </Grid>
@@ -93,7 +93,7 @@ function HAL(props) {
           <Grid container padding={5}>
             <Grid xs={12} className={classes.parent}>
               <Typography className={classes.text} variant="h5" >Main Story</Typography>
-              <Typography className={classes.text} variant="body" >
+              <Typography className={classes.text} variant="body1" >
                 One day, a lazy boy waked up on his bed, struggling for changing his clothes and go to school. 
                 He was hoping for someone who can clone him and replace him to school. 
                 Suddenly, a robot came out from the drawer, looked the same as the boy. 

@@ -88,7 +88,6 @@ function Security(props){
           <b>AWS Amplify and AWS Cognito</b> is used to handle the authentication and authorization.
         </Typography>
         <Tabs
-          variant="scrollable"
           value={value}
           onChange={handleChange}
           sx={{ 

@@ -1,5 +1,6 @@
 import * as React from 'react';
 import Button from '@mui/material/Button';
+import ButtonGroup from '@mui/material/ButtonGroup';
 import Dialog from '@mui/material/Dialog';
 import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
@@ -9,7 +10,6 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 import { useTheme } from '@mui/styles';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
-import {Img} from 'react-image'
 import AppStore_download from '../../Images/AppStore_download.svg'
 import Playstore_download from '../../Images/PlayStore_download.png'
 import Divider from '@mui/material/Divider';
@@ -20,15 +20,22 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import WebIcon from '@mui/icons-material/Web';
 import App_Icon from '../../Images/App_Icon.png'
 import Chip from '@mui/material/Chip';
+import { styled } from '@mui/material/styles';
+import Box from '@mui/material/Box';
+import Paper from '@mui/material/Paper';
+import GA from '../../Images/SSM/GA.png'
+import Xcode_icon from '../../Images/Xcode_icon.png'
+import { ReactComponent as ReactNativeIcon } from '../../Images/ReactNativeIcon.svg';
+
 
 function IOS(props){
   return(
     <>
       <Typography variant="subtitle2" component="div" color="gray">
-        Downloads: 100＋ | iOS 13 or above | iPhone, iPad, iPod, and Mac (with M1 chips)
+        Downloads: <b>100+</b> | iOS 13 or above | iPhone, iPad, iPod, and Mac (with M1 chips)
       </Typography>
       <Typography variant="body">
-        Developed by using Xcode and Swift, support create sticker with emojis😎, save and add existing stickers, and many other functions.
+        Developed by using <b>Xcode</b> and <b>Swift</b>, support create sticker with emojis😎, save and add existing stickers, and many other functions.
       </Typography>
     </>
   )
@@ -41,7 +48,7 @@ function Android(props){
         Downloads: <b>1000＋</b> | Android 4.4 or above
       </Typography>
       <Typography variant="body">
-        Previously developed by Android Studio and Java, currently a web app. A new version is coming soon by using React Native!
+        Previously developed by <b>Android Studio</b> and <b>Java</b>, currently a web app. A new version is coming soon by using <b>React Native</b>!
       </Typography>
     </>
   )
@@ -54,7 +61,7 @@ function Web(props){
         Visits: <b>4000+</b> 
       </Typography>
       <Typography variant="body">
-        Previously developed by pure HTML with CSS and JavaScripts, it will be refreshed by using ReactJS very soon.
+        Previously developed by pure HTML with CSS and JavaScripts, A new version written in <b>ReactJS</b> (Beta website) is coming soon.
       </Typography>
     </>
   )
@@ -69,27 +76,45 @@ function Backend(props){
       <ul>
         <li>
           <Typography variant="body" component="div">
-            We use AWS to host the website and the related services, which is to process user uploaded images and convert into Signal sticker packs for all the frontends. 
+            <b>AWS S3</b> is used to host the website. The backend service converts the user uploaded images to Signal Sticker pack for all iOS, Android, and Web platforms.
           </Typography>
         </li>
         <li>
           <Typography variant="body" component="div">
-            With the benefits of using AWS, the backend is in serverless architecture, in which the services are handled by API Gateways and Lambda functions. It is not only reducing the cost but also make the services more scalable. 
+            With the AWS serverless architecture, the services is handled by API Gateways and Lambda functions. It is not only reducing the cost but also make the services more scalable. 
           </Typography>
         </li>
       </ul>
     </>
   )
 }
+
+function createDataForComponent(title, content, icons){
+  return {title, content, icons}
+}
 function SSM(props) {
   const theme = useTheme();
   const fullScreen = useMediaQuery(theme.breakpoints.down('md'));
+
+  const IOSHeader = () => {
+    return(
+      <>
+        <ReactNativeIcon/>
+      </>
+    )
+  }
   
+  const components = [
+    createDataForComponent('iOS', <IOS/>, <IOSHeader/>),
+    createDataForComponent('Android', <Android/>, <></>),
+    createDataForComponent('Web', <Web/>, <></>),
+    createDataForComponent('Backend', <Backend/>, <></>),
+  ]
   return(
     <Dialog
       fullScreen={fullScreen}
       fullWidth
-      maxWidth={"md"}
+      maxWidth='md'
       open={props.open}
       onClose={props.onClose}
       aria-labelledby="responsive-dialog-title"
@@ -97,94 +122,106 @@ function SSM(props) {
       <DialogTitle id="responsive-dialog-title">
         <Typography variant="h4">
           SignalStickerMaker.com
-           <Chip label={"Launched"} variant="outlined" color="primary" style={{marginLeft: 10}}/>
+          <Chip label={"Launched"} variant="outlined" color="primary" style={{marginLeft: 10}}/>
         </Typography>
       </DialogTitle>
       <DialogContent>
-        <Grid container spacing={3}>
-          <Grid item xs={12} style={{backgroundColor: ''}}>
-            <Grid container >
-              <Grid item xs={12} md={3}>
-                <Grid container style={{flex: 1, justifyContent: "center", alignItem: "center", backgroundColor: ''}}>
-                  <Img src={App_Icon} alt="App Icon" height="150"/>
-                </Grid>
-              </Grid>
-              <Grid item xs={12} md={9} style={{backgroundColor: ''}}>
-                <Grid container style={{height: "100%", flex: 1, justifyContent: "center", alignItem: "center", backgroundColor: ''}}>
-                  <Grid item xs={12} style={{backgroundColor: ''}}>
-                    <ul>
-                      <li><Typography variant="body">An online application for sticker creation for the Signal app. </Typography></li>
-                      <li><Typography variant="body">Developed by myself with my partner as a side project and for interest. </Typography></li>
-                      <li><Typography variant="body">Served over 5000 users from many countries. </Typography></li>
-                      <li><Typography variant="body">Available on iOS, Android, and Web.</Typography></li>
-                    </ul>
-                  </Grid>
-                </Grid>
-              </Grid>
+        <Box sx={{ flexGrow: 1 }}>
+          <Grid container spacing={2}>
+            <Grid item style={{flex: 'flex', justifyContent: "center", alignItem: "center"}}>
+              <img src={App_Icon} alt="App Icon" height="150" style={{maginLeft: "500"}}/>
             </Grid>
-          </Grid>
-          <Grid item xs={12} >
-            <Grid container style={{flex: 1, justifyContent: "center", alignItem: "center", backgroundColor: ''}}>
-              <a href="https://apps.apple.com/bm/app/sigicker-sticker-maker/id1550885981" target="_blank" rel="noreferrer">
-                <Img src={AppStore_download} alt="link to AppStore" height="50"/>
-              </a>
-              <a href="https://play.google.com/store/apps/details?id=com.app.signalstickermaker" target="_blank" rel="noreferrer">
-                <img src={Playstore_download} alt="Download in Google Play Store" height="50"/>
-              </a>
-              <Button
-                variant="outlined"
-                onClick={() => {window.open("https://signalstickermaker.com", "_blank").focus()}}
-                startIcon={<WebIcon/>}
-                style={{height: 50}}
+            <Grid item container xs={12} sm style={{justifyContent: "center", alignItem: "center"}}>
+              <ul>
+                <li>
+                  <Typography variant="body">
+                    An online application for sticker creation for the Signal app, launched since January, 2021.
+                  </Typography>
+                </li>
+                <li>
+                  <Typography variant="body">
+                    Developed by myself with my partner as a side project and for interest. 
+                    </Typography>
+                </li>
+                <li>
+                  <Typography variant="body">
+                    Served over 7000 +  users from many countries, base on Goolge Analtyics.
+                    <img src={GA} alt="GA" height="200"/>
+                  </Typography>
+                </li>
+                <li>
+                  <Typography variant="body">
+                    Available on iOS, Android, and Web.
+                  </Typography>
+                </li>
+              </ul>
+              <Grid 
+                container 
+                item 
+                xs={12} sm={6}
+                style={{flex: 'flex', justifyContent: "center", alignItem: "center", backgroundColor: '', spacing: 0}}
               >
-                Visit the website
-              </Button>
-            </Grid>
-            <Divider style={{marginBottom: 10, marginTop: 10}}/>    
-            <Grid xs={12}>
-               <Accordion
-               >
-                <AccordionSummary
-                  expandIcon={<ExpandMoreIcon />}
+                <a href="https://apps.apple.com/bm/app/sigicker-sticker-maker/id1550885981" target="_blank" rel="noreferrer">
+                  <img src={AppStore_download} alt="link to AppStore" height="50"/>
+                </a>
+                <a href="https://play.google.com/store/apps/details?id=com.app.signalstickermaker" target="_blank" rel="noreferrer">
+                  <img src={Playstore_download} alt="Download in Google Play Store" height="50"/>
+                </a>
+              </Grid>
+              <Grid 
+                container 
+                item 
+                xs={12} sm={6}
+                style={{flex: 'flex', justifyContent: "center", alignItem: "center", backgroundColor: ''}}
+              >
+                <ButtonGroup
+                  variant="outlined"
+                  style={{height: 50}}
                 >
-                  <Typography>iOS</Typography>
-                </AccordionSummary>
-                <AccordionDetails>
-                  <IOS/>
-                </AccordionDetails>
-              </Accordion>
-              <Accordion>
-                <AccordionSummary
-                  expandIcon={<ExpandMoreIcon />}
-                >
-                  <Typography>Android</Typography>
-                </AccordionSummary>
-                <AccordionDetails>
-                  <Android/>
-                </AccordionDetails>
-              </Accordion>
-              <Accordion>
-                <AccordionSummary
-                  expandIcon={<ExpandMoreIcon />}
-                >
-                  <Typography>Web</Typography>
-                </AccordionSummary>
-                <AccordionDetails>
-                  <Web/>
-                </AccordionDetails>
-              </Accordion>
-              <Accordion>
-                <AccordionSummary
-                  expandIcon={<ExpandMoreIcon />}
-                >
-                  <Typography>Backend</Typography>
-                </AccordionSummary>
-                <AccordionDetails>
-                  <Backend/>
-                </AccordionDetails>
-              </Accordion>
+                  <Button
+                    onClick={() => {window.open("https://dev.signalstickermaker.com", "_blank").focus()}}
+                    startIcon={<WebIcon/>}
+                  >
+                    Visit the BETA webiste
+                  </Button>
+                  <Button
+                    onClick={() => {window.open("https://signalstickermaker.com", "_blank").focus()}}
+                    startIcon={<WebIcon/>}
+                  >
+                    Visit the website
+                  </Button>
+                </ButtonGroup>
+              </Grid>
             </Grid>
           </Grid>
+        </Box>
+        <Divider style={{marginBottom: 10, marginTop: 10}}/>    
+        <Grid xs={12}>
+          {components.map((component, index) => (
+            <Accordion
+              expanded
+            >
+            <AccordionSummary
+              expandIcon={<ExpandMoreIcon />}
+            >
+              <div style={{display: 'flex', alignItems: 'center', spacing: 2}}>
+                <Typography
+                  variant="h5"
+                  style={{
+                    marginRight: 10,
+                  }}
+                >
+                  {component.title}
+                </Typography>
+                {component.icons}
+              </div>
+            </AccordionSummary>
+            <AccordionDetails>
+              {component.content}
+            </AccordionDetails>
+          </Accordion>
+          ))}
+          
         </Grid>
       </DialogContent>
       <DialogActions>

@@ -9,6 +9,7 @@ import TimelineOppositeContent from '@mui/lab/TimelineOppositeContent';
 import { ReactComponent as HKCCLogo } from '../Images/PolyU_HKCC.svg';
 import { ReactComponent as PolyULogo } from '../Images/PolyU.svg';
 import { ReactComponent as CCCSSLogo } from '../Images/CCCSS.svg';
+import IconButton from '@mui/material/IconButton';
 
 const iconSize = 40;
 const steps = [
@@ -25,7 +26,8 @@ const steps = [
       "VR technology, 3D Animation and Modelling",
       "Internet Technology"
     ],
-    icon: <PolyULogo style={{ height: iconSize, width: iconSize }}/>
+    icon: <PolyULogo style={{ height: iconSize, width: iconSize }}/>,
+    url: "https://www.polyu.edu.hk/en/"
   },
   {
     yearsRange: "Sep 2017 - Jun 2019",
@@ -39,7 +41,8 @@ const steps = [
       "Networking",
       "Mobile App Design and Development"
     ],
-    icon: <HKCCLogo style={{ height: iconSize, width: iconSize }}/>
+    icon: <HKCCLogo style={{ height: iconSize, width: iconSize }}/>,
+    url: "https://www.hkcc-polyu.edu.hk/en/home/index.html"
   },
   {
     yearsRange: "Sep 2011 - Jun 2017",
@@ -52,7 +55,8 @@ const steps = [
       "Level 4 in Liberal Studies (LS)",
       "Level 4 in History"
     ],
-    icon: <CCCSSLogo style={{ height: iconSize, width: iconSize }}/>
+    icon: <CCCSSLogo style={{ height: iconSize, width: iconSize }}/>,
+    url: "https://www.cccss.edu.hk"
   },
 ];
 
@@ -97,7 +101,14 @@ function Education(){
                 <TimelineDot
                   style={{ backgroundColor: '#FFFFFF'}}
                 >
-                  {step.icon}
+                  <IconButton
+                    size="small"
+                    onClick={() => {
+                      window.open(step.url, "_blank");
+                    }}
+                  >
+                    {step.icon}
+                  </IconButton>
                 </TimelineDot>
                 <TimelineConnector />
               </TimelineSeparator>
