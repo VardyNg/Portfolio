@@ -15,7 +15,6 @@ import Unity3D from '../Images/Unity3D.png';
 import Xcode_icon from '../Images/Xcode_icon.png'
 import aws from '../Images/aws.png';
 import NodeJS from '../Images/NodeJS.png';
-import Grid from '@material-ui/core/grid'
 import GCP from '../Images/GCP.png'
 import Windows from '../Images/Windows.png'
 import Apple from '../Images/Apple.jpeg'
