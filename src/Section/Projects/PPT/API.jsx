@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { ReactComponent as Serverless } from '../../../Images/PPT/Serverless.svg'
-import { useTheme } from '@mui/material/styles';
+import { useTheme } from '@mui/styles';
 import Typography from '@mui/material/Typography';
 import PropTypes from 'prop-types';
 import Tabs from '@mui/material/Tabs';

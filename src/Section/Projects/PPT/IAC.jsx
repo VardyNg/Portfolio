@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { ReactComponent as ServerlessIcon } from '../../../Images/PPT/serverless-framework.svg'
 import { ReactComponent as TerraformIcon } from '../../../Images/PPT/terraform.svg'
-import { useTheme } from '@mui/material/styles';
+import { useTheme } from '@mui/styles';
 import Typography from '@mui/material/Typography';
 import PropTypes from 'prop-types';
 import Tabs from '@mui/material/Tabs';

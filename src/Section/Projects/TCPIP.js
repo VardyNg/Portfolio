@@ -6,12 +6,12 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import useMediaQuery from '@mui/material/useMediaQuery';
-import { useTheme } from '@mui/material/styles';
+import { useTheme } from '@mui/styles';
 import Typography from '@mui/material/Typography';
 import ScreenCap1 from '../../Images/Navigator/ScreenCap1.png'
 import ScreenCap2 from '../../Images/Navigator/ScreenCap2.png'
 import ScreenCap3 from '../../Images/Navigator/ScreenCap3.png'
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@mui/styles';
 
 const useStyles = makeStyles((theme) => ({
   text: {

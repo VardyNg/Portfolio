@@ -1,4 +1,4 @@
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@mui/styles';
 import Csharp_Logo from '../Images/Csharp_Logo.png'
 import CPlusPlus from '../Images/CPlusPlus.png'
 import HCJ from '../Images/HCJ.png'

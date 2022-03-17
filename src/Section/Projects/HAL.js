@@ -6,7 +6,7 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import useMediaQuery from '@mui/material/useMediaQuery';
-import { useTheme } from '@mui/material/styles';
+import { useTheme } from '@mui/styles';
 import Typography from '@mui/material/Typography';
 import HAL3000 from '../../Images/HAL3000.png'
 import Grid from '@mui/material/Grid';
@@ -14,7 +14,7 @@ import Chip from '@mui/material/Chip';
 import MainScreen from '../../Images/HAL3000/MainScreen.png'
 import ScreenCap1 from '../../Images/HAL3000/ScreenCap1.png'
 import ScreenCap2 from '../../Images/HAL3000/ScreenCap2.png'
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@mui/styles';
 
 const useStyles = makeStyles((theme) => ({
   text: {

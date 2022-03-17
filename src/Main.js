@@ -14,7 +14,7 @@ import Grow from '@mui/material/Grow'
 import SkillSets from './Section/SkillSets';
 import Footer from './Section/Footer';
 import react, { useState, useRef } from 'react';
-import { makeStyles, Theme } from "@material-ui/core/styles";
+import { makeStyles } from '@mui/styles';
 import Zoom from '@mui/material/Zoom';
 import Button from '@mui/material/Button';
 import LanguageLibraries from './Section/LanguageLibraries';
@@ -100,7 +100,7 @@ function App() {
                 </Typography>
               </div>
             </Grid>
-            <Grid item>
+            {/* <Grid item>
               <Button onClick={() => contacts.current.scrollIntoView()} color="white" size="small">
                 Contacts
               </Button>
@@ -113,7 +113,7 @@ function App() {
               <Button onClick={() => workingExperience.current.scrollIntoView()} color="white" size="small">
                 Working Experiences
               </Button>
-            </Grid>
+            </Grid> */}
           </Grid>
         </Toolbar>
       </AppBar>

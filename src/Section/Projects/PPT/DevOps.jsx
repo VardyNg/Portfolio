@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { ReactComponent as FrontEndDevOps } from '../../../Images/PPT/Front-End-DevOps.svg'
 import { ReactComponent as APIDevOps } from '../../../Images/PPT/API-DevOps.svg'
 import { ReactComponent as DatabaseDevOps } from '../../../Images/PPT/Database-DevOps.svg'
-import { useTheme } from '@mui/material/styles';
+import { useTheme } from '@mui/styles';
 import Typography from '@mui/material/Typography';
 import PropTypes from 'prop-types';
 import Tabs from '@mui/material/Tabs';

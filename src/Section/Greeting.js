@@ -4,8 +4,8 @@ import Typography from '@mui/material/Typography';
 import Hello from '../Images/Hello.png'
 import Hello2 from '../Images/Hello2.png'
 import useMediaQuery from '@mui/material/useMediaQuery';
-import { useTheme } from '@mui/material/styles';
-import { makeStyles } from '@material-ui/core/styles';
+import { useTheme } from '@mui/styles';
+import { makeStyles } from '@mui/styles';
 import Grow from '@mui/material/Grow';
 import SkillSets from './SkillSets'
 import Divider from '@mui/material/Divider';

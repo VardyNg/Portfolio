@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { ReactComponent as ReactJSIcon } from '../../../Images/PPT/reactjs.svg'
 import { ReactComponent as FrontEndArch} from '../../../Images/PPT/FrontEnd-Arch.svg'
 import { ReactComponent as CloudflareIcon} from '../../../Images/PPT/cloudflare.svg'
-import { useTheme } from '@mui/material/styles';
+import { useTheme } from '@mui/styles';
 import Typography from '@mui/material/Typography';
 import PropTypes from 'prop-types';
 import Tabs from '@mui/material/Tabs';

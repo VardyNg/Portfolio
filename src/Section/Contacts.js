@@ -3,7 +3,7 @@ import { FaLinkedin } from 'react-icons/fa'
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
-import { withStyles } from "@material-ui/core/styles";
+import { withStyles } from "@mui/styles";
 
 const WhiteTextTypography = withStyles({
   root: {

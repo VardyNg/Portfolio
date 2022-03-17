@@ -1,5 +1,5 @@
-import { Typography } from "@material-ui/core"
-import { withStyles } from "@material-ui/core/styles";
+import { Typography } from "@mui/material"
+import { withStyles } from "@mui/styles";
 
 const WhiteTextTypography = withStyles({
   root: {

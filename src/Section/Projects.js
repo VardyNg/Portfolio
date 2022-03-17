@@ -22,10 +22,9 @@ import VR3D from './Projects/VR3D'
 import TCPIP from './Projects/TCPIP'
 import PrivateTutorPlus from './Projects/PPT/';
 import SwipeableViews from 'react-swipeable-views';
-import { useTheme } from '@mui/material/styles';
+import { useTheme } from '@mui/styles';
 import Rating from '@mui/material/Rating';
 import Stack from '@mui/material/Stack'
-import { create } from '@mui/material/styles/createTransitions';
 
 function createDataForProjects(title, description, chip, setShowDialog, start){
   return {title, description, chip, setShowDialog, start}

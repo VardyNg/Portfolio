@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { ReactComponent as CognitoIcon } from '../../../Images/PPT/cognito.svg'
 import { ReactComponent as AmplifyIcon } from '../../../Images/PPT/amplify.svg'
 import { ReactComponent as AmplifyArch } from '../../../Images/PPT/AmplifyArch.svg'
-import { useTheme } from '@mui/material/styles';
+import { useTheme } from '@mui/styles';
 import Typography from '@mui/material/Typography';
 import PropTypes from 'prop-types';
 import Tabs from '@mui/material/Tabs';
