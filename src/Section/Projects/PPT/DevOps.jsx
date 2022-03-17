@@ -4,6 +4,10 @@ import { ReactComponent as APIDevOps } from '../../../Images/PPT/API-DevOps.svg'
 import { ReactComponent as DatabaseDevOps } from '../../../Images/PPT/Database-DevOps.svg'
 import { ReactComponent as GitHubIcon } from '../../../Images/github.svg'
 import { ReactComponent as Branching} from '../../../Images/PPT/GitBranching.svg'
+import { ReactComponent as JenkinsIcon} from '../../../Images/jenkins.svg'
+import { ReactComponent as SonarqubeIcon} from '../../../Images/sonarqube.svg'
+import { ReactComponent as SonarqubeJenkins} from '../../../Images/PPT/Sonarqube_Jenkins.svg'
+import SonarqubeExample from "../../../Images/PPT/SonarqubeExample.png"
 import { useTheme } from '@mui/styles';
 import Typography from '@mui/material/Typography';
 import PropTypes from 'prop-types';
@@ -128,6 +132,27 @@ function API(props){
   )
 }
 
+function CodeAnalysis(props){
+  return(
+    <Stack
+      spacing={2}
+    >
+      <Typography variant="h5" style={{display: 'flex', alignItems: 'center'}}>
+        <JenkinsIcon style={{height: 75, width: 75, marginRight: 5}}/>
+        <SonarqubeIcon style={{height: 150, width: 150, marginRight: 5}}/>
+      </Typography>
+      <Typography variant="body">
+        <b>SonarQube</b> are deployed on an on-perm server to provide code analysis. 
+      </Typography>
+      <Typography variant="body">
+        In particular, the Jenkins is triggered via GitHub webhook, and it will command SnoarQube to do code scanning. 
+      </Typography>
+      <SonarqubeJenkins/>
+      <img src={SonarqubeExample}/>
+    </Stack>
+  )
+}
+
 function Database(props){
   return(
     <Stack
@@ -171,6 +196,7 @@ function DevOps(props){
       >
         <Tab label="Continuous Integration (CI)" />
         <Tab label="Continuous Delivery (CD)" />
+        <Tab label="Code Analysis" />
         <Tab label="Database Staging" />
       </Tabs>
       <Box
@@ -183,6 +209,9 @@ function DevOps(props){
           <CD/>
         </TabPanel>
         <TabPanel value={value} index={2}>
+          <CodeAnalysis/>
+        </TabPanel>
+        <TabPanel value={value} index={3}>
           <Database/>
         </TabPanel>
       </Box>

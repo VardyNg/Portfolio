@@ -92,13 +92,15 @@ function App() {
     return(
       <AppBar position="static" style={{backgroundColor: "#677886"}}>
         <Toolbar>
-          <Grid container style={{width: '100%', marginTop: 10}}>
-            <Grid item >
-              <div className={classes.headerTextContainer}>
-                <Typography variant="h6" color="inherit" component="div" style={{fontFamily: "Raleway"}} className={classes.headerText}>
+          <Grid container style={{width: '100%', marginTop: 10, display: 'flex', justifyContent: 'center'}}>
+            <Grid item xs={12} sm={9} md={8} >
+              {/* <div className={classes.headerTextContainer}> */}
+                <Typography variant="h6" color="inherit" component="" style={{fontFamily: "Raleway"}} 
+                  // className={classes.headerText}
+                >
                   Ng Hoi Wa's Portfolio
                 </Typography>
-              </div>
+              {/* </div> */}
             </Grid>
             {/* <Grid item>
               <Button onClick={() => contacts.current.scrollIntoView()} color="white" size="small">

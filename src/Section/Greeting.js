@@ -1,14 +1,10 @@
-import react, {useEffect, useState} from 'react'
+import Divider from '@mui/material/Divider';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
-import Hello from '../Images/Hello.png'
-import Hello2 from '../Images/Hello2.png'
-import useMediaQuery from '@mui/material/useMediaQuery';
-import { useTheme } from '@mui/styles';
 import { makeStyles } from '@mui/styles';
-import Grow from '@mui/material/Grow';
-import SkillSets from './SkillSets'
-import Divider from '@mui/material/Divider';
+import Hello3 from '../Images/Hello3.png';
+import SkillSets from './SkillSets';
+
 
 const useStyles = makeStyles((theme) => ({
   greetingText: {
@@ -56,7 +52,7 @@ function Greeting(){
           </div>
         </Grid>
         <Grid xs={12} sm={5} className={theme.figure} >
-          <img src={Hello2} height={350} style={{marginTop: 0, backgroundColor: ''}}/>
+          <img src={Hello3} height={350} style={{marginTop: 0, backgroundColor: ''}}/>
         </Grid>
       </Grid>
     // </Grow>

@@ -79,6 +79,7 @@ function Security(props){
       <Typography variant="h4">
         Security
       </Typography>
+      <Divider/>
       <Stack spacing={3} direction="row" style={{display: 'flex', alignItems: 'center'}}>
         <div>
           <Typography variant="h5" style={{display: 'flex', alignItems: 'center'}}>

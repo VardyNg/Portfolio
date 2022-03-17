@@ -214,18 +214,18 @@ function Projects(){
           <Tab label="School Projects" />
         </Tabs>
       </Box>
-      <SwipeableViews
+      {/* <SwipeableViews
         axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
         index={value}
         onChangeIndex={handleChange}
-      >
+      > */}
         <TabPanel value={value} index={0}>
           <Project project={sideProjects}/>
         </TabPanel>
         <TabPanel value={value} index={1}>
           <Project project={schoolProjects}/>
         </TabPanel>  
-      </SwipeableViews>
+      {/* </SwipeableViews> */}
     </>
   )
 }
