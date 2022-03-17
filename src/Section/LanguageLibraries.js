@@ -36,6 +36,10 @@ import { ReactComponent as GitLabIcon } from '../Images/gitlab.svg'
 import { ReactComponent as SVNIcon } from '../Images/svn.svg'
 import { ReactComponent as JenkinsIcon } from '../Images/jenkins.svg'
 import { ReactComponent as SonarqubeIcon } from '../Images/sonarqube.svg'
+import { ReactComponent as AppleIcon }from '../Images/AppleLogo.svg'
+import { ReactComponent as WindowsLogo }from '../Images/WindowsLogo.svg'
+import { ReactComponent as UbuntuLogo }from '../Images/UbuntuLogo.svg'
+import Grid from '@mui/material/Grid'
 
 const useStyles = makeStyles((theme) => ({
   icons: {
@@ -91,9 +95,9 @@ const skills = [
     ]),
     createDataForSkill("Operation Systems",
     [
-      createDataForItem("MacOS", Apple, false),
-      createDataForItem("Windows", Windows, false),
-      createDataForItem("Ubuntu", ubuntu, false),
+      createDataForItem("MacOS", AppleIcon, true),
+      createDataForItem("Windows", WindowsLogo, true),
+      createDataForItem("Ubuntu", UbuntuLogo, true),
       createDataForItem("CentOS", CentOSIcon, true),
     ]),
 
@@ -122,6 +126,41 @@ function LanguageLibraries(props){
     setTextMode(event.target.checked)
   }
   
+  const SkillContent = (props) => {
+    const {skill} = props
+    return(
+      <li>
+        <div style={{width: '100%', height: textMode ? 60 : 85}}>
+          <Typography variant="body1" sx={{ textAlign: 'left', fontWeight: 'bold' }} style={{fontFamily: "Raleway", padding: 0}}>
+            {skill.skill}
+          </Typography>  
+          <div style={{display: 'flex', float:'left', alignItmes: 'center', justifyContent: 'center'}}>
+            {skill.items.map((item, index) => {
+              if(textMode){
+                var comma = ","
+                if(index === skill.items.length - 1){
+                  comma = ""
+                }
+                return(
+                    <> {item.name}{comma}</>
+                )
+              }else{
+                if(item.svg){
+                  return(
+                    <item.icon style={{height: 50, width: 50, marginRight: 10 }}/>
+                  )
+                }else{
+                  return(
+                    <img src={item.icon} className={classes.icons}/>
+                  )
+                }
+              }
+            })}
+          </div>
+        </div>
+      </li>
+    )
+  }
   return(
     <>
     
@@ -139,44 +178,19 @@ function LanguageLibraries(props){
           label="Text mode" 
         />
       </Typography>
-
-      <ul>
-        {skills.map((skill) => {
-          console.log(skill)
-          return(
-            <li>
-              <Typography variant="body1" sx={{ textAlign: 'left', fontWeight: 'bold' }} style={{fontFamily: "Raleway", padding: 0}}>
-                {skill.skill}
-              </Typography>  
-              <div style={{float:'left'}}>
-                {skill.items.map((item, index) => {
-                  
-                  if(textMode){
-                    var comma = ","
-                    if(index === skill.items.length - 1){
-                      comma = ""
-                    }
-                    return(
-                        <> {item.name}{comma}</>
-                    )
-                  }else{
-                    if(item.svg){
-                      return(
-                        <item.icon style={{height: 50, width: 50, marginRight: 10 }}/>
-                      )
-                    }else{
-                      return(
-                        <img src={item.icon} className={classes.icons}/>
-                      )
-                    }
-                  }
-                })}
-              </div>
-              <br></br><br></br><br></br>
-            </li>
-          )
-        })}
-      </ul>
+      <Grid container>
+        <Grid item md={12} lg={6} style={{height: textMode ? 300 : 300}}>
+          <ul>
+            {skills.slice(0, skills.length / 2).map((skill) => {return(<SkillContent skill={skill}/>)})}
+          </ul>
+        </Grid>
+        <Grid item md={12} lg={6}>
+          <ul>
+            {skills.slice(skills.length / 2, skills.length).map((skill) => {return(<SkillContent skill={skill}/>)})}
+          </ul>
+        </Grid>
+      </Grid>
+      
     </>
   )
 }

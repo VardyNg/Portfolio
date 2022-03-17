@@ -9,7 +9,8 @@ import NodeJS from '../Images/NodeJS.png';
 import Grid from '@mui/material/Grid'
 import Typography from '@mui/material/Typography';
 import Grow from '@mui/material/Grow';
-
+import { ReactComponent as TerraformIcon } from '../Images/PPT/terraform.svg'
+import { ReactComponent as ServerlessIcon } from '../Images/PPT/serverless-framework.svg'
 const useStyles = makeStyles((theme) => ({
   icons: {
     height: 40,
@@ -21,12 +22,13 @@ function SkillSets(){
   return(
     <Grid container>
       <Grid item xs={12}>
-        <Typography variant="h5" sx={{ textAlign: 'left' }} style={{fontFamily: "Raleway"}}>
+        <Typography variant="h5" sx={{ textAlign: 'center' }} style={{fontFamily: "Raleway", backgroundColor: ''}}>
           Frontend / Backend / Game developer
         </Typography>
       </Grid>
       <Grid item xs={12}>
-        <img src={Android_Studio_Icon} className={classes.icons}/>
+        <TerraformIcon style={{width: 50, height: 50}}/>
+        <ServerlessIcon style={{width: 50, height: 50}}/>
         <img src={Xcode_icon} className={classes.icons}/>
         {/* <img src={Java_Icon} className={classes.icons}/> */}
         <img src={React_Native_icon} className={classes.icons}/>
