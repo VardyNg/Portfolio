@@ -80,7 +80,7 @@ function Projects(){
     ),
     createDataForProjects(
       "Signal Sticker Maker",
-      "An online application for making sticker for the Signal app, reached over 5000 users since it launces. Available on iOS, Android, and Web.",
+      "An online application for making sticker for the Signal app, reached over 7000 users since it launces. Available on iOS, Android, and Web.",
       ["2 Developers", "Released"],
       setShowSSM,
       1
