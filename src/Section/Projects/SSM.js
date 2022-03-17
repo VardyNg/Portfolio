@@ -41,7 +41,7 @@ function Android(props){
         Downloads: <b>1000＋</b> | Android 4.4 or above
       </Typography>
       <Typography variant="body">
-        Previosuly developed by Android Studio and Java, currently a web app. A new version is coming soon by using React Native!
+        Previously developed by Android Studio and Java, currently a web app. A new version is coming soon by using React Native!
       </Typography>
     </>
   )
@@ -54,7 +54,7 @@ function Web(props){
         Visits: <b>4000+</b> 
       </Typography>
       <Typography variant="body">
-        Previosuly developed by pure HTML with CSS and JavaScripts, it will be refreshed by using ReactJS very soon.
+        Previously developed by pure HTML with CSS and JavaScripts, it will be refreshed by using ReactJS very soon.
       </Typography>
     </>
   )

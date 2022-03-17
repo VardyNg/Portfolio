@@ -57,7 +57,6 @@ function Projects(){
   const [show3D, setShow3D] = useState(false)
   const [showVR3D, setShowVR3D] = useState(false)
   const [showTCPIP, setShowTCPIP] = useState(false)
-
   const closePPT = () => {setShowPPT(false)}
   const closeSSM = () => {setShowSSM(false);};
   const closeHAL = () => {setShowHAL(false);};
@@ -74,7 +73,7 @@ function Projects(){
   const sideProjects = [
     createDataForProjects(
       "Private Tutor+",
-      "A web application for private tutors to manage their businese. The application is built with ReactJS, AWS Serverless (S3 + API Gateway + Lambda), Amplify, and MySQL.",
+      "A web application for private tutors to manage their business. The application is built with ReactJS, AWS Serverless (S3 + API Gateway + Lambda), Amplify, and MySQL.",
       ["4 Developers", "Developing"],
       setShowPPT,
       3
@@ -91,7 +90,7 @@ function Projects(){
   const schoolProjects = [
     createDataForProjects(
       'H.A.L. 3000: The School Survival',
-      "A 3D game for learing programming. Player will learn and use programming logics to solve problems, dedicated for teenagers or children with or without programming experience.",
+      "A 3D game for learning programming. Player will learn and use programming logics to solve problems, dedicated for teenagers or children with or without programming experience.",
       ["Individual"],
       setShowHAL,
       1
@@ -105,7 +104,7 @@ function Projects(){
     ),
     createDataForProjects(
       "VR application for 3D object manipulations using Unity",
-      "A VR application created by Unity3D and deepmotion, user can use their hands to manipulate 3D object, like scalling, rotation, and transformation.",
+      "A VR application created by Unity3D and DeepMotion, user can use their hands to manipulate 3D object, like scaling, rotation, and transformation.",
       ["Group"],
       setShowVR3D,
       0

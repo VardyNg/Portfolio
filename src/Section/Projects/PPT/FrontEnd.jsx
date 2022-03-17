@@ -36,7 +36,7 @@ function FrontEnd(props){
             <b>React JS</b>
           </Typography>
           <Typography variant="body1">
-            The front end is written in <b>React JS</b> with Mainly <b>Material UI</b>, it is designed for both mobile and desktop usage with responsive designs.
+            The front end is written in <b>React JS</b> with <b>Material UI</b> and other libraries, it is designed for both mobile and desktop by make adopting responsive designs.
           </Typography>
         </div>
       </Stack>
@@ -50,7 +50,7 @@ function FrontEnd(props){
             <b>Cloudflare</b>
           </Typography>
           <Typography variant="body1">
-            <b>Cloudflare</b> is used as the DNS and provide HTTPS for the website. Its <b>CDN</b> is used to serve the website.
+            <b>Cloudflare</b> is picked  as the DNS and provide HTTPS for the website. Its <b>CDN</b> is used to serve the website.
           </Typography>
         </div>
       </Stack>
@@ -63,11 +63,11 @@ function FrontEnd(props){
             <b>Hosting</b>
           </Typography>
           <Typography variant="body1">
-            <b>AWS S3</b> is used for the static hosting of the website.
+            <b>AWS S3</b> is for the static hosting of the website.
           </Typography>
         </div>
       </Stack>
-      <FrontEndArch/>
+      <FrontEndArch style={{width: '100%'}}/>
     </Stack>
   )
 }

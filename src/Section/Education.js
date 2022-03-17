@@ -15,7 +15,7 @@ const steps = [
   {
     yearsRange: "Sep 2019 - Dec 2021",
     label: 'The Hong Kong Polytechnic University',
-    degree: 'Bsc(Hons) Internet and Multimedia Technologies',
+    degree: 'BSc(Hons) Internet and Multimedia Technologies',
     cGPA: "2.86",
     description: [
       "Computer Game Development",
@@ -25,7 +25,7 @@ const steps = [
       "VR technology, 3D Animation and Modelling",
       "Internet Technology"
     ],
-    icon: <HKCCLogo style={{ height: iconSize, width: iconSize }}/>
+    icon: <PolyULogo style={{ height: iconSize, width: iconSize }}/>
   },
   {
     yearsRange: "Sep 2017 - Jun 2019",
@@ -39,7 +39,7 @@ const steps = [
       "Networking",
       "Mobile App Design and Development"
     ],
-    icon: <PolyULogo style={{ height: iconSize, width: iconSize }}/>
+    icon: <HKCCLogo style={{ height: iconSize, width: iconSize }}/>
   },
   {
     yearsRange: "Sep 2011 - Jun 2017",

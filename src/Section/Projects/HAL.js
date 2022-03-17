@@ -72,7 +72,7 @@ function HAL(props) {
                   <Grid item xs={12} style={{backgroundColor: ''}} >
                     <ul>
                       <li><Typography className={classes.text} variant="body">An 3D game dedicated for children or teenagers with or without programming experiences, to learn programming logics and concepts.  </Typography></li>
-                      <li><Typography className={classes.text} variant="body">Block base programming, intuituve interface, learn programming progressively. </Typography></li>
+                      <li><Typography className={classes.text} variant="body">Block base programming, intuitive interface, learn programming progressively. </Typography></li>
                       <li><Typography className={classes.text} variant="body">Available for MacOS, Windows, iOS, and Android. </Typography></li>
                       <li><Typography className={classes.text} variant="body">Developed by using Unity3D and C#. </Typography></li>
                       <li><Typography className={classes.text} variant="body">Intermediate product for my final year project.</Typography></li>

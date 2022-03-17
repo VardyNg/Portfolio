@@ -38,8 +38,8 @@ function IAC(props){
             Serverless Framework is used to build the serverless architecture in most CSPs. For this project, it is in AWS.
           </Typography>
           <Typography variant="body1">
-            All the <b>architecutre are written in code</b> and deployed to AWS via Serverless Framework, 
-            it makes the architecitre reusable and deployed to other AWS region base on demands with minimal efforts.
+            All the <b>architecture are written in code</b> and deployed to AWS via Serverless Framework, 
+            it makes the architecture reusable and deployed to other AWS region base on demands with minimal efforts.
           </Typography>
         </div>
       </Stack>
@@ -56,7 +56,7 @@ function IAC(props){
             There are 3 types of database server in this project: Master, Slave, and ProxySQL
           </Typography>
           <Typography variant="body1">
-            Each of the server has different settings and provide different services. And <b>Scalling</b> is necessary in case of demand increases and <b>DR</b> is also requried.
+            Each of the server has different settings and provide different services. And <b>Scaling</b> is necessary in case of demand increases and <b>DR</b> is also required.
           </Typography>
           <Typography variant="body1">
             <b>Terraform</b> is used to define the server and deploy them to CSPs (AWS in this project). <b>New Slaves</b> can deployed based on the coded architecture and ready to serve with little configurations; <b>New ProxySQL</b> and <b>Master</b> instances can also be deployed in a minimum time to reduce impact in user experience, in case of failures.

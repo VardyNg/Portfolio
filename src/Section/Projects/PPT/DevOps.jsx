@@ -42,7 +42,7 @@ function FrontEnd(props){
         A CI/CD pipeline is created such that ReactJS is built by the GitHub Actions and deployed to AWS S3 afterward.
         The pipeline is triggered by merging the staging branch on GitHub.
       </Typography>
-      <FrontEndDevOps/>
+      <FrontEndDevOps style={{width: '100%', height: 500}}/>
     </Stack>
   )
 }
@@ -55,7 +55,7 @@ function API(props){
       <Typography variant="body">
         The API requests are ditrubuted to the API Gateway and handled by the lambda functions.
       </Typography>
-      <APIDevOps/>
+      <APIDevOps style={{width: '100%', height: 500}}/>
       <Typography variant="body">
         A CI/CD pipeline is created to deploy the service by using Serverless Framework. 
         The pipeline is triggered by merging the staging branch on GitHub, and by making use of GitHub Actions to deploy the service.
@@ -72,7 +72,7 @@ function Database(props){
       <Typography variant="body">
         Most of the data are stored in MySQL databases, with MySQL Replications, the data are stored in multiple servers for DR purposes.
       </Typography>
-      <DatabaseDevOps/>
+      <DatabaseDevOps style={{width: '100%', height: 200}}/>
       <Typography variant="body">
         There are three databases for each stage, the database DDL is scripted and will be executed on version update. In application, the same script will be executed squentially from dev, uat, to prod.
       </Typography>
