@@ -19,11 +19,11 @@ jobs:
 
     - name: Install dependencies
       run: npm install
-      working-directory: ./
+      # working-directory: ./
 
     - name: Build react website
       run: npm run build
-      working-directory: ./
+      # working-directory: ./
 
     - name: S3 Sync
       run: aws s3 cp ./build s3://www.wadeenghoiwa.com --recursive
