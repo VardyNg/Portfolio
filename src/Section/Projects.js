@@ -1,33 +1,23 @@
-import react, {useState} from 'react';
-import Box from '@mui/material/Box';
-import Stepper from '@mui/material/Stepper';
-import Step from '@mui/material/Step';
-import StepLabel from '@mui/material/StepLabel';
-import StepContent from '@mui/material/StepContent';
-import Button from '@mui/material/Button';
-import Paper from '@mui/material/Paper';
-import Grid from '@mui/material/Grid';
-import Typography from '@mui/material/Typography';
-import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
-import Tabs from '@mui/material/Tabs';
-import Tab from '@mui/material/Tab';
-import Chip from '@mui/material/Chip';
-import SSM from './Projects/SSM'
-import HAL from './Projects/HAL'
-import ThreeDAnimations from './Projects/3DAnimations'
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
-import VR3D from './Projects/VR3D'
-import TCPIP from './Projects/TCPIP'
-import PrivateTutorPlus from './Projects/PPT/';
-import SwipeableViews from 'react-swipeable-views';
-import { useTheme } from '@mui/styles';
+import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import Chip from '@mui/material/Chip';
+import Grid from '@mui/material/Grid';
 import Rating from '@mui/material/Rating';
-import Stack from '@mui/material/Stack'
+import Stack from '@mui/material/Stack';
+import Tab from '@mui/material/Tab';
+import Tabs from '@mui/material/Tabs';
+import Typography from '@mui/material/Typography';
+import { useTheme } from '@mui/styles';
+import { useState } from 'react';
+import ReportRoute from './Projects';
 
-function createDataForProjects(title, description, chip, setShowDialog, start){
-  return {title, description, chip, setShowDialog, start}
+import {  BrowserRouter as Router,  Routes,  Route, Navigate, useNavigate} from "react-router-dom"
+
+function createDataForProjects(title, description, chip, link, start){
+  return {title, description, chip, link, start}
 }
 
 function TabPanel(props) {
@@ -48,21 +38,9 @@ function TabPanel(props) {
   );
 }
 
-function Projects(){
-  const theme = useTheme();
 
-  const [showPPT, setShowPPT] = useState(false)
-  const [showSSM, setShowSSM] = useState(false)
-  const [showHAL, setShowHAL] = useState(false)
-  const [show3D, setShow3D] = useState(false)
-  const [showVR3D, setShowVR3D] = useState(false)
-  const [showTCPIP, setShowTCPIP] = useState(false)
-  const closePPT = () => {setShowPPT(false)}
-  const closeSSM = () => {setShowSSM(false);};
-  const closeHAL = () => {setShowHAL(false);};
-  const close3D = () => {setShow3D(false)}
-  const closeVR3D = () => {setShowVR3D(false)}
-  const closeTCPIP = () => {setShowTCPIP(false)}
+function Projects(){
+  const navigate = useNavigate()
 
   const [value, setValue] = useState(0);
 
@@ -75,14 +53,14 @@ function Projects(){
       "Private Tutor+",
       "A web application for private tutors to manage their business. The application is built with ReactJS, AWS Serverless (S3 + API Gateway + Lambda), Amplify, and MySQL.",
       ["4 Developers", "Developing"],
-      setShowPPT,
+      "private-tutor-plus",
       3
     ),
     createDataForProjects(
       "Signal Sticker Maker",
       "An online application for making sticker for the Signal app, reached over 7000 users since it launces. Available on iOS, Android, and Web.",
       ["2 Developers", "Released"],
-      setShowSSM,
+      "signal-sticker-maker",
       1
     )
   ]
@@ -92,28 +70,28 @@ function Projects(){
       'H.A.L. 3000: The School Survival',
       "A 3D game for learning programming. Player will learn and use programming logics to solve problems, dedicated for teenagers or children with or without programming experience.",
       ["Individual"],
-      setShowHAL,
+      "hal-3000",
       1
     ),
     createDataForProjects(
       '3D animations with Blender and AutoCAD 3DS MAX',
       "School assignments related to 3D animation, it involves 3D modelling, lighting, animation, and so on.",
       ["Individual"],
-      setShow3D,
+      "3d-animations",
       0,
     ),
     createDataForProjects(
       "VR application for 3D object manipulations using Unity",
       "A VR application created by Unity3D and DeepMotion, user can use their hands to manipulate 3D object, like scaling, rotation, and transformation.",
       ["Group"],
-      setShowVR3D,
+      "3D-vr-game",
       0
     ),
     createDataForProjects(
       "Web game for learning TCP/IP concepts",
       "School assignment for making web game. The game visualize some TCP/IP concepts into games and interact with players.",
       ["Group"],
-      setShowTCPIP,
+      "tcp-ip-game",
       0
       ),
   ];
@@ -149,7 +127,6 @@ function Projects(){
                           ))
                         }
                       </div>
-
                       <Typography 
                         variant="h6" 
                         sx={{ 
@@ -183,7 +160,9 @@ function Projects(){
                   <Grid item xs={12} sm={2}>
                     <Button
                       style={{height: "100%"}}
-                      onClick={() => {project.setShowDialog(true)}}
+                      onClick={() => {
+                        navigate("/projects/" + project.link)
+                      }}
                       endIcon={<ArrowForwardIosIcon/>}
                     >
                       Details
@@ -199,35 +178,25 @@ function Projects(){
   }
 
   return(
-    <>
-      <SSM open={showSSM} onClose={closeSSM}/>
-      <HAL open={showHAL} onClose={closeHAL}/>
-      <PrivateTutorPlus open={showPPT} onClose={closePPT}/>
-      <ThreeDAnimations open={show3D} onClose={close3D}/>
-      <VR3D open={showVR3D} onClose={closeVR3D}/>
-      <TCPIP open={showTCPIP} onClose={closeTCPIP}/>
+    <>      
+      {/* <Routes>
+        <Route path="projects" element={<ReportRoute/>}/>
+      </Routes> */}
       <Typography variant="h4" sx={{ textAlign: 'left', fontWeight: 'bold' }} style={{fontFamily: "Raleway", padding: 10}}>
         Side Projects / School Projects
       </Typography>
-
       <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
         <Tabs value={value} onChange={handleChange} centered>
           <Tab label="Side Projects" />
           <Tab label="School Projects" />
         </Tabs>
       </Box>
-      {/* <SwipeableViews
-        axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
-        index={value}
-        onChangeIndex={handleChange}
-      > */}
-        <TabPanel value={value} index={0}>
-          <Project project={sideProjects}/>
-        </TabPanel>
-        <TabPanel value={value} index={1}>
-          <Project project={schoolProjects}/>
-        </TabPanel>  
-      {/* </SwipeableViews> */}
+      <TabPanel value={value} index={0}>
+        <Project project={sideProjects}/>
+      </TabPanel>
+      <TabPanel value={value} index={1}>
+        <Project project={schoolProjects}/>
+      </TabPanel>  
     </>
   )
 }

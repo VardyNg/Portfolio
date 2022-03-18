@@ -37,6 +37,7 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 function HAL(props) {
+  const [show, setShow] = React.useState(true);
   const theme = useTheme();
   const classes = useStyles()
   const fullScreen = useMediaQuery(theme.breakpoints.down('md'));
@@ -44,7 +45,7 @@ function HAL(props) {
   return(
     <Dialog
       fullScreen={fullScreen}
-      open={props.open}
+      open={show}
       maxWidth
       fullWidth="md"
       onClose={props.onClose}
@@ -114,7 +115,7 @@ function HAL(props) {
         </Grid>
       </DialogContent>
       <DialogActions>
-        <Button onClick={props.onClose} autoFocus fullWidth>
+        <Button onClick={() => {setShow(false)}} autoFocus fullWidth>
           Close
         </Button>
       </DialogActions>

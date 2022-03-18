@@ -34,6 +34,7 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 function VR3D(props) {
+  const [show, setShow] = React.useState(true);
   const theme = useTheme();
   const classes = useStyles()
   const fullScreen = useMediaQuery(theme.breakpoints.down('md'));
@@ -41,7 +42,7 @@ function VR3D(props) {
   return(
     <Dialog
       fullScreen={fullScreen}
-      open={props.open}
+      open={show}
       maxWidth
       fullWidth="md"
       onClose={props.onClose}
@@ -71,7 +72,7 @@ function VR3D(props) {
 
       </DialogContent>
       <DialogActions>
-        <Button onClick={props.onClose} autoFocus fullWidth>
+        <Button onClick={() => {setShow(false)}} autoFocus fullWidth>
           Close
         </Button>
       </DialogActions>

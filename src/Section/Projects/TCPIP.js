@@ -34,6 +34,7 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 function TCPIP(props) {
+  const [show, setShow] = React.useState(true);
   const theme = useTheme();
   const classes = useStyles()
   const fullScreen = useMediaQuery(theme.breakpoints.down('md'));
@@ -41,7 +42,7 @@ function TCPIP(props) {
   return(
     <Dialog
       fullScreen={fullScreen}
-      open={props.open}
+      open={show}
       maxWidth
       fullWidth="md"
       onClose={props.onClose}
@@ -67,7 +68,7 @@ function TCPIP(props) {
         </div>
       </DialogContent>
       <DialogActions>
-        <Button onClick={props.onClose} autoFocus fullWidth>
+        <Button onClick={() => {setShow(false)}} autoFocus fullWidth>
           Close
         </Button>
       </DialogActions>
