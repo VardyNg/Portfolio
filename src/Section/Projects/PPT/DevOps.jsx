@@ -147,8 +147,8 @@ function CodeAnalysis(props){
       <Typography variant="body">
         In particular, the Jenkins is triggered via GitHub webhook, and it will command SnoarQube to do code scanning. 
       </Typography>
-      <SonarqubeJenkins/>
-      <img src={SonarqubeExample}/>
+      <SonarqubeJenkins style={{width: "100%"}}/>
+      <img src={SonarqubeExample} style={{width: "100%"}}/>
     </Stack>
   )
 }

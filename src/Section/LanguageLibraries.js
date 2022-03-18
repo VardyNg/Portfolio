@@ -181,12 +181,12 @@ function LanguageLibraries(props){
       <Grid container>
         <Grid item md={12} lg={6} style={{height: textMode ? 300 : 350}}>
           <ul>
-            {skills.slice(0, skills.length / 2).map((skill) => {return(<SkillContent skill={skill}/>)})}
+            {skills.slice(0, skills.length / 2).map((skill, index) => {return(<SkillContent key={index} skill={skill}/>)})}
           </ul>
         </Grid>
         <Grid item md={12} lg={6}>
           <ul>
-            {skills.slice(skills.length / 2, skills.length).map((skill) => {return(<SkillContent skill={skill}/>)})}
+            {skills.slice(skills.length / 2, skills.length).map((skill, index) => {return(<SkillContent key={index} skill={skill}/>)})}
           </ul>
         </Grid>
       </Grid>

@@ -44,6 +44,8 @@ function TabPanel(props) {
 }
 
 function PrivateTutorPlus(props) {
+  console.log("PrivateTutorPlus")
+  const [show, setShow] = React.useState(true);
   const theme = useTheme();
   const fullScreen = useMediaQuery(theme.breakpoints.down('md'));
   const [value, setValue] = React.useState(0);
@@ -90,7 +92,7 @@ function PrivateTutorPlus(props) {
       fullScreen={fullScreen}
       maxWidth="lg"
       fullWidth
-      open={props.open}
+      open={show}
       onClose={props.onClose}
       aria-labelledby="responsive-dialog-title"
     >
@@ -141,7 +143,7 @@ function PrivateTutorPlus(props) {
       }
       </DialogContent>
       <DialogActions>
-        <Button onClick={props.onClose} autoFocus fullWidth>
+        <Button onClick={() => {setShow(false)}} autoFocus fullWidth>
           Close
         </Button>
       </DialogActions>

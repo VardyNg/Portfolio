@@ -10,6 +10,7 @@ import { useTheme } from '@mui/styles';
 import Typography from '@mui/material/Typography';
 
 function ThreeDAnimations(props) {
+  const [show, setShow] = React.useState(true);
   const theme = useTheme();
   const fullScreen = useMediaQuery(theme.breakpoints.down('md'));
   
@@ -18,7 +19,7 @@ function ThreeDAnimations(props) {
       fullScreen={fullScreen}
       maxWidth="md"
       fullWidth
-      open={props.open}
+      open={show}
       onClose={props.onClose}
       aria-labelledby="responsive-dialog-title"
     >
@@ -52,7 +53,7 @@ function ThreeDAnimations(props) {
         </ul>
       </DialogContent>
       <DialogActions>
-        <Button onClick={props.onClose} autoFocus fullWidth>
+        <Button onClick={() => {setShow(false)}} autoFocus fullWidth>
           Close
         </Button>
       </DialogActions>

@@ -11,7 +11,6 @@
     "@mui/material": "^5.5.1",
     "@mui/styles": "^5.5.1",
     "@testing-library/jest-dom": "^5.11.4",
-    "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
     "phaser": "^3.55.2",
     "react": "^17.0.2",
@@ -19,8 +18,10 @@
     "react-icons": "^4.3.1",
     "react-image": "^4.0.3",
     "react-router-dom": "^6.2.2",
+    "react-router-hash-link": "^2.4.3",
     "react-scripts": "4.0.3",
     "react-swipeable-views": "^0.14.0",
+    "styled-components": "^5.3.3",
     "web-vitals": "^1.0.1"
   },
   "scripts": {
@@ -46,5 +47,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@testing-library/react": "^12.1.4"
   }
 }

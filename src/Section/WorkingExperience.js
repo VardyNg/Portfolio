@@ -72,37 +72,35 @@ function WorkingExperience(){
       <Timeline position="left" style={{backgroundColor: ''}}>
         {steps.map((step, index) => {
           return(
-            <>
-              <TimelineItem style={{marginBottom: 15}}>
-                <TimelineContent >
-                  <Typography variant="h6" sx={{textAlign: 'left', fontWeight: '' }}>
-                    {step.yearsRange}
-                  </Typography>
-                  <Typography variant="h5" sx={{textAlign: 'left', fontWeight: 'bold' }}>
-                    {step.label}
-                  </Typography>
-                  <Typography variant="h6" sx={{textAlign: 'left', fontWeight: '' }}>
-                    {step.position} {" "}
-                  </Typography>       
-                  <ul>
-                    {step.description.map((description, index) => {
-                      return(
-                        <li>
-                          <Typography sx={{ textAlign: 'left' }} >
-                            {description}
-                          </Typography>
-                        </li>
-                      )
-                    })}
-                  </ul>                      
-                </TimelineContent>
-                <TimelineOppositeContent style={{ maxWidth: "1px", paddingLeft: '0px', paddingRight: '0px' }}/>
-                <TimelineSeparator>
-                  <TimelineDot/>
-                  <TimelineConnector />
-                </TimelineSeparator>
-              </TimelineItem>
-            </>
+            <TimelineItem style={{marginBottom: 15}} key={index}>
+              <TimelineContent >
+                <Typography variant="h6" sx={{textAlign: 'left', fontWeight: '' }}>
+                  {step.yearsRange}
+                </Typography>
+                <Typography variant="h5" sx={{textAlign: 'left', fontWeight: 'bold' }}>
+                  {step.label}
+                </Typography>
+                <Typography variant="h6" sx={{textAlign: 'left', fontWeight: '' }}>
+                  {step.position} {" "}
+                </Typography>       
+                <ul>
+                  {step.description.map((description, index) => {
+                    return(
+                      <li key={index}>
+                        <Typography sx={{ textAlign: 'left' }} >
+                          {description}
+                        </Typography>
+                      </li>
+                    )
+                  })}
+                </ul>                      
+              </TimelineContent>
+              <TimelineOppositeContent style={{ maxWidth: "1px", paddingLeft: '0px', paddingRight: '0px' }}/>
+              <TimelineSeparator>
+                <TimelineDot/>
+                <TimelineConnector />
+              </TimelineSeparator>
+            </TimelineItem>
           )
         })}
       </Timeline>

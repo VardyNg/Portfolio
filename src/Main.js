@@ -1,151 +1,139 @@
-import logo from './logo.svg';
-import './App.css';
-import Grid from '@mui/material/Grid';
-import Greeting from './Section/Greeting'
-import Education from './Section/Education'
-import WorkingExperience from './Section/WorkingExperience'
-import Projects from './Section/Projects'
+import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
 import AppBar from '@mui/material/AppBar';
+import Button from '@mui/material/Button';
+import Grid from '@mui/material/Grid';
+import Grow from '@mui/material/Grow';
+import IconButton from '@mui/material/IconButton';
+import Stack from '@mui/material/Stack';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-import Contacts from './Section/Contacts'
-import Fade from '@mui/material/Fade';
-import Grow from '@mui/material/Grow'
-import SkillSets from './Section/SkillSets';
+import { useState } from 'react';
+import { Route, Routes } from "react-router-dom";
+import { HashLink } from 'react-router-hash-link';
+import './App.css';
+import Contacts from './Section/Contacts';
+import Education from './Section/Education';
 import Footer from './Section/Footer';
-import react, { useState, useRef } from 'react';
-import { makeStyles } from '@mui/styles';
-import Zoom from '@mui/material/Zoom';
-import Button from '@mui/material/Button';
+import Greeting from './Section/Greeting';
 import LanguageLibraries from './Section/LanguageLibraries';
-
-const appBarColor = ""
-
-const useStyles = makeStyles((theme) => ({
-  container: {
-    height: "100vh",
-    overflow: "auto"
-  },
-  headerTextContainer: {
-    [theme.breakpoints.up('sm')]: {
-      // backgroundColor: 'red'
-    },
-    [theme.breakpoints.down('xs')]: {
-      // backgroundColor: 'blue',
-      alignItems: "center",
-      justifyContent: "center",
-      width: "100%"
-    },
-  },
-  
-}));
-
-function Scroller({ className, children, trackIds, onScrollToElement }) {
-  return (
-    <div
-      className={className}
-      onScroll={(e) => {
-        for (let i = 0; i <= trackIds.length - 1; i++) {
-          const id = trackIds[i];
-          const trackedEl = document.getElementById(id);
-          const scrollerEl = e.currentTarget;
-
-          if (scrollerEl.scrollTop > trackedEl.offsetTop + trackedEl.offsetHeight/3 - scrollerEl.offsetHeight)
-            onScrollToElement(trackedEl);
-        }
-      }}
-    >
-      {children}
-    </div>
-  );
+import Projects from './Section/Projects';
+import ReportRoute from './Section/Projects/';
+import WorkingExperience from './Section/WorkingExperience';
+import { makeStyles } from "@mui/styles";
+import useMediaQuery from '@mui/material/useMediaQuery';
+import { useTheme } from '@mui/styles';
+function createDataForSections(component, style, margin, id){
+  return {component, style, margin, id}
 }
 
-function createDataForSections(component, ref, style, margin, show){
-  return {component, ref, style, margin, show}
+function createDataForMenu(title, id, bold){
+  return {title, id, bold}
 }
-
-
 
 function App() {
-  const classes = useStyles();
-  const [showEducation, setShowEducation] = useState(true)
-  const [showWorkingExperience, setShowWorkingExperience] = useState(true)
-  const [showProjects, setShowProjects] = useState(true)
-  const [showSkillSets, setShowSkillSets] = useState(true)
+  const theme = useTheme();
+  const upXS = useMediaQuery(theme.breakpoints.up('sm'));
 
-  const education = useRef(null)
-  const workingExperience = useRef(null)
-  const projects = useRef(null)
-  const contacts = useRef(null)
   const sections = [
-    createDataForSections(<Greeting/>, null, {backgroundColor: '#FFFFF'}, 0, true),
-    createDataForSections(<Contacts/>, contacts, {backgroundColor: '#AEBFC8'}, 0, true),
-    createDataForSections(<Projects/>, contacts, {backgroundColor: '#FFFFF'}, 0, showProjects),
-    createDataForSections(<div style={{padding: 35}}> </div>, null, {backgroundColor: '#D4BFAD'}, 20, true),
-    createDataForSections(<LanguageLibraries/>, contacts, {}, 20, true),
-    createDataForSections(<Education/>, education, {backgroundColor: '#E4E5E0'}, 20, showEducation),
-    createDataForSections(<WorkingExperience/>, workingExperience, {}, 20, showWorkingExperience),
-    createDataForSections(<Footer/>, null, {backgroundColor: '#677886'}, 0, true),
+    createDataForSections(<Greeting/>,{backgroundColor: '#FFFFF'}, 0, 'greeting'),
+    createDataForSections(<Contacts/>, {backgroundColor: '#AEBFC8'}, 0, 'contacts'),
+    createDataForSections(<Projects/>, {backgroundColor: '#FFFFF'}, 0, 'projects'),
+    createDataForSections(<div style={{padding: 25}}> </div>,{backgroundColor: '#D4BFAD'}, 20, ''),
+    createDataForSections(<LanguageLibraries/>, {}, 20, 'skills'),
+    createDataForSections(<Education/>,  {backgroundColor: '#E4E5E0'}, 20, 'education'),
+    createDataForSections(<WorkingExperience/>,  {}, 20, 'workingExperience'),
+    createDataForSections(<Footer/>,{backgroundColor: '#677886'}, 0, ''),
+  ]
 
+  const MenuItems = [
+    createDataForMenu("Contacts", 'contacts', false),
+    createDataForMenu("Projects", 'projects', true),
+    createDataForMenu("Skills", 'skills', true),
+    createDataForMenu("Education", 'education', false),
+    createDataForMenu("Working Experience", 'workingExperience', false),
   ]
   const TopBar = () => {
     return(
       <AppBar position="static" style={{backgroundColor: "#677886"}}>
         <Toolbar>
-          <Grid container style={{width: '100%', marginTop: 10, display: 'flex', justifyContent: 'center'}}>
-            <Grid item xs={12} sm={9} md={8} >
-              {/* <div className={classes.headerTextContainer}> */}
-                <Typography variant="h6" color="inherit" component="" style={{fontFamily: "Raleway"}} 
-                  // className={classes.headerText}
-                >
-                  Ng Hoi Wa's Portfolio
-                </Typography>
-              {/* </div> */}
-            </Grid>
-            {/* <Grid item>
-              <Button onClick={() => contacts.current.scrollIntoView()} color="white" size="small">
-                Contacts
-              </Button>
-              <Button onClick={() => projects.current.scrollIntoView()} color="white" size="small">
-                Projects
-              </Button>
-              <Button onClick={() => education.current.scrollIntoView()} color="white" size="small">
-                Education
-              </Button>
-              <Button onClick={() => workingExperience.current.scrollIntoView()} color="white" size="small">
-                Working Experiences
-              </Button>
-            </Grid> */}
+        <Grid container style={{width: '100%', marginTop: 10, display: 'flex', justifyContent: 'center'}}>
+          <Grid item xs={12} sm={9} md={8} >
+            <Stack>
+              <Typography variant="h6" color="inherit" component="" style={{fontFamily: "Raleway"}} >
+                Ng Hoi Wa's Portfolio
+              </Typography>
+              <div>
+                {MenuItems.map((item, index) => (
+                  <Button 
+                    component={HashLink} 
+                    scroll={(el) => el.scrollIntoView({ behavior: 'smooth' })} 
+                    to={'/#' + item.id} 
+                    color="white"
+                    sx={{
+                      fontWeight: item.bold ? 'bold' : '',
+                    }}
+
+                  >
+                    {item.title}
+                  </Button>
+                ))}
+              </div>
+            </Stack>
           </Grid>
+        </Grid>
         </Toolbar>
       </AppBar>
     )
   }
+
+  const ScrollButton = () => {
+    return (
+      <div style={{
+        position: "fixed", 
+        display: 'flex',
+        justifyContent: 'right',
+        width: "100%",
+        right: "50",
+        bottom: "20px",
+        zIndex: 1,
+        cursor: "pointer",
+        // backgroundColor: "green",
+      }}>
+        <IconButton
+          component={HashLink} 
+          scroll={(el) => el.scrollIntoView({ behavior: 'smooth' })} 
+          to='/#top' 
+          variant="contained"
+          style={{
+            backgroundColor: "lightBlue",
+            marginRight: 20
+          }}
+          size="large"
+        >
+          <ArrowUpwardIcon />
+        </IconButton>
+      </div>
+    )
+  }
   return (
     <>
-      <TopBar/>
-      {/* <Scroller
-        className={classes.container}
-        trackIds={["education", "workingExperience", "projects"]}
-        onScrollToElement={(el) => {
-          if (el.id === "education") setShowEducation(true)
-          if (el.id === "workingExperience") setShowWorkingExperience(true)
-          if (el.id === "projects") setShowProjects(true)
-          // if (el.id === "skillsets") setShowSkillSets(true)
-        }}
-      > */}
-        {sections.map((section, index) => {
-          console.log(section.style)
-          return(
-            <Grow in={section.show}>
-              <Grid container align="center" justifyContent="center" style={section.style}>
-                <Grid item xs={12} sm={9} md={8} >
-                  {section.component}
-                </Grid>
-              </Grid>    
-            </Grow>
-          )
-        })}
+      <Routes>
+        <Route path="/projects/*" element={<ReportRoute/>}/>
+      </Routes>
+      <TopBar id="top"/>
+      <ScrollButton/>
+      {sections.map((section, index) => {
+        console.log(section.style)
+        return(
+          <Grow in={true} key={index} id={section.id}>
+            <Grid container align="center" justifyContent="center" style={section.style}>
+              <Grid item xs={12} sm={9} md={8} >
+                {section.component}
+              </Grid>
+            </Grid>    
+          </Grow>
+        )
+      })}
       {/* </Scroller> */}
     </>
   );

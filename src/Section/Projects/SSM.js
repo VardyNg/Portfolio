@@ -93,6 +93,7 @@ function createDataForComponent(title, content, icons){
   return {title, content, icons}
 }
 function SSM(props) {
+  const [show, setShow] = React.useState(true);
   const theme = useTheme();
   const fullScreen = useMediaQuery(theme.breakpoints.down('md'));
 
@@ -115,7 +116,7 @@ function SSM(props) {
       fullScreen={fullScreen}
       fullWidth
       maxWidth='md'
-      open={props.open}
+      open={show}
       onClose={props.onClose}
       aria-labelledby="responsive-dialog-title"
     >
@@ -225,7 +226,7 @@ function SSM(props) {
         </Grid>
       </DialogContent>
       <DialogActions>
-        <Button onClick={props.onClose} autoFocus fullWidth>
+        <Button onClick={() => {setShow(false)}} autoFocus fullWidth>
           Close
         </Button>
       </DialogActions>

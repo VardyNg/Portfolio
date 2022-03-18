@@ -72,7 +72,7 @@ function Education(){
       <Timeline position="left" style={{backgroundColor: ''}}>
         {steps.map((step, index) => {
           return(
-            <TimelineItem >
+            <TimelineItem key={index}>
               <TimelineContent >
                 <Typography variant="h6" sx={{textAlign: 'left', fontWeight: '' }}>
                   {step.yearsRange}
@@ -87,7 +87,7 @@ function Education(){
                 <ul>
                   {step.description.map((description, index) => {
                     return(
-                      <li>
+                      <li key={index}>
                         <Typography sx={{ textAlign: 'left' }} >
                           {description}
                         </Typography>
