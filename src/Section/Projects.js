@@ -126,7 +126,7 @@ function Projects(){
         project.map((project, index) => {
           console.log(project.chip.length)
           return(
-            <Card style={{margin: 20}}>
+            <Card style={{margin: 20}} key={index}>
               <CardContent>
                 <Grid container>
                   <Grid item xs={12} sm={10} >
@@ -140,8 +140,9 @@ function Projects(){
                     >
                       <div>
                         {
-                          Array.from(Array(project.start).keys()).map((item) => (
+                          Array.from(Array(project.start).keys()).map((item, index) => (
                             <Rating
+                              key={index}
                               value={1}
                               max={1}
                             />
@@ -165,6 +166,7 @@ function Projects(){
                           {project.chip.map((chip, index) => {
                             return(
                               <Chip 
+                                key={index}
                                 label={chip} 
                                 variant="outlined" 
                                 style={{marginLeft: 15}}

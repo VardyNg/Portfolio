@@ -67,7 +67,6 @@ function createDataForSections(component, ref, style, margin, show){
 
 
 function App() {
-  const classes = useStyles();
   const [showEducation, setShowEducation] = useState(true)
   const [showWorkingExperience, setShowWorkingExperience] = useState(true)
   const [showProjects, setShowProjects] = useState(true)
@@ -137,7 +136,7 @@ function App() {
         {sections.map((section, index) => {
           console.log(section.style)
           return(
-            <Grow in={section.show}>
+            <Grow in={section.show} key={index}>
               <Grid container align="center" justifyContent="center" style={section.style}>
                 <Grid item xs={12} sm={9} md={8} >
                   {section.component}
