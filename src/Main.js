@@ -56,28 +56,21 @@ function App() {
         <Toolbar>
         <Grid container style={{width: '100%', marginTop: 10, }}>
           <Grid item xs={12} sm={9} md={8} style={{display: 'flex', justifyContent: 'center',}}>
-            <Stack>
-              <Typography variant="h6" color="inherit" component="" style={{fontFamily: "Raleway", marginLeft: 7}} >
-                Ng Hoi Wa's Portfolio
-              </Typography>
-              <div>
-                {MenuItems.map((item, index) => (
-                  <Button 
-                    component={HashLink} 
-                    scroll={(el) => el.scrollIntoView({ behavior: 'smooth' })} 
-                    to={'/#' + item.id} 
-                    color="white"
-                    sx={{
-                      // fontWeight: item.bold ? 'bold' : '',
-                      // textDecoration: item.bold ? 'underline' : '',
-                    }}
-
-                  >
-                    {item.title}
-                  </Button>
-                ))}
-              </div>
-            </Stack>
+            <Typography variant="h6" color="inherit" component="" style={{fontFamily: "Raleway", marginLeft: 7}} >
+              Ng Hoi Wa's Portfolio
+            </Typography>
+            <div>
+              {MenuItems.map((item, index) => (
+                <Button 
+                  component={HashLink} 
+                  scroll={(el) => el.scrollIntoView({ behavior: 'smooth' })} 
+                  to={'/#' + item.id} 
+                  color="white"
+                >
+                  {item.title}
+                </Button>
+              ))}
+            </div>
           </Grid>
         </Grid>
         </Toolbar>
@@ -87,39 +80,54 @@ function App() {
 
   const ScrollButton = () => {
     return (
-      <div style={{
-        position: "fixed", 
-        display: 'flex',
-        justifyContent: 'right',
-        width: "100%",
-        right: "50",
-        bottom: "20px",
-        zIndex: 1,
-        cursor: "pointer",
-        // backgroundColor: "green",
-      }}>
-        <IconButton
-          component={HashLink} 
-          scroll={(el) => el.scrollIntoView({ behavior: 'smooth' })} 
-          to='/#top' 
-          variant="contained"
+      <div 
+        style={{
+          display: 'flex', 
+          justifyContent: 'center', 
+          height: '100%',
+          alignItems: 'center',
+          backgroundColor: 'green',
+        }}>
+        <Grid
+          container xs={12} sm={9} md={8}
           style={{
-            backgroundColor: "lightBlue",
-            marginRight: 20
+            // height: '100%',
+            position: "fixed", 
+            zIndex: 1,
+            transform: 'rotateY(180deg)',
+            // backgroundColor: 'green',
+            bottom: 0,
+            // right: 5,
           }}
-          size="large"
         >
-          <ArrowUpwardIcon />
-        </IconButton>
+          <div
+            style={{
+              // backgroundColor: 'blue',
+              // position: "fixed", 
+              marginBottom: "20px",
+              transform: 'rotateY(180deg)',
+            }}
+          >
+            <IconButton
+              component={HashLink} 
+              scroll={(el) => el.scrollIntoView({ behavior: 'smooth' })} 
+              to='/#top' 
+              variant="contained"
+              style={{
+                backgroundColor: "lightBlue",
+                // marginLeft: '70%'
+              }}
+              size="large"
+            >
+              <ArrowUpwardIcon />
+            </IconButton>
+          </div>
+        </Grid>
       </div>
     )
   }
   return (
-    <div
-      style={{
-        overflowX: "hidden",
-      }}
-    >
+    <div style={{overflowX: "hidden",}}>
       <Routes>
         <Route path="/projects/*" element={<ReportRoute/>}/>
       </Routes>

@@ -126,51 +126,48 @@ function LanguageLibraries(props){
   const SkillContent = (props) => {
     const {skill} = props
     return(
-      <li>
-        <div style={{width: '100%', height: textMode ? 60 : 85}}>
+      // <li>
+        <div 
+          style={{
+            width: '100%', 
+            display: 'flex',
+            minHeight: '70px',
+          }}
+          >
           <Typography variant="body1" sx={{ textAlign: 'left', fontWeight: 'bold' }} style={{fontFamily: "Raleway", padding: 0}}>
             {skill.skill}
-          </Typography>  
-          <div 
-            style={{
-              display: 'flex',
-              flexDirection: 'row',
-              justifyContent: 'flex-start',
-              alignItems: 'center',
-              flexWrap: 'wrap',
-              margin: '10px',
-              spacing: 2
-            }}  
-          >
-            {skill.items.map((item, index) => {
-              if(textMode){
-                var comma = ","
-                if(index === skill.items.length - 1){
-                  comma = ""
-                }
-                return(
-                    <> {item.name}{comma}</>
-                )
-              }else{
-                if(item.svg){
+            <div 
+              style={{
+                display: 'flex',
+                flexDirection: 'row',
+                justifyContent: 'flex-start',
+                alignItems: 'center',
+                flexWrap: 'wrap',
+                margin: textMode ? '0px' : '10px',
+                spacing: 2,
+              }}  
+            >
+              {skill.items.map((item, index) => {
+                if(textMode){
+                  var comma = index !== skill.items.length - 1 ? "," : ""
                   return(
-                    <item.icon style={{height: 35, width: 35, marginRight: 10 }} fill=""/>
+                    <Typography style={{marginLeft: 7}}> 
+                      {item.name}{comma}
+                    </Typography>
                   )
                 }else{
-                  return(
-                    <img src={item.icon} className={classes.icons}/>
-                  )
+                  if(item.svg) return(<item.icon style={{height: 40, width: 40, marginRight: 10 }}/>)
+                  else return( <img src={item.icon} className={classes.icons}/> )
                 }
-              }
-            })}
-          </div>
+              })}
+            </div>
+          </Typography>  
         </div>
-      </li>
+      // </li>
     )
   }
   return(
     <div style={{marginTop: 20}}>      
-    
       <Typography variant="h4" sx={{ textAlign: 'left', fontWeight: 'bold' }} style={{fontFamily: "Raleway", padding: 10}}>
         Skills
         <FormControlLabel 
@@ -185,16 +182,22 @@ function LanguageLibraries(props){
           label="Text mode" 
         />
       </Typography>
-      <Grid container>
-        <Grid item md={12} lg={6} style={{height: textMode ? 300 : 350}}>
-          <ul>
+      <Grid 
+        container 
+        spaicng={2}
+        style={{
+          padding: 20,
+        }}
+      >
+        <Grid 
+          item 
+          md={12} 
+          lg={6} 
+        >
             {skills.slice(0, skills.length / 2).map((skill, index) => {return(<SkillContent key={index} skill={skill}/>)})}
-          </ul>
         </Grid>
         <Grid item md={12} lg={6}>
-          <ul>
             {skills.slice(skills.length / 2, skills.length).map((skill, index) => {return(<SkillContent key={index} skill={skill}/>)})}
-          </ul>
         </Grid>
       </Grid>
       
