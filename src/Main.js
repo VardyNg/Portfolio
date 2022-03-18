@@ -7,7 +7,8 @@ import IconButton from '@mui/material/IconButton';
 import Stack from '@mui/material/Stack';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-import { useState } from 'react';
+import useMediaQuery from '@mui/material/useMediaQuery';
+import { useTheme } from '@mui/styles';
 import { Route, Routes } from "react-router-dom";
 import { HashLink } from 'react-router-hash-link';
 import './App.css';
@@ -19,9 +20,6 @@ import LanguageLibraries from './Section/LanguageLibraries';
 import Projects from './Section/Projects';
 import ReportRoute from './Section/Projects/';
 import WorkingExperience from './Section/WorkingExperience';
-import { makeStyles } from "@mui/styles";
-import useMediaQuery from '@mui/material/useMediaQuery';
-import { useTheme } from '@mui/styles';
 function createDataForSections(component, style, margin, id){
   return {component, style, margin, id}
 }
@@ -56,10 +54,10 @@ function App() {
     return(
       <AppBar position="static" style={{backgroundColor: "#677886"}}>
         <Toolbar>
-        <Grid container style={{width: '100%', marginTop: 10, display: 'flex', justifyContent: 'center'}}>
-          <Grid item xs={12} sm={9} md={8} >
+        <Grid container style={{width: '100%', marginTop: 10, }}>
+          <Grid item xs={12} sm={9} md={8} style={{display: 'flex', justifyContent: 'center',}}>
             <Stack>
-              <Typography variant="h6" color="inherit" component="" style={{fontFamily: "Raleway"}} >
+              <Typography variant="h6" color="inherit" component="" style={{fontFamily: "Raleway", marginLeft: 7}} >
                 Ng Hoi Wa's Portfolio
               </Typography>
               <div>
@@ -117,7 +115,11 @@ function App() {
     )
   }
   return (
-    <>
+    <div
+      style={{
+        overflowX: "hidden",
+      }}
+    >
       <Routes>
         <Route path="/projects/*" element={<ReportRoute/>}/>
       </Routes>
@@ -136,7 +138,7 @@ function App() {
         )
       })}
       {/* </Scroller> */}
-    </>
+    </div>
   );
 }
 

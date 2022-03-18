@@ -1,25 +1,23 @@
-import DevOps from './DevOps'
-import * as React from 'react';
+import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Dialog from '@mui/material/Dialog';
 import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
-import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
+import Tab from '@mui/material/Tab';
+import Tabs from '@mui/material/Tabs';
+import Typography from '@mui/material/Typography';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { useTheme } from '@mui/styles';
-import Typography from '@mui/material/Typography';
-import PropTypes from 'prop-types';
-import Tabs from '@mui/material/Tabs';
-import Tab from '@mui/material/Tab';
-import Box from '@mui/material/Box';
-import SwipeableViews from 'react-swipeable-views';
-import Database from './Database'
+import * as React from 'react';
+import { useNavigate } from 'react-router-dom';
 import API from './API';
-import IAC from './IAC'
-import FrontEnd from './FrontEnd'
-import Overview from './Overview'
-import Security from './Security'
+import Database from './Database';
+import DevOps from './DevOps';
+import FrontEnd from './FrontEnd';
+import IAC from './IAC';
+import Overview from './Overview';
+import Security from './Security';
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
 
@@ -49,7 +47,7 @@ function PrivateTutorPlus(props) {
   const theme = useTheme();
   const fullScreen = useMediaQuery(theme.breakpoints.down('md'));
   const [value, setValue] = React.useState(0);
-
+  const navigate = useNavigate()
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
@@ -93,7 +91,7 @@ function PrivateTutorPlus(props) {
       maxWidth="lg"
       fullWidth
       open={show}
-      onClose={() => {setShow(false)}}
+      onClose={() => {setShow(false); window.history.replaceState(null, null, window.location.pathname);}}
       aria-labelledby="responsive-dialog-title"
     >
       <DialogTitle id="responsive-dialog-title">
@@ -143,7 +141,14 @@ function PrivateTutorPlus(props) {
       }
       </DialogContent>
       <DialogActions>
-        <Button onClick={() => {setShow(false)}} autoFocus fullWidth>
+        <Button 
+          onClick={async() => {
+            setShow(false); 
+            await new Promise(r => setTimeout(() => r(), 1000));
+            navigate("/")}
+          } 
+          autoFocus fullWidth
+        >
           Close
         </Button>
       </DialogActions>

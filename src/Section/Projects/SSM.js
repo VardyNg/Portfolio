@@ -1,32 +1,28 @@
-import * as React from 'react';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import WebIcon from '@mui/icons-material/Web';
+import Accordion from '@mui/material/Accordion';
+import AccordionDetails from '@mui/material/AccordionDetails';
+import AccordionSummary from '@mui/material/AccordionSummary';
+import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import ButtonGroup from '@mui/material/ButtonGroup';
+import Chip from '@mui/material/Chip';
 import Dialog from '@mui/material/Dialog';
 import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
-import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
+import Divider from '@mui/material/Divider';
+import Grid from '@mui/material/Grid';
+import Typography from '@mui/material/Typography';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { useTheme } from '@mui/styles';
-import Typography from '@mui/material/Typography';
-import Grid from '@mui/material/Grid';
-import AppStore_download from '../../Images/AppStore_download.svg'
-import Playstore_download from '../../Images/PlayStore_download.png'
-import Divider from '@mui/material/Divider';
-import Accordion from '@mui/material/Accordion';
-import AccordionSummary from '@mui/material/AccordionSummary';
-import AccordionDetails from '@mui/material/AccordionDetails';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import WebIcon from '@mui/icons-material/Web';
-import App_Icon from '../../Images/App_Icon.png'
-import Chip from '@mui/material/Chip';
-import { styled } from '@mui/material/styles';
-import Box from '@mui/material/Box';
-import Paper from '@mui/material/Paper';
-import GA from '../../Images/SSM/GA.png'
-import Xcode_icon from '../../Images/Xcode_icon.png'
+import * as React from 'react';
+import { useNavigate } from "react-router-dom";
+import AppStore_download from '../../Images/AppStore_download.svg';
+import App_Icon from '../../Images/App_Icon.png';
+import Playstore_download from '../../Images/PlayStore_download.png';
 import { ReactComponent as ReactNativeIcon } from '../../Images/ReactNativeIcon.svg';
-
+import GA from '../../Images/SSM/GA.png';
 
 function IOS(props){
   return(
@@ -96,7 +92,7 @@ function SSM(props) {
   const [show, setShow] = React.useState(true);
   const theme = useTheme();
   const fullScreen = useMediaQuery(theme.breakpoints.down('md'));
-
+  const navigate = useNavigate()
   const IOSHeader = () => {
     return(
       <>
@@ -117,7 +113,7 @@ function SSM(props) {
       fullWidth
       maxWidth='md'
       open={show}
-      onClose={() => {setShow(false)}}
+      onClose={() => {setShow(false); window.history.replaceState(null, null, window.location.pathname);}}
       aria-labelledby="responsive-dialog-title"
     >
       <DialogTitle id="responsive-dialog-title">
@@ -226,7 +222,14 @@ function SSM(props) {
         </Grid>
       </DialogContent>
       <DialogActions>
-        <Button onClick={() => {setShow(false)}} autoFocus fullWidth>
+        <Button 
+          onClick={async() => {
+            setShow(false); 
+            await new Promise(r => setTimeout(() => r(), 1000));
+            navigate("/")}
+          } 
+          autoFocus fullWidth
+        >
           Close
         </Button>
       </DialogActions>
