@@ -54,10 +54,12 @@ function PrivateTutorPlus(props) {
 
   const TabContent = () => {
     return(
-      <div
+      <Box
         style={{
-          overflow: 'auto',
-          width: fullScreen ? '100%' : '90%'
+          // overflow: 'hiddena',
+          // overflowY: 'hidden',
+          // height: '100%',
+          width: fullScreen ? '100%' : '90%',
         }}
       >
         <TabPanel value={value} index={0} >
@@ -81,7 +83,7 @@ function PrivateTutorPlus(props) {
         <TabPanel value={value} index={6}>
           <Security/>
         </TabPanel>
-      </div>
+      </Box>
     )
   }
 
@@ -99,46 +101,51 @@ function PrivateTutorPlus(props) {
           Private Tutor Plus
         </Typography>
       </DialogTitle>
-      <DialogContent>
-      <Box
-        sx={{ 
-          flexGrow: 1, 
-          bgcolor: 'background.paper', 
-          display: 'flex', 
-          justifyContent: fullScreen ? 'center' : 'flex-start',
-          height: fullScreen ? null : 600,
-          width: fullScreen ? "100%" : null,
+      <DialogContent
+        style={{
+          overflow: 'hidden',
+          height: '100%'
         }}
       >
-
-        <Tabs
-          orientation={fullScreen ? "horizontal" : "vertical"}
-          variant="scrollable"
-          value={value}
-          onChange={handleChange}
-          aria-label="Vertical tabs example"
+        <Box
           sx={{ 
-            borderRight: fullScreen ? 0 : 1, 
-            borderBottom: fullScreen ? 1 : 0,
-            borderColor: 'divider' 
+            flexGrow: 1, 
+            // bgcolor: 'pink', 
+            display: 'flex', 
+            justifyContent: fullScreen ? 'center' : 'flex-start',
+            // height: fullScreen ? null : 600,
+            width: fullScreen ? "100%" : null,
+            // overflow: 'hidden'
           }}
-          centered
         >
-          <Tab label="Overview" />
-          <Tab label="Web Tech" />
-          <Tab label="API" />
-          <Tab label="Database" />
-          <Tab label="DevOps" />
-          <Tab label="IaC" />
-          <Tab label="Security" />
-        </Tabs>
-        {!fullScreen && 
+          <Tabs
+            orientation={fullScreen ? "horizontal" : "vertical"}
+            variant="scrollable"
+            value={value}
+            onChange={handleChange}
+            aria-label="Vertical tabs example"
+            sx={{ 
+              borderRight: fullScreen ? 0 : 1, 
+              borderBottom: fullScreen ? 1 : 0,
+              borderColor: 'divider' 
+            }}
+            centered
+          >
+            <Tab label="Overview" />
+            <Tab label="Web Tech" />
+            <Tab label="API" />
+            <Tab label="Database" />
+            <Tab label="DevOps" />
+            <Tab label="IaC" />
+            <Tab label="Security" />
+          </Tabs>
+          {!fullScreen && 
+            <TabContent/>
+          }
+        </Box>
+        {fullScreen && 
           <TabContent/>
         }
-      </Box>
-      {fullScreen && 
-        <TabContent/>
-      }
       </DialogContent>
       <DialogActions>
         <Button onClick={props.onClose} autoFocus fullWidth>
