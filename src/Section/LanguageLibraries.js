@@ -1,45 +1,42 @@
-import { makeStyles } from '@mui/styles';
-import Csharp_Logo from '../Images/Csharp_Logo.png'
-import CPlusPlus from '../Images/CPlusPlus.png'
-import HCJ from '../Images/HCJ.png'
-import Swift from '../Images/swift.png'
-import MySQL from '../Images/MySQL.png'
-import php from '../Images/php.png'
-import Java_Icon from '../Images/Java_Icon.png'
-import python from '../Images/python.png'
-import SQL_Lite from '../Images/SQL_Lite.png'
-import Typography from '@mui/material/Typography'
-import Android_Studio_Icon from '../Images/Android_Studio_Icon.png';
-import React_Native_icon from '../Images/React_Native_icon.png';
-import Unity3D from '../Images/Unity3D.png';
-import Xcode_icon from '../Images/Xcode_icon.png'
-import aws from '../Images/aws.png';
-import NodeJS from '../Images/NodeJS.png';
-import GCP from '../Images/GCP.png'
-import Windows from '../Images/Windows.png'
-import Apple from '../Images/Apple.jpeg'
-import ubuntu from '../Images/ubuntu.png'
-import FormGroup from '@mui/material/FormGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
+import Grid from '@mui/material/Grid';
 import Switch from '@mui/material/Switch';
-import react, {useState} from 'react';
-import ReactJS from '../Images/ReactJS.png'
-import { ReactComponent as ServerlessIcon } from '../Images/PPT/serverless-framework.svg'
-import { ReactComponent as TerraformIcon } from '../Images/PPT/terraform.svg'
-import { ReactComponent as SQLIcon } from '../Images/sql.svg'
-import { ReactComponent as DynamoDBIcon } from '../Images/dynamodb.svg'
-import { ReactComponent as MongoDBIcon } from '../Images/mongodb.svg'
-import { ReactComponent as CentOSIcon } from '../Images/centos.svg'
-import { ReactComponent as GitIcon } from '../Images/git.svg'
-import { ReactComponent as GitHubIcon } from '../Images/github.svg'
-import { ReactComponent as GitLabIcon } from '../Images/gitlab.svg'
-import { ReactComponent as SVNIcon } from '../Images/svn.svg'
-import { ReactComponent as JenkinsIcon } from '../Images/jenkins.svg'
-import { ReactComponent as SonarqubeIcon } from '../Images/sonarqube.svg'
-import { ReactComponent as AppleIcon }from '../Images/AppleLogo.svg'
-import { ReactComponent as WindowsLogo }from '../Images/WindowsLogo.svg'
-import { ReactComponent as UbuntuLogo }from '../Images/UbuntuLogo.svg'
-import Grid from '@mui/material/Grid'
+import Typography from '@mui/material/Typography';
+import { makeStyles } from '@mui/styles';
+import { useState } from 'react';
+import MySQL from '../Images/MySQL.png';
+import Xcode_icon from '../Images/Xcode_icon.png';
+import { ReactComponent as MySQLIcon } from '../Images/PPT/mysql.svg';
+import { ReactComponent as GCPIcon } from '../Images/GCPIcon.svg';
+import { ReactComponent as JavaIcon } from '../Images/JavaIcon.svg';
+import { ReactComponent as SwiftIcon } from '../Images/SwiftIcon.svg';
+import { ReactComponent as CSharpIcon } from '../Images/CSharpIcon.svg';
+import { ReactComponent as CPlusPlusIcon } from '../Images/CPlusPlusIcon.svg';
+import { ReactComponent as PythonIcon } from '../Images/PythonIcon.svg';
+import { ReactComponent as ReactNativeIcon } from '../Images/ReactNativeIcon.svg';
+import { ReactComponent as ReactJSIcon } from '../Images/ReactJSIcon.svg';
+import { ReactComponent as AWSIcon } from '../Images/AWSIcon.svg';
+import { ReactComponent as HTML5Icon } from '../Images/HTML5Icon.svg';
+import { ReactComponent as CSSIcon } from '../Images/CSSIcon.svg';
+import { ReactComponent as JSIcon } from '../Images/JSIcon.svg';
+import { ReactComponent as NodeJsIcon } from '../Images/NodeJsIcon.svg';
+import { ReactComponent as Unity3DIcon } from '../Images/Unity3D.svg';
+import { ReactComponent as AppleIcon } from '../Images/AppleLogo.svg';
+import { ReactComponent as CentOSIcon } from '../Images/centos.svg';
+import { ReactComponent as DynamoDBIcon } from '../Images/dynamodb.svg';
+import { ReactComponent as GitIcon } from '../Images/git.svg';
+import { ReactComponent as GitHubIcon } from '../Images/github.svg';
+import { ReactComponent as GitLabIcon } from '../Images/gitlab.svg';
+import { ReactComponent as JenkinsIcon } from '../Images/jenkins.svg';
+import { ReactComponent as MongoDBIcon } from '../Images/mongodb.svg';
+import { ReactComponent as ServerlessIcon } from '../Images/PPT/serverless-framework.svg';
+import { ReactComponent as TerraformIcon } from '../Images/PPT/terraform.svg';
+import { ReactComponent as SonarqubeIcon } from '../Images/sonarqube.svg';
+import { ReactComponent as SQLIcon } from '../Images/SQLIcon.svg';
+import { ReactComponent as SVNIcon } from '../Images/svn.svg';
+import { ReactComponent as UbuntuLogo } from '../Images/UbuntuLogo.svg';
+import { ReactComponent as WindowsLogo } from '../Images/WindowsLogo.svg';
+import { ReactComponent as AndoirStudioIcon} from '../Images/Android_Studio_Icon.svg'
 
 const useStyles = makeStyles((theme) => ({
   icons: {
@@ -60,36 +57,36 @@ const skills = [
   
     createDataForSkill("Programming / Languages",
     [
-      createDataForItem("C#",Csharp_Logo, false),
-      createDataForItem("C++",CPlusPlus, false),
-      createDataForItem("HTML, CSS, JavaScript",HCJ, false),
-      createDataForItem("Swift",Swift, false),
-      // createDataForItem("PHP",php),
-      createDataForItem("Python",python, false),
-      createDataForItem("Java",Java_Icon, false),
+      createDataForItem("Swift",SwiftIcon, true),
+      createDataForItem("Python",PythonIcon, true),
+      createDataForItem("C#",CSharpIcon, true),
+      createDataForItem("C++",CPlusPlusIcon, true),
       createDataForItem("SQL",SQLIcon, true),
+      createDataForItem("Java",JavaIcon, true),
+      createDataForItem("JavaScript", JSIcon, true),
+      createDataForItem("HTML", HTML5Icon, true),
+      createDataForItem("CSS", CSSIcon, true),
     ]),
     createDataForSkill("Libraries",
     [
-      createDataForItem("React Native",React_Native_icon, false),
-      createDataForItem("React JS",ReactJS, false),
-      createDataForItem("Node JS",NodeJS, false),
+      createDataForItem("React Native",ReactNativeIcon, true),
+      createDataForItem("React JS",ReactJSIcon, true),
+      createDataForItem("Node JS",NodeJsIcon, true),
     ]),
     createDataForSkill("IDEs", 
     [
       createDataForItem("Xcode",Xcode_icon, false),
-      createDataForItem("Android Studio",Android_Studio_Icon, false),
-      createDataForItem("Unity3D",Unity3D, false),
+      createDataForItem("Android Studio",AndoirStudioIcon, true),
+      createDataForItem("Unity3D",Unity3DIcon, true),
     ]),
     createDataForSkill("Cloud Services",
     [
-      createDataForItem("Amazon Web Service",aws, false),
-      createDataForItem("Google Cloud Platform",GCP, false)
+      createDataForItem("Amazon Web Service",AWSIcon, true),
+      createDataForItem("Google Cloud Platform",GCPIcon, true)
     ]),
     createDataForSkill("DBMS",
     [
-      createDataForItem("MySQL",MySQL, false),
-      createDataForItem("SQLite",SQL_Lite, false),
+      createDataForItem("MySQL",MySQLIcon, true),
       createDataForItem("DynamoDB",DynamoDBIcon, true),
       createDataForItem("MongoDB",MongoDBIcon, true),
     ]),
@@ -134,7 +131,17 @@ function LanguageLibraries(props){
           <Typography variant="body1" sx={{ textAlign: 'left', fontWeight: 'bold' }} style={{fontFamily: "Raleway", padding: 0}}>
             {skill.skill}
           </Typography>  
-          <div style={{display: 'flex', float:'left', alignItmes: 'center', justifyContent: 'center'}}>
+          <div 
+            style={{
+              display: 'flex',
+              flexDirection: 'row',
+              justifyContent: 'flex-start',
+              alignItems: 'center',
+              flexWrap: 'wrap',
+              margin: '10px',
+              spacing: 2
+            }}  
+          >
             {skill.items.map((item, index) => {
               if(textMode){
                 var comma = ","
@@ -147,7 +154,7 @@ function LanguageLibraries(props){
               }else{
                 if(item.svg){
                   return(
-                    <item.icon style={{height: 50, width: 50, marginRight: 10 }}/>
+                    <item.icon style={{height: 35, width: 35, marginRight: 10 }} fill=""/>
                   )
                 }else{
                   return(

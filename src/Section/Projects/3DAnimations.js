@@ -1,26 +1,25 @@
-import * as React from 'react';
 import Button from '@mui/material/Button';
 import Dialog from '@mui/material/Dialog';
 import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
-import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
+import Typography from '@mui/material/Typography';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { useTheme } from '@mui/styles';
-import Typography from '@mui/material/Typography';
-
+import * as React from 'react';
+import { useNavigate } from "react-router-dom";
 function ThreeDAnimations(props) {
   const [show, setShow] = React.useState(true);
   const theme = useTheme();
   const fullScreen = useMediaQuery(theme.breakpoints.down('md'));
-  
+  const navigate = useNavigate()
   return(
     <Dialog
       fullScreen={fullScreen}
       maxWidth="md"
       fullWidth
       open={show}
-      onClose={() => {setShow(false)}}
+      onClose={() => {setShow(false); window.history.replaceState(null, null, window.location.pathname);}}
       aria-labelledby="responsive-dialog-title"
     >
       <DialogTitle id="responsive-dialog-title">
@@ -44,7 +43,7 @@ function ThreeDAnimations(props) {
           <li>Created by using AutoCAD 3DS MAX</li>
         </ul>
         <Typography variant="h6" style={{fontWeight: 'bold'}} sx={{ fontStyle: 'italic' }}>
-          Conflagratios
+          Conflagration
         </Typography>
         <iframe width="100%" height="300" src="https://www.youtube.com/embed/l6ZQsRN4WqE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>  
         <ul>
@@ -53,7 +52,14 @@ function ThreeDAnimations(props) {
         </ul>
       </DialogContent>
       <DialogActions>
-        <Button onClick={() => {setShow(false)}} autoFocus fullWidth>
+        <Button 
+          onClick={async() => {
+            setShow(false); 
+            await new Promise(r => setTimeout(() => r(), 1000));
+            navigate("/")}
+          } 
+          autoFocus fullWidth
+        >
           Close
         </Button>
       </DialogActions>
