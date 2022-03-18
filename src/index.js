@@ -7,6 +7,19 @@ import reportWebVitals from './reportWebVitals';
 // import { ThemeProvider, createTheme } from '@mui/styles';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 
+console.log(
+"Y88b      /      e      888~-_   888~-_   Y88b    /\n",
+" Y88b    /      d8b     888   \  888   \   Y88b  / \n",
+"  Y88b  /      /Y88b    888    | 888    |   Y88b/  \n",
+"   Y888/      /  Y88b   888   /  888    |    Y8Y   \n",
+"    Y8/      /____Y88b  888_-~   888   /      Y    \n",
+"     Y      /      Y88b 888 ~-_  888_-~      /     \n",
+)
+// hide console.log on production
+if (process.env.NODE_ENV !== "development"){
+  console.log = () => { };
+}
+
 const theme = createTheme({      
   palette: {
     white: {
