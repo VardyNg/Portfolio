@@ -70,7 +70,8 @@ function App() {
                     to={'/#' + item.id} 
                     color="white"
                     sx={{
-                      fontWeight: item.bold ? 'bold' : '',
+                      // fontWeight: item.bold ? 'bold' : '',
+                      // textDecoration: item.bold ? 'underline' : '',
                     }}
 
                   >

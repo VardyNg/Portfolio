@@ -178,7 +178,7 @@ function Projects(){
   }
 
   return(
-    <>      
+    <div style={{marginTop: 20}}>      
       {/* <Routes>
         <Route path="projects" element={<ReportRoute/>}/>
       </Routes> */}
@@ -197,7 +197,7 @@ function Projects(){
       <TabPanel value={value} index={1}>
         <Project project={schoolProjects}/>
       </TabPanel>  
-    </>
+    </div>
   )
 }
 

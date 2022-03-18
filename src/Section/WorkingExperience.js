@@ -63,13 +63,13 @@ const steps = [
 
 function WorkingExperience(){
   return(
-    <>
+    <div style={{marginTop: 20}}>      
       <div style={{alignContent: "left"}}>
         <Typography variant="h4" sx={{ textAlign: 'left', fontWeight: 'bold' }} style={{fontFamily: "Raleway", padding: 10}}>
           Working Experiences
         </Typography>
       </div>
-      <Timeline position="left" style={{backgroundColor: ''}}>
+      <Timeline position="left" style={{marginLeft: 25}}>
         {steps.map((step, index) => {
           return(
             <TimelineItem style={{marginBottom: 15}} key={index}>
@@ -104,7 +104,7 @@ function WorkingExperience(){
           )
         })}
       </Timeline>
-    </>
+    </div>
   )
 }
 

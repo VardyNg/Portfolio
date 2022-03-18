@@ -117,7 +117,7 @@ function SSM(props) {
       fullWidth
       maxWidth='md'
       open={show}
-      onClose={props.onClose}
+      onClose={() => {setShow(false)}}
       aria-labelledby="responsive-dialog-title"
     >
       <DialogTitle id="responsive-dialog-title">

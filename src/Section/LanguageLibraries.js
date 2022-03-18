@@ -162,7 +162,7 @@ function LanguageLibraries(props){
     )
   }
   return(
-    <>
+    <div style={{marginTop: 20}}>      
     
       <Typography variant="h4" sx={{ textAlign: 'left', fontWeight: 'bold' }} style={{fontFamily: "Raleway", padding: 10}}>
         Skills
@@ -191,7 +191,7 @@ function LanguageLibraries(props){
         </Grid>
       </Grid>
       
-    </>
+    </div>
   )
 }
       
