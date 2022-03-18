@@ -20,7 +20,7 @@ function ThreeDAnimations(props) {
       maxWidth="md"
       fullWidth
       open={show}
-      onClose={props.onClose}
+      onClose={() => {setShow(false)}}
       aria-labelledby="responsive-dialog-title"
     >
       <DialogTitle id="responsive-dialog-title">

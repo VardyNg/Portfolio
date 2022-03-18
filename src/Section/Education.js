@@ -63,7 +63,7 @@ const steps = [
 function Education(){
 
   return(
-    <>
+    <div style={{marginTop: 20}}>      
       <div style={{alignContent: "left"}}>
         <Typography variant="h4" sx={{ textAlign: 'left' }} style={{fontFamily: "Raleway", padding: 10}}>
           <b>Education Background</b>
@@ -116,7 +116,7 @@ function Education(){
           )
         })}
       </Timeline>
-    </>
+    </div>
   )
 }
 

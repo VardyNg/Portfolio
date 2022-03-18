@@ -61,7 +61,7 @@ function Greeting(){
     <Grid container xs={12} className={classes.container} >
       <Grid item xs={12} sm={7} >
         <div className={classes.greetingTextContainer}>
-          <Typography variant="h3" component="div" className={classes.greetingText} >
+          <Typography variant="h3" component="div" className={classes.greetingText} style={{marginTop: 20}}>
             Hello, I am 
           </Typography>
           <Typography variant="h3" component="div" className={classes.greetingText} display="inline">

@@ -48,7 +48,7 @@ function HAL(props) {
       open={show}
       maxWidth
       fullWidth="md"
-      onClose={props.onClose}
+      onClose={() => {setShow(false)}}
       aria-labelledby="responsive-dialog-title"
     >
       <DialogTitle id="responsive-dialog-title">
