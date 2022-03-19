@@ -185,22 +185,41 @@ function LanguageLibraries(props){
       <Grid 
         container 
         spaicng={2}
-        style={{
+        style={{ 
+          width: '100%',
           padding: 20,
+          display: 'flex',
+          // flex: 1,
+          alignItems: 'strech',
+          justifyContent: 'flex-start',
+          // backgroundColor: 'blue',
+          // flexDirection: 'row'
         }}
       >
-        <Grid 
-          item 
-          md={12} 
-          lg={6} 
-        >
-            {skills.slice(0, skills.length / 2).map((skill, index) => {return(<SkillContent key={index} skill={skill}/>)})}
-        </Grid>
-        <Grid item md={12} lg={6}>
-            {skills.slice(skills.length / 2, skills.length).map((skill, index) => {return(<SkillContent key={index} skill={skill}/>)})}
-        </Grid>
+        {/* <div
+        > */}
+          {Array.from(Array(skills.length).keys()).map((item, index) => {
+            const temp = 1 // skills.length / 8
+            const countInRow = 4
+            return(
+              <Grid 
+                item 
+                xs={12} 
+                md={12/countInRow * 2} 
+                lg={12/countInRow} 
+                style={{
+                  // backgroundColor:  '#'+(Math.random()*0xFFFFFF<<0).toString(16), 
+                  height: '100',
+                  // display: 'table-row'
+                }}
+              >
+                {skills.slice(temp * index, temp * index + temp).map((skill, index) => {return(<SkillContent key={index} skill={skill}/>)})}
+              </Grid>    
+            )
+          })}
+
+        {/* </div> */}
       </Grid>
-      
     </div>
   )
 }
