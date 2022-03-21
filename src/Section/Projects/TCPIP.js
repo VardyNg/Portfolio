@@ -43,7 +43,9 @@ function TCPIP(props) {
       open={show}
       maxWidth
       fullWidth="md"
-      onClose={() => {setShow(false); window.history.replaceState(null, null, window.location.pathname);}}
+      onClose={async() => {setShow(false); 
+            await new Promise(r => setTimeout(() => r(), 200));
+            navigate("/")}}
       aria-labelledby="responsive-dialog-title"
     >
       <DialogTitle id="responsive-dialog-title">
@@ -69,7 +71,7 @@ function TCPIP(props) {
         <Button 
           onClick={async() => {
             setShow(false); 
-            await new Promise(r => setTimeout(() => r(), 1000));
+            await new Promise(r => setTimeout(() => r(), 200));
             navigate("/")}
           } 
           autoFocus fullWidth

@@ -23,11 +23,12 @@ import App_Icon from '../../Images/App_Icon.png';
 import Playstore_download from '../../Images/PlayStore_download.png';
 import { ReactComponent as ReactNativeIcon } from '../../Images/ReactNativeIcon.svg';
 import GA from '../../Images/SSM/GA.png';
-
+import RN from '../../Images/SSM/RN-Dev.png';
+import ReactDev from '../../Images/SSM/React-Dev.png';
 function IOS(props){
   return(
     <>
-      <Typography variant="subtitle2" component="div" color="gray">
+      <Typography variant="subtitle1" component="div" color="gray">
         Downloads: <b>100+</b> | iOS 13 or above | iPhone, iPad, iPod, and Mac (with M1 chips)
       </Typography>
       <Typography variant="body">
@@ -40,12 +41,14 @@ function IOS(props){
 function Android(props){
   return(
     <>
-      <Typography variant="subtitle2" component="div" color="gray">
+      <Typography variant="subtitle1" component="div" color="gray">
         Downloads: <b>1000＋</b> | Android 4.4 or above
       </Typography>
       <Typography variant="body">
         Previously developed by <b>Android Studio</b> and <b>Java</b>, currently a web app. A new version is coming soon by using <b>React Native</b>!
       </Typography>
+      <br/>
+      <img src={RN} alt="React-Native Development" width='100%'/>
     </>
   )
 }
@@ -53,12 +56,14 @@ function Android(props){
 function Web(props){
   return(
     <>
-      <Typography variant="subtitle2" component="div" color="gray">
-        Visits: <b>4000+</b> 
+      <Typography variant="subtitle1" component="div" color="gray">
+        Visits: <b>6000+</b> 
       </Typography>
       <Typography variant="body">
         Previously developed by pure HTML with CSS and JavaScripts, A new version written in <b>ReactJS</b> (Beta website) is coming soon.
       </Typography>
+      <br/>
+      <img src={ReactDev} alt="React-JS Development" width='100%'/>
     </>
   )
 }
@@ -66,7 +71,7 @@ function Web(props){
 function Backend(props){
   return(
     <>
-      <Typography variant="subtitle2" component="div" color="gray">
+      <Typography variant="subtitle1" component="div" color="gray">
         Main platform: <b>AWS</b> 
       </Typography>
       <ul>
@@ -113,7 +118,9 @@ function SSM(props) {
       fullWidth
       maxWidth='md'
       open={show}
-      onClose={() => {setShow(false); window.history.replaceState(null, null, window.location.pathname);}}
+      onClose={async() => {setShow(false); 
+            await new Promise(r => setTimeout(() => r(), 200));
+            navigate("/")}}
       aria-labelledby="responsive-dialog-title"
     >
       <DialogTitle id="responsive-dialog-title">
@@ -225,7 +232,7 @@ function SSM(props) {
         <Button 
           onClick={async() => {
             setShow(false); 
-            await new Promise(r => setTimeout(() => r(), 1000));
+            await new Promise(r => setTimeout(() => r(), 200));
             navigate("/")}
           } 
           autoFocus fullWidth
