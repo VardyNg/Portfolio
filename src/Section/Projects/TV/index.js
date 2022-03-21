@@ -52,7 +52,7 @@ function OverView(props){
 
 
 function TabPanel(props) {
-  const { children, value, index, ...other } = props;
+  const { children, value, index, fullScreen, ...other } = props;
 
   return (
     <div
@@ -62,11 +62,11 @@ function TabPanel(props) {
       aria-labelledby={`vertical-tab-${index}`}
       {...other}
       style={{
-       
+       width: '100%',
       }}
     >
       {value === index && (
-        <Box sx={{ p: 3 }}>
+        <Box sx={{ p: fullScreen ? 0 : 3 }}>
           {children}
         </Box>
       )}
@@ -89,23 +89,24 @@ function TV(props){
     return(
       <div
         style={{
-          overflow: 'auto',
-          width: fullScreen ? '100%' : '90%'
+          // overflow: 'auto',
+          width: fullScreen ? '100%' : '90%',
+          backgroundColor: ''
         }}
       >
-        <TabPanel value={value} index={0} >
+        <TabPanel value={value} index={0}  fullScreen={fullScreen}>
           <OverView/>
         </TabPanel>
-        <TabPanel value={value} index={1} >
+        <TabPanel value={value} index={1}  fullScreen={fullScreen}>
           <Features/>
         </TabPanel>
-        <TabPanel value={value} index={2} >
+        <TabPanel value={value} index={2}  fullScreen={fullScreen}>
           <FrontEnd/>
         </TabPanel>
-        <TabPanel value={value} index={3}>
+        <TabPanel value={value} index={3} fullScreen={fullScreen}>
           <Database/>
         </TabPanel>
-        <TabPanel value={value} index={4}>
+        <TabPanel value={value} index={4} fullScreen={fullScreen}>
           <API/>
         </TabPanel>
 
@@ -124,50 +125,50 @@ function TV(props){
     >
       <DialogTitle style={{display: 'flex', justifyContent: 'flex-start', alignItems: 'center'}}>
         <Typograhy
-          variant="h4"
+          variant={ fullScreen ? "h6" : "h4" }
         >
           TechVision Competition Management System
         </Typograhy>
 
       </DialogTitle>
       <DialogContent>
-      <Box
-        sx={{ 
-          flexGrow: 1, 
-          bgcolor: 'background.paper', 
-          display: 'flex', 
-          justifyContent: fullScreen ? 'center' : 'flex-start',
-          height: fullScreen ? null : 600,
-          width: fullScreen ? "100%" : null,
-        }}
-      >
-
-        <Tabs
-          orientation={fullScreen ? "horizontal" : "vertical"}
-          variant="scrollable"
-          value={value}
-          onChange={handleChange}
-          aria-label="Vertical tabs example"
+        <Box
           sx={{ 
-            borderRight: fullScreen ? 0 : 1, 
-            borderBottom: fullScreen ? 1 : 0,
-            borderColor: 'divider' 
+            flexGrow: 1, 
+            bgcolor: 'background.paper', 
+            display: 'flex', 
+            justifyContent: fullScreen ? 'center' : 'flex-start',
+            height: fullScreen ? null : 600,
+            width: fullScreen ? "100%" : null,
           }}
-          centered
         >
-          <Tab label="Overview" />
-          <Tab label="Features" />
-          <Tab label="Web Tech" />
-          <Tab label="Database" />
-          <Tab label="API" />
-        </Tabs>
-        {!fullScreen && 
+
+          <Tabs
+            orientation={fullScreen ? "horizontal" : "vertical"}
+            variant="scrollable"
+            value={value}
+            onChange={handleChange}
+            aria-label="Vertical tabs example"
+            sx={{ 
+              borderRight: fullScreen ? 0 : 1, 
+              borderBottom: fullScreen ? 1 : 0,
+              borderColor: 'divider' 
+            }}
+            centered
+          >
+            <Tab label="Overview" />
+            <Tab label="Features" />
+            <Tab label="Web Tech" />
+            <Tab label="Database" />
+            <Tab label="API" />
+          </Tabs>
+          {!fullScreen && 
+            <TabContent/>
+          }
+        </Box>
+        {fullScreen && 
           <TabContent/>
         }
-      </Box>
-      {fullScreen && 
-        <TabContent/>
-      }
       </DialogContent>
       <DialogActions>
         <Button

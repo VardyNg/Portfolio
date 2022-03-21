@@ -221,13 +221,13 @@ function Features(props){
 
   return(
     <>
-      <Stack spacing={2}>
+      <Stack spacing={2} style={{backgroundColor: ''}}>
         <Typography variant="h4">
           Features 
         </Typography>
         <Divider/>
         <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-          <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
+          <Tabs value={value} onChange={handleChange} variant="scrollable">
             <Tab label="Judging" />
             <Tab label="Scores analysis" />
             <Tab label="Scoring Setup" />
