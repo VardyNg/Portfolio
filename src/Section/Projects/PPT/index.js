@@ -18,6 +18,7 @@ import FrontEnd from './FrontEnd';
 import IAC from './IAC';
 import Overview from './Overview';
 import Security from './Security';
+
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
 
@@ -149,7 +150,7 @@ function PrivateTutorPlus(props) {
             await new Promise(r => setTimeout(() => r(), 200));
             navigate("/")}
           } 
-          autoFocus fullWidth
+          fullWidth
         >
           Close
         </Button>

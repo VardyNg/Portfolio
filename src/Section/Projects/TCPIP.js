@@ -74,7 +74,7 @@ function TCPIP(props) {
             await new Promise(r => setTimeout(() => r(), 200));
             navigate("/")}
           } 
-          autoFocus fullWidth
+          fullWidth
         >
           Close
         </Button>

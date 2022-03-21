@@ -13,7 +13,7 @@ import Typography from '@mui/material/Typography';
 import { useTheme } from '@mui/styles';
 import { useState } from 'react';
 import ReportRoute from './Projects';
-
+import ArticleIcon from '@mui/icons-material/Article';
 import {  BrowserRouter as Router,  Routes,  Route, Navigate, useNavigate} from "react-router-dom"
 
 function createDataForProjects(title, description, chip, link, start){
@@ -163,6 +163,7 @@ function Projects(){
                       onClick={() => {
                         navigate("/projects/" + project.link)
                       }}
+                      startIcon={<ArticleIcon/>}
                       endIcon={<ArrowForwardIosIcon/>}
                     >
                       Details

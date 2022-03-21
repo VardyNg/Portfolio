@@ -5,7 +5,8 @@ import PrivateTutorPlus from './PPT/';
 import SSM from './SSM';
 import TCPIP from './TCPIP';
 import VR3D from './VR3D';
-
+import TV from './TV/index'
+import TVChecker from "./TVChecker";
 function ProjectRoute(props){
   console.log("ProjectRoute")
   return(
@@ -16,6 +17,8 @@ function ProjectRoute(props){
       <Route path="3D-animations" element={<ThreeDAnimations />}/>
       <Route path="3D-vr-game" element={<VR3D />}/>
       <Route path="tcp-ip-game" element={<TCPIP />}/>
+      <Route path="techvision" element={<TV/>}/>
+      <Route path="tv-checker" element={<TVChecker />}/>
     </Routes>
   )
 }

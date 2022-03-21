@@ -1,4 +1,6 @@
 import Box from '@mui/material/Box';
+import ArticleIcon from '@mui/icons-material/Article';
+import WebIcon from '@mui/icons-material/Web';
 import Stepper from '@mui/material/Stepper';
 import Step from '@mui/material/Step';
 import StepLabel from '@mui/material/StepLabel';
@@ -14,6 +16,8 @@ import TimelineContent from '@mui/lab/TimelineContent';
 import TimelineDot from '@mui/lab/TimelineDot';
 import TimelineOppositeContent from '@mui/lab/TimelineOppositeContent';
 import Divider from '@mui/material/Divider'
+import ButtonGroup from '@mui/material/ButtonGroup';
+import { useNavigate } from 'react-router-dom';
 function createDataForWorkingExperience(yearsRange, label, position, description){
   return {yearsRange, label, position, description};
 }
@@ -62,6 +66,7 @@ const steps = [
 ];
 
 function WorkingExperience(){
+  const navigate =  useNavigate()
   return(
     <div style={{marginTop: 20}}>      
       <div style={{alignContent: "left"}}>
@@ -93,7 +98,33 @@ function WorkingExperience(){
                       </li>
                     )
                   })}
-                </ul>                      
+                </ul>           
+                {step.label === "Crossover Int. Company Limited" && 
+                <>
+                  <ButtonGroup
+                    variant="outlined"
+                    size="large"
+                    fullWidth
+                    >
+                    
+                    <Button
+                      onClick={() => { navigate("projects/techvision")}}
+                      startIcon={<ArticleIcon/>}
+                    >
+                      Doc
+                    </Button>
+                    <Button
+                      startIcon={<WebIcon/>}
+                      onClick={() => { 
+                        console.log("wdawda")
+                        navigate("projects/tv-checker")
+                      }}
+                    >
+                      View website
+                    </Button>
+                  </ButtonGroup>
+
+                </>}           
               </TimelineContent>
               <TimelineOppositeContent style={{ maxWidth: "1px", paddingLeft: '0px', paddingRight: '0px' }}/>
               <TimelineSeparator>
