@@ -100,14 +100,14 @@ function Projects(){
     const {project} = props;
     console.log(project)
     return(
-      <>{
+      <Grid container spacing={0}>{
         project.map((project, index) => {
           console.log(project.chip.length)
           return(
-            <Card style={{margin: 20}} key={index}>
-              <CardContent>
-                <Grid container>
-                  <Grid item xs={12} sm={10} >
+            <Grid item xs={12} lg={6}>
+              <Card style={{margin: 20, height: '80%'}} key={index}>
+                <CardContent>
+                  <Grid item container xs={12} >
                     <Stack
                       style={{
                         display: 'flex',
@@ -169,12 +169,12 @@ function Projects(){
                       Details
                     </Button>
                   </Grid>
-                </Grid>
-              </CardContent>
-            </Card>
+                </CardContent>
+              </Card>
+            </Grid>
           )
         })
-      }</>
+      }</Grid>
     )
   }
 
