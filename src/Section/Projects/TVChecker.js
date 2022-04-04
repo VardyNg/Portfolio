@@ -144,7 +144,7 @@ function TVChecker(props){
           <Button
             startIcon={<ArticleIcon/>}
             onClick={() => { navigate("projects/techvision")}}
-          >
+o          >
             
             View documentation
           </Button>

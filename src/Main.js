@@ -20,6 +20,7 @@ import LanguageLibraries from './Section/LanguageLibraries';
 import Projects from './Section/Projects';
 import ReportRoute from './Section/Projects/';
 import WorkingExperience from './Section/WorkingExperience';
+import Credentials from './Section/Credentials';
 function createDataForSections(component, style, margin, id){
   return {component, style, margin, id}
 }
@@ -38,15 +39,16 @@ function App() {
     createDataForSections(<Projects/>, {backgroundColor: '#FFFFF'}, 0, 'projects'),
     createDataForSections(<div style={{padding: 25}}> </div>,{backgroundColor: '#D4BFAD'}, 20, ''),
     createDataForSections(<LanguageLibraries/>, {}, 20, 'skills'),
-    createDataForSections(<Education/>,  {backgroundColor: '#E4E5E0'}, 20, 'education'),
-    createDataForSections(<WorkingExperience/>,  {}, 20, 'workingExperience'),
+    createDataForSections(<Credentials/>, {}, 20, 'credentials'),
+    createDataForSections(<WorkingExperience/>,  {backgroundColor: '#E4E5E0'}, 20, 'workingExperience'),
+    createDataForSections(<Education/>,  {}, 20, 'education'),
     createDataForSections(<Footer/>,{backgroundColor: '#677886'}, 0, ''),
   ]
 
   const MenuItems = [
     createDataForMenu("Contacts", 'contacts', false),
     createDataForMenu("Projects", 'projects', true),
-    createDataForMenu("Skills", 'skills', true),
+    createDataForMenu("Skills & Certs", 'skills', true),
     createDataForMenu("Education", 'education', false),
     createDataForMenu("Working Experience", 'workingExperience', false),
   ]
