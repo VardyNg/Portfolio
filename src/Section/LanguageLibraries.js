@@ -62,7 +62,7 @@ const skills = [
       createDataForItem("C#",CSharpIcon, true),
       createDataForItem("C++",CPlusPlusIcon, true),
       createDataForItem("SQL",SQLIcon, true),
-      createDataForItem("Java",JavaIcon, true),
+      // createDataForItem("Java",JavaIcon, true),
       createDataForItem("JavaScript", JSIcon, true),
       createDataForItem("HTML", HTML5Icon, true),
       createDataForItem("CSS", CSSIcon, true),
