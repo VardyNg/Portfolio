@@ -82,7 +82,7 @@ function Education(){
                 </Typography>
                 <Typography variant="h6" sx={{textAlign: 'left', fontWeight: '' }}>
                   {step.degree}
-                  {step.cGPA !== "" && ", cGPA: " + step.cGPA}
+                  {/* {step.cGPA !== "" && ", cGPA: " + step.cGPA} */}
                 </Typography>       
                 <ul>
                   {step.description.map((description, index) => {
