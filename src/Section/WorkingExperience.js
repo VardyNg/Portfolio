@@ -27,8 +27,9 @@ const steps = [
     "Armitage Technologies Limited",
     "Mobile Developer",
     [
-      "Design and development application UI to facilitate digital transformation for logistics clients",
-      "Involved in DevOps development, suggested and implement GitLab to replace SVN, develop workflow to implement CI/CD pipelines"
+      "Develop hybrid application using ReactJS",
+      "Develop CICD workflow to deploy product",
+      "Suggested and assisted the migration of using GitLab"
     ],
   ),
   createDataForWorkingExperience(
@@ -36,7 +37,7 @@ const steps = [
     'Banclogix System Co. Limited, KVB Global',
     'Software Development Internship (Part Time mode)',
     [
-      "Develop software for system installation and maintenance in data centres",
+      "Develop software to maintain systems using ReactJS and Docker",
       "System support for the crypto currency ETD",
     ],
   ),
@@ -45,12 +46,12 @@ const steps = [
   'Crossover Int. Company Limited',
   'Software Developer Internship (Full Time mode)',
     [
-      "Designed and developed an online CRUD application to support competitions scoring, maintain and develop APIs",
+      "Designed and developed a CRUD application to support competitions scoring using ReactJS",
+      "Maintained and developed APIs using NodeJS, backed with MySQL Database",
+      "Setup and maintained remote servers",
+      "Implement CI/CD workflow to automate deployment",
       "Consulted with end users to develop and revised the system",
-      "Setup and maintained remote server to support company operations",
-      "Proof-of-concept activity",
-      "Implement automation workflows, CI/CD, DevOps development",
-      "Rated “Exceed Expectation” in performance by the supervisor"
+      "Rated “Exceed Expectation” by the supervisorr"
     ],
   ),
   createDataForWorkingExperience(

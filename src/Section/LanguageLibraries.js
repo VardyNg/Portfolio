@@ -60,7 +60,7 @@ const skills = [
       createDataForItem("Swift",SwiftIcon, true),
       createDataForItem("Python",PythonIcon, true),
       createDataForItem("C#",CSharpIcon, true),
-      createDataForItem("C++",CPlusPlusIcon, true),
+      // createDataForItem("C++",CPlusPlusIcon, true),
       createDataForItem("SQL",SQLIcon, true),
       // createDataForItem("Java",JavaIcon, true),
       createDataForItem("JavaScript", JSIcon, true),
