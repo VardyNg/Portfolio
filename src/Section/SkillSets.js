@@ -7,8 +7,8 @@ import { ReactComponent as NodeJsIcon } from '../Images/NodeJsIcon.svg';
 import { ReactComponent as AWSIcon } from '../Images/AWSIcon.svg';
 import { ReactComponent as ReactNativeIcon } from '../Images/ReactNativeIcon.svg';
 import { ReactComponent as Unity3DIcon } from '../Images/Unity3D.svg';
+import { ReactComponent as DockerIcon } from '../Images/docker.svg';
 import Xcode_icon from '../Images/Xcode_icon.png';
-
 const useStyles = makeStyles((theme) => ({
   icons: {
     height: 40,
@@ -42,7 +42,7 @@ function SkillSets(){
         <Unity3DIcon style={{width: 50, height: 50, marginLeft: 10}}/>
         <AWSIcon style={{width: 50, height: 50, marginLeft: 10}}/>
         <NodeJsIcon style={{width: 50, height: 50, marginLeft: 15}}/>
-
+        <DockerIcon style={{width: 50, height: 50, marginLeft: 15}}/>
       </Grid>
     </Grid>
   )

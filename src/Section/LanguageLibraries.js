@@ -37,7 +37,7 @@ import { ReactComponent as SVNIcon } from '../Images/svn.svg';
 import { ReactComponent as UbuntuLogo } from '../Images/UbuntuLogo.svg';
 import { ReactComponent as WindowsLogo } from '../Images/WindowsLogo.svg';
 import { ReactComponent as AndoirStudioIcon} from '../Images/Android_Studio_Icon.svg'
-
+import { ReactComponent as DockerIcon } from '../Images/docker.svg';
 const useStyles = makeStyles((theme) => ({
   icons: {
     height: 40,
@@ -104,9 +104,9 @@ const skills = [
       createDataForItem("GitHub",GitHubIcon, true),
       createDataForItem("GitLab",GitLabIcon, true),
       createDataForItem("SVN",SVNIcon, true),
+      createDataForItem("Docker",DockerIcon, true),
       createDataForItem("Jenkins",JenkinsIcon, true),
       createDataForItem("SonarQube",SonarqubeIcon, true),
-
     ]),
     createDataForSkill("IaC",
     [
