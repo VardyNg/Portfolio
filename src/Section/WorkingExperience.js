@@ -23,6 +23,7 @@ function createDataForWorkingExperience(startTime, endTime, label, position, des
   return {startTime, endTime, label, position, description};
 }
 const steps = [
+
   createDataForWorkingExperience(
     moment("2022-01-01"),
     moment("2022-04-01").endOf('month'),
@@ -71,12 +72,20 @@ function WorkingExperience(){
       </div>
       <Timeline position="left" style={{marginLeft: 25}}>
         {steps.map((step, index) => {
+          let durationString = ""
+          if(index === 0)
+            durationString += step.startTime.format('MMM YYYY') + "- Present"
+          else{
+            durationString += step.startTime.format('MMM YYYY') + " - " + step.endTime.format('MMM YYYY')
+            durationString += " "
+            durationString += "(" + (step.endTime.diff(step.startTime, 'month') + 1) + " months)"
+          }
           return(
             <TimelineItem style={{marginBottom: 15}} key={index}>
               <TimelineContent >
                 <Typography variant="h6" sx={{textAlign: 'left', fontWeight: '' }}>
-                  {step.startTime.format('MMM YYYY')} - {step.endTime.format('MMM YYYY')} {' '}
-                  ({step.endTime.diff(step.startTime, 'month') + 1} months)
+                  {durationString}
+                  
                 </Typography>
                 <Typography variant="h5" sx={{textAlign: 'left', fontWeight: 'bold' }}>
                   {step.label}
