@@ -18,12 +18,14 @@ import TimelineOppositeContent from '@mui/lab/TimelineOppositeContent';
 import Divider from '@mui/material/Divider'
 import ButtonGroup from '@mui/material/ButtonGroup';
 import { useNavigate } from 'react-router-dom';
-function createDataForWorkingExperience(yearsRange, label, position, description){
-  return {yearsRange, label, position, description};
+import moment from 'moment';
+function createDataForWorkingExperience(startTime, endTime, label, position, description){
+  return {startTime, endTime, label, position, description};
 }
 const steps = [
   createDataForWorkingExperience(
-    "Jan 2022 - Present",
+    moment("2022-01-01"),
+    moment("2022-04-01").endOf('month'),
     "Armitage Technologies Limited",
     "Mobile Developer",
     [
@@ -33,7 +35,8 @@ const steps = [
     ],
   ),
   createDataForWorkingExperience(
-    "Sep 2021 - Dec 2021 (4 months)",
+    moment("2021-09-01"),
+    moment("2021-12-01").endOf('month'),
     'Banclogix System Co. Limited, KVB Global',
     'Software Development Internship (Part Time mode)',
     [
@@ -42,9 +45,10 @@ const steps = [
     ],
   ),
   createDataForWorkingExperience(
-  "Jun 2021 - Sep 2021 (4 months)",
-  'Crossover Int. Company Limited',
-  'Software Developer Internship (Full Time mode)',
+    moment("2021-06-01"),
+    moment("2021-09-01").endOf('month'),
+    'Crossover Int. Company Limited',
+    'Software Developer Internship (Full Time mode)',
     [
       "Designed and developed a CRUD application to support competitions scoring using ReactJS",
       "Maintained and developed APIs using NodeJS, backed with MySQL Database",
@@ -71,7 +75,8 @@ function WorkingExperience(){
             <TimelineItem style={{marginBottom: 15}} key={index}>
               <TimelineContent >
                 <Typography variant="h6" sx={{textAlign: 'left', fontWeight: '' }}>
-                  {step.yearsRange}
+                  {step.startTime.format('MMM YYYY')} - {step.endTime.format('MMM YYYY')} {' '}
+                  ({step.endTime.diff(step.startTime, 'month') + 1} months)
                 </Typography>
                 <Typography variant="h5" sx={{textAlign: 'left', fontWeight: 'bold' }}>
                   {step.label}
