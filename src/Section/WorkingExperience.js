@@ -53,16 +53,6 @@ const steps = [
       "Consulted with end users to develop and revised the system",
       "Rated “Exceed Expectation” by the supervisorr"
     ],
-  ),
-  createDataForWorkingExperience(
-    "Jun 2020 - Jun 2021 (1 year)",
-    'IT & Math Private Tutor',
-    'Self-Employed (Part time)',
-    [
-      "Private tutored 8 students from IB International and DSE discipline individually ",
-      "Concentrated in senior secondary student, IT and Mathematic coaching",
-      "Designed teaching materials and assessments ",
-    ],
   )
 ];
 
