@@ -37,7 +37,7 @@ const steps = [
   createDataForWorkingExperience(
     moment("2021-09-01"),
     moment("2021-12-01").endOf('month'),
-    'Banclogix System Co. Limited, KVB Global',
+    'Banclogix System Co., Ltd, KVB Global',
     'Software Development Internship (Part Time mode)',
     [
       "Develop software to maintain systems using ReactJS and Docker",
