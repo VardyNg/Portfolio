@@ -20,3 +20,8 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+package-lock.json
+terraform/.terraform.lock.hcl
+terraform/.terraform/providers/registry.terraform.io/hashicorp/aws/4.17.1/darwin_arm64/terraform-provider-aws_v4.17.1_x5
+terraform/terraform.tfstate.backup
+terraform/terraform.tfstate
