@@ -1,5 +1,6 @@
 import Typography from '@mui/material/Typography';
 import { ReactComponent as AWSSAA } from '../Images/Certs/AWS-SAA.svg';
+import { ReactComponent as AWSDVA } from '../Images/Certs/AWS-DVA.svg';
 import Card from '@mui/material/Card'
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
@@ -20,6 +21,13 @@ const certs = [
     "2022-04-03",
     "2025-04-03",
     "https://www.credly.com/badges/7794c6a8-5d2d-487d-992a-7beb697ce65e"
+  ),
+  createDataForCerts(
+    "AWS Certified Developer – Associate",
+    <AWSDVA style={{height: 100}}/>,
+    "2022-06-17",
+    "2025-06-17",
+    "https://www.credly.com/badges/610618a2-e827-48a0-9a9a-b80f7bc7cbcb"
   )
 ]
 function Credentials(){
