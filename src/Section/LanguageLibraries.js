@@ -78,7 +78,7 @@ const skills = [
       createDataForItem("Android Studio",AndoirStudioIcon, true),
       createDataForItem("Unity3D",Unity3DIcon, true),
     ]),
-    createDataForSkill("Cloud Services",
+    createDataForSkill("Cloud Service Provider",
     [
       createDataForItem("Amazon Web Service",AWSIcon, true),
       createDataForItem("Google Cloud Platform",GCPIcon, true)
