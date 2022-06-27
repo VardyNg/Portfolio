@@ -12,8 +12,8 @@ import ButtonGroup from '@mui/material/ButtonGroup';
 import Typography from '@mui/material/Typography';
 import moment from 'moment';
 import { useNavigate } from 'react-router-dom';
-function createDataForWorkingExperience(startTime, endTime, label, position, description){
-  return {startTime, endTime, label, position, description};
+function createDataForWorkingExperience(startTime, endTime, label, position, department, description){
+  return {startTime, endTime, label, position, department, description};
 }
 const steps = [
   createDataForWorkingExperience(
@@ -21,6 +21,7 @@ const steps = [
     null,
     "eCloudvalley Digital Technology Co., Ltd",
     "Cloud Engineer",
+    "Solution Architect - Development",
     [],
   ),
   createDataForWorkingExperience(
@@ -28,6 +29,7 @@ const steps = [
     moment("2022-04-01").endOf('month'),
     "Armitage Technologies Limited",
     "Mobile Developer",
+    "Project BU",
     [
       "Develop hybrid application using ReactJS",
       "Develop CICD workflow to deploy product",
@@ -39,6 +41,7 @@ const steps = [
     moment("2021-12-01").endOf('month'),
     'Banclogix System Co., Ltd, KVB Global',
     'Software Development Internship (Part Time mode)',
+    'Blockchain Team',
     [
       "Develop software to maintain systems using ReactJS and Docker",
       "System support for the crypto currency ETD",
@@ -49,6 +52,7 @@ const steps = [
     moment("2021-09-01").endOf('month'),
     'Crossover Int. Company Limited',
     'Software Developer Internship (Full Time mode)',
+    "IT",
     [
       "Designed and developed a CRUD application to support competitions scoring using ReactJS",
       "Maintained and developed APIs using NodeJS, backed with MySQL Database",
@@ -84,13 +88,12 @@ function WorkingExperience(){
               <TimelineContent >
                 <Typography variant="h6" sx={{textAlign: 'left', fontWeight: '' }}>
                   {durationString}
-                  
                 </Typography>
                 <Typography variant="h5" sx={{textAlign: 'left', fontWeight: 'bold' }}>
                   {step.label}
                 </Typography>
                 <Typography variant="h6" sx={{textAlign: 'left', fontWeight: '' }}>
-                  {step.position} {" "}
+                  {step.position}, {step.department}
                 </Typography>       
                 <ul>
                   {step.description.map((description, index) => {
