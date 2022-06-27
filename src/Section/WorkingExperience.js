@@ -11,9 +11,10 @@ import Button from '@mui/material/Button';
 import ButtonGroup from '@mui/material/ButtonGroup';
 import Typography from '@mui/material/Typography';
 import moment from 'moment';
+import Link from '@mui/material/Link';
 import { useNavigate } from 'react-router-dom';
-function createDataForWorkingExperience(startTime, endTime, label, position, department, description){
-  return {startTime, endTime, label, position, department, description};
+function createDataForWorkingExperience(startTime, endTime, label, position, department, description, url){
+  return {startTime, endTime, label, position, department, description, url};
 }
 const steps = [
   createDataForWorkingExperience(
@@ -23,6 +24,7 @@ const steps = [
     "Cloud Engineer",
     "Solution Architect - Development",
     [],
+    "https://www.ecloudvalley.com/"
   ),
   createDataForWorkingExperience(
     moment("2022-01-01"),
@@ -35,6 +37,7 @@ const steps = [
       "Develop CICD workflow to deploy product",
       "Suggested and assisted the migration of using GitLab"
     ],
+    "https://www.armitage.com.hk/"
   ),
   createDataForWorkingExperience(
     moment("2021-09-01"),
@@ -46,6 +49,7 @@ const steps = [
       "Develop software to maintain systems using ReactJS and Docker",
       "System support for the crypto currency ETD",
     ],
+    "https://www.banclogix.com/"
   ),
   createDataForWorkingExperience(
     moment("2021-06-01"),
@@ -61,6 +65,7 @@ const steps = [
       "Consulted with end users to develop and revised the system",
       "Rated “Exceed Expectation” by the supervisorr"
     ],
+    null
   )
 ];
 
@@ -90,7 +95,7 @@ function WorkingExperience(){
                   {durationString}
                 </Typography>
                 <Typography variant="h5" sx={{textAlign: 'left', fontWeight: 'bold' }}>
-                  {step.label}
+                  {step.url ? <Link href={step.url} color="inherit" target="_blank">{step.label}</Link> : step.label}
                 </Typography>
                 <Typography variant="h6" sx={{textAlign: 'left', fontWeight: '' }}>
                   {step.position}, {step.department}
