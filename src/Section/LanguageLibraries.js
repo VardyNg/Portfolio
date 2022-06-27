@@ -33,7 +33,6 @@ import { ReactComponent as ServerlessIcon } from '../Images/PPT/serverless-frame
 import { ReactComponent as TerraformIcon } from '../Images/PPT/terraform.svg';
 import { ReactComponent as SonarqubeIcon } from '../Images/sonarqube.svg';
 import { ReactComponent as SQLIcon } from '../Images/SQLIcon.svg';
-import { ReactComponent as SVNIcon } from '../Images/svn.svg';
 import { ReactComponent as UbuntuLogo } from '../Images/UbuntuLogo.svg';
 import { ReactComponent as WindowsLogo } from '../Images/WindowsLogo.svg';
 import { ReactComponent as AndoirStudioIcon} from '../Images/Android_Studio_Icon.svg'
@@ -103,7 +102,6 @@ const skills = [
       createDataForItem("Git",GitIcon, true),
       createDataForItem("GitHub",GitHubIcon, true),
       createDataForItem("GitLab",GitLabIcon, true),
-      createDataForItem("SVN",SVNIcon, true),
       createDataForItem("Docker",DockerIcon, true),
       createDataForItem("Jenkins",JenkinsIcon, true),
       createDataForItem("SonarQube",SonarqubeIcon, true),
