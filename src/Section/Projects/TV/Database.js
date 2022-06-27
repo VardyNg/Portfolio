@@ -15,7 +15,7 @@ function Database(props){
         </Typography>
         <Divider/>
         <Typography variant="body1">
-          <b>MySQL</b> is used as the database for the project, it is hosted on the same server where front end and service api are hosted.
+          <b>MySQL</b> is used as the database for the application, it is hosted on the same server where front end and service api are hosted.
         </Typography>
       </Stack>
     </>

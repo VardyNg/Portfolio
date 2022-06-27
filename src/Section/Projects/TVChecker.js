@@ -113,7 +113,7 @@ function TVChecker(props){
         <Typograhy
           variant="subtitle1"
         >
-          The system is wrapped up and I am not sure its status, you can also view the documentation instead in case of failure.
+          The system is wrapped up and I am not sure its status, you can also view the documentation instead, in case of failure.
         </Typograhy>
         <br/>
         <ButtonGroup

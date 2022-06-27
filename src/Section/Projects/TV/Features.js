@@ -163,11 +163,11 @@ function CompetitionMangement(props){
         </Typography>
         <Divider/>
         <Typography variant="body1">
-          Competitions composed with multiple <b>sessions</b> (e.g. 2022, 2021, 2020...), each sessios composed with different <b>streams</b> (Primary School, Secondary School ...) 
-          ,each stream has multiple <b>rounds</b> (e.g. Round 1, Round 2, Round 3...), each round composed with multiple <b>entries</b> (the partipants).
+          Competitions composed with multiple <b>sessions</b> (e.g. 2022, 2021, 2020...), each sessios composed with different <b>streams</b> (Primary School, Secondary School ...),
+          each stream has multiple <b>rounds</b> (e.g. Round 1, Round 2, Round 3...), each round composed with multiple <b>entries</b> (the partipants).
         </Typography>
         <Typography variant="body1">
-          In the system, <b>all of the above cateogries are customizable!</b>.
+          In the system, <b>all of the above cateogries are customizable!</b>
         </Typography>
         <img src={Competition_Management} alt="competition Management" style={{width: '100%'}}/>
         <img src={Competition_Management_Stream} alt="competition Stream" style={{width: '100%'}}/>

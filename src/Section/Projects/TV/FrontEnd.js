@@ -15,13 +15,13 @@ function FrontEnd(props){
         </Typography>
         <Divider/>
         <Typography variant="body1">
-          <b>ReactJS</b> is used as the front-end framework for the project, it is hosted on the same server where database and service api are hosted.
+          <b>ReactJS</b> is used as the front-end framework for the application, it is hosted on the same server where database and service api are hosted.
         </Typography>
         <Typography variant="body1">
-          A <b>GitHub actions workflow</b> is used to build and deploy the project to the server.
+          A <b>GitHub actions workflow</b> is used to build and deploy the application to the server.
         </Typography>
         <Typography variant="body1">
-          <b>Let's Encrypt</b> is used to generate SSL certificates for the project to provide HTTPS access.
+          <b>Let's Encrypt</b> is used to generate SSL certificates for the application to provide HTTPS access.
         </Typography>
 
       </Stack>
