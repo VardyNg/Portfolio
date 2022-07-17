@@ -75,7 +75,6 @@ const skills = [
     createDataForSkill("IDEs", 
     [
       createDataForItem("Xcode",Xcode_icon, false),
-      createDataForItem("Android Studio",AndoirStudioIcon, true),
       createDataForItem("Unity3D",Unity3DIcon, true),
     ]),
     createDataForSkill("Cloud Service Provider",
