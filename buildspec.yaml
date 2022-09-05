@@ -17,6 +17,10 @@ phases:
     commands:
       - echo Building...
       - npm run build
+  post_build:
+    commands:
+      - ls
+      
 artifacts:
   files:
     - "**/*"
