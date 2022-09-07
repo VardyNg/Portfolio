@@ -43,21 +43,7 @@ const steps = [
     ],
     icon: <HKCCLogo style={{ height: iconSize, width: iconSize }}/>,
     url: "https://www.hkcc-polyu.edu.hk/en/home/index.html"
-  },
-  {
-    yearsRange: "Sep 2011 - Jun 2017",
-    label: 'Cheung Chek Chee Secondary School',
-    degree: '2017 Hong Kong Diploma of Secondary Education (HKDSE)',
-    cGPA: "",
-    description: [
-      "Level 5 in Information and Communication Technology (ICT) ",
-      "Level 4 in Mathematics ",
-      "Level 4 in Liberal Studies (LS)",
-      "Level 4 in History"
-    ],
-    icon: <CCCSSLogo style={{ height: iconSize, width: iconSize }}/>,
-    url: "https://www.cccss.edu.hk"
-  },
+  }
 ];
 
 function Education(){
