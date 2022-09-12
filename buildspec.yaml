@@ -23,6 +23,6 @@ phases:
       
 artifacts:
   files:
-    - "build/**/*"
-  # discard-paths: no
-  # base-directory: build
+    - "**/*"
+  discard-paths: no
+  base-directory: build
