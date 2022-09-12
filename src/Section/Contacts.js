@@ -1,5 +1,9 @@
 import { GoMarkGithub} from "react-icons/go";
 import { FaLinkedin } from 'react-icons/fa'
+import { 
+  BsStackOverflow,
+  BsMedium
+} from 'react-icons/bs'
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
@@ -22,6 +26,20 @@ function Contacts(){
         size="large"
       >
         <GoMarkGithub/>
+      </IconButton>
+      <IconButton
+        onClick={() => window.open("https://stackoverflow.com/users/15603575/vardy", '_blank').focus()}
+        color="white"
+        size="large"
+      >
+        <BsStackOverflow/>
+      </IconButton>
+      <IconButton
+        onClick={() => window.open("https://medium.com/@vardyng", '_blank').focus()}
+        color="white"
+        size="large"
+      >
+        <BsMedium/>
       </IconButton>
       <IconButton
         onClick={() => window.open("https://www.linkedin.com/in/nghoiwa/", "_blank").focus()}
