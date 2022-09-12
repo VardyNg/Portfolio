@@ -62,7 +62,7 @@ const steps = [
       "Maintained and developed APIs using NodeJS, backed with MySQL Database",
       "Setup and maintained remote servers",
       "Implement CI/CD workflow to automate deployment",
-      "Consulted with end users to develop and revised the system",
+      "Consulted with end users to develop and revise the system",
       "Rated “Exceed Expectation” by the supervisorr"
     ],
     null

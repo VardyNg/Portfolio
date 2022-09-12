@@ -21,7 +21,7 @@ function SkillSets(){
     <Grid container>
       <Grid item xs={12}>
         <Typography variant="h5" sx={{ textAlign: 'center' }} style={{fontFamily: "Raleway", backgroundColor: ''}}>
-          Frontend / Backend / DevOps developer
+          Cloud Technologies | Frontend | DevOps
         </Typography>
       </Grid>
       <Grid item xs={12} 
@@ -39,7 +39,6 @@ function SkillSets(){
         <ServerlessIcon style={{width: 50, height: 50, marginLeft: 5}}/>
         <img src={Xcode_icon} className={classes.icons}/>
         <ReactNativeIcon style={{width: 50, height: 50, marginLeft: 5}}/>
-        <Unity3DIcon style={{width: 50, height: 50, marginLeft: 10}}/>
         <AWSIcon style={{width: 50, height: 50, marginLeft: 10}}/>
         <NodeJsIcon style={{width: 50, height: 50, marginLeft: 15}}/>
         <DockerIcon style={{width: 50, height: 50, marginLeft: 15}}/>

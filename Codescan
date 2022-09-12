@@ -1,0 +1,47 @@
+pipeline {
+  agent {
+    kubernetes {
+        yaml '''
+        apiVersion: v1
+        kind: Pod
+        spec:
+          nodeSelector:
+            kubernetes.io/arch: arm64
+          securityContext:
+            runAsUser: 0
+            runAsGroup: 0
+            fsGroup: 0
+          containers:
+          - name: default
+            image: vardyng/sonar-scanner:arm-openjdk-17-node-16-17
+            tty: true
+            resources:
+              requests: 
+                cpu: "500m" 
+                memory: "512Mi"
+              limits:
+                cpu: "500m"
+                memory: "512Mi"
+        '''
+    }
+  }
+  stages {
+    stage('Scan') {
+      steps {
+        container('default') {
+          checkout([$class: 'GitSCM', branches: [[name: 'dev']], extensions: [], userRemoteConfigs: [[credentialsId: 'vardyng-github-pat', url: 'https://github.com/VardyNg/Portfolio.git']]])
+          script {
+            def scannerHome = tool 'homelab-sonarqube';
+            withSonarQubeEnv('homelab-sonarqube') { // If you have configured more than one global server connection, you can specify its name
+              sh """
+              export BROWSERSLIST_IGNORE_OLD_DATA=true
+              ${scannerHome}/bin/sonar-scanner
+              """
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
