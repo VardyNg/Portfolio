@@ -9,6 +9,7 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 import { makeStyles, useTheme } from '@mui/styles';
 import * as React from 'react';
 import { useNavigate } from "react-router-dom";
+import ReactGA from 'react-ga4';
 const useStyles = makeStyles((theme) => ({
   text: {
     fontSize: 20,
@@ -35,6 +36,7 @@ function VR3D(props) {
   const classes = useStyles()
   const fullScreen = useMediaQuery(theme.breakpoints.down('md'));
   const navigate = useNavigate()
+  ReactGA.send({ hitType: "pageview", page: window.location.pathname });
   return(
     <Dialog
       fullScreen={fullScreen}
@@ -55,7 +57,7 @@ function VR3D(props) {
       <DialogContent>
         <Grid container spacing={3}>
           <Grid item xs={12} style={{display: 'flex', justifyContent: 'center'}}>
-            <iframe width="80%" height="500" src="https://www.youtube.com/embed/prAfkGpCarI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe width="80%" height="500" src="https://www.youtube.com/embed/prAfkGpCarI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
           </Grid>
           <Grid item xs={12}>
             <ul>

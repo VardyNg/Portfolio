@@ -8,11 +8,13 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 import { useTheme } from '@mui/styles';
 import * as React from 'react';
 import { useNavigate } from "react-router-dom";
+import ReactGA from 'react-ga4';
 function ThreeDAnimations(props) {
   const [show, setShow] = React.useState(true);
   const theme = useTheme();
   const fullScreen = useMediaQuery(theme.breakpoints.down('md'));
   const navigate = useNavigate()
+  ReactGA.send({ hitType: "pageview", page: window.location.pathname });
   return(
     <Dialog
       fullScreen={fullScreen}
@@ -38,7 +40,7 @@ function ThreeDAnimations(props) {
           Close Enounter
         </Typography>
 
-        <iframe width="100%" height="300" src="https://www.youtube.com/embed/Y8c5hOXNL7k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe width="100%" height="300" src="https://www.youtube.com/embed/Y8c5hOXNL7k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
         <ul>
           <li>Inspired by the movie <i>2001: A Space Odyssey</i></li>
           <li>A short story about an astronaut try to reach to aliens but end up being elimitated</li>
@@ -47,7 +49,7 @@ function ThreeDAnimations(props) {
         <Typography variant="h6" style={{fontWeight: 'bold'}} sx={{ fontStyle: 'italic' }}>
           Conflagration
         </Typography>
-        <iframe width="100%" height="300" src="https://www.youtube.com/embed/l6ZQsRN4WqE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>  
+        <iframe width="100%" height="300" src="https://www.youtube.com/embed/l6ZQsRN4WqE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>  
         <ul>
           <li>Created by using Blender</li>
           <li>A short animation aims to demostrate the visual effects</li>

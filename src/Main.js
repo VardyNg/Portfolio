@@ -21,6 +21,9 @@ import Projects from './Section/Projects';
 import ReportRoute from './Section/Projects/';
 import WorkingExperience from './Section/WorkingExperience';
 import Credentials from './Section/Credentials';
+import ReactGA from "react-ga4";
+import { useEffect } from 'react';
+
 function createDataForSections(component, style, margin, id){
   return {component, style, margin, id}
 }
@@ -32,6 +35,10 @@ function createDataForMenu(title, id, bold){
 function App() {
   const theme = useTheme();
   const upXS = useMediaQuery(theme.breakpoints.up('sm'));
+
+  useEffect(() => {
+    ReactGA.send({ hitType: "pageview", page: "/" });
+  },[])
 
   const sections = [
     createDataForSections(<Greeting/>,{backgroundColor: '#FFFFF'}, 0, 'greeting'),
@@ -64,6 +71,7 @@ function App() {
             <div>
               {MenuItems.map((item, index) => (
                 <Button 
+                  key={index}
                   component={HashLink} 
                   scroll={(el) => el.scrollIntoView({ behavior: 'smooth' })} 
                   to={'/#' + item.id} 

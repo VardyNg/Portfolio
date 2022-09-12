@@ -11,6 +11,7 @@ import { useNavigate } from "react-router-dom";
 import ScreenCap1 from '../../Images/Navigator/ScreenCap1.png';
 import ScreenCap2 from '../../Images/Navigator/ScreenCap2.png';
 import ScreenCap3 from '../../Images/Navigator/ScreenCap3.png';
+import ReactGA from 'react-ga4';
 const useStyles = makeStyles((theme) => ({
   text: {
     fontSize: 20,
@@ -37,6 +38,7 @@ function TCPIP(props) {
   const classes = useStyles()
   const fullScreen = useMediaQuery(theme.breakpoints.down('md'));
   const navigate = useNavigate()
+  ReactGA.send({ hitType: "pageview", page: window.location.pathname });
   return(
     <Dialog
       fullScreen={fullScreen}

@@ -18,10 +18,10 @@ import FrontEnd from './FrontEnd';
 import IAC from './IAC';
 import Overview from './Overview';
 import Security from './Security';
-
+import ReactGA from 'react-ga4';
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
-
+  
   return (
     <div
       role="tabpanel"
@@ -49,6 +49,7 @@ function PrivateTutorPlus(props) {
   const fullScreen = useMediaQuery(theme.breakpoints.down('md'));
   const [value, setValue] = React.useState(0);
   const navigate = useNavigate()
+  ReactGA.send({ hitType: "pageview", page: window.location.pathname });
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };

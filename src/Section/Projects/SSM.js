@@ -25,6 +25,7 @@ import { ReactComponent as ReactNativeIcon } from '../../Images/ReactNativeIcon.
 import GA from '../../Images/SSM/GA.png';
 import RN from '../../Images/SSM/RN-Dev.png';
 import ReactDev from '../../Images/SSM/React-Dev.png';
+import ReactGA from 'react-ga4';
 function IOS(props){
   return(
     <>
@@ -98,6 +99,7 @@ function SSM(props) {
   const theme = useTheme();
   const fullScreen = useMediaQuery(theme.breakpoints.down('md'));
   const navigate = useNavigate()
+  ReactGA.send({ hitType: "pageview", page: window.location.pathname });
   const IOSHeader = () => {
     return(
       <>
