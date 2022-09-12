@@ -12,6 +12,9 @@ import { useTheme } from '@mui/material/styles';
 import moment from 'moment';
 import Button from '@mui/material/Button';
 import LinkIcon from '@mui/icons-material/Link';
+import ReactGA from 'react-ga4';
+import { gaEvent } from "../functions";
+import { GA_CATEGORY_BUTTON_CLICK } from '../constants';
 function createDataForCerts(title, icon, issueDate, expirationDate, credentialLinkl){
   return {title, icon, issueDate, expirationDate, credentialLinkl}
 }
@@ -69,7 +72,10 @@ function Credentials(){
                     </Typography>
                     <Button
                       startIcon={<LinkIcon/>}
-                      onClick={() => window.open(cert.credentialLinkl)}
+                      onClick={() => {
+                        gaEvent(GA_CATEGORY_BUTTON_CLICK, `Certification Link: ${cert.title}`);
+                        window.open(cert.credentialLinkl)
+                      }}
                     >
                       Show credentials
                     </Button>
