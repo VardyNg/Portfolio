@@ -21,5 +21,5 @@ phases:
       - npm run build
   post_build:
     commands:
-      - aws s3 sync ./build s3://www.wadeenghoiwa.com --recursive
+      - aws s3 cp ./build s3://www.wadeenghoiwa.com --recursive
     
