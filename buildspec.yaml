@@ -9,6 +9,8 @@ phases:
       - apt install -y nodejs
       - echo Installing Npm...
       - npm install -g npm
+      - pip install --upgrade pip
+      - pip install --upgrade awscli
   pre_build:
     commands:
       - echo Installing dependencies...
@@ -19,10 +21,5 @@ phases:
       - npm run build
   post_build:
     commands:
-      - ls
-      
-artifacts:
-  files:
-    - "build/**/*"
-  # discard-paths: no
-  # base-directory: build
+      - aws s3 sync ./build s3://www.wadeenghoiwa.com --recursive
+    
