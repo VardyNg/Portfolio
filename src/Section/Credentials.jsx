@@ -2,6 +2,7 @@ import Typography from '@mui/material/Typography';
 import { ReactComponent as AWSSAA } from '../Images/Certs/AWS-SAA.svg';
 import { ReactComponent as AWSDVA } from '../Images/Certs/AWS-DVA.svg';
 import { ReactComponent as HTCAO002 } from '../Images/Certs/HTCAO002.svg';
+import { ReactComponent as AWSSAP } from '../Images/Certs/AWS-SAP.svg';
 import Grid from '@mui/material/Grid'
 import Card from '@mui/material/Card'
 import CardContent from '@mui/material/CardContent';
@@ -40,6 +41,13 @@ const certs = [
     "2022-07-16",
     "2024-07-16",
     "https://www.credly.com/badges/67e029c5-743c-4a93-9ef7-7fa78641d4a3"
+  ),
+  createDataForCerts(
+    "AWS Certified Solutions Architect – Professional (SAP-C01) ",
+    <AWSSAP style={{height: 100, width: 100}}/>,
+    "2023-01-15",
+    "2026-01-15",
+    ""
   )
 ]
 function Credentials(){
