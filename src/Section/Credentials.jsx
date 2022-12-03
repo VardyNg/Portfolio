@@ -2,6 +2,7 @@ import Typography from '@mui/material/Typography';
 import { ReactComponent as AWSSAA } from '../Images/Certs/AWS-SAA.svg';
 import { ReactComponent as AWSDVA } from '../Images/Certs/AWS-DVA.svg';
 import { ReactComponent as HTCAO002 } from '../Images/Certs/HTCAO002.svg';
+import { ReactComponent as AZ900 } from '../Images/Certs/AZ-900.svg';
 import Grid from '@mui/material/Grid'
 import Card from '@mui/material/Card'
 import CardContent from '@mui/material/CardContent';
@@ -40,6 +41,13 @@ const certs = [
     "2022-07-16",
     "2024-07-16",
     "https://www.credly.com/badges/67e029c5-743c-4a93-9ef7-7fa78641d4a3"
+  ),
+  createDataForCerts(
+    "Microsoft Azure Fundamentals (AZ-900)",
+    <AZ900 style={{height: 100, width: 100}}/>,
+    "2022-12-27",
+    null,
+    "https://www.credly.com/badges/67e029c5-743c-4a93-9ef7-7fa78641d4a3"
   )
 ]
 function Credentials(){
@@ -67,8 +75,8 @@ function Credentials(){
                     </Typography>
                     
                     <Typography variant="subtitle1" color="text.secondary" component="div">
-                      Validity: {moment(cert.issueDate).format("MMM YYYY")}
-                      {cert.expirationDate !== null && <> - {moment(cert.expirationDate).format("MMM YYYY")}</>}
+                      Validity: {moment(cert.issueDate).format("MMM YYYY")}{' '} 
+                      - {cert.expirationDate !== null && <> {moment(cert.expirationDate).format("MMM YYYY")}</>}
                     </Typography>
                     <Button
                       startIcon={<LinkIcon/>}
