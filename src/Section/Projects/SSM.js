@@ -26,6 +26,9 @@ import GA from '../../Images/SSM/GA.png';
 import RN from '../../Images/SSM/RN-Dev.png';
 import ReactDev from '../../Images/SSM/React-Dev.png';
 import ReactGA from 'react-ga4';
+import {
+  SSM_USER_COUNT
+} from '../../constants';
 function IOS(props){
   return(
     <>
@@ -58,7 +61,7 @@ function Web(props){
   return(
     <>
       <Typography variant="subtitle1" component="div" color="gray">
-        Visits: <b>6000+</b> 
+        Visits: <b>{SSM_USER_COUNT}+</b> 
       </Typography>
       <Typography variant="body">
         Previously developed by pure HTML with CSS and JavaScripts, A new version written in <b>ReactJS</b> (Beta website) is coming soon.
@@ -151,7 +154,7 @@ function SSM(props) {
                 </li>
                 <li>
                   <Typography variant="body">
-                    Served over 7000 +  users from many countries, base on Goolge Analtyics.
+                    Served over {SSM_USER_COUNT}+  users from many countries, base on Goolge Analtyics.
                     <img src={GA} alt="GA" height="200"/>
                   </Typography>
                 </li>
