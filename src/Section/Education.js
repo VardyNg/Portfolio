@@ -9,67 +9,62 @@ import TimelineOppositeContent from '@mui/lab/TimelineOppositeContent';
 import { ReactComponent as HKCCLogo } from '../Images/PolyU_HKCC.svg';
 import { ReactComponent as PolyULogo } from '../Images/PolyU.svg';
 import { ReactComponent as CCCSSLogo } from '../Images/CCCSS.svg';
+import { ReactComponent as EIELogo } from '../Images/PolyU-EIE.svg';
 import IconButton from '@mui/material/IconButton';
 
 const iconSize = 40;
 const steps = [
   {
-    yearsRange: "Sep 2019 - Dec 2021",
-    label: 'The Hong Kong Polytechnic University',
+    yearsRange: "2019 - 2022",
+    institute: 'Department of Electronic and Information Engineering',
     degree: 'BSc(Hons) Internet and Multimedia Technologies',
     cGPA: "2.86",
     description: [
-      "Computer Game Development",
-      "Programming and Database",
-      "Integrated Circuit (IC)",
+      "Internet Technology",
       "Web and Mobile Application Development",
+      "Programming and Database",
+      "Computer Game Development",
+      "Integrated Circuit (IC)",
       "VR technology, 3D Animation and Modelling",
-      "Internet Technology"
     ],
-    icon: <PolyULogo style={{ height: iconSize, width: iconSize }}/>,
-    url: "https://www.polyu.edu.hk/en/"
+    icon: <EIELogo style={{ height: iconSize, width: iconSize }}/>,
+    url: "https://www.polyu.edu.hk/en/eie/"
   },
   {
-    yearsRange: "Sep 2017 - Jun 2019",
-    label: 'Hong Kong Community College, Hong Kong PolyU',
+    yearsRange: "2017 - 2019",
+    institute: 'Hong Kong Community College',
     degree: 'Associate in Information Technology',
     cGPA: "3.36",
     description: [
-      "Basic Programming",
-      "Database",
-      "Mathematics",
+      "Mobile App Design and Development",
+      "Basic Programming and Database",
       "Networking",
-      "Mobile App Design and Development"
+      "Mathematics",
     ],
     icon: <HKCCLogo style={{ height: iconSize, width: iconSize }}/>,
     url: "https://www.hkcc-polyu.edu.hk/en/home/index.html"
   }
 ];
 
-function Education(){
 
-  return(
-    <div style={{marginTop: 20}}>      
-      <div style={{alignContent: "left"}}>
-        <Typography variant="h4" sx={{ textAlign: 'left' }} style={{fontFamily: "Raleway", padding: 10}}>
-          <b>Education Background</b>
-        </Typography>
-      </div>
-      <Timeline position="left" style={{backgroundColor: ''}}>
-        {steps.map((step, index) => {
-          return(
-            <TimelineItem key={index}>
-              <TimelineContent >
-                <Typography variant="h6" sx={{textAlign: 'left', fontWeight: '' }}>
-                  {step.yearsRange}
-                </Typography>
-                <Typography variant="h5" sx={{textAlign: 'left', fontWeight: 'bold' }}>
-                  {step.label}
-                </Typography>
-                <Typography variant="h6" sx={{textAlign: 'left', fontWeight: '' }}>
-                  {step.degree}
-                  {/* {step.cGPA !== "" && ", cGPA: " + step.cGPA} */}
-                </Typography>       
+function DetailedInstitutes(){
+  return <>
+    <Timeline position="left" style={{backgroundColor: '', marginLeft: -50}}>
+      {steps.map((step, index) => {
+        return(
+          <TimelineItem key={index}>
+            <TimelineContent >
+              <Typography variant="subtitle1" sx={{textAlign: 'left', fontWeight: '', marginBottom: -1}}>
+                {step.yearsRange}
+              </Typography>
+              <Typography variant="h6" sx={{textAlign: 'left', fontWeight: 'bold', marginBottom: -1 }}>
+                {step.degree}
+                {/* {step.cGPA !== "" && ", cGPA: " + step.cGPA} */}
+              </Typography>       
+              <Typography variant="subtitle1" sx={{textAlign: 'left', fontWeight: '' }}>
+                {step.institute}
+              </Typography>
+              <div style={{marginLeft: -10}}>
                 <ul>
                   {step.description.map((description, index) => {
                     return(
@@ -81,27 +76,69 @@ function Education(){
                     )
                   })}
                 </ul>                      
-              </TimelineContent>
-              <TimelineOppositeContent style={{ maxWidth: "1px", paddingLeft: '0px', paddingRight: '0px' }}/>
-              <TimelineSeparator>
-                <TimelineDot
-                  style={{ backgroundColor: '#FFFFFF'}}
+              </div>
+            </TimelineContent>
+            <TimelineOppositeContent style={{ maxWidth: "1px", paddingLeft: '0px', paddingRight: '0px' }}/>
+            <TimelineSeparator>
+              <TimelineDot
+                style={{ backgroundColor: '#FFFFFF'}}
+              >
+                <IconButton
+                  size="small"
+                  onClick={() => {
+                    window.open(step.url, "_blank");
+                  }}
                 >
-                  <IconButton
-                    size="small"
-                    onClick={() => {
-                      window.open(step.url, "_blank");
-                    }}
-                  >
-                    {step.icon}
-                  </IconButton>
-                </TimelineDot>
-                <TimelineConnector />
-              </TimelineSeparator>
-            </TimelineItem>
-          )
-        })}
+                  {step.icon}
+                </IconButton>
+              </TimelineDot>
+              <TimelineConnector />
+            </TimelineSeparator>
+          </TimelineItem>
+        )
+      })}
+    </Timeline>
+  </>
+}
+function Education(){
+
+  return(
+    <div style={{marginTop: 20}}>      
+      <div style={{alignContent: "left"}}>
+        <Typography variant="h4" sx={{ textAlign: 'left' }} style={{fontFamily: "Raleway", padding: 10}}>
+          <b>Education Background</b>
+        </Typography>
+      </div>
+      <Timeline position="left">
+        <TimelineItem>
+          <TimelineContent>
+            <Typography variant="h6" sx={{textAlign: 'left', fontWeight: '' }}>
+              2017 - 2022
+            </Typography>
+            <Typography variant="h5" sx={{textAlign: 'left', fontWeight: 'bold' }}>
+              The Hong Kong Polytechnic University
+            </Typography>
+            <DetailedInstitutes/>
+          </TimelineContent>
+          <TimelineOppositeContent style={{ maxWidth: "1px", paddingLeft: '0px', paddingRight: '0px' }}/>
+          <TimelineSeparator>
+            <TimelineDot
+              style={{ backgroundColor: '#FFFFFF'}}
+            >
+              <IconButton
+                size="small"
+                onClick={() => {
+                  window.open("https://www.polyu.edu.hk/en/", "_blank");
+                }}
+              >
+                <PolyULogo style={{ height: iconSize, width: iconSize }}/>
+              </IconButton>
+            </TimelineDot>
+            <TimelineConnector />
+          </TimelineSeparator>
+        </TimelineItem>
       </Timeline>
+      
     </div>
   )
 }
