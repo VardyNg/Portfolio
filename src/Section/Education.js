@@ -12,7 +12,7 @@ import { ReactComponent as CCCSSLogo } from '../Images/CCCSS.svg';
 import { ReactComponent as EIELogo } from '../Images/PolyU-EIE.svg';
 import IconButton from '@mui/material/IconButton';
 
-const iconSize = 40;
+const iconSize = 35;
 const steps = [
   {
     yearsRange: "2019 - 2022",
@@ -92,7 +92,6 @@ function DetailedInstitutes(){
                   {step.icon}
                 </IconButton>
               </TimelineDot>
-              <TimelineConnector />
             </TimelineSeparator>
           </TimelineItem>
         )
@@ -131,7 +130,7 @@ function Education(){
                   window.open("https://www.polyu.edu.hk/en/", "_blank");
                 }}
               >
-                <PolyULogo style={{ height: iconSize, width: iconSize }}/>
+                <PolyULogo style={{ height: iconSize * 1.2, width: iconSize * 1.2}}/>
               </IconButton>
             </TimelineDot>
             <TimelineConnector />
