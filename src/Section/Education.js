@@ -20,11 +20,10 @@ const steps = [
     degree: 'BSc(Hons) Internet and Multimedia Technologies',
     cGPA: "2.86",
     description: [
-      "Internet Technology",
       "Web and Mobile Application Development",
+      "Internet Technology",
       "Programming and Database",
       "Computer Game Development",
-      "Integrated Circuit (IC)",
       "VR technology, 3D Animation and Modelling",
     ],
     icon: <EIELogo style={{ height: iconSize, width: iconSize }}/>,
