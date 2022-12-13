@@ -14,7 +14,7 @@ phases:
   pre_build:
     commands:
       - echo Installing dependencies...
-      - npm instal
+      - npm install
   build:
     commands:
       - echo Building...
