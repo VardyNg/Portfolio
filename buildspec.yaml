@@ -8,7 +8,7 @@ phases:
       - curl -sL https://deb.nodesource.com/setup_16.x | bash -
       - apt install -y nodejs
       - echo Installing Npm...
-      - npm install -g npm
+      # - npm install -g npm
       - pip install --upgrade pip
       - pip install --upgrade awscli
   pre_build:
