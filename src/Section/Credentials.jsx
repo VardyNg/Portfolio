@@ -55,7 +55,7 @@ const certs = [
     <AWSSOA style={{height: 100, width: 100}}/>,
     "2022-10-14",
     "2025-10-14",
-    "https://www.credly.com/badges/f929e2d3-42f6-473d-9e1a-766a0f8b8185'
+    "https://www.credly.com/badges/f929e2d3-42f6-473d-9e1a-766a0f8b8185"
   )
 ]
 function Credentials(){
