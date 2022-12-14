@@ -44,18 +44,18 @@ const certs = [
     "https://www.credly.com/badges/67e029c5-743c-4a93-9ef7-7fa78641d4a3"
   ),
   createDataForCerts(
-    "AWS Certified DevOps Engineer – Professional (DOP-C01)",
-    <AWSDOP style={{height: 100, width: 100}}/>,
-    "2022-12-13",
-    "2025-12-13",
-    "https://www.credly.com/badges/d808da6c-93f2-4fe3-84ec-e7932cb121ed/public_url"
-  ),
-  createDataForCerts(
     "AWS Certified SysOps Administrator – Associate (SOA-C02)",
     <AWSSOA style={{height: 100, width: 100}}/>,
     "2022-10-14",
     "2025-10-14",
     "https://www.credly.com/badges/f929e2d3-42f6-473d-9e1a-766a0f8b8185"
+  ),
+  createDataForCerts(
+    "AWS Certified DevOps Engineer – Professional (DOP-C01)",
+    <AWSDOP style={{height: 100, width: 100}}/>,
+    "2022-12-13",
+    "2025-12-13",
+    "https://www.credly.com/badges/d808da6c-93f2-4fe3-84ec-e7932cb121ed/public_url"
   )
 ]
 function Credentials(){
