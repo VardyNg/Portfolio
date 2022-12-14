@@ -25,14 +25,14 @@ const certs = [
     "AWS Certified Solutions Architect – Associate (SAA-C02)",
     <AWSSAA style={{height: 100}}/>,
     "2022-04-03",
-    "2025-04-03",
+    "2025-12-13",
     "https://www.credly.com/badges/7794c6a8-5d2d-487d-992a-7beb697ce65e"
   ),
   createDataForCerts(
     "AWS Certified Developer – Associate (DVA-C01)",
     <AWSDVA style={{height: 100}}/>,
     "2022-06-17",
-    "2025-06-17",
+    "2025-12-13",
     "https://www.credly.com/badges/610618a2-e827-48a0-9a9a-b80f7bc7cbcb"
   ),
   createDataForCerts(
@@ -45,9 +45,9 @@ const certs = [
   createDataForCerts(
     "AWS Certified DevOps Engineer – Professional (DOP-C01)",
     <AWSDOP style={{height: 100, width: 100}}/>,
-    "2022-12-01",
-    "2025-12-01",
-    ""
+    "2022-12-13",
+    "2025-12-13",
+    "https://www.credly.com/badges/d808da6c-93f2-4fe3-84ec-e7932cb121ed/public_url"
   )
 ]
 function Credentials(){
