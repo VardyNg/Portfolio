@@ -2,6 +2,7 @@ import Typography from '@mui/material/Typography';
 import { ReactComponent as AWSSAA } from '../Images/Certs/AWS-SAA.svg';
 import { ReactComponent as AWSDVA } from '../Images/Certs/AWS-DVA.svg';
 import { ReactComponent as HTCAO002 } from '../Images/Certs/HTCAO002.svg';
+import { ReactComponent as AWSDOP } from '../Images/Certs/AWS-DOP.svg';
 import { ReactComponent as AWSSOA } from '../Images/Certs/AWS-SOA.svg';
 import Grid from '@mui/material/Grid'
 import Card from '@mui/material/Card'
@@ -25,14 +26,14 @@ const certs = [
     "AWS Certified Solutions Architect – Associate (SAA-C02)",
     <AWSSAA style={{height: 100}}/>,
     "2022-04-03",
-    "2025-04-03",
+    "2025-12-13",
     "https://www.credly.com/badges/7794c6a8-5d2d-487d-992a-7beb697ce65e"
   ),
   createDataForCerts(
     "AWS Certified Developer – Associate (DVA-C01)",
     <AWSDVA style={{height: 100}}/>,
     "2022-06-17",
-    "2025-06-17",
+    "2025-12-13",
     "https://www.credly.com/badges/610618a2-e827-48a0-9a9a-b80f7bc7cbcb"
   ),
   createDataForCerts(
@@ -43,11 +44,18 @@ const certs = [
     "https://www.credly.com/badges/67e029c5-743c-4a93-9ef7-7fa78641d4a3"
   ),
   createDataForCerts(
+    "AWS Certified DevOps Engineer – Professional (DOP-C01)",
+    <AWSDOP style={{height: 100, width: 100}}/>,
+    "2022-12-13",
+    "2025-12-13",
+    "https://www.credly.com/badges/d808da6c-93f2-4fe3-84ec-e7932cb121ed/public_url"
+  ),
+  createDataForCerts(
     "AWS Certified SysOps Administrator – Associate (SOA-C02)",
     <AWSSOA style={{height: 100, width: 100}}/>,
     "2022-10-14",
     "2025-10-14",
-    "https://www.credly.com/badges/f929e2d3-42f6-473d-9e1a-766a0f8b8185"
+    "https://www.credly.com/badges/f929e2d3-42f6-473d-9e1a-766a0f8b8185'
   )
 ]
 function Credentials(){
