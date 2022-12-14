@@ -46,7 +46,7 @@ const theme = createTheme({
 });
 
 ReactGA.initialize(
-  process.env.REACT_APP_GOOGLE_ANAYTICS_MEASUREMENT_ID,
+  "G-K6RLEQNLEH",
   {
     debug: true
   }
