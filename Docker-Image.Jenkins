@@ -14,7 +14,7 @@ pipeline {
             fsGroup: 0
           containers:
           - name: default
-            image: docker
+            image: docker:latest
             tty: true
             resources:
               requests: 
