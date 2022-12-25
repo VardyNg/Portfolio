@@ -1,8 +1,8 @@
 pipeline {
   agent {
     kubernetes {
-        cloud 'oracle-kubernetes'
-        yaml '''
+      cloud 'oracle-kubernetes'
+      yaml '''
         apiVersion: v1
         kind: Pod
         spec:
@@ -13,24 +13,24 @@ pipeline {
             runAsGroup: 0
             fsGroup: 0
           containers:
-          - name: docker
-            image: docker:20.10.17-git
-            tty: true
-            resources:
-              requests: 
-                cpu: "1" 
-                memory: "4Gi"
-              limits:
-                cpu: "1"
-                memory: "4Gi"
-            volumeMounts: 
-              - mountPath: /var/run 
-                name: docker-sock 
+            - name: docker
+              image: docker:20.10.17-git
+              tty: true
+              resources:
+                requests: 
+                  cpu: "1" 
+                  memory: "4Gi"
+                limits:
+                  cpu: "1"
+                  memory: "4Gi"
+              volumeMounts: 
+                - mountPath: /var/run 
+                  name: docker-sock 
           volumes: 
             - name: docker-sock 
               hostPath: 
-                  path: /var/run
-        '''
+                path: /var/run
+      '''
     }
   }
   stages {
