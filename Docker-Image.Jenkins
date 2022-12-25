@@ -32,6 +32,7 @@ pipeline {
         container('default') {
           checkout([$class: 'GitSCM', branches: [[name: 'dev']], extensions: [], userRemoteConfigs: [[credentialsId: 'vardyng-github-pat', url: 'https://github.com/VardyNg/Portfolio.git']]])
           sh 'echo "Building Docker Image"'
+          sh 'echo "Building Docker Image"'
         }
       }
     }
