@@ -14,7 +14,7 @@ pipeline {
             fsGroup: 0
           containers:
           - name: docker
-            image: docker:dind
+            image: docker:20.10.17-git
             tty: true
             resources:
               requests: 
