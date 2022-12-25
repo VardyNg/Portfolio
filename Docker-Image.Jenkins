@@ -24,8 +24,8 @@ pipeline {
                 cpu: "1"
                 memory: "4Gi"
             volumeMounts: 
-                - mountPath: /var/run 
-                  name: docker-sock 
+              - mountPath: /var/run 
+                name: docker-sock 
           volumes: 
             - name: docker-sock 
               hostPath: 
