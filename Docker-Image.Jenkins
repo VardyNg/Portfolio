@@ -13,7 +13,7 @@ pipeline {
             runAsGroup: 0
             fsGroup: 0
           containers:
-            - name: docker
+            - name: buildkit
               image: moby/buildkit:master
               tty: true
               resources:
@@ -29,7 +29,7 @@ pipeline {
   stages {
     stage('Build Docker Image') {
       steps {
-        container('docker') {
+        container('buildkit') {
           checkout([$class: 'GitSCM', branches: [[name: 'dev']], extensions: [], userRemoteConfigs: [[credentialsId: 'vardyng-github-pat', url: 'https://github.com/VardyNg/Portfolio.git']]])
           sh 'echo "Building Docker Image"'
           sh 'docker buildx create --name mybuilder --driver docker-container'
