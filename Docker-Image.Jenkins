@@ -33,7 +33,11 @@ pipeline {
           checkout([$class: 'GitSCM', branches: [[name: 'dev']], extensions: [], userRemoteConfigs: [[credentialsId: 'vardyng-github-pat', url: 'https://github.com/VardyNg/Portfolio.git']]])
           sh '''
             echo "Building Docker Image"
-            buildctl build --frontend dockerfile.v0 --local context=. --local dockerfile=. --output type=image, name=vardyng/portfolio:latest, push=true
+            buildctl build \
+              --frontend dockerfile.v0 \
+              --local context=. \
+              --local dockerfile=. \
+              --output type=image,name=vardyng/portfolio:latest,push=true
           '''
         }
       }

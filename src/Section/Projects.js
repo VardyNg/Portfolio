@@ -15,9 +15,7 @@ import { useState } from 'react';
 import ReportRoute from './Projects';
 import ArticleIcon from '@mui/icons-material/Article';
 import {  BrowserRouter as Router,  Routes,  Route, Navigate, useNavigate} from "react-router-dom"
-import {
-  SSM_USER_COUNT
-} from '../constants';
+
 function createDataForProjects(title, description, chip, link, start){
   return {title, description, chip, link, start}
 }
@@ -60,7 +58,7 @@ function Projects(){
     ),
     createDataForProjects(
       "Signal Sticker Maker",
-      `An online application for making sticker for the Signal app, reached over ${SSM_USER_COUNT} users since it launces. Available on iOS, Android, and Web.`,
+      "An online application for making sticker for the Signal app, reached over 7000 users since it launces. Available on iOS, Android, and Web.",
       ["2 Developers", "Released"],
       "signal-sticker-maker",
       1
