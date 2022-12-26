@@ -55,7 +55,7 @@ pipeline {
               --frontend dockerfile.v0 \
               --local context=. \
               --local dockerfile=. \
-              --output type=image,name=\"name=vardyng/portfolio:latest\",push=true
+              --output type=image,name=\"vardyng/portfolio:latest\",push=true
           '''
         }
       }
