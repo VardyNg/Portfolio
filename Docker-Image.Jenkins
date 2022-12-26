@@ -31,13 +31,16 @@ pipeline {
       steps {
         container('buildkit') {
           checkout([$class: 'GitSCM', branches: [[name: 'dev']], extensions: [], userRemoteConfigs: [[credentialsId: 'vardyng-github-pat', url: 'https://github.com/VardyNg/Portfolio.git']]])
-          sh 'echo "Building Docker Image"'
-          sh 'docker buildx create --name mybuilder --driver docker-container'
-          sh 'docker buildx use mybuilder'
-          sh 'docker buildx build --load --platform linux/amd64 -t vardyng/portfolio:latest-amd .'
+          sh '''
+            echo "Building Docker Image"
+            buildctl build \
+              --frontend dockerfile.v0 \
+              --local context=. \
+              --local dockerfile=. \
+              --output type=image, name=vardyng/portfolio:latest, push=true
+          '''
         }
       }
     }
   }
 }
-
