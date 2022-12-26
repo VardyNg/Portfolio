@@ -23,6 +23,8 @@ pipeline {
                 limits:
                   cpu: "1"
                   memory: "4Gi"
+              securityContext:
+                privileged: true
       '''
     }
   }
