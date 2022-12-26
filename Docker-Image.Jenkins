@@ -44,5 +44,32 @@ pipeline {
         }
       }
     }
+    stage('Push Image to Docker Hub') {
+      steps {
+        container('buildkit') {
+          sh '''
+            echo "Pushing Image to Docker Hub"
+          '''
+        }
+      }
+    }
+    stage('Push Image to AWS ECR') {
+      steps {
+        container('buildkit') {
+          sh '''
+            echo "Pushing Image to AWS ECR"
+          '''
+        }
+      }
+    }
+    stage('Push Image to Azure Container Registry') {
+      steps {
+        container('buildkit') {
+          sh '''
+            echo "Pushing Image to Azure Container Registry"
+          '''
+        }
+      }
+    }
   }
 }
