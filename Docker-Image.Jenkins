@@ -29,7 +29,7 @@ pipeline {
     }
   }
   environment {
-    DOCKERHUB_AUTH = credentials('vardyng-docker-hub')
+    DOCKERHUB_AUTH = credentials('dockerhub-vardyng')
   }
   stages {
     stage('Config config.json') {
@@ -38,7 +38,8 @@ pipeline {
           sh '''
             echo "Configuring config.json"
             mkdir -p ~/.docker
-            echo "{\"auths\":{\"https://index.docker.io/v1/\":{\"auth\":\"${DOCKERHUB_AUTH}\"}}}" >> ~/.docker/config.json
+            BASE64_DOCKERHUB_AUTH=$(echo -n ${DOCKERHUB_AUTH} | base64)
+            echo "{\"auths\":{\"https://index.docker.io/v1/\":{\"auth\":\"${BASE64_DOCKERHUB_AUTH}\"}}}" >> ~/.docker/config.json
             echo "Configured config.json"
             less /root/.docker/config.json
           '''
