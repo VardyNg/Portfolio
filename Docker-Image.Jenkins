@@ -28,7 +28,22 @@ pipeline {
       '''
     }
   }
+  environment {
+    DOCKERHUB_AUTH = credentials('vardyng-docker-hub')
+  }
   stages {
+    stage('Config config.json') {
+      steps {
+        container('buildkit') {
+          sh '''
+            echo "Configuring config.json"
+            echo "{\"auths\":{\"https://index.docker.io/v1/\":{\"auth\":\"${DOCKERHUB_AUTH}\"}}}" > /root/.docker/config.json
+            echo "Configured config.json"
+            less /root/.docker/config.json
+          '''
+        }
+      }
+    }
     stage('Build Docker Image') {
       steps {
         container('buildkit') {
@@ -39,7 +54,7 @@ pipeline {
               --frontend dockerfile.v0 \
               --local context=. \
               --local dockerfile=. \
-              --output type=image,name=vardyng/portfolio:latest,push=true
+              --output type=image,name=\"name=vardyng/portfolio:latest\",push=true
           '''
         }
       }
