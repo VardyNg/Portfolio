@@ -30,7 +30,6 @@ pipeline {
   }
   environment {
     ACR_AUTH = credentials('ecv-vardyngportfolio-azure')
-    DOCKERHUB_USERNAME = credentials('dockerhub-vardyng-username')
     DOCKERHUB_PASSWORD = credentials('dockerhub-vardyng-password')
   }
   stages {
