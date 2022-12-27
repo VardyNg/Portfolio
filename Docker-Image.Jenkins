@@ -51,7 +51,7 @@ pipeline {
     stage('Build and Push Docker Images') {
       steps {
         container('buildkit') {
-          checkout([$class: 'GitSCM', branches: [[name: 'dev']], extensions: [], userRemoteConfigs: [[credentialsId: 'vardyng-github-pat', url: 'https://github.com/VardyNg/Portfolio.git']]])
+          checkout([$class: 'GitSCM', branches: [[name: 'prod']], extensions: [], userRemoteConfigs: [[credentialsId: 'vardyng-github-pat', url: 'https://github.com/VardyNg/Portfolio.git']]])
           sh '''
             echo "Building Docker Image"
             buildctl build \
