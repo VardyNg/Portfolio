@@ -42,8 +42,6 @@ pipeline {
             mkdir -p ~/.docker
             BASE64_DOCKERHUB_AUTH=$(echo -n ${DOCKERHUB_USERNAME}:${DOCKERHUB_AUTH} | base64)
             echo "{\\"auths\\":{\\"https://index.docker.io/v1/\\":{\\"auth\\":\\"${BASE64_DOCKERHUB_AUTH}\\"},\\"vardyngportfolio.azurecr.io\\":{\\"auth\\":\\"${ACR_AUTH}\\"}}}" >> ~/.docker/config.json
-            echo "Configured config.json"
-            less /root/.docker/config.json
           '''
         }
       }
