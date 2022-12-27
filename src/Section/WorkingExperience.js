@@ -23,7 +23,11 @@ const steps = [
     "eCloudvalley Digital Technology Co., Ltd",
     "Cloud Engineer",
     "Solution Architect - Development",
-    [],
+    [
+      "Developed Cloud Native applications on AWS for a Multi-national theme park and resort company",
+      "Developed and Defined DevOps tools and practices to facilitate CICD",
+      "Participated in cloud infrastructure designs"
+    ],
     "https://www.ecloudvalley.com/"
   ),
   createDataForWorkingExperience(
@@ -33,9 +37,8 @@ const steps = [
     "Mobile Developer",
     "Project BU",
     [
-      "Develop hybrid application using ReactJS",
-      "Develop CICD workflow to deploy product",
-      "Suggested and assisted the migration of using GitLab"
+      "Developed ReactJS application UI",
+      "Implemented automated pipelines for Continues Delivery"
     ],
     "https://www.armitage.com.hk/"
   ),
@@ -46,8 +49,8 @@ const steps = [
     'Software Development Internship (Part Time mode)',
     'Blockchain Team',
     [
-      "Develop software to maintain systems using ReactJS and Docker",
-      "System support for the crypto currency ETD",
+      "Setup and installed docker based system",
+      "Maintained networking devices",
     ],
     "https://www.banclogix.com/"
   ),
@@ -58,12 +61,8 @@ const steps = [
     'Software Developer Internship (Full Time mode)',
     "IT",
     [
-      "Designed and developed a CRUD application to support competitions scoring using ReactJS",
-      "Maintained and developed APIs using NodeJS, backed with MySQL Database",
-      "Setup and maintained remote servers",
-      "Implement CI/CD workflow to automate deployment",
-      "Consulted with end users to develop and revise the system",
-      "Rated “Exceed Expectation” by the supervisorr"
+      "Designed and developed scoring system for both frontend and backend using ReactJS, NodeJS, and MySQL",
+      "Consulted with end users to revise the system"
     ],
     null
   )
