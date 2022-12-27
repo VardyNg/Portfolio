@@ -64,21 +64,21 @@ function Credentials(){
     <div style={{marginTop: 10, marginBottom: 10}}>      
       <div style={{alignContent: "left"}}>
         <Typography variant="h4" sx={{ textAlign: 'left' }} style={{fontFamily: "Raleway", padding: 10}}>
-          <b>Certifications</b>
+          <b>Professional Qualifications</b>
         </Typography>
         <Grid 
           container
           style={{display: 'flex', flexDirection: 'row', flexWrap: 'stretch', justifyContent: 'space-around', alignItems: 'stretch'}}
         >
           {certs.map(cert => (
-            <Grid item xs={12} lg={6} padding={1}>
-              <Card sx={{ display: 'flex', justifyContent: 'flex-start', alignItems: 'center', padding: 1 }}>
-                <div style={{marginLeft: 30}}>
+            <Grid item xs={12} lg={6} padding={1} key={cert}>
+              <Card sx={{ display: 'flex', justifyContent: 'flex-start', alignItems: 'center', padding: 0.5, height: 125 }}>
+                <div style={{marginLeft: 10}}>
                   {cert.icon}
                 </div>
-                <Box sx={{ display: 'flex', flexDirection: 'column' }}>
+                <Box sx={{ display: 'flex', flexDirection: 'column', backgroundColor: '', width: '100%', marginBottom: -2}}>
                   <CardContent >
-                    <Typography component="div" variant="h6">
+                    <Typography component="div" variant="h7">
                       {cert.title}
                     </Typography>
                     
@@ -88,6 +88,7 @@ function Credentials(){
                     </Typography>
                     <Button
                       startIcon={<LinkIcon/>}
+                      size="small"
                       onClick={() => {
                         gaEvent(GA_CATEGORY_BUTTON_CLICK, `Certification Link: ${cert.title}`);
                         window.open(cert.credentialLinkl)

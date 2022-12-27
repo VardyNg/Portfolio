@@ -14,7 +14,7 @@ function Footer(props){
         Created by Ng Hoi Wa, 2022. All right reserved.
       </WhiteTextTypography>
       <WhiteTextTypography variant="subtitle2" component="div" style={{fontColor: 'white'}}>
-        using ReactJS | hosted on AWS S3 static hosting | deployed using AWS CodePipeline | sourced on GitHub
+        written by ReactJS | hosted on AWS S3 static hosting | deployed using AWS CodePipeline | sourced on GitHub
       </WhiteTextTypography>
     </div>
   )
