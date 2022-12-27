@@ -81,7 +81,7 @@ function WorkingExperience(){
         {steps.map((step, index) => {
           let durationString = ""
           if(index === 0)
-            durationString += step.startTime.format('MMM YYYY') + "- Present"
+            durationString += step.startTime.format('MMM YYYY') + " - Present"
           else{
             durationString += step.startTime.format('MMM YYYY') + " - " + step.endTime.format('MMM YYYY')
             durationString += " "
