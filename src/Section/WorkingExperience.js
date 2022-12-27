@@ -88,36 +88,42 @@ function WorkingExperience(){
             durationString += "(" + (step.endTime.diff(step.startTime, 'month') + 1) + " months)"
           }
           return(
-            <TimelineItem style={{marginBottom: 15}} key={index}>
+            <TimelineItem style={{marginBottom: 0}} key={index}>
               <TimelineContent >
                 <Typography variant="h6" sx={{textAlign: 'left', fontWeight: '' }}>
                   {durationString}
                 </Typography>
                 <Typography variant="h5" sx={{textAlign: 'left', fontWeight: 'bold' }}>
-                  {step.url ? <Link href={step.url} color="inherit" target="_blank">{step.label}</Link> : step.label}
+                  {step.url ? 
+                    <Link href={step.url} color="inherit" target="_blank">
+                      {step.label}
+                    </Link> 
+                    : step.label
+                  }
                 </Typography>
-                <Typography variant="h6" sx={{textAlign: 'left', fontWeight: '' }}>
+                <Typography variant="subtitle1" sx={{textAlign: 'left', fontWeight: '' }}>
                   {step.position}, {step.department}
-                </Typography>       
-                <ul>
-                  {step.description.map((description, index) => {
-                    return(
-                      <li key={index}>
-                        <Typography sx={{ textAlign: 'left' }} >
-                          {description}
-                        </Typography>
-                      </li>
-                    )
-                  })}
-                </ul>           
+                </Typography>
+                <div style={{marginLeft: -10}}>
+                  <ul>
+                    {step.description.map((description, index) => {
+                      return(
+                        <li key={index}>
+                          <Typography sx={{ textAlign: 'left' }} >
+                            {description}
+                          </Typography>
+                        </li>
+                      )
+                    })}
+                  </ul>           
+                </div>
                 {step.label === "Crossover Int. Company Limited" && 
                 <>
                   <ButtonGroup
                     variant="outlined"
                     size="large"
                     fullWidth
-                    >
-                    
+                  >  
                     <Button
                       onClick={() => { navigate("projects/techvision")}}
                       startIcon={<ArticleIcon/>}
@@ -134,7 +140,6 @@ function WorkingExperience(){
                       View website
                     </Button>
                   </ButtonGroup>
-
                 </>}           
               </TimelineContent>
               <TimelineOppositeContent style={{ maxWidth: "1px", paddingLeft: '0px', paddingRight: '0px' }}/>
