@@ -121,16 +121,18 @@ function WorkingExperience(){
                 <>
                   <ButtonGroup
                     variant="outlined"
-                    size="large"
+                    size="small"
                     fullWidth
                   >  
                     <Button
+                      style={{width: 200}}
                       onClick={() => { navigate("projects/techvision")}}
                       startIcon={<ArticleIcon/>}
                     >
                       Doc
                     </Button>
                     <Button
+                      style={{width: 200}}
                       startIcon={<WebIcon/>}
                       onClick={() => { 
                         console.log("wdawda")
