@@ -73,10 +73,10 @@ function Credentials(){
           {certs.map(cert => (
             <Grid item xs={12} lg={6} padding={1} key={cert}>
               <Card sx={{ display: 'flex', justifyContent: 'flex-start', alignItems: 'center', padding: 1 }}>
-                <div style={{marginLeft: 30}}>
+                <div style={{marginLeft: 10}}>
                   {cert.icon}
                 </div>
-                <Box sx={{ display: 'flex', flexDirection: 'column' }}>
+                <Box sx={{ display: 'flex', flexDirection: 'column', backgroundColor: '', width: '100%' }}>
                   <CardContent >
                     <Typography component="div" variant="h6">
                       {cert.title}
