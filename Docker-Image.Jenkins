@@ -1,0 +1,63 @@
+pipeline {
+  agent {
+    kubernetes {
+      cloud 'oracle-kubernetes'
+      yaml '''
+        apiVersion: v1
+        kind: Pod
+        spec:
+          nodeSelector:
+            kubernetes.io/arch: arm64
+          securityContext:
+            runAsUser: 0
+            runAsGroup: 0
+            fsGroup: 0
+          containers:
+            - name: buildkit
+              image: moby/buildkit:master
+              tty: true
+              resources:
+                requests: 
+                  cpu: "1" 
+                  memory: "4Gi"
+                limits:
+                  cpu: "1"
+                  memory: "4Gi"
+              securityContext:
+                privileged: true
+      '''
+    }
+  }
+  environment {
+    ACR_AUTH = credentials('ecv-vardyngportfolio-azure')
+    DOCKERHUB_PASSWORD = credentials('dockerhub-vardyng-password')
+  }
+  stages {
+    stage('Config config.json') {
+      steps {
+        container('buildkit') {
+          sh '''
+            echo "Configuring config.json"
+            mkdir -p ~/.docker
+            echo "{\\"auths\\":{\\"https://index.docker.io/v1/\\":{\\"auth\\":\\"${DOCKERHUB_PASSWORD}\\"},\\"vardyngportfolio.azurecr.io\\":{\\"auth\\":\\"${ACR_AUTH}\\"}}}" >> ~/.docker/config.json
+          '''
+        }
+      }
+    }
+    stage('Build and Push Docker Images') {
+      steps {
+        container('buildkit') {
+          checkout([$class: 'GitSCM', branches: [[name: 'prod']], extensions: [], userRemoteConfigs: [[credentialsId: 'vardyng-github-pat', url: 'https://github.com/VardyNg/Portfolio.git']]])
+          sh '''
+            echo "Building Docker Image"
+            buildctl build \
+              --frontend dockerfile.v0 \
+              --local context=. \
+              --local dockerfile=. \
+              --output type=image,\\"name=vardyng/portfolio:latest,vardyngportfolio.azurecr.io/portfolio:latest\\",push=true
+          '''
+        }
+      }
+    }
+  }
+}
