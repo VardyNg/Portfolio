@@ -93,7 +93,7 @@ function WorkingExperience(){
                 <Typography variant="h6" sx={{textAlign: 'left', fontWeight: '' }}>
                   {durationString}
                 </Typography>
-                <Typography variant="h5" sx={{textAlign: 'left', fontWeight: 'bold' }}>
+                <Typography variant="h5" sx={{textAlign: 'left', fontWeight: 'bold'}}>
                   {step.url ? 
                     <Link href={step.url} color="inherit" target="_blank">
                       {step.label}
@@ -143,7 +143,7 @@ function WorkingExperience(){
                 </>}           
               </TimelineContent>
               <TimelineOppositeContent style={{ maxWidth: "1px", paddingLeft: '0px', paddingRight: '0px' }}/>
-              <TimelineSeparator>
+              <TimelineSeparator style={{marginTop: 40}} >
                 <TimelineDot/>
                 <TimelineConnector />
               </TimelineSeparator>
