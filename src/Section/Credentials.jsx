@@ -64,7 +64,7 @@ function Credentials(){
     <div style={{marginTop: 10, marginBottom: 10}}>      
       <div style={{alignContent: "left"}}>
         <Typography variant="h4" sx={{ textAlign: 'left' }} style={{fontFamily: "Raleway", padding: 10}}>
-          <b>Certifications</b>
+          <b>Professional Qualifications</b>
         </Typography>
         <Grid 
           container
