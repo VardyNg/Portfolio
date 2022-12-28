@@ -22,7 +22,7 @@ const steps = [
     null,
     "eCloudvalley Digital Technology Co., Ltd",
     "Cloud Engineer",
-    "Solution Architect - Development",
+    "in Solution Architect - Development team",
     [
       "Developed Cloud Native applications on AWS for a Multi-national theme park and resort company",
       "Developed and Defined DevOps tools and practices to facilitate CICD",
