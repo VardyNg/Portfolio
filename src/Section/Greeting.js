@@ -71,7 +71,7 @@ function Greeting(){
             {" "} Vardy
           </Typography>
           <Typography variant="h5" component="div" className={classes.greetingText}>
-            Welcome to my portfolio.
+            Welcome to my portfolio
           </Typography>
           <Divider className={classes.divider}/>
           <Typography variant="body1" component="div" style={{fontFamily: "Raleway"}}>

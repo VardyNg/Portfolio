@@ -21,7 +21,7 @@ import ArticleIcon from '@mui/icons-material/Article';
 import WebIcon from '@mui/icons-material/Web';
 import Countdown from "react-countdown";
 import { useNavigate } from "react-router-dom";
-
+import ReactGA from 'react-ga4';
 let siteURL = "https://www.aismartscore.com"
 function TVChecker(props){
   console.log("TVChecker")
@@ -34,6 +34,7 @@ function TVChecker(props){
   const theme = useTheme();
   let navigate = useNavigate()
   const fullScreen = useMediaQuery(theme.breakpoints.down('md'));
+  ReactGA.send({ hitType: "pageview", page: window.location.pathname });
   useEffect(() => {
     checkServerStatus()
     setDurationSinceLeft(
@@ -113,7 +114,7 @@ function TVChecker(props){
         <Typograhy
           variant="subtitle1"
         >
-          The system is wrapped up and I am not sure its status, you can also view the documentation instead in case of failure.
+          The system is wrapped up and I am not sure its status, you can also view the documentation instead, in case of failure.
         </Typograhy>
         <br/>
         <ButtonGroup

@@ -11,9 +11,10 @@ import Button from '@mui/material/Button';
 import ButtonGroup from '@mui/material/ButtonGroup';
 import Typography from '@mui/material/Typography';
 import moment from 'moment';
+import Link from '@mui/material/Link';
 import { useNavigate } from 'react-router-dom';
-function createDataForWorkingExperience(startTime, endTime, label, position, description){
-  return {startTime, endTime, label, position, description};
+function createDataForWorkingExperience(startTime, endTime, label, position, department, description, url){
+  return {startTime, endTime, label, position, department, description, url};
 }
 const steps = [
   createDataForWorkingExperience(
@@ -21,42 +22,49 @@ const steps = [
     null,
     "eCloudvalley Digital Technology Co., Ltd",
     "Cloud Engineer",
-    [],
+    "in Solution Architect - Development team",
+    [
+      "Developed Cloud Native applications on AWS for a Multi-national theme park and resort company",
+      "Developed and Defined DevOps tools and practices to facilitate CICD",
+      "Participated in cloud infrastructure designs"
+    ],
+    "https://www.ecloudvalley.com/"
   ),
   createDataForWorkingExperience(
     moment("2022-01-01"),
     moment("2022-04-01").endOf('month'),
     "Armitage Technologies Limited",
     "Mobile Developer",
+    "Project BU",
     [
-      "Develop hybrid application using ReactJS",
-      "Develop CICD workflow to deploy product",
-      "Suggested and assisted the migration of using GitLab"
+      "Developed ReactJS application UI",
+      "Implemented automated pipelines for Continues Delivery"
     ],
+    "https://www.armitage.com.hk/"
   ),
   createDataForWorkingExperience(
     moment("2021-09-01"),
     moment("2021-12-01").endOf('month'),
     'Banclogix System Co., Ltd, KVB Global',
     'Software Development Internship (Part Time mode)',
+    'Blockchain Team',
     [
-      "Develop software to maintain systems using ReactJS and Docker",
-      "System support for the crypto currency ETD",
+      "Setup and installed docker based system",
+      "Maintained networking devices",
     ],
+    "https://www.banclogix.com/"
   ),
   createDataForWorkingExperience(
     moment("2021-06-01"),
     moment("2021-09-01").endOf('month'),
     'Crossover Int. Company Limited',
     'Software Developer Internship (Full Time mode)',
+    "IT",
     [
-      "Designed and developed a CRUD application to support competitions scoring using ReactJS",
-      "Maintained and developed APIs using NodeJS, backed with MySQL Database",
-      "Setup and maintained remote servers",
-      "Implement CI/CD workflow to automate deployment",
-      "Consulted with end users to develop and revised the system",
-      "Rated “Exceed Expectation” by the supervisorr"
+      "Designed and developed scoring system for both frontend and backend using ReactJS, NodeJS, and MySQL",
+      "Consulted with end users to revise the system"
     ],
+    null
   )
 ];
 
@@ -73,51 +81,58 @@ function WorkingExperience(){
         {steps.map((step, index) => {
           let durationString = ""
           if(index === 0)
-            durationString += step.startTime.format('MMM YYYY') + "- Present"
+            durationString += step.startTime.format('MMM YYYY') + " - Present"
           else{
             durationString += step.startTime.format('MMM YYYY') + " - " + step.endTime.format('MMM YYYY')
             durationString += " "
             durationString += "(" + (step.endTime.diff(step.startTime, 'month') + 1) + " months)"
           }
           return(
-            <TimelineItem style={{marginBottom: 15}} key={index}>
+            <TimelineItem style={{marginBottom: 0}} key={index}>
               <TimelineContent >
                 <Typography variant="h6" sx={{textAlign: 'left', fontWeight: '' }}>
                   {durationString}
-                  
                 </Typography>
-                <Typography variant="h5" sx={{textAlign: 'left', fontWeight: 'bold' }}>
-                  {step.label}
+                <Typography variant="h5" sx={{textAlign: 'left', fontWeight: 'bold'}}>
+                  {step.url ? 
+                    <Link href={step.url} color="inherit" target="_blank">
+                      {step.label}
+                    </Link> 
+                    : step.label
+                  }
                 </Typography>
-                <Typography variant="h6" sx={{textAlign: 'left', fontWeight: '' }}>
-                  {step.position} {" "}
-                </Typography>       
-                <ul>
-                  {step.description.map((description, index) => {
-                    return(
-                      <li key={index}>
-                        <Typography sx={{ textAlign: 'left' }} >
-                          {description}
-                        </Typography>
-                      </li>
-                    )
-                  })}
-                </ul>           
+                <Typography variant="subtitle1" sx={{textAlign: 'left', fontWeight: '' }}>
+                  {step.position}, {step.department}
+                </Typography>
+                <div style={{marginLeft: -10}}>
+                  <ul>
+                    {step.description.map((description, index) => {
+                      return(
+                        <li key={index}>
+                          <Typography sx={{ textAlign: 'left' }} >
+                            {description}
+                          </Typography>
+                        </li>
+                      )
+                    })}
+                  </ul>           
+                </div>
                 {step.label === "Crossover Int. Company Limited" && 
                 <>
                   <ButtonGroup
                     variant="outlined"
-                    size="large"
+                    size="small"
                     fullWidth
-                    >
-                    
+                  >  
                     <Button
+                      style={{width: 200}}
                       onClick={() => { navigate("projects/techvision")}}
                       startIcon={<ArticleIcon/>}
                     >
                       Doc
                     </Button>
                     <Button
+                      style={{width: 200}}
                       startIcon={<WebIcon/>}
                       onClick={() => { 
                         console.log("wdawda")
@@ -127,11 +142,10 @@ function WorkingExperience(){
                       View website
                     </Button>
                   </ButtonGroup>
-
                 </>}           
               </TimelineContent>
               <TimelineOppositeContent style={{ maxWidth: "1px", paddingLeft: '0px', paddingRight: '0px' }}/>
-              <TimelineSeparator>
+              <TimelineSeparator style={{marginTop: 40}} >
                 <TimelineDot/>
                 <TimelineConnector />
               </TimelineSeparator>

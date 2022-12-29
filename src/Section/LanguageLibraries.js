@@ -33,11 +33,17 @@ import { ReactComponent as ServerlessIcon } from '../Images/PPT/serverless-frame
 import { ReactComponent as TerraformIcon } from '../Images/PPT/terraform.svg';
 import { ReactComponent as SonarqubeIcon } from '../Images/sonarqube.svg';
 import { ReactComponent as SQLIcon } from '../Images/SQLIcon.svg';
-import { ReactComponent as SVNIcon } from '../Images/svn.svg';
 import { ReactComponent as UbuntuLogo } from '../Images/UbuntuLogo.svg';
 import { ReactComponent as WindowsLogo } from '../Images/WindowsLogo.svg';
 import { ReactComponent as AndoirStudioIcon} from '../Images/Android_Studio_Icon.svg'
 import { ReactComponent as DockerIcon } from '../Images/docker.svg';
+import { ReactComponent as K8SIcon } from '../Images/k8s.svg';
+import { ReactComponent as ShellIcon } from '../Images/shell.svg';
+import { ReactComponent as AzureIcon } from '../Images/azure.svg';
+import { ReactComponent as CloudFormationIcon } from '../Images/cloudformation.svg';
+import { ReactComponent as GitHubActionIcon } from '../Images/github-action.svg';
+const ICONSIZE = 30;
+
 const useStyles = makeStyles((theme) => ({
   icons: {
     height: 40,
@@ -55,63 +61,58 @@ function createDataForItem(name, icon, svg){
 
 const skills = [
   
-    createDataForSkill("Programming / Languages",
+    createDataForSkill("Programming / Language",
     [
+      createDataForItem("JavaScript", JSIcon, true),
       createDataForItem("Swift",SwiftIcon, true),
       createDataForItem("Python",PythonIcon, true),
-      createDataForItem("C#",CSharpIcon, true),
+      // createDataForItem("C#",CSharpIcon, true),
       // createDataForItem("C++",CPlusPlusIcon, true),
       createDataForItem("SQL",SQLIcon, true),
+      createDataForItem("Linux Shell Script", ShellIcon, true),
       // createDataForItem("Java",JavaIcon, true),
-      createDataForItem("JavaScript", JSIcon, true),
       createDataForItem("HTML", HTML5Icon, true),
       createDataForItem("CSS", CSSIcon, true),
     ]),
-    createDataForSkill("Libraries",
+    createDataForSkill("Library",
     [
       createDataForItem("React Native",ReactNativeIcon, true),
       createDataForItem("React JS",ReactJSIcon, true),
       createDataForItem("Node JS",NodeJsIcon, true),
     ]),
-    createDataForSkill("IDEs", 
+    createDataForSkill("IDE", 
     [
       createDataForItem("Xcode",Xcode_icon, false),
-      createDataForItem("Android Studio",AndoirStudioIcon, true),
-      createDataForItem("Unity3D",Unity3DIcon, true),
+      // createDataForItem("Unity3D",Unity3DIcon, true),
     ]),
-    createDataForSkill("Cloud Services",
+    createDataForSkill("Cloud Service Provider",
     [
       createDataForItem("Amazon Web Service",AWSIcon, true),
-      createDataForItem("Google Cloud Platform",GCPIcon, true)
-    ]),
-    createDataForSkill("DBMS",
-    [
-      createDataForItem("MySQL",MySQLIcon, true),
-      createDataForItem("DynamoDB",DynamoDBIcon, true),
-      createDataForItem("MongoDB",MongoDBIcon, true),
-    ]),
-    createDataForSkill("Operation Systems",
-    [
-      createDataForItem("MacOS", AppleIcon, true),
-      createDataForItem("Windows", WindowsLogo, true),
-      createDataForItem("Ubuntu", UbuntuLogo, true),
-      createDataForItem("CentOS", CentOSIcon, true),
-    ]),
-
-    createDataForSkill("DevOps",
-    [
-      createDataForItem("Git",GitIcon, true),
-      createDataForItem("GitHub",GitHubIcon, true),
-      createDataForItem("GitLab",GitLabIcon, true),
-      createDataForItem("SVN",SVNIcon, true),
-      createDataForItem("Docker",DockerIcon, true),
-      createDataForItem("Jenkins",JenkinsIcon, true),
-      createDataForItem("SonarQube",SonarqubeIcon, true),
+      createDataForItem("Microsoft Azure",AzureIcon, true)
     ]),
     createDataForSkill("IaC",
     [
       createDataForItem("Terraform",TerraformIcon, true),
       createDataForItem("Serverless framework",ServerlessIcon, true),
+      createDataForItem("AWS CloudFormation", CloudFormationIcon, true),
+    ]),
+    createDataForSkill("DBMS",
+    [
+      createDataForItem("MySQL",MySQLIcon, true),
+      createDataForItem("DynamoDB",DynamoDBIcon, true),
+      // createDataForItem("MongoDB",MongoDBIcon, true),
+    ]),
+    createDataForSkill("Container Technology", [
+      createDataForItem("Docker",DockerIcon, true),
+      createDataForItem("Kubernetes",K8SIcon, true),
+
+    ]),
+    createDataForSkill("DevOps",
+    [
+      createDataForItem("Jenkins",JenkinsIcon, true),
+      createDataForItem("GitHub Actions",GitHubActionIcon, true),
+      createDataForItem("GitLab",GitLabIcon, true),
+      createDataForItem("SonarQube",SonarqubeIcon, true),
     ]),
 ]
 
@@ -156,8 +157,8 @@ function LanguageLibraries(props){
                     </Typography>
                   )
                 }else{
-                  if(item.svg) return(<item.icon style={{height: 40, width: 40, marginRight: 10 }}/>)
-                  else return( <img src={item.icon} className={classes.icons}/> )
+                  if(item.svg) return(<item.icon style={{height: ICONSIZE, width: ICONSIZE, marginRight: ICONSIZE/3, marginTop: ICONSIZE/3}}/>)
+                  else return( <img src={item.icon} className={classes.icons} style={{height: ICONSIZE, width: ICONSIZE, marginRight: ICONSIZE/3, marginTop: ICONSIZE/3}}/> )
                 }
               })}
             </div>

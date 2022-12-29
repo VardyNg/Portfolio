@@ -9,11 +9,14 @@ const WhiteTextTypography = withStyles({
 
 function Footer(props){
   return(
-    <>
-      <WhiteTextTypography variant="subtitle2" component="div" style={{margin: 20, fontColor: 'white'}}>
-        Created by Ng Hoi Wa, 2022. All right reserved | Created by using ReactJS, hosted on AWS, with Cloudflare.
+    <div style={{padding: 10}}>
+      <WhiteTextTypography variant="subtitle1" component="div" style={{fontColor: 'white'}}>
+        Created by Ng Hoi Wa, 2022. All right reserved.
       </WhiteTextTypography>
-    </>
+      <WhiteTextTypography variant="subtitle2" component="div" style={{fontColor: 'white'}}>
+        written by ReactJS | hosted on AWS S3 static hosting | deployed using AWS CodePipeline | sourced on GitHub
+      </WhiteTextTypography>
+    </div>
   )
 }
 

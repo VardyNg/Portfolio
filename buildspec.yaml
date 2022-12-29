@@ -2,11 +2,24 @@ version: 0.2
 
 phases:
   install:
+    on-failure: ABORT
     commands:
+      - echo Installing Node 16...
+      - curl -sL https://deb.nodesource.com/setup_16.x | bash -
+      - apt install -y nodejs
+      - echo Installing Npm...
+      # - npm install -g npm
+      - pip install --upgrade pip
+      - pip install --upgrade awscli
+  pre_build:
+    commands:
+      - echo Installing dependencies...
       - npm install
   build:
     commands:
+      - echo Building...
       - npm run build
-artifacts:
-  files:
-    - 'build/*'
+  post_build:
+    commands:
+      - aws s3 cp ./build s3://www.wadeenghoiwa.com --recursive
+    

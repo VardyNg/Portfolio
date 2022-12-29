@@ -18,6 +18,7 @@ import Features from './Features'
 import Database from './Database'
 import API from './API'
 import FrontEnd from './FrontEnd'
+import ReactGA from 'react-ga4';
 function OverView(props){
   return(
     <>
@@ -82,6 +83,7 @@ function TV(props){
   const theme = useTheme();
   let navigate = useNavigate()
   const fullScreen = useMediaQuery(theme.breakpoints.down('md'));
+  ReactGA.send({ hitType: "pageview", page: window.location.pathname });
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };

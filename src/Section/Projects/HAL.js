@@ -14,6 +14,7 @@ import HAL3000 from '../../Images/HAL3000.png';
 import MainScreen from '../../Images/HAL3000/MainScreen.png';
 import ScreenCap1 from '../../Images/HAL3000/ScreenCap1.png';
 import ScreenCap2 from '../../Images/HAL3000/ScreenCap2.png';
+import ReactGA from 'react-ga4';
 const useStyles = makeStyles((theme) => ({
   text: {
     fontSize: 20
@@ -40,6 +41,7 @@ function HAL(props) {
   const classes = useStyles()
   const fullScreen = useMediaQuery(theme.breakpoints.down('md'));
   const navigate = useNavigate()
+  ReactGA.send({ hitType: "pageview", page: window.location.pathname });
   return(
     <Dialog
       fullScreen={fullScreen}
@@ -108,7 +110,7 @@ function HAL(props) {
             </Grid>
             <Grid xs={12} className={classes.parent}>
               <Grid item xs={12} className={classes.imageContainer}>
-                <iframe width="75%" height="500" src="https://www.youtube.com/embed/6fnqcI7amdk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe width="75%" height="500" src="https://www.youtube.com/embed/6fnqcI7amdk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
               </Grid>
             </Grid>
           </Grid>

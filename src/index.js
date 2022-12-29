@@ -3,9 +3,8 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-// import theme from './theme'
-// import { ThemeProvider, createTheme } from '@mui/styles';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
+import ReactGA from "react-ga4";
 
 console.log(
 "Y88b      /      e      888~-_   888~-_   Y88b    /\n",
@@ -46,12 +45,19 @@ const theme = createTheme({
   },
 });
 
+ReactGA.initialize(
+  "G-K6RLEQNLEH",
+  {
+    debug: true
+  }
+);
+
 ReactDOM.render(
   <ThemeProvider theme={theme}>
     <App />
   </ThemeProvider>
   ,document.getElementById('root')
-);
+  );
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
