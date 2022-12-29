@@ -1,5 +1,5 @@
 [![AWS CodeBuild](https://codebuild.ap-east-1.amazonaws.com/badges?uuid=eyJlbmNyeXB0ZWREYXRhIjoiZGVEYmM2ZUw2SC92NEpSK3ltbDgrSFBDOTdDajJxTzFLNWx0TWVPZFB2dEtFNkMzZ0s3d1Q5QUZhSGZSUkozYlVMSjJiVVZUVjc5MG1UcWpsTnZsZS9jPSIsIml2UGFyYW1ldGVyU3BlYyI6IkdrbVBRZ1ZpSjVleDNRc2kiLCJtYXRlcmlhbFNldFNlcmlhbCI6MX0%3D&branch=main)](https://codebuild.ap-east-1.amazonaws.com/badges?uuid=eyJlbmNyeXB0ZWREYXRhIjoiZGVEYmM2ZUw2SC92NEpSK3ltbDgrSFBDOTdDajJxTzFLNWx0TWVPZFB2dEtFNkMzZ0s3d1Q5QUZhSGZSUkozYlVMSjJiVVZUVjc5MG1UcWpsTnZsZS9jPSIsIml2UGFyYW1ldGVyU3BlYyI6IkdrbVBRZ1ZpSjVleDNRc2kiLCJtYXRlcmlhbFNldFNlcmlhbCI6MX0%3D&branch=main)
-
+[![Build Status](https://jenkins.wadeenghoiwa.com/buildStatus/icon?job=Portfolio-Codescan)](https://jenkins.wadeenghoiwa.com/view/Portfolio/job/Portfolio-Codescan/)
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
