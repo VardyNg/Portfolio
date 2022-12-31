@@ -56,7 +56,7 @@ const certs = [
     "2022-12-13",
     "2025-12-13",
     "https://www.credly.com/badges/d808da6c-93f2-4fe3-84ec-e7932cb121ed/public_url"
-  )
+  ),
 ]
 function Credentials(){
   
