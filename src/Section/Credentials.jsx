@@ -28,7 +28,7 @@ const tabs = [
   { value: 'all', label: 'Overview' },
   // { value: 'aws', label: 'AWS' },
   // { value: 'azure', label: 'Azure' },
-  { value: 'aws', label: 'Cloud Service' },
+  { value: 'aws', label: 'Cloud Service Provider' },
   { value: 'azure', label: 'IaC' },
   { value: 'azure', label: 'Kubernetes' },
 ]
