@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import Typography from '@mui/material/Typography';
 import { ReactComponent as AWSSAA } from '../Images/Certs/AWS-SAA.svg';
 import { ReactComponent as AWSDVA } from '../Images/Certs/AWS-DVA.svg';
@@ -26,11 +27,9 @@ function createDataForCerts(title, icon, issueDate, expirationDate, credentialLi
 
 const tabs = [
   { value: 'all', label: 'Overview' },
-  // { value: 'aws', label: 'AWS' },
-  // { value: 'azure', label: 'Azure' },
-  { value: 'aws', label: 'Cloud Service Provider' },
-  { value: 'azure', label: 'IaC' },
-  { value: 'azure', label: 'Kubernetes' },
+  { value: 'csp', label: 'Cloud Service Provider' },
+  { value: 'iac', label: 'IaC' },
+  // { value: 'k8s', label: 'Kubernetes' },
 ]
 
 const certs = [
@@ -40,7 +39,7 @@ const certs = [
     "2022-04-03",
     "2025-04-03",
     "https://www.credly.com/badges/7794c6a8-5d2d-487d-992a-7beb697ce65e",
-    ["all", "aws"]
+    ["all", "csp"]
   ),
   createDataForCerts(
     "AWS Certified Developer – Associate (DVA-C01)",
@@ -48,7 +47,7 @@ const certs = [
     "2022-06-17",
     "2025-12-13",
     "https://www.credly.com/badges/610618a2-e827-48a0-9a9a-b80f7bc7cbcb",
-    ["all", "aws"]
+    ["all", "csp"]
   ),
   createDataForCerts(
     "HashiCorp Certified: Terraform Associate (HTCA002)",
@@ -56,49 +55,47 @@ const certs = [
     "2022-07-16",
     "2024-07-16",
     "https://www.credly.com/badges/67e029c5-743c-4a93-9ef7-7fa78641d4a3",
-    ["all", "aws"]
+    ["all", "iac"]
   ),
   createDataForCerts(
     "AWS Certified SysOps Administrator – Associate (SOA-C02)",
     <AWSSOA style={{height: 100, width: 100}}/>,
     "2022-10-14",
     "2025-12-13",
-    "https://www.credly.com/badges/f929e2d3-42f6-473d-9e1a-766a0f8b8185"
+    "https://www.credly.com/badges/f929e2d3-42f6-473d-9e1a-766a0f8b8185",
+    ["all", "csp"]
   ),
   createDataForCerts(
     "AWS Certified DevOps Engineer – Professional (DOP-C01)",
     <AWSDOP style={{height: 100, width: 100}}/>,
     "2022-12-13",
     "2025-12-13",
-    "https://www.credly.com/badges/d808da6c-93f2-4fe3-84ec-e7932cb121ed/public_url"
+    "https://www.credly.com/badges/d808da6c-93f2-4fe3-84ec-e7932cb121ed/public_url",
+    ["all", "csp"]
   ),
 ]
-function Credentials(){
+
+function CredentialsGroup(props){
+  console.log(props)
   
-  return(
-    <div style={{marginTop: 10, marginBottom: 10}}>      
-      <div style={{alignContent: "left"}}>
-        <Typography variant="h4" sx={{ textAlign: 'left' }} style={{fontFamily: "Raleway", padding: 10}}>
-          <b>Professional Qualifications</b>
-        </Typography>
-        <Tabs 
-          // value={value} 
-          // onChange={handleChange} 
-          aria-label="basic tabs example"
-        >
-          {tabs.map((tab) => {
-            return (
-              <Tab label={tab.label} />
-            )
-          })}
-        </Tabs>
-        <Grid 
+  return (
+    <div hidden={props.value !== props.index}>
+      <Grid 
           container
-          style={{display: 'flex', flexDirection: 'row', flexWrap: 'stretch', justifyContent: 'space-around', alignItems: 'stretch'}}
+          style={{
+            display: 'flex', 
+            flexDirection: 'row', 
+            flexWrap: 'stretch', 
+            justifyContent: 'space-around', 
+            alignItems: 'stretch', 
+            backgroundColor: ''
+          }}
         >
-          {certs.map(cert => (
-            <Grid item xs={12} lg={6} padding={1} key={cert}>
-              <Card sx={{ display: 'flex', justifyContent: 'flex-start', alignItems: 'center', padding: 0.5, height: 125 }}>
+        {certs
+          .filter(cert => cert.types.includes(props.type))
+          .map(cert => (
+            <Grid item xs={12} lg={6} padding={1} key={cert} style={{backgroundColor: ''}}>
+              <Card sx={{ display: 'flex', justifyContent: 'flex-start', alignItems: 'center', padding: 0.5, height: 125, backgroundColor: ''}}>
                 <div style={{marginLeft: 10}}>
                   {cert.icon}
                 </div>
@@ -126,8 +123,42 @@ function Credentials(){
                 </Box>
               </Card>
             </Grid>
-          ))}
-        </Grid>
+          )
+        )}
+        
+      </Grid>
+    </div>
+    )
+  }
+function Credentials(){
+  const [tabValue, setTabValue] = useState(0);
+
+  const handleChangeTab = (event, newValue) => {
+    setTabValue(newValue);
+  };
+
+  return(
+    <div style={{marginTop: 10, marginBottom: 10}}>      
+      <div style={{alignContent: "left"}}>
+        <Typography variant="h4" sx={{ textAlign: 'left' }} style={{fontFamily: "Raleway", padding: 10}}>
+          <b>Professional Qualifications</b>
+        </Typography>
+        <Tabs 
+          value={tabValue} 
+          onChange={handleChangeTab} 
+          aria-label="basic tabs example"
+        >
+          {tabs.map((tab) => {
+            return (
+              <Tab label={tab.label} key={tab}/>
+            )
+          })}
+        </Tabs>
+        {tabs.map((tab, index) => {
+          return (
+            <CredentialsGroup type={tab.value} value={tabValue} index={index} key={tab.value}/>
+          )
+        })}
       </div>
     </div>
   )
