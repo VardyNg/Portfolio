@@ -110,7 +110,7 @@ function CredentialsGroup(props){
         .map(issuer => {
           return (
             <> 
-              <Typography variant='overline'>
+              <Typography variant='overline' color="text.secondary">
                 {issuer}
               </Typography>
               <hr style={{width: '30%', marginTop: -5}}/>
@@ -140,10 +140,9 @@ function CredentialsGroup(props){
                             <Typography component="div" variant="h7">
                               {cert.title}
                             </Typography>
-                            
-                            <Typography variant="subtitle1" color="text.secondary" component="div">
-                              Validity: {moment(cert.issueDate).format("MMM YYYY")}
-                              {cert.expirationDate !== null && <> - {moment(cert.expirationDate).format("MMM YYYY")}</>}
+                            <Typography variant="subtitle2" color="text.secondary" component="div">
+                              Validity: {moment(cert.issueDate).format("MMM YY")}
+                              {cert.expirationDate !== null && <> - {moment(cert.expirationDate).format("MMM YY")}</>}
                             </Typography>
                             <Button
                               startIcon={<LinkIcon/>}
@@ -185,11 +184,10 @@ function Credentials(){
         <Tabs 
           value={tabValue} 
           onChange={handleChangeTab} 
-          aria-label="basic tabs example"
-        >
+          >
           {tabs.map((tab) => {
             return (
-              <Tab label={tab.label} key={tab}/>
+              <Tab label={tab.label} key={tab} />
             )
           })}
         </Tabs>
