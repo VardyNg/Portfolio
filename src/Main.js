@@ -44,10 +44,10 @@ function App() {
     createDataForSections(<Greeting/>,{backgroundColor: '#FFFFF'}, 0, 'greeting'),
     createDataForSections(<Contacts/>, {backgroundColor: '#AEBFC8'}, 0, 'contacts'),
     createDataForSections(<Projects/>, {backgroundColor: '#FFFFF'}, 0, 'projects'),
-    createDataForSections(<div style={{padding: 25}}> </div>,{backgroundColor: '#D4BFAD'}, 20, ''),
+    createDataForSections(<div style={{padding: 25}}> </div>,{backgroundColor: '#eeeee4'}, 20, ''),
     createDataForSections(<LanguageLibraries/>, {}, 20, 'skills'),
     createDataForSections(<Credentials/>, {}, 20, 'credentials'),
-    createDataForSections(<WorkingExperience/>,  {backgroundColor: '#E4E5E0'}, 20, 'workingExperience'),
+    createDataForSections(<WorkingExperience/>,  {backgroundColor: '#eeeee4'}, 20, 'workingExperience'),
     createDataForSections(<Education/>,  {}, 20, 'education'),
     createDataForSections(<Footer/>,{backgroundColor: '#677886'}, 0, ''),
   ]
