@@ -70,7 +70,7 @@ pipeline {
       steps {
         container('azurecli') {
           withCredentials([azureServicePrincipal('azure-vardyng1999-gmail-com')]) {
-            sh 'az storage blob upload-batch -d devportfiliosc -s build --account-name devportfiliosa'
+            sh 'az storage blob upload-batch -d devportfiliosc -s build --account-name devportfiliosa --overwrite'
           }
         }
       }
