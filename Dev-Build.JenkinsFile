@@ -18,7 +18,7 @@ podTemplate(yaml: '''
         - mountPath: /var/jenkins_home
           name: build
       - name: azurecli
-        image: mcr.microsoft.com/azure-cli:latest
+        image: vardyng/azure-cli:latest
         resources:
           limits:
             cpu: "1"
