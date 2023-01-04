@@ -3,6 +3,9 @@ podTemplate(yaml: '''
     apiVersion: v1
     kind: Pod
     spec:
+      nodeSelector:
+        kubernetes.io/os: linux
+        kubernetes.io/arch: amd64
       containers:
       - name: node
         image: node:16.17-alpine3.15
