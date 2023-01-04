@@ -1,8 +1,8 @@
 pipeline {
   agent {
     kuberenes {
-      cloud: 'home-kubernetes'
-      yaml: '''
+      cloud 'home-kubernetes'
+      yaml '''
         cloud: home-kubernetes
         apiVersion: v1
         kind: Pod
