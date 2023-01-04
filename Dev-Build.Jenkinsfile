@@ -1,6 +1,6 @@
 pipeline {
   agent {
-    kuberenes {
+    kubernetes {
       cloud 'home-kubernetes'
       yaml '''
         cloud: home-kubernetes
