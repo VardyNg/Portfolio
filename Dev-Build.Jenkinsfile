@@ -3,20 +3,19 @@ pipeline {
     kubernetes {
       cloud 'home-kubernetes'
       yaml '''
-        cloud: home-kubernetes
         apiVersion: v1
         kind: Pod
         spec:
           nodeSelector:
             kubernetes.io/os: linux
-            kubernetes.io/arch: amd64
+            kubernetes.io/arch: arm64
           containers:
           - name: node
             image: node:16.17-alpine3.15
             resources:
               limits:
                 cpu: "2"
-                memory: "4Gi"
+                memory: "2Gi"
             command:
             - sleep
             args:
