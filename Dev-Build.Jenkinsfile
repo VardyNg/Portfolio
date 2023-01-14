@@ -21,7 +21,7 @@ pipeline {
             - mountPath: /var/jenkins_home
               name: build
           - name: azurecli
-            image: vardyng/azure-cli:latest
+            image: exaonline/azure-cli:latest
             imagePullPolicy: Always
             resources:
               limits:
