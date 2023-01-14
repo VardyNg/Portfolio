@@ -5,7 +5,7 @@ podTemplate(yaml: '''
     spec:
       nodeSelector:
         kubernetes.io/os: linux
-        kubernetes.io/arch: amd64
+        kubernetes.io/arch: arm64
       containers:
       - name: node
         image: node:16.17-alpine3.15
