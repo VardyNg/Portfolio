@@ -11,7 +11,8 @@ import { ReactComponent as PolyULogo } from '../Images/PolyU.svg';
 import { ReactComponent as CCCSSLogo } from '../Images/CCCSS.svg';
 import { ReactComponent as EIELogo } from '../Images/PolyU-EIE.svg';
 import IconButton from '@mui/material/IconButton';
-
+import { styled } from '@mui/material/styles';
+import React from 'react';
 const iconSize = 35;
 const steps = [
   {
@@ -45,8 +46,14 @@ const steps = [
   }
 ];
 
+const InstitutesIcon = styled('div')(({ theme }) => ({
+  [theme.breakpoints.down('sm')]: {
+    display: 'none'
+  },
+}));
 
 function DetailedInstitutes(){
+
   return <>
     <Timeline position="left" style={{backgroundColor: '', marginLeft: -50}}>
       {steps.map((step, index) => {
@@ -79,18 +86,22 @@ function DetailedInstitutes(){
             </TimelineContent>
             <TimelineOppositeContent style={{ maxWidth: "1px", paddingLeft: '0px', paddingRight: '0px' }}/>
             <TimelineSeparator>
-              <TimelineDot
-                style={{ backgroundColor: '#FFFFFF'}}
-              >
-                <IconButton
-                  size="small"
-                  onClick={() => {
-                    window.open(step.url, "_blank");
+              <InstitutesIcon>
+                <TimelineDot
+                  style={{
+                    backgroundColor: '#FFFFFF',
                   }}
                 >
-                  {step.icon}
-                </IconButton>
-              </TimelineDot>
+                  <IconButton
+                    size="small"
+                    onClick={() => {
+                      window.open(step.url, "_blank");
+                    }}
+                  >
+                    {step.icon}
+                  </IconButton>
+                </TimelineDot>
+              </InstitutesIcon>
             </TimelineSeparator>
           </TimelineItem>
         )
@@ -99,7 +110,6 @@ function DetailedInstitutes(){
   </>
 }
 function Education(){
-
   return(
     <div style={{marginTop: 20}}>      
       <div style={{alignContent: "left"}}>
