@@ -22,7 +22,7 @@ pipeline {
               name: build
           - name: azurecli
             image: vardyng/azure-cli:latest
-            pullPolicy: Always
+            imagePullPolicy: Always
             resources:
               limits:
                 cpu: "1"
