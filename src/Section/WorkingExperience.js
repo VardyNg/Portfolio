@@ -125,14 +125,14 @@ function WorkingExperience(){
                     fullWidth
                   >  
                     <Button
-                      style={{width: 200}}
+                      style={{width: "50%"}}
                       onClick={() => { navigate("projects/techvision")}}
                       startIcon={<ArticleIcon/>}
                     >
                       Doc
                     </Button>
                     <Button
-                      style={{width: 200}}
+                      style={{width: "50%"}}
                       startIcon={<WebIcon/>}
                       onClick={() => { 
                         console.log("wdawda")
