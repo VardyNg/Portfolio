@@ -102,7 +102,7 @@ const skills = [
     ]),
 ]
 
-function LanguageLibraries(props){
+function LanguageLibraries(){
   const classes = useStyles()
   const [textMode, setTextMode] = useState(false)
 
