@@ -116,9 +116,9 @@ function Projects(){
                     >
                       <div>
                         {
-                          Array.from(Array(project.start).keys()).map((item, import { NavLink } from 'react-router-dom') => (
+                          Array.from(Array(project.start).keys()).map((item, i) => (
                             <Rating
-                              key={import { NavLink } from 'react-router-dom'}
+                              key={i}
                               value={1}
                               max={1}
                             />
