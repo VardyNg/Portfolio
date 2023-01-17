@@ -81,7 +81,7 @@ function PrivateTutorPlus(props) {
           <IAC/>
         </TabPanel>
         <TabPanel value={value} index={6}>
-          <Security/>
+          <Security/>b
         </TabPanel>
       </div>
     )
