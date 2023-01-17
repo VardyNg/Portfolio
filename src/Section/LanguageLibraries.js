@@ -200,7 +200,12 @@ function LanguageLibraries(){
                   // display: 'table-row'
                 }}
               >
-                {skills.slice(temp * index, temp * index + temp).map((skill, index) => {return(<SkillContent key={index} skill={skill}/>)})}
+                {skills
+                  .slice(temp * index, temp * index + temp)
+                  .map((skill, i) => {
+                    return(<SkillContent key={i} skill={skill}/>)}
+                  )
+                }
               </Grid>    
             )
           })}
