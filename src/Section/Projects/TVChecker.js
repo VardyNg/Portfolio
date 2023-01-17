@@ -69,6 +69,11 @@ function TVChecker(props){
       );
     }
   };
+  const closeDialog = async() => {
+    setShow(false);
+    await new Promise(r => setTimeout(() => r(), 200));
+    navigate("/")
+  }
 
   return(
     <Dialog
@@ -76,9 +81,7 @@ function TVChecker(props){
       fullScreen={fullScreen}
       fullWidth
       maxWidth="md"
-      onClose={async() => {setShow(false); 
-        await new Promise(r => setTimeout(() => r(), 200));
-        navigate("/")}}
+      onClose={closeDialog}
     >
       <DialogTitle style={{display: 'flex', justifyContent: 'flex-start', alignItems: 'center'}}>
         <Typograhy
@@ -150,11 +153,7 @@ o          >
       </DialogContent>
       <DialogActions>
         <Button
-          onClick={async() => {
-            setShow(false); 
-            await new Promise(r => setTimeout(() => r(), 200));
-            navigate("/")}
-          } 
+          onClick={closeDialog} 
           fullWidth
         >
           Close
