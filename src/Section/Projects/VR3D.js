@@ -37,15 +37,18 @@ function VR3D(props) {
   const fullScreen = useMediaQuery(theme.breakpoints.down('md'));
   const navigate = useNavigate()
   ReactGA.send({ hitType: "pageview", page: window.location.pathname });
+  const closeDialog = async() => {
+    setShow(false);
+    await new Promise(r => setTimeout(() => r(), 200));
+    navigate("/")
+  }
   return(
     <Dialog
       fullScreen={fullScreen}
       open={show}
       maxWidth
       fullWidth="md"
-      onClose={async() => {setShow(false); 
-            await new Promise(r => setTimeout(() => r(), 200));
-            navigate("/")}}
+      onClose={closeDialog}
       aria-labelledby="responsive-dialog-title"
     >
       <DialogTitle id="responsive-dialog-title">
@@ -73,11 +76,7 @@ function VR3D(props) {
       </DialogContent>
       <DialogActions>
         <Button 
-          onClick={async() => {
-            setShow(false); 
-            await new Promise(r => setTimeout(() => r(), 200));
-            navigate("/")}
-          } 
+          onClick={closeDialog} 
           fullWidth
         >
           Close

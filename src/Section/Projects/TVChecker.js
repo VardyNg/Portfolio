@@ -1,5 +1,3 @@
-import react from 'react'
-import axios from 'axios'
 import { useState, useEffect } from 'react'
 import Dialog from '@mui/material/Dialog'
 import DialogContent from '@mui/material/DialogContent'
@@ -10,12 +8,10 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 import { useTheme } from '@mui/styles';
 import Typograhy from '@mui/material/Typography'
 import moment from 'moment'
-import urlExist from 'url-exist';
 import isReachable from 'is-reachable'
 import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
 import CancelIcon from '@mui/icons-material/Cancel';
 import CircularProgress from '@mui/material/CircularProgress';
-import LinearProgress from '@mui/material/LinearProgress';
 import { ButtonGroup } from '@mui/material'
 import ArticleIcon from '@mui/icons-material/Article';
 import WebIcon from '@mui/icons-material/Web';
@@ -23,9 +19,9 @@ import Countdown from "react-countdown";
 import { useNavigate } from "react-router-dom";
 import ReactGA from 'react-ga4';
 let siteURL = "https://www.aismartscore.com"
+
 function TVChecker(props){
   console.log("TVChecker")
-  const [title, setStitle] = useState("Checking server status")
   const [show, setShow] = useState(true)
   const [checkingStatus, setCheckingStatus] = useState(true)
   const [serverAlive, setServerAlive] = useState(false)
@@ -72,6 +68,11 @@ function TVChecker(props){
       );
     }
   };
+  const closeDialog = async() => {
+    setShow(false);
+    await new Promise(r => setTimeout(() => r(), 200));
+    navigate("/")
+  }
 
   return(
     <Dialog
@@ -79,15 +80,13 @@ function TVChecker(props){
       fullScreen={fullScreen}
       fullWidth
       maxWidth="md"
-      onClose={async() => {setShow(false); 
-        await new Promise(r => setTimeout(() => r(), 200));
-        navigate("/")}}
+      onClose={closeDialog}
     >
       <DialogTitle style={{display: 'flex', justifyContent: 'flex-start', alignItems: 'center'}}>
         <Typograhy
           variant="h4"
         >
-          {title}
+          Checking server status
         </Typograhy>
         <div style={{marginLeft: 20}}>
           {checkingStatus ? <CircularProgress/> : 
@@ -153,11 +152,7 @@ o          >
       </DialogContent>
       <DialogActions>
         <Button
-          onClick={async() => {
-            setShow(false); 
-            await new Promise(r => setTimeout(() => r(), 200));
-            navigate("/")}
-          } 
+          onClick={closeDialog} 
           fullWidth
         >
           Close

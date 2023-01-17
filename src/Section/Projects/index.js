@@ -1,12 +1,12 @@
-import {  BrowserRouter as Router,  Routes,  Route, Navigate, useNavigate} from "react-router-dom"
+import { Route, Routes } from "react-router-dom";
 import ThreeDAnimations from './3DAnimations';
 import HAL from './HAL';
 import PrivateTutorPlus from './PPT/';
 import SSM from './SSM';
 import TCPIP from './TCPIP';
-import VR3D from './VR3D';
-import TV from './TV/index'
+import TV from './TV/index';
 import TVChecker from "./TVChecker";
+import VR3D from './VR3D';
 function ProjectRoute(props){
   console.log("ProjectRoute")
   return(
