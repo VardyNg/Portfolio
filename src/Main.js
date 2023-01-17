@@ -4,15 +4,15 @@ import Button from '@mui/material/Button';
 import Grid from '@mui/material/Grid';
 import Grow from '@mui/material/Grow';
 import IconButton from '@mui/material/IconButton';
-import Stack from '@mui/material/Stack';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-import useMediaQuery from '@mui/material/useMediaQuery';
-import { useTheme } from '@mui/styles';
+import { useEffect } from 'react';
+import ReactGA from "react-ga4";
 import { Route, Routes } from "react-router-dom";
 import { HashLink } from 'react-router-hash-link';
 import './App.css';
 import Contacts from './Section/Contacts';
+import Credentials from './Section/Credentials';
 import Education from './Section/Education';
 import Footer from './Section/Footer';
 import Greeting from './Section/Greeting';
@@ -20,9 +20,6 @@ import LanguageLibraries from './Section/LanguageLibraries';
 import Projects from './Section/Projects';
 import ReportRoute from './Section/Projects/';
 import WorkingExperience from './Section/WorkingExperience';
-import Credentials from './Section/Credentials';
-import ReactGA from "react-ga4";
-import { useEffect } from 'react';
 
 function createDataForSections(component, style, margin, id){
   return {component, style, margin, id}
@@ -33,8 +30,6 @@ function createDataForMenu(title, id, bold){
 }
 
 function App() {
-  const theme = useTheme();
-  const upXS = useMediaQuery(theme.breakpoints.up('sm'));
 
   useEffect(() => {
     ReactGA.send({ hitType: "pageview", page: "/" });
