@@ -29,7 +29,7 @@ function createDataForMenu(title, id, bold){
   return {title, id, bold}
 }
 
-function App() {
+function Main() {
 
   useEffect(() => {
     ReactGA.send({ hitType: "pageview", page: "/" });
@@ -155,4 +155,4 @@ function App() {
   );
 }
 
-export default App;
+export default Main;
