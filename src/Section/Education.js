@@ -1,18 +1,17 @@
-import Typography from '@mui/material/Typography';
 import Timeline from '@mui/lab/Timeline';
-import TimelineItem from '@mui/lab/TimelineItem';
-import TimelineSeparator from '@mui/lab/TimelineSeparator';
 import TimelineConnector from '@mui/lab/TimelineConnector';
 import TimelineContent from '@mui/lab/TimelineContent';
 import TimelineDot from '@mui/lab/TimelineDot';
+import TimelineItem from '@mui/lab/TimelineItem';
 import TimelineOppositeContent from '@mui/lab/TimelineOppositeContent';
-import { ReactComponent as HKCCLogo } from '../Images/PolyU_HKCC.svg';
-import { ReactComponent as PolyULogo } from '../Images/PolyU.svg';
-import { ReactComponent as CCCSSLogo } from '../Images/CCCSS.svg';
-import { ReactComponent as EIELogo } from '../Images/PolyU-EIE.svg';
+import TimelineSeparator from '@mui/lab/TimelineSeparator';
 import IconButton from '@mui/material/IconButton';
 import { styled } from '@mui/material/styles';
+import Typography from '@mui/material/Typography';
 import React from 'react';
+import { ReactComponent as EIELogo } from '../Images/PolyU-EIE.svg';
+import { ReactComponent as PolyULogo } from '../Images/PolyU.svg';
+import { ReactComponent as HKCCLogo } from '../Images/PolyU_HKCC.svg';
 const iconSize = 35;
 const steps = [
   {

@@ -1,4 +1,5 @@
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import ArticleIcon from '@mui/icons-material/Article';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Card from '@mui/material/Card';
@@ -10,11 +11,8 @@ import Stack from '@mui/material/Stack';
 import Tab from '@mui/material/Tab';
 import Tabs from '@mui/material/Tabs';
 import Typography from '@mui/material/Typography';
-import { useTheme } from '@mui/styles';
 import { useState } from 'react';
-import ReportRoute from './Projects';
-import ArticleIcon from '@mui/icons-material/Article';
-import {  BrowserRouter as Router,  Routes,  Route, Navigate, useNavigate} from "react-router-dom"
+import { useNavigate } from "react-router-dom";
 
 function createDataForProjects(title, description, chip, link, start){
   return {title, description, chip, link, start}
