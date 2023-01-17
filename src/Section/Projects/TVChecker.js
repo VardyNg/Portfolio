@@ -22,7 +22,6 @@ let siteURL = "https://www.aismartscore.com"
 
 function TVChecker(props){
   console.log("TVChecker")
-  const [title, setStitle] = useState("Checking server status")
   const [show, setShow] = useState(true)
   const [checkingStatus, setCheckingStatus] = useState(true)
   const [serverAlive, setServerAlive] = useState(false)
@@ -87,7 +86,7 @@ function TVChecker(props){
         <Typograhy
           variant="h4"
         >
-          {title}
+          Checking server status
         </Typograhy>
         <div style={{marginLeft: 20}}>
           {checkingStatus ? <CircularProgress/> : 
