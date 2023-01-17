@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router-dom";
-import ThreeDAnimations from './3DAnimations';
+import ThreeDAnimations from './ThreeDAnimations';
 import HAL from './HAL';
 import PrivateTutorPlus from './PPT/';
 import SSM from './SSM';
