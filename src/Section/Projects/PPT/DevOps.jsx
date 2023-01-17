@@ -4,8 +4,6 @@ import Stack from '@mui/material/Stack'
 import Tab from '@mui/material/Tab'
 import Tabs from '@mui/material/Tabs'
 import Typography from '@mui/material/Typography'
-import useMediaQuery from '@mui/material/useMediaQuery'
-import { useTheme } from '@mui/styles'
 import React from 'react'
 import { ReactComponent as GitHubIcon } from '../../../Images/github.svg'
 import { ReactComponent as JenkinsIcon } from '../../../Images/jenkins.svg'
@@ -168,8 +166,6 @@ function Database(props){
 }
 
 function DevOps(props){
-  const theme = useTheme();
-  const fullScreen = useMediaQuery(theme.breakpoints.down('md'));
   const [value, setValue] = React.useState(0);
 
   const handleChange = (event, newValue) => {

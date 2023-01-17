@@ -20,6 +20,44 @@ import { useNavigate } from "react-router-dom";
 import ReactGA from 'react-ga4';
 let siteURL = "https://www.aismartscore.com"
 
+const ServerStatus = (props) => {
+  if (props.checkingStatus) return <CircularProgress/>
+  else return (
+    <div style={{marginLeft: 20}}>
+      <ServerStatusIcon serverAlive={props.serverAlive}/>
+    </div>
+  )
+}
+
+const ServerStatusIcon = (props) => {
+  if (props.serverAlive) return <CheckCircleOutlineIcon style={{color: "green"}}/>
+  else return <CancelIcon style={{color: "red"}}/>
+}
+
+const VisitWebSiteButtonContent = (props) => {
+  if (props.checkingStatus) return <CircularProgress/>
+  else return <VisitWebSiteButtonStatus {...props}/>
+}
+
+const VisitWebSiteButtonStatus = (props) => {
+  if (props.serverAlive) return <RedirectStatus {...props}/>
+  else return <>Server unreachable</>
+}
+
+const RedirectStatus = (props) => {
+  if (props.redirected) return (
+    <>
+      Visite website
+    </>
+  )
+  else return (
+    <>
+      Visite website in ... 
+    <Countdown date={Date.now() + 3000} renderer={props.renderer} />  
+  </>
+  )
+}
+
 function TVChecker(props){
   console.log("TVChecker")
   const [show, setShow] = useState(true)
@@ -88,16 +126,10 @@ function TVChecker(props){
         >
           Checking server status
         </Typograhy>
-        <div style={{marginLeft: 20}}>
-          {checkingStatus ? <CircularProgress/> : 
-          <>
-            {serverAlive ?
-              <CheckCircleOutlineIcon style={{color: "green"}}/>
-              :
-              <CancelIcon style={{color: "red"}}/>
-            }
-          </>}
-        </div>
+        <ServerStatus
+          checkingStatus={checkingStatus}
+          serverAlive={serverAlive}
+        />
       </DialogTitle>
       <DialogContent>
         <Typograhy
@@ -125,21 +157,12 @@ function TVChecker(props){
             disabled={!serverAlive || checkingStatus}
             onClick={directToSite}
           >
-            {checkingStatus ? <CircularProgress/> : 
-            <>
-              {serverAlive ?
-                <>
-                  {redirected ? <>
-                    Visite website
-                  </>: <>
-                    Visite website in ... 
-                    <Countdown date={Date.now() + 3000} renderer={renderer} />  
-                  </>}
-                </>:
-                <>Server unreachable</>
-              }
-            </>
-            }
+            <VisitWebSiteButtonContent 
+              checkingStatus={checkingStatus}
+              serverAlive={serverAlive}
+              renderer={renderer}
+              redirected={redirected}
+            />
           </Button>
           <Button
             startIcon={<ArticleIcon/>}

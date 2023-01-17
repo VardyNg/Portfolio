@@ -1,20 +1,12 @@
 import Divider from '@mui/material/Divider';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
-import useMediaQuery from '@mui/material/useMediaQuery';
-import { useTheme } from '@mui/styles';
 import React from 'react';
+import { ReactComponent as CloudformationIcon } from '../../../Images/cloudformation.svg';
 import { ReactComponent as ServerlessIcon } from '../../../Images/PPT/serverless-framework.svg';
 import { ReactComponent as TerraformIcon } from '../../../Images/PPT/terraform.svg';
-import { ReactComponent as CloudformationIcon } from '../../../Images/cloudformation.svg';
-function IAC(props){
-  const theme = useTheme();
-  const fullScreen = useMediaQuery(theme.breakpoints.down('md'));
-  const [value, setValue] = React.useState(0);
 
-  const handleChange = (event, newValue) => {
-    setValue(newValue);
-  };
+function IAC(props){
   
   return(
     <Stack spacing={2}>
