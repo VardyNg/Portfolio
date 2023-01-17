@@ -116,9 +116,9 @@ function Projects(){
                     >
                       <div>
                         {
-                          Array.from(Array(project.start).keys()).map((item, index) => (
+                          Array.from(Array(project.start).keys()).map((item, import { NavLink } from 'react-router-dom') => (
                             <Rating
-                              key={index}
+                              key={import { NavLink } from 'react-router-dom'}
                               value={1}
                               max={1}
                             />
@@ -138,10 +138,10 @@ function Projects(){
                       </Typography>
                       {project.chip.length > 0 && 
                         <>
-                          {project.chip.map((chip, index) => {
+                          {project.chip.map((chip, i) => {
                             return(
                               <Chip 
-                                key={index}
+                                key={i}
                                 label={chip} 
                                 variant="outlined" 
                                 style={{marginLeft: 15}}
