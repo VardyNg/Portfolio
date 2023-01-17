@@ -6,9 +6,6 @@ pipeline {
         apiVersion: v1
         kind: Pod
         spec:
-          nodeSelector:
-            kubernetes.io/os: linux
-            kubernetes.io/arch: arm64
           containers:
           - name: node
             image: node:16.17-alpine3.15
@@ -24,7 +21,8 @@ pipeline {
             - mountPath: /var/jenkins_home
               name: build
           - name: azurecli
-            image: vardyng/azure-cli:latest
+            image: exaonline/azure-cli:latest
+            imagePullPolicy: Always
             resources:
               limits:
                 cpu: "1"
