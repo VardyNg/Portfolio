@@ -95,11 +95,11 @@ function Projects(){
   ];
 
   const Project = (props) => {
-    const {project} = props;
-    console.log(project)
+    const {projects} = props;
+    console.log(projects)
     return(
       <>{
-        project.map((project, index) => {
+        projects.map((project, index) => {
           console.log(project.chip.length)
           return(
             <Card style={{margin: 20}} key={index}>
@@ -191,10 +191,10 @@ function Projects(){
         </Tabs>
       </Box>
       <TabPanel value={value} index={0}>
-        <Project project={sideProjects}/>
+        <Project projects={sideProjects}/>
       </TabPanel>
       <TabPanel value={value} index={1}>
-        <Project project={schoolProjects}/>
+        <Project projects={schoolProjects}/>
       </TabPanel>  
     </div>
   )
