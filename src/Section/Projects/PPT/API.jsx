@@ -1,6 +1,8 @@
 import Divider from '@mui/material/Divider';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
+import useMediaQuery from '@mui/material/useMediaQuery';
+import { useTheme } from '@mui/styles';
 import React from 'react';
 import { ReactComponent as Serverless } from '../../../Images/PPT/Serverless.svg';
 
