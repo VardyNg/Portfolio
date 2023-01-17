@@ -64,7 +64,6 @@ function DetailedInstitutes(){
               </Typography>
               <Typography variant="h6" sx={{textAlign: 'left', fontWeight: 'bold', marginBottom: -1 }}>
                 {step.degree}
-                {/* {step.cGPA !== "" && ", cGPA: " + step.cGPA} */}
               </Typography>       
               <Typography variant="subtitle1" sx={{textAlign: 'left', fontWeight: '' }}>
                 {step.institute}
