@@ -73,7 +73,7 @@ function Greeting(){
           </Typography>
           <Divider className={classes.divider}/>
           <Typography variant="body1" component="div" style={{fontFamily: "Raleway"}}>
-            I am a Full Stack Developer. Love coding, making useful application and learn new techniques.
+            I am a Software Engineer. Love coding, learn new techniques, dive deep into technologies. 👨🏻‍💻
           </Typography>
           <Divider className={classes.divider}/>
           <SkillSets/>
