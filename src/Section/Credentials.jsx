@@ -15,6 +15,7 @@ import { ReactComponent as AWSDOP } from '../Images/Certs/AWS-DOP.svg';
 import { ReactComponent as AWSDVA } from '../Images/Certs/AWS-DVA.svg';
 import { ReactComponent as AWSSAA } from '../Images/Certs/AWS-SAA.svg';
 import { ReactComponent as AWSSOA } from '../Images/Certs/AWS-SOA.svg';
+import { ReactComponent as AZ204 } from '../Images/Certs/AZ-204.svg';
 import { ReactComponent as HTCAO002 } from '../Images/Certs/HTCAO002.svg';
 
 function createDataForCerts(title, icon, issueDate, expirationDate, credentialLinkl, types, issuer){
@@ -26,13 +27,15 @@ const tabs = [
     label: 'Overview',
     issuers: [
       "Amazon Web Service",
-      "HashiCorp"
+      "HashiCorp",
+      "Microsoft Azure"
     ]
   },
   { value: 'csp', 
     label: 'Cloud Service Provider',
     issuers: [
-      "Amazon Web Service"
+      "Amazon Web Service",
+      "Microsoft Azure"
     ]
   },
   { value: 'iac', 
@@ -88,6 +91,15 @@ const certs = [
     "https://www.credly.com/badges/d808da6c-93f2-4fe3-84ec-e7932cb121ed/public_url",
     ["all", "csp"],
     "Amazon Web Service"
+  ),
+  createDataForCerts(
+    "Microsoft Certified: Azure Developer Associate",
+    <AZ204 style={{height: 100, width: 100}}/>,
+    "2023-2-10",
+    "2024-2-10",
+    "https://www.credly.com/badges/1554db9d-2081-41cd-b832-a103b5d311a2/public_url",
+    ["all", "csp"],
+    "Microsoft Azure"
   ),
 ]
 
