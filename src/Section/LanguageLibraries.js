@@ -4,44 +4,30 @@ import Switch from '@mui/material/Switch';
 import Typography from '@mui/material/Typography';
 import { makeStyles } from '@mui/styles';
 import { useState } from 'react';
-import MySQL from '../Images/MySQL.png';
-import Xcode_icon from '../Images/Xcode_icon.png';
-import { ReactComponent as MySQLIcon } from '../Images/PPT/mysql.svg';
-import { ReactComponent as GCPIcon } from '../Images/GCPIcon.svg';
-import { ReactComponent as JavaIcon } from '../Images/JavaIcon.svg';
-import { ReactComponent as SwiftIcon } from '../Images/SwiftIcon.svg';
-import { ReactComponent as CSharpIcon } from '../Images/CSharpIcon.svg';
-import { ReactComponent as CPlusPlusIcon } from '../Images/CPlusPlusIcon.svg';
-import { ReactComponent as PythonIcon } from '../Images/PythonIcon.svg';
-import { ReactComponent as ReactNativeIcon } from '../Images/ReactNativeIcon.svg';
-import { ReactComponent as ReactJSIcon } from '../Images/ReactJSIcon.svg';
 import { ReactComponent as AWSIcon } from '../Images/AWSIcon.svg';
-import { ReactComponent as HTML5Icon } from '../Images/HTML5Icon.svg';
-import { ReactComponent as CSSIcon } from '../Images/CSSIcon.svg';
-import { ReactComponent as JSIcon } from '../Images/JSIcon.svg';
-import { ReactComponent as NodeJsIcon } from '../Images/NodeJsIcon.svg';
-import { ReactComponent as Unity3DIcon } from '../Images/Unity3D.svg';
-import { ReactComponent as AppleIcon } from '../Images/AppleLogo.svg';
-import { ReactComponent as CentOSIcon } from '../Images/centos.svg';
-import { ReactComponent as DynamoDBIcon } from '../Images/dynamodb.svg';
-import { ReactComponent as GitIcon } from '../Images/git.svg';
-import { ReactComponent as GitHubIcon } from '../Images/github.svg';
-import { ReactComponent as GitLabIcon } from '../Images/gitlab.svg';
-import { ReactComponent as JenkinsIcon } from '../Images/jenkins.svg';
-import { ReactComponent as MongoDBIcon } from '../Images/mongodb.svg';
-import { ReactComponent as ServerlessIcon } from '../Images/PPT/serverless-framework.svg';
-import { ReactComponent as TerraformIcon } from '../Images/PPT/terraform.svg';
-import { ReactComponent as SonarqubeIcon } from '../Images/sonarqube.svg';
-import { ReactComponent as SQLIcon } from '../Images/SQLIcon.svg';
-import { ReactComponent as UbuntuLogo } from '../Images/UbuntuLogo.svg';
-import { ReactComponent as WindowsLogo } from '../Images/WindowsLogo.svg';
-import { ReactComponent as AndoirStudioIcon} from '../Images/Android_Studio_Icon.svg'
-import { ReactComponent as DockerIcon } from '../Images/docker.svg';
-import { ReactComponent as K8SIcon } from '../Images/k8s.svg';
-import { ReactComponent as ShellIcon } from '../Images/shell.svg';
 import { ReactComponent as AzureIcon } from '../Images/azure.svg';
 import { ReactComponent as CloudFormationIcon } from '../Images/cloudformation.svg';
+import { ReactComponent as CSSIcon } from '../Images/CSSIcon.svg';
+import { ReactComponent as DockerIcon } from '../Images/docker.svg';
+import { ReactComponent as DynamoDBIcon } from '../Images/dynamodb.svg';
 import { ReactComponent as GitHubActionIcon } from '../Images/github-action.svg';
+import { ReactComponent as GitLabIcon } from '../Images/gitlab.svg';
+import { ReactComponent as HTML5Icon } from '../Images/HTML5Icon.svg';
+import { ReactComponent as JenkinsIcon } from '../Images/jenkins.svg';
+import { ReactComponent as JSIcon } from '../Images/JSIcon.svg';
+import { ReactComponent as K8SIcon } from '../Images/k8s.svg';
+import { ReactComponent as NodeJsIcon } from '../Images/NodeJsIcon.svg';
+import { ReactComponent as MySQLIcon } from '../Images/PPT/mysql.svg';
+import { ReactComponent as ServerlessIcon } from '../Images/PPT/serverless-framework.svg';
+import { ReactComponent as TerraformIcon } from '../Images/PPT/terraform.svg';
+import { ReactComponent as PythonIcon } from '../Images/PythonIcon.svg';
+import { ReactComponent as ReactJSIcon } from '../Images/ReactJSIcon.svg';
+import { ReactComponent as ReactNativeIcon } from '../Images/ReactNativeIcon.svg';
+import { ReactComponent as ShellIcon } from '../Images/shell.svg';
+import { ReactComponent as SonarqubeIcon } from '../Images/sonarqube.svg';
+import { ReactComponent as SQLIcon } from '../Images/SQLIcon.svg';
+import { ReactComponent as SwiftIcon } from '../Images/SwiftIcon.svg';
+import Xcode_icon from '../Images/Xcode_icon.png';
 const ICONSIZE = 30;
 
 const useStyles = makeStyles((theme) => ({
@@ -116,7 +102,7 @@ const skills = [
     ]),
 ]
 
-function LanguageLibraries(props){
+function LanguageLibraries(){
   const classes = useStyles()
   const [textMode, setTextMode] = useState(false)
 
@@ -214,7 +200,12 @@ function LanguageLibraries(props){
                   // display: 'table-row'
                 }}
               >
-                {skills.slice(temp * index, temp * index + temp).map((skill, index) => {return(<SkillContent key={index} skill={skill}/>)})}
+                {skills
+                  .slice(temp * index, temp * index + temp)
+                  .map((skill, i) => {
+                    return(<SkillContent key={i} skill={skill}/>)}
+                  )
+                }
               </Grid>    
             )
           })}

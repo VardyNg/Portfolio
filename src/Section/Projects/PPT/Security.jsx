@@ -1,15 +1,10 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { ReactComponent as CognitoIcon } from '../../../Images/PPT/cognito.svg'
-import { ReactComponent as AmplifyIcon } from '../../../Images/PPT/amplify.svg'
 import { ReactComponent as AmplifyArch } from '../../../Images/PPT/AmplifyArch.svg'
-import { useTheme } from '@mui/styles';
 import Typography from '@mui/material/Typography';
-import PropTypes from 'prop-types';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Box from '@mui/material/Box';
-import useMediaQuery from '@mui/material/useMediaQuery';
-import Title from './Title'
 import Stack from '@mui/material/Stack';
 import Divider from '@mui/material/Divider';
 import SignInWithApple from '../../../Images/PPT/AppleSignIn.png'
@@ -66,8 +61,6 @@ function Architecture(props){
   )
 }
 function Security(props){
-  const theme = useTheme();
-  const fullScreen = useMediaQuery(theme.breakpoints.down('md'));
   const [value, setValue] = React.useState(0);
   
   const handleChange = (event, newValue) => {

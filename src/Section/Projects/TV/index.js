@@ -11,8 +11,7 @@ import Tabs from '@mui/material/Tabs'
 import { default as Typograhy, default as Typography } from '@mui/material/Typography'
 import useMediaQuery from '@mui/material/useMediaQuery'
 import { useTheme } from '@mui/styles'
-import * as React from 'react'
-import { useState } from 'react'
+import React, { useState }  from 'react'
 import { useNavigate } from "react-router-dom"
 import Features from './Features'
 import Database from './Database'
@@ -115,15 +114,18 @@ function TV(props){
       </div>
     )
   }
+  const closeDialog = async() => {
+    setShow(false);
+    await new Promise(r => setTimeout(() => r(), 200));
+    navigate("/")
+  }
   return(
     <Dialog
       open={show}
       fullScreen={fullScreen}
       fullWidth
       maxWidth="md"
-      onClose={async() => {setShow(false); 
-        await new Promise(r => setTimeout(() => r(), 200));
-        navigate("/")}}
+      onClose={closeDialog}
     >
       <DialogTitle style={{display: 'flex', justifyContent: 'flex-start', alignItems: 'center'}}>
         <Typograhy
@@ -174,11 +176,7 @@ function TV(props){
       </DialogContent>
       <DialogActions>
         <Button
-          onClick={async() => {
-            setShow(false); 
-            await new Promise(r => setTimeout(() => r(), 200));
-            navigate("/")}
-          } 
+          onClick={closeDialog}
           fullWidth
         >
           Close

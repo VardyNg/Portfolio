@@ -5,8 +5,6 @@ import Typography from '@mui/material/Typography';
 import * as React from 'react';
 import Divider from '@mui/material/Divider'
 import Stack from '@mui/material/Stack'
-import ImageList from '@mui/material/ImageList';
-import ImageListItem from '@mui/material/ImageListItem';
 import Judge_Login from '../../../Images/TV/Judge_Login.png'
 import Judge_Panel from '../../../Images/TV/Judge_Panel.png'
 import Judge_Scoring from '../../../Images/TV/Judge_Scoring.png'
