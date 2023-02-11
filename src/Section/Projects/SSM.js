@@ -114,15 +114,20 @@ function SSM(props) {
     createDataForComponent('Web', <Web/>, <></>),
     createDataForComponent('Backend', <Backend/>, <></>),
   ]
+
+  const closeDialog = async() => {
+    setShow(false);
+    await new Promise(r => setTimeout(() => r(), 200));
+    navigate("/")
+  }
+
   return(
     <Dialog
       fullScreen={fullScreen}
       fullWidth
       maxWidth='md'
       open={show}
-      onClose={async() => {setShow(false); 
-            await new Promise(r => setTimeout(() => r(), 200));
-            navigate("/")}}
+      onClose={closeDialog}
       aria-labelledby="responsive-dialog-title"
     >
       <DialogTitle id="responsive-dialog-title">
@@ -232,11 +237,7 @@ function SSM(props) {
       </DialogContent>
       <DialogActions>
         <Button 
-          onClick={async() => {
-            setShow(false); 
-            await new Promise(r => setTimeout(() => r(), 200));
-            navigate("/")}
-          } 
+          onClick={closeDialog} 
           fullWidth
         >
           Close

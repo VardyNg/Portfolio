@@ -106,9 +106,9 @@ function WorkingExperience(){
                 </Typography>
                 <div style={{marginLeft: -10}}>
                   <ul>
-                    {step.description.map((description, index) => {
+                    {step.description.map((description, i) => {
                       return(
-                        <li key={index}>
+                        <li key={i}>
                           <Typography sx={{ textAlign: 'left' }} >
                             {description}
                           </Typography>

@@ -1,13 +1,11 @@
 import Divider from '@mui/material/Divider';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
+import useMediaQuery from '@mui/material/useMediaQuery';
+import { makeStyles, useTheme } from "@mui/styles";
+import React from 'react';
 import Hello3 from '../Images/Hello3.png';
 import SkillSets from './SkillSets';
-import { createTheme, ThemeProvider, styled } from '@mui/material/styles';
-import { makeStyles } from "@mui/styles";
-import useMediaQuery from '@mui/material/useMediaQuery';
-import { useTheme } from '@mui/styles';
-import React, { useState } from 'react';
 
 const useStyles = makeStyles((theme) => ({
   container: {

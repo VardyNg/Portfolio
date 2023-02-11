@@ -1,25 +1,22 @@
-import { useState, useEffect } from 'react';
-import Typography from '@mui/material/Typography';
-import { ReactComponent as AWSSAA } from '../Images/Certs/AWS-SAA.svg';
-import { ReactComponent as AWSDVA } from '../Images/Certs/AWS-DVA.svg';
-import { ReactComponent as HTCAO002 } from '../Images/Certs/HTCAO002.svg';
-import { ReactComponent as AWSDOP } from '../Images/Certs/AWS-DOP.svg';
-import { ReactComponent as AWSSOA } from '../Images/Certs/AWS-SOA.svg';
-import Grid from '@mui/material/Grid';
-import Card from '@mui/material/Card';
-import Tabs from '@mui/material/Tabs';
-import Tab from '@mui/material/Tab';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import IconButton from '@mui/material/IconButton';
-import Box from '@mui/material/Box';
-import { useTheme } from '@mui/material/styles';
-import moment from 'moment';
-import Button from '@mui/material/Button';
 import LinkIcon from '@mui/icons-material/Link';
-import ReactGA from 'react-ga4';
-import { gaEvent } from "../functions";
+import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import Grid from '@mui/material/Grid';
+import Tab from '@mui/material/Tab';
+import Tabs from '@mui/material/Tabs';
+import Typography from '@mui/material/Typography';
+import moment from 'moment';
+import { useState } from 'react';
 import { GA_CATEGORY_BUTTON_CLICK } from '../constants';
+import { gaEvent } from "../functions";
+import { ReactComponent as AWSDOP } from '../Images/Certs/AWS-DOP.svg';
+import { ReactComponent as AWSDVA } from '../Images/Certs/AWS-DVA.svg';
+import { ReactComponent as AWSSAA } from '../Images/Certs/AWS-SAA.svg';
+import { ReactComponent as AWSSOA } from '../Images/Certs/AWS-SOA.svg';
+import { ReactComponent as AZ204 } from '../Images/Certs/AZ-204.svg';
+import { ReactComponent as HTCAO002 } from '../Images/Certs/HTCAO002.svg';
 
 function createDataForCerts(title, icon, issueDate, expirationDate, credentialLinkl, types, issuer){
   return {title, icon, issueDate, expirationDate, credentialLinkl, types, issuer}
@@ -30,13 +27,15 @@ const tabs = [
     label: 'Overview',
     issuers: [
       "Amazon Web Service",
-      "HashiCorp"
+      "HashiCorp",
+      "Microsoft Azure"
     ]
   },
   { value: 'csp', 
     label: 'Cloud Service Provider',
     issuers: [
-      "Amazon Web Service"
+      "Amazon Web Service",
+      "Microsoft Azure"
     ]
   },
   { value: 'iac', 
@@ -92,6 +91,15 @@ const certs = [
     "https://www.credly.com/badges/d808da6c-93f2-4fe3-84ec-e7932cb121ed/public_url",
     ["all", "csp"],
     "Amazon Web Service"
+  ),
+  createDataForCerts(
+    "Microsoft Certified: Azure Developer Associate",
+    <AZ204 style={{height: 100, width: 100}}/>,
+    "2023-2-10",
+    "2024-2-10",
+    "https://www.credly.com/badges/1554db9d-2081-41cd-b832-a103b5d311a2/public_url",
+    ["all", "csp"],
+    "Microsoft Azure"
   ),
 ]
 

@@ -81,10 +81,15 @@ function PrivateTutorPlus(props) {
           <IAC/>
         </TabPanel>
         <TabPanel value={value} index={6}>
-          <Security/>
+          <Security/>b
         </TabPanel>
       </div>
     )
+  }
+  const closeDialog = async() => {
+    setShow(false);
+    await new Promise(r => setTimeout(() => r(), 200));
+    navigate("/")
   }
 
   return(
@@ -93,9 +98,7 @@ function PrivateTutorPlus(props) {
       maxWidth="lg"
       fullWidth
       open={show}
-      onClose={async() => {setShow(false); 
-            await new Promise(r => setTimeout(() => r(), 200));
-            navigate("/")}}
+      onClose={closeDialog}
       aria-labelledby="responsive-dialog-title"
     >
       <DialogTitle id="responsive-dialog-title">
@@ -146,11 +149,7 @@ function PrivateTutorPlus(props) {
       </DialogContent>
       <DialogActions>
         <Button 
-          onClick={async() => {
-            setShow(false); 
-            await new Promise(r => setTimeout(() => r(), 200));
-            navigate("/")}
-          } 
+          onClick={closeDialog}
           fullWidth
         >
           Close

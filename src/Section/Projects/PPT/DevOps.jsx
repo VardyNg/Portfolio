@@ -1,23 +1,19 @@
-import React, { useState } from 'react'
-import { ReactComponent as FrontEndDevOps } from '../../../Images/PPT/Front-End-DevOps.svg'
+import Box from '@mui/material/Box'
+import Divider from '@mui/material/Divider'
+import Stack from '@mui/material/Stack'
+import Tab from '@mui/material/Tab'
+import Tabs from '@mui/material/Tabs'
+import Typography from '@mui/material/Typography'
+import React from 'react'
+import { ReactComponent as GitHubIcon } from '../../../Images/github.svg'
+import { ReactComponent as JenkinsIcon } from '../../../Images/jenkins.svg'
 import { ReactComponent as APIDevOps } from '../../../Images/PPT/API-DevOps.svg'
 import { ReactComponent as DatabaseDevOps } from '../../../Images/PPT/Database-DevOps.svg'
-import { ReactComponent as GitHubIcon } from '../../../Images/github.svg'
-import { ReactComponent as Branching} from '../../../Images/PPT/GitBranching.svg'
-import { ReactComponent as JenkinsIcon} from '../../../Images/jenkins.svg'
-import { ReactComponent as SonarqubeIcon} from '../../../Images/sonarqube.svg'
-import { ReactComponent as SonarqubeJenkins} from '../../../Images/PPT/Sonarqube_Jenkins.svg'
+import { ReactComponent as FrontEndDevOps } from '../../../Images/PPT/Front-End-DevOps.svg'
+import { ReactComponent as Branching } from '../../../Images/PPT/GitBranching.svg'
 import SonarqubeExample from "../../../Images/PPT/SonarqubeExample.png"
-import { useTheme } from '@mui/styles';
-import Typography from '@mui/material/Typography';
-import PropTypes from 'prop-types';
-import Tabs from '@mui/material/Tabs';
-import Tab from '@mui/material/Tab';
-import Box from '@mui/material/Box';
-import useMediaQuery from '@mui/material/useMediaQuery';
-import Title from './Title'
-import Stack from '@mui/material/Stack';
-import Divider from '@mui/material/Divider'
+import { ReactComponent as SonarqubeJenkins } from '../../../Images/PPT/Sonarqube_Jenkins.svg'
+import { ReactComponent as SonarqubeIcon } from '../../../Images/sonarqube.svg'
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
 
@@ -170,8 +166,6 @@ function Database(props){
 }
 
 function DevOps(props){
-  const theme = useTheme();
-  const fullScreen = useMediaQuery(theme.breakpoints.down('md'));
   const [value, setValue] = React.useState(0);
 
   const handleChange = (event, newValue) => {
