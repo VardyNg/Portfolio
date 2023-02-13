@@ -1,29 +1,14 @@
-import React, { useState } from 'react'
+import Divider from '@mui/material/Divider'
+import Stack from '@mui/material/Stack'
+import Typography from '@mui/material/Typography'
+import React from 'react'
+import { ReactComponent as AmplifyIcon } from '../../../Images/Amplify.svg'
+import { ReactComponent as CloudflareIcon } from '../../../Images/cloudflare.svg'
 import { ReactComponent as ReactJSIcon } from '../../../Images/PPT/reactjs.svg'
-import { ReactComponent as S3Icon} from '../../../Images/S3.svg'
-import { ReactComponent as AmplifyIcon} from '../../../Images/Amplify.svg'
-import { ReactComponent as CloudflareIcon} from '../../../Images/cloudflare.svg'
-import { useTheme } from '@mui/styles';
-import Typography from '@mui/material/Typography';
-import PropTypes from 'prop-types';
-import Tabs from '@mui/material/Tabs';
-import Tab from '@mui/material/Tab';
-import Box from '@mui/material/Box';
-import useMediaQuery from '@mui/material/useMediaQuery';
-import Title from './Title'
-import Stack from '@mui/material/Stack';
-import Divider from '@mui/material/Divider';
-import Grid from '@mui/material/Grid';
+import { ReactComponent as S3Icon } from '../../../Images/S3.svg'
 
 function FrontEnd(props){
-  const theme = useTheme();
-  const fullScreen = useMediaQuery(theme.breakpoints.down('md'));
-  const [value, setValue] = React.useState(0);
 
-  const handleChange = (event, newValue) => {
-    setValue(newValue);
-  };
-  
   return(
     <Stack spacing={2}>
       <Typography variant="h4">

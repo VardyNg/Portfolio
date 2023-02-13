@@ -22,7 +22,7 @@ const steps = [
     null,
     "eCloudvalley Digital Technology Co., Ltd",
     "Cloud Engineer",
-    "Solution Architect - Development",
+    "in Solution Architect - Development team",
     [
       "Developed Cloud Native applications on AWS for a Multi-national theme park and resort company",
       "Developed and Defined DevOps tools and practices to facilitate CICD",
@@ -106,9 +106,9 @@ function WorkingExperience(){
                 </Typography>
                 <div style={{marginLeft: -10}}>
                   <ul>
-                    {step.description.map((description, index) => {
+                    {step.description.map((description, i) => {
                       return(
-                        <li key={index}>
+                        <li key={i}>
                           <Typography sx={{ textAlign: 'left' }} >
                             {description}
                           </Typography>
@@ -125,14 +125,14 @@ function WorkingExperience(){
                     fullWidth
                   >  
                     <Button
-                      style={{width: 200}}
+                      style={{width: "50%"}}
                       onClick={() => { navigate("projects/techvision")}}
                       startIcon={<ArticleIcon/>}
                     >
                       Doc
                     </Button>
                     <Button
-                      style={{width: 200}}
+                      style={{width: "50%"}}
                       startIcon={<WebIcon/>}
                       onClick={() => { 
                         console.log("wdawda")

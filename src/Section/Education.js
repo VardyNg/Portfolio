@@ -1,17 +1,17 @@
-import Typography from '@mui/material/Typography';
 import Timeline from '@mui/lab/Timeline';
-import TimelineItem from '@mui/lab/TimelineItem';
-import TimelineSeparator from '@mui/lab/TimelineSeparator';
 import TimelineConnector from '@mui/lab/TimelineConnector';
 import TimelineContent from '@mui/lab/TimelineContent';
 import TimelineDot from '@mui/lab/TimelineDot';
+import TimelineItem from '@mui/lab/TimelineItem';
 import TimelineOppositeContent from '@mui/lab/TimelineOppositeContent';
-import { ReactComponent as HKCCLogo } from '../Images/PolyU_HKCC.svg';
-import { ReactComponent as PolyULogo } from '../Images/PolyU.svg';
-import { ReactComponent as CCCSSLogo } from '../Images/CCCSS.svg';
-import { ReactComponent as EIELogo } from '../Images/PolyU-EIE.svg';
+import TimelineSeparator from '@mui/lab/TimelineSeparator';
 import IconButton from '@mui/material/IconButton';
-
+import { styled } from '@mui/material/styles';
+import Typography from '@mui/material/Typography';
+import React from 'react';
+import { ReactComponent as EIELogo } from '../Images/PolyU-EIE.svg';
+import { ReactComponent as PolyULogo } from '../Images/PolyU.svg';
+import { ReactComponent as HKCCLogo } from '../Images/PolyU_HKCC.svg';
 const iconSize = 35;
 const steps = [
   {
@@ -45,8 +45,14 @@ const steps = [
   }
 ];
 
+const InstitutesIcon = styled('div')(({ theme }) => ({
+  [theme.breakpoints.down('sm')]: {
+    display: 'none'
+  },
+}));
 
 function DetailedInstitutes(){
+
   return <>
     <Timeline position="left" style={{backgroundColor: '', marginLeft: -50}}>
       {steps.map((step, index) => {
@@ -58,16 +64,15 @@ function DetailedInstitutes(){
               </Typography>
               <Typography variant="h6" sx={{textAlign: 'left', fontWeight: 'bold', marginBottom: -1 }}>
                 {step.degree}
-                {/* {step.cGPA !== "" && ", cGPA: " + step.cGPA} */}
               </Typography>       
               <Typography variant="subtitle1" sx={{textAlign: 'left', fontWeight: '' }}>
                 {step.institute}
               </Typography>
               <div style={{marginLeft: -10}}>
                 <ul>
-                  {step.description.map((description, index) => {
+                  {step.description.map((description, i) => {
                     return(
-                      <li key={index}>
+                      <li key={i}>
                         <Typography sx={{ textAlign: 'left' }} >
                           {description}
                         </Typography>
@@ -79,18 +84,22 @@ function DetailedInstitutes(){
             </TimelineContent>
             <TimelineOppositeContent style={{ maxWidth: "1px", paddingLeft: '0px', paddingRight: '0px' }}/>
             <TimelineSeparator>
-              <TimelineDot
-                style={{ backgroundColor: '#FFFFFF'}}
-              >
-                <IconButton
-                  size="small"
-                  onClick={() => {
-                    window.open(step.url, "_blank");
+              <InstitutesIcon>
+                <TimelineDot
+                  style={{
+                    backgroundColor: '#FFFFFF',
                   }}
                 >
-                  {step.icon}
-                </IconButton>
-              </TimelineDot>
+                  <IconButton
+                    size="small"
+                    onClick={() => {
+                      window.open(step.url, "_blank");
+                    }}
+                  >
+                    {step.icon}
+                  </IconButton>
+                </TimelineDot>
+              </InstitutesIcon>
             </TimelineSeparator>
           </TimelineItem>
         )
@@ -99,7 +108,6 @@ function DetailedInstitutes(){
   </>
 }
 function Education(){
-
   return(
     <div style={{marginTop: 20}}>      
       <div style={{alignContent: "left"}}>
