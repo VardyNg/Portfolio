@@ -24,9 +24,9 @@ const steps = [
     "Cloud Engineer",
     "in Solution Architect - Development team",
     [
-      "Developed Cloud Native applications on AWS for a Multi-national theme park and resort company",
-      "Developed and Defined DevOps tools and practices to facilitate CICD",
-      "Participated in cloud infrastructure designs"
+      "Developed Serverless Application on AWS for a Multi-national theme park and resort company",
+      "Developed and Defined DevOps tools and practices to facilitate CI/CD",
+      "Participated in Cloud Infrastructure Designs and provisioning on AWS using Terraform and other IaC tools"
     ],
     "https://www.ecloudvalley.com/"
   ),
@@ -37,8 +37,8 @@ const steps = [
     "Mobile Developer",
     "Project BU",
     [
-      "Developed ReactJS application UI",
-      "Implemented automated pipelines for Continues Delivery"
+      "Developed Application UI for a Logistc Company usig ReactJS",
+      "Implemented automated pipelines for Continues Delivery using GitLab CI"
     ],
     "https://www.armitage.com.hk/"
   ),
@@ -49,7 +49,7 @@ const steps = [
     'Software Development Internship (Part Time mode)',
     'Blockchain Team',
     [
-      "Setup and installed docker based system",
+      "Setup and installed Docker based system",
       "Maintained networking devices",
     ],
     "https://www.banclogix.com/"
@@ -59,9 +59,9 @@ const steps = [
     moment("2021-09-01").endOf('month'),
     'Crossover Int. Company Limited',
     'Software Developer Internship (Full Time mode)',
-    "IT",
+    "IT Dept.",
     [
-      "Designed and developed scoring system for both frontend and backend using ReactJS, NodeJS, and MySQL",
+      "Designed and developed scoring system for frontend and backend using ReactJS, NodeJS, and MySQL",
       "Consulted with end users to revise the system"
     ],
     null
@@ -102,13 +102,13 @@ function WorkingExperience(){
                   }
                 </Typography>
                 <Typography variant="subtitle1" sx={{textAlign: 'left', fontWeight: '' }}>
-                  {step.position}, {step.department}
+                  <b>{step.position}</b>, {step.department}
                 </Typography>
                 <div style={{marginLeft: -10}}>
                   <ul>
-                    {step.description.map((description, index) => {
+                    {step.description.map((description, i) => {
                       return(
-                        <li key={index}>
+                        <li key={i}>
                           <Typography sx={{ textAlign: 'left' }} >
                             {description}
                           </Typography>
@@ -125,14 +125,14 @@ function WorkingExperience(){
                     fullWidth
                   >  
                     <Button
-                      style={{width: 200}}
+                      style={{width: "50%"}}
                       onClick={() => { navigate("projects/techvision")}}
                       startIcon={<ArticleIcon/>}
                     >
                       Doc
                     </Button>
                     <Button
-                      style={{width: 200}}
+                      style={{width: "50%"}}
                       startIcon={<WebIcon/>}
                       onClick={() => { 
                         console.log("wdawda")

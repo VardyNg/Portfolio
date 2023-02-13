@@ -1,4 +1,5 @@
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import ArticleIcon from '@mui/icons-material/Article';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Card from '@mui/material/Card';
@@ -10,11 +11,8 @@ import Stack from '@mui/material/Stack';
 import Tab from '@mui/material/Tab';
 import Tabs from '@mui/material/Tabs';
 import Typography from '@mui/material/Typography';
-import { useTheme } from '@mui/styles';
 import { useState } from 'react';
-import ReportRoute from './Projects';
-import ArticleIcon from '@mui/icons-material/Article';
-import {  BrowserRouter as Router,  Routes,  Route, Navigate, useNavigate} from "react-router-dom"
+import { useNavigate } from "react-router-dom";
 
 function createDataForProjects(title, description, chip, link, start){
   return {title, description, chip, link, start}
@@ -97,11 +95,11 @@ function Projects(){
   ];
 
   const Project = (props) => {
-    const {project} = props;
-    console.log(project)
+    const {projects} = props;
+    console.log(projects)
     return(
       <>{
-        project.map((project, index) => {
+        projects.map((project, index) => {
           console.log(project.chip.length)
           return(
             <Card style={{margin: 20}} key={index}>
@@ -118,9 +116,9 @@ function Projects(){
                     >
                       <div>
                         {
-                          Array.from(Array(project.start).keys()).map((item, index) => (
+                          Array.from(Array(project.start).keys()).map((item, i) => (
                             <Rating
-                              key={index}
+                              key={i}
                               value={1}
                               max={1}
                             />
@@ -140,10 +138,10 @@ function Projects(){
                       </Typography>
                       {project.chip.length > 0 && 
                         <>
-                          {project.chip.map((chip, index) => {
+                          {project.chip.map((chip, i) => {
                             return(
                               <Chip 
-                                key={index}
+                                key={i}
                                 label={chip} 
                                 variant="outlined" 
                                 style={{marginLeft: 15}}
@@ -193,10 +191,10 @@ function Projects(){
         </Tabs>
       </Box>
       <TabPanel value={value} index={0}>
-        <Project project={sideProjects}/>
+        <Project projects={sideProjects}/>
       </TabPanel>
       <TabPanel value={value} index={1}>
-        <Project project={schoolProjects}/>
+        <Project projects={schoolProjects}/>
       </TabPanel>  
     </div>
   )

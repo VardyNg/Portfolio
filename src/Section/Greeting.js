@@ -1,13 +1,11 @@
 import Divider from '@mui/material/Divider';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
+import useMediaQuery from '@mui/material/useMediaQuery';
+import { makeStyles, useTheme } from "@mui/styles";
+import React from 'react';
 import Hello3 from '../Images/Hello3.png';
 import SkillSets from './SkillSets';
-import { createTheme, ThemeProvider, styled } from '@mui/material/styles';
-import { makeStyles } from "@mui/styles";
-import useMediaQuery from '@mui/material/useMediaQuery';
-import { useTheme } from '@mui/styles';
-import React, { useState } from 'react';
 
 const useStyles = makeStyles((theme) => ({
   container: {
@@ -75,7 +73,7 @@ function Greeting(){
           </Typography>
           <Divider className={classes.divider}/>
           <Typography variant="body1" component="div" style={{fontFamily: "Raleway"}}>
-            I am a Full Stack Developer. Love coding, making useful application and learn new techniques.
+            I am a Software Engineer. Love coding, learn new techniques, dive deep into technologies. 👨🏻‍💻
           </Typography>
           <Divider className={classes.divider}/>
           <SkillSets/>

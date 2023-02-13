@@ -1,13 +1,12 @@
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import { makeStyles } from '@mui/styles';
+import { ReactComponent as AWSIcon } from '../Images/AWSIcon.svg';
+import { ReactComponent as DockerIcon } from '../Images/docker.svg';
+import { ReactComponent as NodeJsIcon } from '../Images/NodeJsIcon.svg';
 import { ReactComponent as ServerlessIcon } from '../Images/PPT/serverless-framework.svg';
 import { ReactComponent as TerraformIcon } from '../Images/PPT/terraform.svg';
-import { ReactComponent as NodeJsIcon } from '../Images/NodeJsIcon.svg';
-import { ReactComponent as AWSIcon } from '../Images/AWSIcon.svg';
 import { ReactComponent as ReactNativeIcon } from '../Images/ReactNativeIcon.svg';
-import { ReactComponent as Unity3DIcon } from '../Images/Unity3D.svg';
-import { ReactComponent as DockerIcon } from '../Images/docker.svg';
 import Xcode_icon from '../Images/Xcode_icon.png';
 const useStyles = makeStyles((theme) => ({
   icons: {
@@ -21,7 +20,7 @@ function SkillSets(){
     <Grid container>
       <Grid item xs={12}>
         <Typography variant="h5" sx={{ textAlign: 'center' }} style={{fontFamily: "Raleway", backgroundColor: ''}}>
-          Cloud Technologies | Frontend | DevOps
+          Cloud Technologies | DevOps | Frontend
         </Typography>
       </Grid>
       <Grid item xs={12} 
