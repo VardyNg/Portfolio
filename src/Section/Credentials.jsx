@@ -29,7 +29,8 @@ const tabs = [
     issuers: [
       "Amazon Web Service",
       "HashiCorp",
-      "Microsoft Azure"
+      "Microsoft Azure",
+      "Cloud Native Computing Foundation (CNCF)",
     ]
   },
   { value: 'csp', 
@@ -39,10 +40,18 @@ const tabs = [
       "Microsoft Azure"
     ]
   },
-  { value: 'iac', 
+  { 
+    value: 'iac', 
     label: 'IaC',
     issuers: [
       "HashiCorp"
+    ]
+  },
+  { 
+    value: 'container', 
+    label: 'Container Technology',
+    issuers: [
+      "Cloud Native Computing Foundation (CNCF)",
     ]
   },
 ]
@@ -78,9 +87,11 @@ const certs = [
   createDataForCerts(
     "Kubernetes Certified Administrator (CKA)",
     <K8SCKA style={{height: 100}}/>,
-    "2023-03-16",
-    "2026-03-16",
-    "https://www.credly.com/badges/67e029c5-743c-4a93-9ef7-7fa78641d4a3"
+    "2023-04-11",
+    "2026-04-11",
+    "https://www.credly.com/badges/67e029c5-743c-4a93-9ef7-7fa78641d4a3",
+    ["all", "container"],
+    "Cloud Native Computing Foundation (CNCF)"
   ),
   createDataForCerts(
     "AWS Certified SysOps Administrator – Associate (SOA-C02)",
