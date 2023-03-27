@@ -17,6 +17,7 @@ import { ReactComponent as AWSSAA } from '../Images/Certs/AWS-SAA.svg';
 import { ReactComponent as AWSSOA } from '../Images/Certs/AWS-SOA.svg';
 import { ReactComponent as AZ204 } from '../Images/Certs/AZ-204.svg';
 import { ReactComponent as HTCAO002 } from '../Images/Certs/HTCAO002.svg';
+import { ReactComponent as K8SCKA } from '../Images/Certs/K8S-CKA.svg';
 
 function createDataForCerts(title, icon, issueDate, expirationDate, credentialLinkl, types, issuer){
   return {title, icon, issueDate, expirationDate, credentialLinkl, types, issuer}
@@ -28,7 +29,8 @@ const tabs = [
     issuers: [
       "Amazon Web Service",
       "HashiCorp",
-      "Microsoft Azure"
+      "Microsoft Azure",
+      "Cloud Native Computing Foundation (CNCF)",
     ]
   },
   { value: 'csp', 
@@ -38,10 +40,18 @@ const tabs = [
       "Microsoft Azure"
     ]
   },
-  { value: 'iac', 
+  { 
+    value: 'iac', 
     label: 'IaC',
     issuers: [
       "HashiCorp"
+    ]
+  },
+  { 
+    value: 'container', 
+    label: 'Container Technology',
+    issuers: [
+      "Cloud Native Computing Foundation (CNCF)",
     ]
   },
 ]
@@ -73,6 +83,15 @@ const certs = [
     "https://www.credly.com/badges/67e029c5-743c-4a93-9ef7-7fa78641d4a3",
     ["all", "iac"],
     "HashiCorp"
+  ),
+  createDataForCerts(
+    "Kubernetes Certified Administrator (CKA)",
+    <K8SCKA style={{height: 100}}/>,
+    "2023-03-26",
+    "2026-03-26",
+    "https://www.credly.com/badges/ba1b61de-25a5-44d0-be83-a1615860507d",
+    ["all", "container"],
+    "Cloud Native Computing Foundation (CNCF)"
   ),
   createDataForCerts(
     "AWS Certified SysOps Administrator – Associate (SOA-C02)",
