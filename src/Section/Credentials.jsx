@@ -87,9 +87,9 @@ const certs = [
   createDataForCerts(
     "Kubernetes Certified Administrator (CKA)",
     <K8SCKA style={{height: 100}}/>,
-    "2023-04-11",
-    "2026-04-11",
-    "https://www.credly.com/badges/67e029c5-743c-4a93-9ef7-7fa78641d4a3",
+    "2023-03-26",
+    "2026-03-26",
+    "https://www.credly.com/badges/ba1b61de-25a5-44d0-be83-a1615860507d",
     ["all", "container"],
     "Cloud Native Computing Foundation (CNCF)"
   ),
