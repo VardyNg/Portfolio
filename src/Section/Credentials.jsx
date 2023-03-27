@@ -18,6 +18,7 @@ import { ReactComponent as AWSSOA } from '../Images/Certs/AWS-SOA.svg';
 import { ReactComponent as AZ204 } from '../Images/Certs/AZ-204.svg';
 import { ReactComponent as HTCAO002 } from '../Images/Certs/HTCAO002.svg';
 import { ReactComponent as K8SCKAD } from '../Images/Certs/K8S-CKAD.svg';
+import { ReactComponent as K8SCKA } from '../Images/Certs/K8S-CKA.svg';
 
 function createDataForCerts(title, icon, issueDate, expirationDate, credentialLinkl, types, issuer){
   return {title, icon, issueDate, expirationDate, credentialLinkl, types, issuer}
@@ -29,8 +30,8 @@ const tabs = [
     issuers: [
       "Amazon Web Service",
       "HashiCorp",
+      "Microsoft Azure",
       "Cloud Native Computing Foundation (CNCF)",
-      "Microsoft Azure"
     ]
   },
   { value: 'csp', 
@@ -40,16 +41,18 @@ const tabs = [
       "Microsoft Azure"
     ]
   },
-  { value: 'iac', 
+  { 
+    value: 'iac', 
     label: 'IaC',
     issuers: [
       "HashiCorp"
     ]
   },
-  { value: 'k8s', 
-    label: 'Kubernetes',
+  { 
+    value: 'container', 
+    label: 'Container Technology',
     issuers: [
-      "Cloud Native Computing Foundation (CNCF)"
+      "Cloud Native Computing Foundation (CNCF)",
     ]
   },
 ]
@@ -99,6 +102,24 @@ const certs = [
     "",
     ["all", "k8s"],
     "Cloud Native Computing Foundation (CNCF)"
+  ),
+  createDataForCerts(
+    "Kubernetes Certified Administrator (CKA)",
+    <K8SCKA style={{height: 100}}/>,
+    "2023-03-26",
+    "2026-03-26",
+    "https://www.credly.com/badges/ba1b61de-25a5-44d0-be83-a1615860507d",
+    ["all", "container"],
+    "Cloud Native Computing Foundation (CNCF)"
+  ),
+  createDataForCerts(
+    "AWS Certified SysOps Administrator – Associate (SOA-C02)",
+    <AWSSOA style={{height: 100, width: 100}}/>,
+    "2022-10-14",
+    "2025-12-13",
+    "https://www.credly.com/badges/f929e2d3-42f6-473d-9e1a-766a0f8b8185",
+    ["all", "csp"],
+    "Amazon Web Service"
   ),
   createDataForCerts(
     "AWS Certified DevOps Engineer – Professional (DOP-C01)",
