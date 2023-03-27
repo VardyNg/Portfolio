@@ -20,7 +20,7 @@ function SkillSets(){
     <Grid container>
       <Grid item xs={12}>
         <Typography variant="h5" sx={{ textAlign: 'center' }} style={{fontFamily: "Raleway", backgroundColor: ''}}>
-          Cloud Technologies | DevOps | Frontend
+          Cloud Technologies | Frontend | DevOps
         </Typography>
       </Grid>
       <Grid item xs={12} 

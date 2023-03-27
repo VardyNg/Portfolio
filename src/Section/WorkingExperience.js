@@ -24,9 +24,9 @@ const steps = [
     "Cloud Engineer",
     "in Solution Architect - Development team",
     [
-      "Developed Serverless Application on AWS for a Multi-national theme park and resort company",
-      "Developed and Defined DevOps tools and practices to facilitate CI/CD",
-      "Participated in Cloud Infrastructure Designs and provisioning on AWS using Terraform and other IaC tools"
+      "Developed Cloud Native applications on AWS for a Multi-national theme park and resort company",
+      "Developed and Defined DevOps tools and practices to facilitate CICD",
+      "Participated in cloud infrastructure designs"
     ],
     "https://www.ecloudvalley.com/"
   ),
@@ -37,8 +37,8 @@ const steps = [
     "Mobile Developer",
     "Project BU",
     [
-      "Developed Application UI for a Logistc Company usig ReactJS",
-      "Implemented automated pipelines for Continues Delivery using GitLab CI"
+      "Developed ReactJS application UI",
+      "Implemented automated pipelines for Continues Delivery"
     ],
     "https://www.armitage.com.hk/"
   ),
@@ -49,7 +49,7 @@ const steps = [
     'Software Development Internship (Part Time mode)',
     'Blockchain Team',
     [
-      "Setup and installed Docker based system",
+      "Setup and installed docker based system",
       "Maintained networking devices",
     ],
     "https://www.banclogix.com/"
@@ -59,9 +59,9 @@ const steps = [
     moment("2021-09-01").endOf('month'),
     'Crossover Int. Company Limited',
     'Software Developer Internship (Full Time mode)',
-    "IT Dept.",
+    "IT",
     [
-      "Designed and developed scoring system for frontend and backend using ReactJS, NodeJS, and MySQL",
+      "Designed and developed scoring system for both frontend and backend using ReactJS, NodeJS, and MySQL",
       "Consulted with end users to revise the system"
     ],
     null
@@ -102,7 +102,7 @@ function WorkingExperience(){
                   }
                 </Typography>
                 <Typography variant="subtitle1" sx={{textAlign: 'left', fontWeight: '' }}>
-                  <b>{step.position}</b>, {step.department}
+                  {step.position}, {step.department}
                 </Typography>
                 <div style={{marginLeft: -10}}>
                   <ul>
