@@ -85,7 +85,7 @@ const certs = [
     "HashiCorp"
   ),
   createDataForCerts(
-    "Kubernetes Certified Administrator (CKA)",
+    "Certified Kubernetes Administrator (CKA)",
     <K8SCKA style={{height: 100}}/>,
     "2023-03-26",
     "2026-03-26",
