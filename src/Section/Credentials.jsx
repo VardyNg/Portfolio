@@ -95,12 +95,12 @@ const certs = [
     "HashiCorp"
   ),
   createDataForCerts(
-    "Kubernetes Certified Application Developer (CKAD)",
+    "Certified Kubernetes Application Developer (CKAD)",
     <K8SCKAD style={{height: 100}}/>,
-    "2023-06-16",
-    "2026-06-16",
+    "2023-04-07",
+    "2026-04-07",
     "",
-    ["all", "k8s"],
+    ["all", "container"],
     "Cloud Native Computing Foundation (CNCF)"
   ),
   createDataForCerts(
