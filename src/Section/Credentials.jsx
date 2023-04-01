@@ -59,7 +59,6 @@ const tabs = [
 const certs = [
   createDataForCerts(
     "AWS Certified Solutions Architect – Associate",
-    "DOP-C01",
     "SAA-C02",
     <AWSSAA style={{height: 100}}/>,
     "2022-04-03",
@@ -110,6 +109,7 @@ const certs = [
   ),
   createDataForCerts(
     "AWS Certified DevOps Engineer – Professional",
+    "DOP-C01",
     <AWSDOP style={{height: 100, width: 100}}/>,
     "2022-12-13",
     "2025-12-13",
