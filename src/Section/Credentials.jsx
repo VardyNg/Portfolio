@@ -171,7 +171,7 @@ function CredentialsGroup(props){
                         </div>
                         <Box sx={{ display: 'flex', flexDirection: 'column', backgroundColor: '', width: '100%', marginBottom: -2}}>
                           <CardContent >
-                            <Typography component="div" variant="h7">
+                            <Typography component="div" variant="h6">
                               {cert.title}
                             </Typography>
                             <Typography variant="subtitle2" color="text.secondary" component="div">
