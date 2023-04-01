@@ -24,9 +24,9 @@ const steps = [
     "Cloud Engineer",
     "in Solution Architect - Development team",
     [
-      "Developed Cloud Native applications on AWS for a Multi-national theme park and resort company",
-      "Developed and Defined DevOps tools and practices to facilitate CICD",
-      "Participated in cloud infrastructure designs"
+      "Participated in AWS serverless application development, written automation tests to ensure code reliability and quality, defined and developed tools for the team to facilitate CICD, gathered requirements and revisions with clients",
+      " Participated in cloud infrastructure designs and provisions using Terraform",
+      "Developed cloud agnostic applications using NestJS and ORM on K8S"
     ],
     "https://www.ecloudvalley.com/"
   ),
