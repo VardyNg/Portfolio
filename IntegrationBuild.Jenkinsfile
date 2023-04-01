@@ -1,5 +1,5 @@
-podTemplate(yaml: '''
-    cloud: Kubernetes-oracle
+podTemplate(
+  yaml: '''
     apiVersion: v1
     kind: Pod
     spec:
