@@ -168,7 +168,7 @@ function CredentialsGroup(props){
                               {cert.title}
                             </Typography>
                             <Typography variant="subtitle2" color="text.secondary" component="div">
-                              Validity: {moment(cert.issueDate).format("MMM YY")}
+                              {moment(cert.issueDate).format("MMM YY")}
                               {cert.expirationDate !== null && <> - {moment(cert.expirationDate).format("MMM YY")}</>}
                             </Typography>
                             <Button
