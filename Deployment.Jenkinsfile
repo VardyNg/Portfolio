@@ -53,7 +53,7 @@ podTemplate(yaml: '''
       container('node') {
         sh '''
           npm config set registry http://verdaccio-service.verdaccio
-          npm install --legacy-peer-deps
+          npm install
         '''
       }
     }
