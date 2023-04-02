@@ -94,7 +94,7 @@ const certs = [
     <K8SCKAD style={{height: 100}}/>,
     "2023-04-07",
     "2026-04-07",
-    "",
+    "https://www.credly.com/badges/1e17381c-eded-4e48-b4fa-b0641eda22a2",
     ["all", "container"],
     "Cloud Native Computing Foundation (CNCF)"
   ),
