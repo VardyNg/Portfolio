@@ -19,8 +19,8 @@ import { ReactComponent as AZ204 } from '../Images/Certs/AZ-204.svg';
 import { ReactComponent as HTCAO002 } from '../Images/Certs/HTCAO002.svg';
 import { ReactComponent as K8SCKA } from '../Images/Certs/K8S-CKA.svg';
 
-function createDataForCerts(title, icon, issueDate, expirationDate, credentialLinkl, types, issuer){
-  return {title, icon, issueDate, expirationDate, credentialLinkl, types, issuer}
+function createDataForCerts(title, abbreviation, icon, issueDate, expirationDate, credentialLinkl, types, issuer){
+  return {title, abbreviation, icon, issueDate, expirationDate, credentialLinkl, types, issuer}
 }
 
 const tabs = [
@@ -58,7 +58,8 @@ const tabs = [
 
 const certs = [
   createDataForCerts(
-    "AWS Certified Solutions Architect – Associate (SAA-C02)",
+    "AWS Certified Solutions Architect – Associate",
+    "SAA-C02",
     <AWSSAA style={{height: 100}}/>,
     "2022-04-03",
     "2025-04-03",
@@ -67,7 +68,8 @@ const certs = [
     "Amazon Web Service"
   ),
   createDataForCerts(
-    "AWS Certified Developer – Associate (DVA-C01)",
+    "AWS Certified Developer – Associate",
+    "DVA-C01",
     <AWSDVA style={{height: 100}}/>,
     "2022-06-17",
     "2025-12-13",
@@ -76,7 +78,8 @@ const certs = [
     "Amazon Web Service"
   ),
   createDataForCerts(
-    "HashiCorp Certified: Terraform Associate (HTCA002)",
+    "HashiCorp Certified: Terraform Associate",
+    "HTCA002",
     <HTCAO002 style={{height: 100}}/>,
     "2022-07-16",
     "2024-07-16",
@@ -85,7 +88,8 @@ const certs = [
     "HashiCorp"
   ),
   createDataForCerts(
-    "Kubernetes Certified Administrator (CKA)",
+    "Kubernetes Certified Administrator",
+    "CKA",
     <K8SCKA style={{height: 100}}/>,
     "2023-03-26",
     "2026-03-26",
@@ -94,7 +98,8 @@ const certs = [
     "Cloud Native Computing Foundation (CNCF)"
   ),
   createDataForCerts(
-    "AWS Certified SysOps Administrator – Associate (SOA-C02)",
+    "AWS Certified SysOps Administrator – Associate",
+    "SOA-C02",
     <AWSSOA style={{height: 100, width: 100}}/>,
     "2022-10-14",
     "2025-12-13",
@@ -103,7 +108,8 @@ const certs = [
     "Amazon Web Service"
   ),
   createDataForCerts(
-    "AWS Certified DevOps Engineer – Professional (DOP-C01)",
+    "AWS Certified DevOps Engineer – Professional",
+    "DOP-C01",
     <AWSDOP style={{height: 100, width: 100}}/>,
     "2022-12-13",
     "2025-12-13",
@@ -113,6 +119,7 @@ const certs = [
   ),
   createDataForCerts(
     "Microsoft Certified: Azure Developer Associate",
+    "AZ-204",
     <AZ204 style={{height: 100, width: 100}}/>,
     "2023-2-10",
     "2024-2-10",
@@ -164,11 +171,11 @@ function CredentialsGroup(props){
                         </div>
                         <Box sx={{ display: 'flex', flexDirection: 'column', backgroundColor: '', width: '100%', marginBottom: -2}}>
                           <CardContent >
-                            <Typography component="div" variant="h7">
+                            <Typography component="div" variant="h6">
                               {cert.title}
                             </Typography>
                             <Typography variant="subtitle2" color="text.secondary" component="div">
-                              Validity: {moment(cert.issueDate).format("MMM YY")}
+                              {cert.abbreviation} | {moment(cert.issueDate).format("MMM YY")}
                               {cert.expirationDate !== null && <> - {moment(cert.expirationDate).format("MMM YY")}</>}
                             </Typography>
                             <Button
