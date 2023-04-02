@@ -99,7 +99,7 @@ const certs = [
     "Cloud Native Computing Foundation (CNCF)"
   ),
   createDataForCerts(
-    "Kubernetes Certified Administrator",
+    "Certified Kubernetes Administrator",
     "CKA",
     <K8SCKA style={{height: 100}}/>,
     "2023-03-26",
