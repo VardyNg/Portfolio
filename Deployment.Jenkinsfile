@@ -52,7 +52,6 @@ podTemplate(yaml: '''
     stage('Install Dependencies') {
       container('node') {
         sh '''
-          npm config set registry http://verdaccio-service.verdaccio
           npm install
         '''
       }
@@ -65,7 +64,7 @@ podTemplate(yaml: '''
         '''
       }
     }
-
+ 
 
     stage('Sync website to S3') {
       container('awscli') {
