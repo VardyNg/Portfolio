@@ -17,6 +17,7 @@ import { ReactComponent as AWSSAA } from '../Images/Certs/AWS-SAA.svg';
 import { ReactComponent as AWSSOA } from '../Images/Certs/AWS-SOA.svg';
 import { ReactComponent as AZ204 } from '../Images/Certs/AZ-204.svg';
 import { ReactComponent as HTCAO002 } from '../Images/Certs/HTCAO002.svg';
+import { ReactComponent as K8SCKAD } from '../Images/Certs/K8S-CKAD.svg';
 import { ReactComponent as K8SCKA } from '../Images/Certs/K8S-CKA.svg';
 
 function createDataForCerts(title, abbreviation, icon, issueDate, expirationDate, credentialLinkl, types, issuer){
@@ -86,6 +87,16 @@ const certs = [
     "https://www.credly.com/badges/67e029c5-743c-4a93-9ef7-7fa78641d4a3",
     ["all", "iac"],
     "HashiCorp"
+  ),
+  createDataForCerts(
+    "Certified Kubernetes Application Developer",
+    "CKAD",
+    <K8SCKAD style={{height: 100}}/>,
+    "2023-04-01",
+    "2026-04-01",
+    "https://www.credly.com/badges/1e17381c-eded-4e48-b4fa-b0641eda22a2",
+    ["all", "container"],
+    "Cloud Native Computing Foundation (CNCF)"
   ),
   createDataForCerts(
     "Kubernetes Certified Administrator",
