@@ -24,9 +24,9 @@ const steps = [
     "Cloud Engineer",
     "in Solution Architect - Development team",
     [
-      "Participated in AWS serverless application development, written automation tests to ensure code reliability and quality, defined and developed tools for the team to facilitate CICD, gathered requirements and revisions with clients",
-      " Participated in cloud infrastructure designs and provisions using Terraform",
-      "Developed cloud agnostic applications using NestJS and ORM on K8S"
+      "Participated in serverless app development on AWS for a US based theme park company to handle 10K+ requests per day, written automation tests to ensure code reliability and quality, defined and developed tools for the team to facilitate CICD thus reduce deploy time by 80%, gathered requirements and revisions with clients.",
+      "Developed backend applications for a global supply-chain client using NestJS and ORM, integrated with Azure resources like Azure AD and Monitor, deployed as docker container on ACR and AKS.",
+      "Participated in cloud infrastructure designs and provisions using Terraform on AWS and Azure."
     ],
     "https://www.ecloudvalley.com/"
   ),
@@ -37,8 +37,8 @@ const steps = [
     "Mobile Developer",
     "Project BU",
     [
-      "Developed ReactJS application UI",
-      "Implemented automated pipelines for Continues Delivery"
+      "Participated in frontend application development using ReactJS, communicate with client to revise the systems, optimized application to reduce loading time by 30%.",
+      "Implemented automated pipelines for Continuous Delivery using GitLab-CI."
     ],
     "https://www.armitage.com.hk/"
   ),
@@ -49,8 +49,8 @@ const steps = [
     'Software Development Internship (Part Time mode)',
     'Blockchain Team',
     [
-      "Setup and installed docker based system",
-      "Maintained networking devices",
+      "Setup and installed over 500 docker based systems.",
+      "Developed and optimized scripts for maintaining network machines.",
     ],
     "https://www.banclogix.com/"
   ),
@@ -61,8 +61,8 @@ const steps = [
     'Software Developer Internship (Full Time mode)',
     "IT",
     [
-      "Designed and developed scoring system for both frontend and backend using ReactJS, NodeJS, and MySQL",
-      "Consulted with end users to revise the system"
+      "Designed and developed applications using ReactJS, ExpressJS, and MySQL.",
+      "Setup and maintained Linux server."
     ],
     null
   )
