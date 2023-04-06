@@ -8,6 +8,8 @@ import Tab from '@mui/material/Tab';
 import Tabs from '@mui/material/Tabs';
 import Typography from '@mui/material/Typography';
 import moment from 'moment';
+import useMediaQuery from '@mui/material/useMediaQuery';
+import { useTheme } from '@mui/material/styles';
 import { useState } from 'react';
 import { GA_CATEGORY_BUTTON_CLICK } from '../constants';
 import { gaEvent } from "../functions";
@@ -140,9 +142,10 @@ const certs = [
   ),
 ]
 
-function CredentialsGroup(props){
-  console.log(props)
-  
+function CredentialsGroup(props) {
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+
   return (
     <div 
       hidden={props.value !== props.index}
@@ -176,13 +179,13 @@ function CredentialsGroup(props){
                   .filter(cert => cert.types.includes(props.type))
                   .map(cert => (
                     <Grid item xs={12} lg={6} padding={1} key={cert} style={{backgroundColor: ''}}>
-                      <Card sx={{ display: 'flex', justifyContent: 'flex-start', alignItems: 'center', padding: 0.5, height: 125, backgroundColor: ''}}>
+                      <Card sx={{ display: 'flex', justifyContent: 'flex-start', alignItems: 'center', padding: 0.5, height: isMobile ? 175 : 125, backgroundColor: ''}}>
                         <div style={{marginLeft: 10}}>
                           {cert.icon}
                         </div>
                         <Box sx={{ display: 'flex', flexDirection: 'column', backgroundColor: '', width: '100%', marginBottom: -2}}>
                           <CardContent >
-                            <Typography component="div" variant="h6">
+                            <Typography component="div" variant={isMobile ? "h6" : "h5"}>
                               {cert.title}
                             </Typography>
                             <Typography variant="subtitle2" color="text.secondary" component="div">
@@ -211,8 +214,8 @@ function CredentialsGroup(props){
         })
       }
     </div>
-    )
-  }
+  );
+}
 function Credentials(){
   const [tabValue, setTabValue] = useState(0);
 
