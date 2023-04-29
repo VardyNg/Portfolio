@@ -69,7 +69,7 @@ podTemplate(yaml: '''
     stage('Sync website to S3') {
       container('awscli') {
         withAWS(credentials: 'AWS-634042005768', region: 'ap-east-1') {
-          sh "aws s3 cp ./build s3://www.wadeenghoiwa.com --recursive"
+          sh "aws s3 cp ./build s3://vardyng.com --recursive"
         }
       }
     }
