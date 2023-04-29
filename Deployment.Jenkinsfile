@@ -70,6 +70,7 @@ podTemplate(yaml: '''
       container('awscli') {
         withAWS(credentials: 'AWS-634042005768', region: 'ap-east-1') {
           sh "aws s3 cp ./build s3://vardyng.com --recursive"
+          sh "aws s3 cp ./build s3://www.vardyng.com --recursive"
         }
       }
     }
