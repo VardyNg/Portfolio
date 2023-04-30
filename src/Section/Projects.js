@@ -57,7 +57,7 @@ function Projects(){
     createDataForProjects(
       "Private Tutor+",
       "A web application for private tutors to manage their business. The application is built with ReactJS, AWS Serverless (S3 + API Gateway + Lambda), Amplify, and MySQL.",
-      ["4 Developers", "Developing"],
+      ["4 Developers", "Archived"],
       "private-tutor-plus",
       3
     ),
