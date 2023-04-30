@@ -63,17 +63,14 @@ function Greeting(){
             Hello, I am 
           </Typography>
           <Typography variant="h3" component="div" className={classes.greetingText} display="inline">
-            Ng Hoi Wa, 
-          </Typography>
-          <Typography variant="h3" component="div" className={classes.greetingText} display="inline">
-            {" "} Vardy
+            Vardy Ng
           </Typography>
           <Typography variant="h5" component="div" className={classes.greetingText}>
             Welcome to my portfolio
           </Typography>
           <Divider className={classes.divider}/>
           <Typography variant="body1" component="div" style={{fontFamily: "Raleway"}}>
-            I am a Full Stack Developer. Love coding, making useful application and learn new techniques.
+            I am a Software Engineer. Love coding, making useful application and learn new techniques.
           </Typography>
           <Divider className={classes.divider}/>
           <SkillSets/>

@@ -48,19 +48,19 @@ function Projects(){
 
   const sideProjects = [
     createDataForProjects(
-      "Private Tutor+",
-      "A web application for private tutors to manage their business. The application is built with ReactJS, AWS Serverless (S3 + API Gateway + Lambda), Amplify, and MySQL.",
-      ["4 Developers", "Developing"],
-      "private-tutor-plus",
+      "Signal Sticker Maker",
+      "An online application for making sticker for the Signal app, reached over 10,000 users since it launces. Available on iOS, Android, and Web.",
+      ["2 Developers", "Released"],
+      "signal-sticker-maker",
       3
     ),
     createDataForProjects(
-      "Signal Sticker Maker",
-      "An online application for making sticker for the Signal app, reached over 7000 users since it launces. Available on iOS, Android, and Web.",
-      ["2 Developers", "Released"],
-      "signal-sticker-maker",
-      1
-    )
+      "Private Tutor+",
+      "A web application for private tutors to manage their business. The application is built with ReactJS, AWS Serverless (S3 + API Gateway + Lambda), Amplify, and MySQL.",
+      ["4 Developers", "Archived"],
+      "private-tutor-plus",
+      3
+    ),
   ]
 
   const schoolProjects = [
