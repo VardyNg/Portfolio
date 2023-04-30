@@ -20,7 +20,7 @@ const steps = [
   createDataForWorkingExperience(
     moment("2022-05-01"),
     null,
-    "eCloudvalley Digital Technology Co., Ltd",
+    "eCloudValley",
     "Cloud Engineer",
     "in Solution Architect - Development team",
     [
@@ -33,7 +33,7 @@ const steps = [
   createDataForWorkingExperience(
     moment("2022-01-01"),
     moment("2022-04-01").endOf('month'),
-    "Armitage Technologies Limited",
+    "Armitage",
     "Mobile Developer",
     "Project BU",
     [
@@ -45,7 +45,7 @@ const steps = [
   createDataForWorkingExperience(
     moment("2021-09-01"),
     moment("2021-12-01").endOf('month'),
-    'Banclogix System Co., Ltd, KVB Global',
+    'Banclogix, KVB Global',
     'Software Development Internship (Part Time mode)',
     'Blockchain Team',
     [
@@ -57,7 +57,7 @@ const steps = [
   createDataForWorkingExperience(
     moment("2021-06-01"),
     moment("2021-09-01").endOf('month'),
-    'Crossover Int. Company Limited',
+    'Crossover International',
     'Software Developer Internship (Full Time mode)',
     "IT",
     [
