@@ -16,7 +16,7 @@ const WhiteTextTypography = withStyles({
   }
 })(Typography);
 
-const contactEmail = "vardyng1999@gmail.com"
+const contactEmail = "vardy@vardyng.com"
 
 function Contacts(){
   
