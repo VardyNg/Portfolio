@@ -24,9 +24,10 @@ const steps = [
     "Cloud Engineer",
     "in Solution Architect - Development team",
     [
-      "Participated in serverless app development on AWS for a US based theme park company to handle 10K+ requests per day, written automation tests to ensure code reliability and quality, defined and developed tools for the team to facilitate CICD thus reduce deploy time by 80%, gathered requirements and revisions with clients.",
-      "Developed backend applications for a global supply-chain client using NestJS and ORM, integrated with Azure resources like Azure AD and Monitor, deployed as docker container on ACR and AKS.",
-      "Participated in cloud infrastructure designs and provisions using Terraform on AWS and Azure."
+      "Participated in serverless development on AWS for a US based company to handle 10K+ requests daily.",
+      "Defined and developed CI/CD tools for the team to reduce deploy time by 80%, created automation tests to ensure code quality, gathered requirements and revisions with clients.",
+      "Developed backend applications for a global supply-chain client using NestJS and ORM, integrated with Azure resources, deployed as Docker container on K8S.",
+      "Participated in cloud infrastructure designs and provisions using Terraform.",
     ],
     "https://www.ecloudvalley.com/"
   ),
@@ -61,8 +62,10 @@ const steps = [
     'Software Developer Internship (Full Time mode)',
     "IT",
     [
-      "Designed and developed applications using ReactJS, ExpressJS, and MySQL.",
-      "Setup and maintained Linux server."
+      "Designed and developed applications using ReactJS, ExpressJS, and MySQL for a scoring system",
+      "Consulted with clients to gather requirements and revisions.",
+      "Setup and maintained Linux server to host the services.",
+      "Implemented automated pipelines for Continuous Delivery using GitHub Actions"
     ],
     null
   )
