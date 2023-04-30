@@ -58,10 +58,10 @@ function Main() {
     return(
       <AppBar position="static" style={{backgroundColor: "#677886"}}>
         <Toolbar>
-        <Grid container style={{width: '100%', marginTop: 10, }}>
-          <Grid item xs={12} sm={9} md={8} style={{display: 'flex', justifyContent: 'center',}}>
+        <Grid container style={{width: '100%', marginTop: 10, display: 'flex', justifyContent: 'center',}}>
+          <Grid item xs={12} sm={9} md={8} >
             <Typography variant="h6" color="inherit" component="" style={{fontFamily: "Raleway", marginLeft: 7}} >
-              Ng Hoi Wa's Portfolio
+              Vardy's Portfolio
             </Typography>
             <div>
               {MenuItems.map((item, index) => (
