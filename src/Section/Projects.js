@@ -49,7 +49,7 @@ function Projects(){
   const sideProjects = [
     createDataForProjects(
       "Signal Sticker Maker",
-      "An online application for making sticker for the Signal app, reached over 7000 users since it launces. Available on iOS, Android, and Web.",
+      "An online application for making sticker for the Signal app, reached over 10,000 users since it launces. Available on iOS, Android, and Web.",
       ["2 Developers", "Released"],
       "signal-sticker-maker",
       3
