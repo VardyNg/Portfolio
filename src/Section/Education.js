@@ -15,7 +15,7 @@ import { ReactComponent as HKCCLogo } from '../Images/PolyU_HKCC.svg';
 const iconSize = 35;
 const steps = [
   {
-    yearsRange: "2019 - 2022",
+    yearsRange: "2019 - 2021",
     institute: 'Department of Electronic and Information Engineering',
     degree: 'BSc(Hons) Internet and Multimedia Technologies',
     cGPA: "2.86",
@@ -119,7 +119,7 @@ function Education(){
         <TimelineItem>
           <TimelineContent>
             <Typography variant="h6" sx={{textAlign: 'left', fontWeight: '' }}>
-              2017 - 2022
+              2017 - 2021
             </Typography>
             <Typography variant="h5" sx={{textAlign: 'left', fontWeight: 'bold' }}>
               The Hong Kong Polytechnic University
