@@ -51,8 +51,8 @@ function Main() {
     createDataForMenu("Contacts", 'contacts', false),
     createDataForMenu("Projects", 'projects', true),
     createDataForMenu("Skills & Certs", 'skills', true),
-    createDataForMenu("Education", 'education', false),
     createDataForMenu("Working Experience", 'workingExperience', false),
+    createDataForMenu("Education", 'education', false),
   ]
   const TopBar = () => {
     return(
