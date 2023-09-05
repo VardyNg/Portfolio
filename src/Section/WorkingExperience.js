@@ -87,8 +87,6 @@ function WorkingExperience(){
             durationString += step.startTime.format('MMM YYYY') + " - Present"
           else{
             durationString += step.startTime.format('MMM YYYY') + " - " + step.endTime.format('MMM YYYY')
-            durationString += " "
-            durationString += "(" + (step.endTime.diff(step.startTime, 'month') + 1) + " months)"
           }
           return(
             <TimelineItem style={{marginBottom: 0}} key={index}>
