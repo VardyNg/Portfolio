@@ -83,7 +83,7 @@ function WorkingExperience(){
       <Timeline position="left" style={{marginLeft: 25}}>
         {steps.map((step, index) => {
           let durationString = ""
-          if(index === 0)
+          if(step.endTime === null)
             durationString += step.startTime.format('MMM YYYY') + " - Present"
           else{
             durationString += step.startTime.format('MMM YYYY') + " - " + step.endTime.format('MMM YYYY')
