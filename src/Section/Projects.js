@@ -182,7 +182,7 @@ function Projects(){
         <Route path="projects" element={<ReportRoute/>}/>
       </Routes> */}
       <Typography variant="h4" sx={{ textAlign: 'left', fontWeight: 'bold' }} style={{fontFamily: "Raleway", padding: 10}}>
-        Side Projects / School Projects
+        Projects
       </Typography>
       <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
         <Tabs value={value} onChange={handleChange} centered>
