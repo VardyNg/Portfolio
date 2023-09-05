@@ -19,7 +19,7 @@ function createDataForWorkingExperience(startTime, endTime, label, position, dep
 const steps = [
   createDataForWorkingExperience(
     moment("2022-05-01"),
-    null,
+    moment("2023-07-01").endOf('month'),
     "eCloudValley",
     "Cloud Engineer",
     "in Solution Architect - Development team",
