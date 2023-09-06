@@ -1,3 +1,4 @@
+import LinkIcon from '@mui/icons-material/Link';
 import ArticleIcon from '@mui/icons-material/Article';
 import WebIcon from '@mui/icons-material/Web';
 import Timeline from '@mui/lab/Timeline';
@@ -96,8 +97,18 @@ function WorkingExperience(){
                 </Typography>
                 <Typography variant="h5" sx={{textAlign: 'left', fontWeight: 'bold'}}>
                   {step.url ? 
-                    <Link href={step.url} color="inherit" target="_blank">
+                    <Link 
+                      href={step.url}
+                      color="inherit"
+                      target="_blank"
+                      style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        flexWrap: 'wrap',
+                      }}
+                    >
                       {step.label}
+                      <LinkIcon style={{marginLeft: 5}}/>
                     </Link> 
                     : step.label
                   }
