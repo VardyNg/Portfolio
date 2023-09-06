@@ -20,7 +20,8 @@ import LanguageLibraries from './Section/LanguageLibraries';
 import Projects from './Section/Projects';
 import ReportRoute from './Section/Projects/';
 import WorkingExperience from './Section/WorkingExperience';
-
+import GitHub from './Section/GitHub';
+import OSS from './Section/OSS';
 function createDataForSections(component, style, margin, id){
   return {component, style, margin, id}
 }
@@ -38,7 +39,9 @@ function Main() {
   const sections = [
     createDataForSections(<Greeting/>,{backgroundColor: '#FFFFF'}, 0, 'greeting'),
     createDataForSections(<Contacts/>, {backgroundColor: '#AEBFC8'}, 0, 'contacts'),
-    createDataForSections(<Projects/>, {backgroundColor: '#FFFFF'}, 0, 'projects'),
+    createDataForSections(<Projects/>, {backgroundColor: '#FFFFF'}, 20, 'projects'),
+    createDataForSections(<GitHub/>, {backgroundColor: '#FFFFFF'}, 0, 'github'),
+    createDataForSections(<OSS />, {backgroundColor: '#FFFFFF'}, 0, 'oss'),
     createDataForSections(<div style={{padding: 25}}> </div>,{backgroundColor: '#eeeee4'}, 20, ''),
     createDataForSections(<LanguageLibraries/>, {}, 20, 'skills'),
     createDataForSections(<Credentials/>, {}, 20, 'credentials'),
