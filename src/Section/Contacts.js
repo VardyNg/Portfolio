@@ -1,4 +1,4 @@
-import { GoMarkGithub} from "react-icons/go";
+import GitHubIcon from '@mui/icons-material/GitHub';
 import { FaLinkedin } from 'react-icons/fa'
 import { 
   BsStackOverflow,
@@ -31,7 +31,7 @@ function Contacts(){
         color="white"
         size="large"
       >
-        <GoMarkGithub/>
+        <GitHubIcon />
       </IconButton>
       <IconButton
         onClick={() => {
