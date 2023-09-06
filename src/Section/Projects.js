@@ -1,5 +1,4 @@
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
-import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
@@ -7,48 +6,20 @@ import Chip from '@mui/material/Chip';
 import Grid from '@mui/material/Grid';
 import Rating from '@mui/material/Rating';
 import Stack from '@mui/material/Stack';
-import Tab from '@mui/material/Tab';
-import Tabs from '@mui/material/Tabs';
 import Typography from '@mui/material/Typography';
-import { useState } from 'react';
 import { useNavigate } from "react-router-dom";
 
 function createDataForProjects(title, description, chip, link, start){
   return {title, description, chip, link, start}
 }
 
-function TabPanel(props) {
-  const { children, value, index, ...other } = props;
-
-  return (
-    <div
-      role="tabpanel"
-      hidden={value !== index}
-      id={`simple-tabpanel-${index}`}
-      aria-labelledby={`simple-tab-${index}`}
-      {...other}
-    >
-      {value === index && (
-        children
-      )}
-    </div>
-  );
-}
-
-
 function Projects(){
   const navigate = useNavigate()
-
-  const [value, setValue] = useState(0);
-
-  const handleChange = (event, newValue) => {
-    setValue(newValue);
-  };
 
   const sideProjects = [
     createDataForProjects(
       "Signal Sticker Maker",
-      "A Web/Mobile app for making sticker for the Signal app, reached over 10,000 users world wide and created over 25,000 stickers!",
+      "A Web/Mobile app for making sticker for the Signal app, reached over 10,000 users world wide and created over 25,000 stickers",
       ["2 Developers", "Released"],
       "signal-sticker-maker",
       3
@@ -61,37 +32,6 @@ function Projects(){
       3
     ),
   ]
-
-  const schoolProjects = [
-    createDataForProjects(
-      'H.A.L. 3000: The School Survival',
-      "A 3D game for learning programming. Player will learn and use programming logics to solve problems, dedicated for teenagers or children with or without programming experience.",
-      ["Individual"],
-      "hal-3000",
-      1
-    ),
-    createDataForProjects(
-      '3D animations with Blender and AutoCAD 3DS MAX',
-      "School assignments related to 3D animation, it involves 3D modelling, lighting, animation, and so on.",
-      ["Individual"],
-      "3d-animations",
-      0,
-    ),
-    createDataForProjects(
-      "VR application for 3D object manipulations using Unity",
-      "A VR application created by Unity3D and DeepMotion, user can use their hands to manipulate 3D object, like scaling, rotation, and transformation.",
-      ["Group"],
-      "3D-vr-game",
-      0
-    ),
-    createDataForProjects(
-      "Web game for learning TCP/IP concepts",
-      "School assignment for making web game. The game visualize some TCP/IP concepts into games and interact with players.",
-      ["Group"],
-      "tcp-ip-game",
-      0
-      ),
-  ];
 
   const Project = (props) => {
     const {projects} = props;
@@ -182,18 +122,7 @@ function Projects(){
       <Typography variant="h4" sx={{ textAlign: 'left', fontWeight: 'bold' }} style={{fontFamily: "Raleway", padding: 10}}>
         Projects
       </Typography>
-      <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-        <Tabs value={value} onChange={handleChange} centered>
-          <Tab label="Side Projects" />
-          <Tab label="School Projects" />
-        </Tabs>
-      </Box>
-      <TabPanel value={value} index={0}>
-        <Project projects={sideProjects}/>
-      </TabPanel>
-      <TabPanel value={value} index={1}>
-        <Project projects={schoolProjects}/>
-      </TabPanel>  
+      <Project projects={sideProjects}/>
     </div>
   )
 }
