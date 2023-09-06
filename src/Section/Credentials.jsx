@@ -31,9 +31,9 @@ const tabs = [
     label: 'Overview',
     issuers: [
       "Amazon Web Service",
-      "HashiCorp",
-      "Microsoft Azure",
       "Cloud Native Computing Foundation (CNCF)",
+      "Microsoft Azure",
+      "HashiCorp",
     ]
   },
   { value: 'csp', 
@@ -44,22 +44,32 @@ const tabs = [
     ]
   },
   { 
+    value: 'container', 
+    label: 'Kubernetes',
+    issuers: [
+      "Cloud Native Computing Foundation (CNCF)",
+    ]
+  },
+  { 
     value: 'iac', 
     label: 'IaC',
     issuers: [
       "HashiCorp"
     ]
   },
-  { 
-    value: 'container', 
-    label: 'Container Technology',
-    issuers: [
-      "Cloud Native Computing Foundation (CNCF)",
-    ]
-  },
 ]
 
 const certs = [
+  createDataForCerts(
+    "AWS Certified DevOps Engineer – Professional",
+    "DOP-C01",
+    <AWSDOP style={{height: 100, width: 100}}/>,
+    "2022-12-13",
+    "2025-12-13",
+    "https://www.credly.com/badges/d808da6c-93f2-4fe3-84ec-e7932cb121ed/public_url",
+    ["all", "csp"],
+    "Amazon Web Service"
+  ),
   createDataForCerts(
     "AWS Certified Solutions Architect – Associate",
     "SAA-C02",
@@ -121,16 +131,6 @@ const certs = [
     "Amazon Web Service"
   ),
   createDataForCerts(
-    "AWS Certified DevOps Engineer – Professional",
-    "DOP-C01",
-    <AWSDOP style={{height: 100, width: 100}}/>,
-    "2022-12-13",
-    "2025-12-13",
-    "https://www.credly.com/badges/d808da6c-93f2-4fe3-84ec-e7932cb121ed/public_url",
-    ["all", "csp"],
-    "Amazon Web Service"
-  ),
-  createDataForCerts(
     "Microsoft Certified: Azure Developer Associate",
     "AZ-204",
     <AZ204 style={{height: 100, width: 100}}/>,
@@ -185,7 +185,7 @@ function CredentialsGroup(props) {
                         </div>
                         <Box sx={{ display: 'flex', flexDirection: 'column', backgroundColor: '', width: '100%', marginBottom: -2}}>
                           <CardContent >
-                            <Typography component="div" variant={isMobile ? "h6" : "h5"}>
+                            <Typography component="div" variant={isMobile ? "h5" : "h6"}>
                               {cert.title}
                             </Typography>
                             <Typography variant="subtitle2" color="text.secondary" component="div">

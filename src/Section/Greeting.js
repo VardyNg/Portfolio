@@ -6,6 +6,7 @@ import { makeStyles, useTheme } from "@mui/styles";
 import React from 'react';
 import Hello3 from '../Images/Hello3.png';
 import SkillSets from './SkillSets';
+import CertsList from './CertsList';
 
 const useStyles = makeStyles((theme) => ({
   container: {
@@ -74,6 +75,8 @@ function Greeting(){
           </Typography>
           <Divider className={classes.divider}/>
           <SkillSets/>
+          <Divider className={classes.divider}/>
+          <CertsList />
         </div>
       </Grid>
       <Grid xs={12} sm={5}  className={classes.figure}>

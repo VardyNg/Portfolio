@@ -1,3 +1,4 @@
+import LinkIcon from '@mui/icons-material/Link';
 import ArticleIcon from '@mui/icons-material/Article';
 import WebIcon from '@mui/icons-material/Web';
 import Timeline from '@mui/lab/Timeline';
@@ -19,7 +20,7 @@ function createDataForWorkingExperience(startTime, endTime, label, position, dep
 const steps = [
   createDataForWorkingExperience(
     moment("2022-05-01"),
-    null,
+    moment("2023-07-01").endOf('month'),
     "eCloudValley",
     "Cloud Engineer",
     "in Solution Architect - Development team",
@@ -47,7 +48,7 @@ const steps = [
     moment("2021-09-01"),
     moment("2021-12-01").endOf('month'),
     'Banclogix, KVB Global',
-    'Software Development Internship (Part Time mode)',
+    'Software Development Internship',
     'Blockchain Team',
     [
       "Setup and installed over 500 docker based systems.",
@@ -59,7 +60,7 @@ const steps = [
     moment("2021-06-01"),
     moment("2021-09-01").endOf('month'),
     'Crossover International',
-    'Software Developer Internship (Full Time mode)',
+    'Software Developer Internship',
     "IT",
     [
       "Designed and developed applications using ReactJS, ExpressJS, and MySQL for a scoring system",
@@ -72,7 +73,7 @@ const steps = [
 ];
 
 function WorkingExperience(){
-  const navigate =  useNavigate()
+
   return(
     <div style={{marginTop: 20}}>      
       <div style={{alignContent: "left"}}>
@@ -80,15 +81,23 @@ function WorkingExperience(){
           Working Experiences
         </Typography>
       </div>
+      <div>
+        <Typography variant="h5">
+          Open to work in Toronto, ON 🇨🇦
+        </Typography>
+      </div>
+      <div style={{alignContent: "left"}}>
+        <Typography variant="body">
+          Please checkout my full experience on my <Link href="https://www.linkedin.com/in/vardyng" target="_blank">LinkedIn</Link>
+        </Typography>
+      </div>
       <Timeline position="left" style={{marginLeft: 25}}>
         {steps.map((step, index) => {
           let durationString = ""
-          if(index === 0)
+          if(step.endTime === null)
             durationString += step.startTime.format('MMM YYYY') + " - Present"
           else{
             durationString += step.startTime.format('MMM YYYY') + " - " + step.endTime.format('MMM YYYY')
-            durationString += " "
-            durationString += "(" + (step.endTime.diff(step.startTime, 'month') + 1) + " months)"
           }
           return(
             <TimelineItem style={{marginBottom: 0}} key={index}>
@@ -96,56 +105,27 @@ function WorkingExperience(){
                 <Typography variant="h6" sx={{textAlign: 'left', fontWeight: '' }}>
                   {durationString}
                 </Typography>
-                <Typography variant="h5" sx={{textAlign: 'left', fontWeight: 'bold'}}>
+                <Typography variant="h5" sx={{textAlign: 'left', fontWeight: 'bold' }}>
+                  {step.position}
+                </Typography>
+                <Typography variant="h6" sx={{textAlign: 'left', fontWeight: 'bold'}}>
                   {step.url ? 
-                    <Link href={step.url} color="inherit" target="_blank">
+                    <Link 
+                      href={step.url}
+                      color="inherit"
+                      target="_blank"
+                      style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        flexWrap: 'wrap',
+                      }}
+                    >
                       {step.label}
+                      <LinkIcon style={{marginLeft: 5}}/>
                     </Link> 
                     : step.label
                   }
                 </Typography>
-                <Typography variant="subtitle1" sx={{textAlign: 'left', fontWeight: '' }}>
-                  {step.position}, {step.department}
-                </Typography>
-                <div style={{marginLeft: -10}}>
-                  <ul>
-                    {step.description.map((description, i) => {
-                      return(
-                        <li key={i}>
-                          <Typography sx={{ textAlign: 'left' }} >
-                            {description}
-                          </Typography>
-                        </li>
-                      )
-                    })}
-                  </ul>           
-                </div>
-                {step.label === "Crossover Int. Company Limited" && 
-                <>
-                  <ButtonGroup
-                    variant="outlined"
-                    size="small"
-                    fullWidth
-                  >  
-                    <Button
-                      style={{width: "50%"}}
-                      onClick={() => { navigate("projects/techvision")}}
-                      startIcon={<ArticleIcon/>}
-                    >
-                      Doc
-                    </Button>
-                    <Button
-                      style={{width: "50%"}}
-                      startIcon={<WebIcon/>}
-                      onClick={() => { 
-                        console.log("wdawda")
-                        navigate("projects/tv-checker")
-                      }}
-                    >
-                      View website
-                    </Button>
-                  </ButtonGroup>
-                </>}           
               </TimelineContent>
               <TimelineOppositeContent style={{ maxWidth: "1px", paddingLeft: '0px', paddingRight: '0px' }}/>
               <TimelineSeparator style={{marginTop: 40}} >

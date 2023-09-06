@@ -27,6 +27,15 @@ import { ReactComponent as ShellIcon } from '../Images/shell.svg';
 import { ReactComponent as SonarqubeIcon } from '../Images/sonarqube.svg';
 import { ReactComponent as SQLIcon } from '../Images/SQLIcon.svg';
 import { ReactComponent as SwiftIcon } from '../Images/SwiftIcon.svg';
+import { ReactComponent as PostgresqlIcon} from '../Images/postgresql-icon.svg';
+import { ReactComponent as SQLiteIcon} from '../Images/sqlite-icon.svg';
+import { ReactComponent as AzureARMIcon} from '../Images/azure-arm.svg';
+import { ReactComponent as GCPIcon} from '../Images/gcp.svg';
+import { ReactComponent as GoIcon} from '../Images/go.svg';
+import { ReactComponent as UbuntuIcon} from '../Images/ubuntu.svg';
+import { ReactComponent as CentosIcon} from '../Images/centos.svg';
+import { ReactComponent as AmazonLinux2Icon} from '../Images/amazon-linux-2.svg';
+
 import Xcode_icon from '../Images/Xcode_icon.png';
 const ICONSIZE = 30;
 
@@ -50,13 +59,11 @@ const skills = [
     createDataForSkill("Programming / Language",
     [
       createDataForItem("JavaScript", JSIcon, true),
-      createDataForItem("Swift",SwiftIcon, true),
       createDataForItem("Python",PythonIcon, true),
-      // createDataForItem("C#",CSharpIcon, true),
-      // createDataForItem("C++",CPlusPlusIcon, true),
+      createDataForItem("Go",GoIcon, true),
       createDataForItem("SQL",SQLIcon, true),
       createDataForItem("Linux Shell Script", ShellIcon, true),
-      // createDataForItem("Java",JavaIcon, true),
+      createDataForItem("Swift",SwiftIcon, true),
       createDataForItem("HTML", HTML5Icon, true),
       createDataForItem("CSS", CSSIcon, true),
     ]),
@@ -66,41 +73,47 @@ const skills = [
       createDataForItem("React JS",ReactJSIcon, true),
       createDataForItem("Node JS",NodeJsIcon, true),
     ]),
-    createDataForSkill("IDE", 
-    [
-      createDataForItem("Xcode",Xcode_icon, false),
-      // createDataForItem("Unity3D",Unity3DIcon, true),
-    ]),
     createDataForSkill("Cloud Service Provider",
     [
       createDataForItem("Amazon Web Service",AWSIcon, true),
-      createDataForItem("Microsoft Azure",AzureIcon, true)
+      createDataForItem("Microsoft Azure",AzureIcon, true),
+      createDataForItem("Google Cloud Platform",GCPIcon, true)
     ]),
     createDataForSkill("IaC",
     [
       createDataForItem("Terraform",TerraformIcon, true),
       createDataForItem("Serverless framework",ServerlessIcon, true),
       createDataForItem("AWS CloudFormation", CloudFormationIcon, true),
+      createDataForItem("Azure ARM", AzureARMIcon, true),
     ]),
     createDataForSkill("DBMS",
     [
       createDataForItem("MySQL",MySQLIcon, true),
-      createDataForItem("DynamoDB",DynamoDBIcon, true),
-      // createDataForItem("MongoDB",MongoDBIcon, true),
+      createDataForItem("PostgresQL", PostgresqlIcon, true),
+      createDataForItem("DynamoDB", DynamoDBIcon, true),
+      createDataForItem("SQLite", SQLiteIcon, true),
     ]),
-    createDataForSkill("Container Technology", [
-      createDataForItem("Docker",DockerIcon, true),
-      createDataForItem("Kubernetes",K8SIcon, true),
-
-    ]),
-    createDataForSkill("DevOps",
+    createDataForSkill("DevOps & Container Technology",
     [
       createDataForItem("Jenkins",JenkinsIcon, true),
       createDataForItem("GitHub Actions",GitHubActionIcon, true),
       createDataForItem("GitLab",GitLabIcon, true),
       createDataForItem("SonarQube",SonarqubeIcon, true),
+      createDataForItem("Docker",DockerIcon, true),
+      createDataForItem("Kubernetes",K8SIcon, true),
     ]),
-]
+    createDataForSkill("OS",
+    [
+      createDataForItem("Ubuntu", UbuntuIcon, true),
+      createDataForItem("Centos", CentosIcon, true),
+      createDataForItem("Amazon Linux 2", AmazonLinux2Icon, true),
+    ]),
+    createDataForSkill("IDE", 
+    [
+      createDataForItem("Xcode",Xcode_icon, false),
+      // createDataForItem("Unity3D",Unity3DIcon, true),
+    ]),
+  ]
 
 function LanguageLibraries(){
   const classes = useStyles()

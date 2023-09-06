@@ -74,7 +74,7 @@ function DetailedInstitutes(){
                     return(
                       <li key={i}>
                         <Typography sx={{ textAlign: 'left' }} >
-                          {description}
+                          - {description}
                         </Typography>
                       </li>
                     )
@@ -112,7 +112,7 @@ function Education(){
     <div style={{marginTop: 20}}>      
       <div style={{alignContent: "left"}}>
         <Typography variant="h4" sx={{ textAlign: 'left' }} style={{fontFamily: "Raleway", padding: 10}}>
-          <b>Education Background</b>
+          <b>Education</b>
         </Typography>
       </div>
       <Timeline position="left">
