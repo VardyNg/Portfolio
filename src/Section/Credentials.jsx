@@ -61,6 +61,16 @@ const tabs = [
 
 const certs = [
   createDataForCerts(
+    "AWS Certified DevOps Engineer – Professional",
+    "DOP-C01",
+    <AWSDOP style={{height: 100, width: 100}}/>,
+    "2022-12-13",
+    "2025-12-13",
+    "https://www.credly.com/badges/d808da6c-93f2-4fe3-84ec-e7932cb121ed/public_url",
+    ["all", "csp"],
+    "Amazon Web Service"
+  ),
+  createDataForCerts(
     "AWS Certified Solutions Architect – Associate",
     "SAA-C02",
     <AWSSAA style={{height: 100}}/>,
@@ -117,16 +127,6 @@ const certs = [
     "2022-10-14",
     "2025-12-13",
     "https://www.credly.com/badges/f929e2d3-42f6-473d-9e1a-766a0f8b8185",
-    ["all", "csp"],
-    "Amazon Web Service"
-  ),
-  createDataForCerts(
-    "AWS Certified DevOps Engineer – Professional",
-    "DOP-C01",
-    <AWSDOP style={{height: 100, width: 100}}/>,
-    "2022-12-13",
-    "2025-12-13",
-    "https://www.credly.com/badges/d808da6c-93f2-4fe3-84ec-e7932cb121ed/public_url",
     ["all", "csp"],
     "Amazon Web Service"
   ),
