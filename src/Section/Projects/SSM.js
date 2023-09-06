@@ -1,4 +1,3 @@
-import LinkIcon from '@mui/icons-material/Link';
 import Link from '@mui/material/Link';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
@@ -19,13 +18,16 @@ import { useTheme } from '@mui/styles';
 import * as React from 'react';
 import ReactGA from 'react-ga4';
 import { useNavigate } from "react-router-dom";
-import AppStore_download from '../../Images/AppStore_download.svg';
-import Playstore_download from '../../Images/PlayStore_download.png';
-import { ReactComponent as ReactNativeIcon } from '../../Images/ReactNativeIcon.svg';
 import App_Icon from '../../Images/SSM/App_Icon.png';
+import {
+  AppStoreButton,
+  PlayStoreButton,
+  WebButton,
+} from './SSM/index.js';
 
 const appStoreURL = "https://apps.apple.com/bm/app/sigicker-sticker-maker/id1550885981";
 const playStoreURL = "https://play.google.com/store/apps/details?id=com.app.signalstickermaker"
+
 function Mobile() {
   return(
     <Stack>
@@ -160,24 +162,13 @@ function SSM(props) {
               spacing={1}
             >
               <Grid item>
-                <a href={appStoreURL} target="_blank" rel="noreferrer">
-                  <img src={AppStore_download} alt="link to AppStore"  style={{height: downloadButtonHeight}} />
-                </a>
+                <AppStoreButton height={downloadButtonHeight}/>
               </Grid>
               <Grid item>
-                <a href={playStoreURL} target="_blank" rel="noreferrer">
-                  <img src={Playstore_download} alt="Download in Google Play Store"  style={{height: downloadButtonHeight}}/>
-                </a>
+                <PlayStoreButton height={downloadButtonHeight}/>
               </Grid>
               <Grid item>
-                <Button
-                  variant="outlined"
-                  onClick={() => {window.open("https://signalstickermaker.com", "_blank").focus()}}
-                  startIcon={<LinkIcon/>}
-                  style={{height: downloadButtonHeight}}
-                >
-                  Visit the website
-                </Button>
+                <WebButton height={downloadButtonHeight}/>
               </Grid>
             </Grid>
           </Grid>
