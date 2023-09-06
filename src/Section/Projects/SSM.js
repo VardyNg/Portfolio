@@ -1,5 +1,4 @@
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import WebIcon from '@mui/icons-material/Web';
 import Accordion from '@mui/material/Accordion';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import AccordionSummary from '@mui/material/AccordionSummary';
@@ -26,6 +25,8 @@ import GA from '../../Images/SSM/GA.png';
 import RN from '../../Images/SSM/RN-Dev.png';
 import ReactDev from '../../Images/SSM/React-Dev.png';
 import ReactGA from 'react-ga4';
+import LinkIcon from '@mui/icons-material/Link';
+
 function IOS(props){
   return(
     <>
@@ -182,7 +183,7 @@ function SSM(props) {
               <Button
                 variant="outlined"
                 onClick={() => {window.open("https://signalstickermaker.com", "_blank").focus()}}
-                startIcon={<WebIcon/>}
+                startIcon={<LinkIcon/>}
               >
                 Visit the website
               </Button>
