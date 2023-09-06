@@ -75,20 +75,6 @@ function Projects(){
                       >
                         {project.title}
                       </Typography>
-                      {project.chip.length > 0 && 
-                        <>
-                          {project.chip.map((chip, i) => {
-                            return(
-                              <Chip 
-                                key={i}
-                                label={chip} 
-                                variant="outlined" 
-                                style={{marginLeft: 15}}
-                              />
-                            )
-                          })}
-                        </>
-                      }
                     </Stack>
                     <Typography variant="body1" component="div" sx={{textAlign: 'left', marginTop: 1}}>
                       {project.description}
