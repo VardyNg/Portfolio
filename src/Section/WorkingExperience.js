@@ -73,7 +73,7 @@ const steps = [
 ];
 
 function WorkingExperience(){
-  const navigate =  useNavigate()
+
   return(
     <div style={{marginTop: 20}}>      
       <div style={{alignContent: "left"}}>
@@ -113,48 +113,6 @@ function WorkingExperience(){
                     : step.label
                   }
                 </Typography>
-                <Typography variant="subtitle1" sx={{textAlign: 'left', fontWeight: '' }}>
-                  {step.position}, {step.department}
-                </Typography>
-                <div style={{marginLeft: -10}}>
-                  <ul>
-                    {step.description.map((description, i) => {
-                      return(
-                        <li key={i}>
-                          <Typography sx={{ textAlign: 'left' }} >
-                            {description}
-                          </Typography>
-                        </li>
-                      )
-                    })}
-                  </ul>           
-                </div>
-                {step.label === "Crossover Int. Company Limited" && 
-                <>
-                  <ButtonGroup
-                    variant="outlined"
-                    size="small"
-                    fullWidth
-                  >  
-                    <Button
-                      style={{width: "50%"}}
-                      onClick={() => { navigate("projects/techvision")}}
-                      startIcon={<ArticleIcon/>}
-                    >
-                      Doc
-                    </Button>
-                    <Button
-                      style={{width: "50%"}}
-                      startIcon={<WebIcon/>}
-                      onClick={() => { 
-                        console.log("wdawda")
-                        navigate("projects/tv-checker")
-                      }}
-                    >
-                      View website
-                    </Button>
-                  </ButtonGroup>
-                </>}           
               </TimelineContent>
               <TimelineOppositeContent style={{ maxWidth: "1px", paddingLeft: '0px', paddingRight: '0px' }}/>
               <TimelineSeparator style={{marginTop: 40}} >
