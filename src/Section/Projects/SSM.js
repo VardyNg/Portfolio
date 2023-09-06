@@ -160,6 +160,7 @@ function SSM(props) {
               xs={12}
               style={{flex: 'flex', justifyContent: "center", alignItem: "center", backgroundColor: ''}}
               spacing={1}
+              padding={2}
             >
               <Grid item>
                 <AppStoreButton height={downloadButtonHeight}/>
