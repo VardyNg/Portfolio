@@ -18,7 +18,7 @@ import { useTheme } from '@mui/styles';
 import * as React from 'react';
 import { useNavigate } from "react-router-dom";
 import AppStore_download from '../../Images/AppStore_download.svg';
-import App_Icon from '../../Images/App_Icon.png';
+import App_Icon from '../../Images/SSM/App_Icon.png';
 import Playstore_download from '../../Images/PlayStore_download.png';
 import { ReactComponent as ReactNativeIcon } from '../../Images/ReactNativeIcon.svg';
 import GA from '../../Images/SSM/GA.png';
