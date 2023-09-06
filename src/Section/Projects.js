@@ -53,7 +53,7 @@ function Projects(){
           const titleIsLink = project.url ? true : false
           const displayIcon = project.icon ? true : false
           return(
-            <Card style={{margin: 20}} key={index}>
+            <Card style={{margin: 5}} key={index}>
               <CardContent>
                 <Grid container>
                   <Grid item xs={12} sm={10} >
