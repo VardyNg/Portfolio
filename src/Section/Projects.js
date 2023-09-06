@@ -9,9 +9,13 @@ import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import { useNavigate } from "react-router-dom";
 import LinkIcon from '@mui/icons-material/Link';
+import SSMIcon from '../Images/SSM/App_Icon.png';
 
-function createDataForProjects(title, description, chip, link, start, url){
-  return {title, description, chip, link, start, url}
+function createDataForIcon(path, alt) {
+  return {path, alt}
+}
+function createDataForProjects(icon, title, description, chip, link, start, url){
+  return {icon, title, description, chip, link, start, url}
 }
 
 function Projects(){
@@ -19,6 +23,7 @@ function Projects(){
 
   const sideProjects = [
     createDataForProjects(
+      createDataForIcon(SSMIcon, "Signal Sticker Maker icon"),
       "SignalStickerMaker.com",
       "A Web/Mobile app for making sticker for the Signal app, reached over 10,000 users world wide and created over 25,000 stickers",
       ["2 Developers", "Released"],
@@ -27,6 +32,7 @@ function Projects(){
       'https://signalstickermaker.com'
     ),
     createDataForProjects(
+      null,
       "Private Tutor+",
       "A web application for private tutors to manage their business. The application is built with ReactJS, AWS Serverless (S3 + API Gateway + Lambda), Amplify, and MySQL.",
       ["4 Developers", "Archived"],
@@ -44,6 +50,7 @@ function Projects(){
         projects.map((project, index) => {
           console.log(project.chip.length)
           const titleIsLink = project.url ? true : false
+          const displayIcon = project.icon ? true : false
           return(
             <Card style={{margin: 20}} key={index}>
               <CardContent>
@@ -71,12 +78,23 @@ function Projects(){
                       <Typography 
                         variant="h6" 
                         sx={{ 
-                          textAlign: 'left', 
                           fontWeight: 'bold',
                           display: 'flex',
                           justifyContent: 'center',
                         }}
                       >
+                        {displayIcon && 
+                          <img
+                            src={project.icon.path}
+                            alt={project.icon.alt}
+                            style={{
+                              width: 50,
+                              height: 50,
+                              marginLeft: -10,
+                              marginRight: 2,
+                            }}
+                          />
+                        }
                         {titleIsLink ? 
                           <Link
                             underline="hover"
