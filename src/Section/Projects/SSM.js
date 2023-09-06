@@ -122,6 +122,65 @@ function SSM(props) {
     navigate("/")
   }
 
+  const downloadButtonHeight = 50;
+
+  const Description = () => {
+    return(
+      <Box sx={{ flexGrow: 1 }}>
+        <Grid container>
+          <Grid item container style={{flex: 'flex', justifyContent: "center", alignItem: "center"}}>
+            <img src={App_Icon} alt="App Icon" height="150" style={{maginLeft: "500"}}/>
+          </Grid>
+          <Grid item container xs={12} sm style={{justifyContent: "center", alignItem: "center"}}>
+            <ul>
+              <li>
+                <Typography variant="body">
+                  An web/mobile application that allows users to create Signal Sticker pack from their own images.
+                </Typography>
+              </li>
+              <li>
+                <Typography variant="body">
+                  Developed with another developer as a side project.
+                  </Typography>
+              </li>
+              <li>
+                <Typography variant="body">
+                  Served over <b>11,000+</b> users world wide and created over <b>25,000+</b> stickers.
+                </Typography>
+              </li>
+            </ul>
+            <Grid 
+              container 
+              xs={12}
+              style={{flex: 'flex', justifyContent: "center", alignItem: "center", backgroundColor: ''}}
+              spacing={1}
+            >
+              <Grid item>
+                <a href="https://apps.apple.com/bm/app/sigicker-sticker-maker/id1550885981" target="_blank" rel="noreferrer">
+                  <img src={AppStore_download} alt="link to AppStore" height={downloadButtonHeight}/>
+                </a>
+              </Grid>
+              <Grid item>
+                <a href="https://play.google.com/store/apps/details?id=com.app.signalstickermaker" target="_blank" rel="noreferrer">
+                  <img src={Playstore_download} alt="Download in Google Play Store" height={downloadButtonHeight}/>
+                </a>
+              </Grid>
+              <Grid item>
+                <Button
+                  variant="outlined"
+                  onClick={() => {window.open("https://signalstickermaker.com", "_blank").focus()}}
+                  startIcon={<LinkIcon/>}
+                  style={{height: downloadButtonHeight}}
+                >
+                  Visit the website
+                </Button>
+              </Grid>
+            </Grid>
+          </Grid>
+        </Grid>
+      </Box>
+    )
+  }
   return(
     <Dialog
       fullScreen={fullScreen}
@@ -138,58 +197,7 @@ function SSM(props) {
         </Typography>
       </DialogTitle>
       <DialogContent>
-        <Box sx={{ flexGrow: 1 }}>
-          <Grid container spacing={2}>
-            <Grid item style={{flex: 'flex', justifyContent: "center", alignItem: "center"}}>
-              <img src={App_Icon} alt="App Icon" height="150" style={{maginLeft: "500"}}/>
-            </Grid>
-            <Grid item container xs={12} sm style={{justifyContent: "center", alignItem: "center"}}>
-              <ul>
-                <li>
-                  <Typography variant="body">
-                    An online application for sticker creation for the Signal app, launched since January, 2021.
-                  </Typography>
-                </li>
-                <li>
-                  <Typography variant="body">
-                    Developed by myself with my partner as a side project and for interest. 
-                    </Typography>
-                </li>
-                <li>
-                  <Typography variant="body">
-                    Served over 7000 +  users from many countries, base on Goolge Analtyics.
-                    <img src={GA} alt="GA" height="200"/>
-                  </Typography>
-                </li>
-                <li>
-                  <Typography variant="body">
-                    Available on iOS, Android, and Web.
-                  </Typography>
-                </li>
-              </ul>
-              <Grid 
-                container 
-                item 
-                xs={12} sm={6}
-                style={{flex: 'flex', justifyContent: "center", alignItem: "center", backgroundColor: '', spacing: 0}}
-              >
-                <a href="https://apps.apple.com/bm/app/sigicker-sticker-maker/id1550885981" target="_blank" rel="noreferrer">
-                  <img src={AppStore_download} alt="link to AppStore" height="50"/>
-                </a>
-                <a href="https://play.google.com/store/apps/details?id=com.app.signalstickermaker" target="_blank" rel="noreferrer">
-                  <img src={Playstore_download} alt="Download in Google Play Store" height="50"/>
-                </a>
-              </Grid>
-              <Button
-                variant="outlined"
-                onClick={() => {window.open("https://signalstickermaker.com", "_blank").focus()}}
-                startIcon={<LinkIcon/>}
-              >
-                Visit the website
-              </Button>
-            </Grid>
-          </Grid>
-        </Box>
+        <Description />
         <Divider style={{marginBottom: 10, marginTop: 10}}/>    
         <Grid xs={12}>
           {components.map((component, index) => (
