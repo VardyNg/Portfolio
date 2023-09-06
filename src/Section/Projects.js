@@ -10,12 +10,17 @@ import Typography from '@mui/material/Typography';
 import { useNavigate } from "react-router-dom";
 import LinkIcon from '@mui/icons-material/Link';
 import SSMIcon from '../Images/SSM/App_Icon.png';
+import {
+  AppStoreButton,
+  PlayStoreButton,
+  WebButton,
+} from './Projects/SSM/index.js';
 
 function createDataForIcon(path, alt) {
   return {path, alt}
 }
-function createDataForProjects(icon, title, description, chip, link, start, url){
-  return {icon, title, description, chip, link, start, url}
+function createDataForProjects(icon, title, description, chip, link, start, url, customComponent){
+  return {icon, title, description, chip, link, start, url, customComponent}
 }
 
 function Projects(){
@@ -29,7 +34,12 @@ function Projects(){
       ["2 Developers", "Released"],
       "signal-sticker-maker",
       3,
-      'https://signalstickermaker.com'
+      'https://signalstickermaker.com',
+      <Stack direction='row' spacing={1}>
+        <AppStoreButton height={40}/>
+        <PlayStoreButton height={40}/>
+        <WebButton height={40}/>
+      </Stack>
     ),
   ]
 
@@ -107,6 +117,7 @@ function Projects(){
                     <Typography variant="body1" component="div" sx={{textAlign: 'left', marginTop: 1}}>
                       {project.description}
                     </Typography>
+                    {project.customComponent}
                   </Grid>
                   <Grid item xs={12} sm={2}>
                     <Button
