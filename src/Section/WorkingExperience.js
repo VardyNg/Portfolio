@@ -47,7 +47,7 @@ const steps = [
     moment("2021-09-01"),
     moment("2021-12-01").endOf('month'),
     'Banclogix, KVB Global',
-    'Software Development Internship (Part Time mode)',
+    'Software Development Internship',
     'Blockchain Team',
     [
       "Setup and installed over 500 docker based systems.",
@@ -59,7 +59,7 @@ const steps = [
     moment("2021-06-01"),
     moment("2021-09-01").endOf('month'),
     'Crossover International',
-    'Software Developer Internship (Full Time mode)',
+    'Software Developer Internship',
     "IT",
     [
       "Designed and developed applications using ReactJS, ExpressJS, and MySQL for a scoring system",
