@@ -179,24 +179,13 @@ function SSM(props) {
                   <img src={Playstore_download} alt="Download in Google Play Store" height="50"/>
                 </a>
               </Grid>
-              <Grid 
-                container 
-                item 
-                xs={12} sm={6}
-                style={{flex: 'flex', justifyContent: "center", alignItem: "center", backgroundColor: ''}}
+              <Button
+                variant="outlined"
+                onClick={() => {window.open("https://signalstickermaker.com", "_blank").focus()}}
+                startIcon={<WebIcon/>}
               >
-                <ButtonGroup
-                  variant="outlined"
-                  style={{height: 50}}
-                >
-                  <Button
-                    onClick={() => {window.open("https://signalstickermaker.com", "_blank").focus()}}
-                    startIcon={<WebIcon/>}
-                  >
-                    Visit the website
-                  </Button>
-                </ButtonGroup>
-              </Grid>
+                Visit the website
+              </Button>
             </Grid>
           </Grid>
         </Box>
