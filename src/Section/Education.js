@@ -74,7 +74,7 @@ function DetailedInstitutes(){
                     return(
                       <li key={i}>
                         <Typography sx={{ textAlign: 'left' }} >
-                          {description}
+                          - {description}
                         </Typography>
                       </li>
                     )
