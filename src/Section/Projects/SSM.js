@@ -133,7 +133,7 @@ function SSM(props) {
       <Box sx={{ flexGrow: 1 }}>
         <Grid container>
           <Grid item container style={{flex: 'flex', justifyContent: "center", alignItem: "center"}}>
-            <img src={App_Icon} alt="App Icon" height="150" style={{maginLeft: "500"}}/>
+            <img src={App_Icon} alt="App Icon" height="150" width="150" style={{maginLeft: "500"}}/>
           </Grid>
           <Grid item container xs={12} sm style={{justifyContent: "center", alignItem: "center"}}>
             <ul>
@@ -161,12 +161,12 @@ function SSM(props) {
             >
               <Grid item>
                 <a href={appStoreURL} target="_blank" rel="noreferrer">
-                  <img src={AppStore_download} alt="link to AppStore" height={downloadButtonHeight}/>
+                  <img src={AppStore_download} alt="link to AppStore"  style={{height: downloadButtonHeight}} />
                 </a>
               </Grid>
               <Grid item>
                 <a href={playStoreURL} target="_blank" rel="noreferrer">
-                  <img src={Playstore_download} alt="Download in Google Play Store" height={downloadButtonHeight}/>
+                  <img src={Playstore_download} alt="Download in Google Play Store"  style={{height: downloadButtonHeight}}/>
                 </a>
               </Grid>
               <Grid item>
