@@ -31,9 +31,9 @@ const tabs = [
     label: 'Overview',
     issuers: [
       "Amazon Web Service",
-      "HashiCorp",
-      "Microsoft Azure",
       "Cloud Native Computing Foundation (CNCF)",
+      "Microsoft Azure",
+      "HashiCorp",
     ]
   },
   { value: 'csp', 
@@ -44,17 +44,17 @@ const tabs = [
     ]
   },
   { 
+    value: 'container', 
+    label: 'Kubernetes',
+    issuers: [
+      "Cloud Native Computing Foundation (CNCF)",
+    ]
+  },
+  { 
     value: 'iac', 
     label: 'IaC',
     issuers: [
       "HashiCorp"
-    ]
-  },
-  { 
-    value: 'container', 
-    label: 'Container Technology',
-    issuers: [
-      "Cloud Native Computing Foundation (CNCF)",
     ]
   },
 ]
