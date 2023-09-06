@@ -45,7 +45,8 @@ function Main() {
     createDataForSections(<div style={{padding: 25}}> </div>,{backgroundColor: '#eeeee4'}, 20, ''),
     createDataForSections(<LanguageLibraries/>, {}, 20, 'skills'),
     createDataForSections(<Credentials/>, {}, 20, 'credentials'),
-    createDataForSections(<WorkingExperience/>,  {backgroundColor: '#eeeeee'}, 20, 'workingExperience'),
+    createDataForSections(<div style={{padding: 25}}> </div>,{backgroundColor: '#e4e4e4'}, 20, ''),
+    createDataForSections(<WorkingExperience/>,  {backgroundColor: '#ffffff'}, 20, 'workingExperience'),
     createDataForSections(<Education/>,  {}, 20, 'education'),
     createDataForSections(<Footer/>,{backgroundColor: '#677886'}, 0, ''),
   ]
