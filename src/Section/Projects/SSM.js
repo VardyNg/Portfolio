@@ -190,12 +190,6 @@ function SSM(props) {
                   style={{height: 50}}
                 >
                   <Button
-                    onClick={() => {window.open("https://dev.signalstickermaker.com", "_blank").focus()}}
-                    startIcon={<WebIcon/>}
-                  >
-                    Visit the BETA webiste
-                  </Button>
-                  <Button
                     onClick={() => {window.open("https://signalstickermaker.com", "_blank").focus()}}
                     startIcon={<WebIcon/>}
                   >
