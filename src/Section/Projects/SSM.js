@@ -1,10 +1,10 @@
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import Accordion from '@mui/material/Accordion';
-import AccordionDetails from '@mui/material/AccordionDetails';
-import AccordionSummary from '@mui/material/AccordionSummary';
+import LinkIcon from '@mui/icons-material/Link';
+import Link from '@mui/material/Link';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
-import ButtonGroup from '@mui/material/ButtonGroup';
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
 import Chip from '@mui/material/Chip';
 import Dialog from '@mui/material/Dialog';
 import DialogActions from '@mui/material/DialogActions';
@@ -12,83 +12,95 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogTitle from '@mui/material/DialogTitle';
 import Divider from '@mui/material/Divider';
 import Grid from '@mui/material/Grid';
+import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { useTheme } from '@mui/styles';
 import * as React from 'react';
+import ReactGA from 'react-ga4';
 import { useNavigate } from "react-router-dom";
 import AppStore_download from '../../Images/AppStore_download.svg';
-import App_Icon from '../../Images/SSM/App_Icon.png';
 import Playstore_download from '../../Images/PlayStore_download.png';
 import { ReactComponent as ReactNativeIcon } from '../../Images/ReactNativeIcon.svg';
-import GA from '../../Images/SSM/GA.png';
-import RN from '../../Images/SSM/RN-Dev.png';
-import ReactDev from '../../Images/SSM/React-Dev.png';
-import ReactGA from 'react-ga4';
-import LinkIcon from '@mui/icons-material/Link';
+import App_Icon from '../../Images/SSM/App_Icon.png';
 
-function IOS(props){
+const appStoreURL = "https://apps.apple.com/bm/app/sigicker-sticker-maker/id1550885981";
+const playStoreURL = "https://play.google.com/store/apps/details?id=com.app.signalstickermaker"
+function Mobile() {
+  return(
+    <Stack>
+      <Typography>
+        Created using <b>React Native</b>, downloaded <b>&gt; 5,000</b> times on both iOS and Android.
+      </Typography>
+      <Typography>
+        Download now to see how it looks! 
+        (
+          <Link
+            onClick={(e) => {
+              window.open(appStoreURL, '_blank')
+            }}
+          >
+            iOS
+          </Link>
+          /
+          <Link
+            onClick={(e) => {
+              window.open(playStoreURL, '_blank')
+            }}
+          >
+            Android
+          </Link>
+        )
+      </Typography>
+      
+    </Stack>
+  )
+}
+
+function Web(){
   return(
     <>
-      <Typography variant="subtitle1" component="div" color="gray">
-        Downloads: <b>100+</b> | iOS 13 or above | iPhone, iPad, iPod, and Mac (with M1 chips)
-      </Typography>
       <Typography variant="body">
-        Developed by using <b>Xcode</b> and <b>Swift</b>, support create sticker with emojis😎, save and add existing stickers, and many other functions.
+        Developed by <b>ReactJS</b>, hosted on AWS S3 and CloudFront, served <b>&gt; 11,000</b> users world wide.
       </Typography>
     </>
   )
 }
 
-function Android(props){
+function Backend(){
   return(
-    <>
-      <Typography variant="subtitle1" component="div" color="gray">
-        Downloads: <b>1000＋</b> | Android 4.4 or above
+    <Stack
+      spacing={1}
+    >
+      <Typography variant="body">
+        Leveraged <b>AWS Serverless Model</b> (API Gateway & Lambda), integrated with managed services like S3, VPC, CloudWatch...etc, to provide <b>reliable, efficient, and low-cost service</b>.
       </Typography>
       <Typography variant="body">
-        Previously developed by <b>Android Studio</b> and <b>Java</b>, currently a web app. A new version is coming soon by using <b>React Native</b>!
+        Read the complete story of SignalStickerMaker.com's backend evolution in my blog:
       </Typography>
-      <br/>
-      <img src={RN} alt="React-Native Development" width='100%'/>
-    </>
-  )
-}
-
-function Web(props){
-  return(
-    <>
-      <Typography variant="subtitle1" component="div" color="gray">
-        Visits: <b>6000+</b> 
-      </Typography>
-      <Typography variant="body">
-        Previously developed by pure HTML with CSS and JavaScripts, A new version written in <b>ReactJS</b> (Beta website) is coming soon.
-      </Typography>
-      <br/>
-      <img src={ReactDev} alt="React-JS Development" width='100%'/>
-    </>
-  )
-}
-
-function Backend(props){
-  return(
-    <>
-      <Typography variant="subtitle1" component="div" color="gray">
-        Main platform: <b>AWS</b> 
-      </Typography>
-      <ul>
-        <li>
-          <Typography variant="body" component="div">
-            <b>AWS S3</b> is used to host the website. The backend service converts the user uploaded images to Signal Sticker pack for all iOS, Android, and Web platforms.
-          </Typography>
-        </li>
-        <li>
-          <Typography variant="body" component="div">
-            With the AWS serverless architecture, the services is handled by API Gateways and Lambda functions. It is not only reducing the cost but also make the services more scalable. 
-          </Typography>
-        </li>
-      </ul>
-    </>
+      <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%'}}>
+        <Button
+          onClick={() => {window.open("https://medium.com/@vardyng/the-journey-behind-signalstickermaker-coms-backend-architecture-from-students-to-professionals-b7f1babf26d1", "_blank").focus()}}
+        >
+          <Card sx={{ width: '100%' }}>
+            <CardMedia
+              sx={{ height: 140 }}
+              image="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*FXXtC4rMIKX6D9YH6uHuug.png"
+              title="green iguana"
+            />
+            <CardContent>
+              <Typography gutterBottom variant="h5" component="div">
+                The journey behind SignalStickerMaker.com’s backend architecture: from Students to Professionals
+              </Typography>
+              <Typography variant="body2" color="text.secondary">
+                By the time in 2021, an idea of create a tool to help create Signal sticker as easy as possible arise, but the two final year students (me and my friend) only got a very limited tool sets, and some what traditional, we know that:...
+              </Typography>
+              <Button size="large">Read</Button>
+            </CardContent>
+          </Card>
+        </Button>
+      </div>
+    </Stack>
   )
 }
 
@@ -110,8 +122,7 @@ function SSM(props) {
   }
   
   const components = [
-    createDataForComponent('iOS', <IOS/>, <IOSHeader/>),
-    createDataForComponent('Android', <Android/>, <></>),
+    createDataForComponent('Mobile', <Mobile />, <></>),
     createDataForComponent('Web', <Web/>, <></>),
     createDataForComponent('Backend', <Backend/>, <></>),
   ]
@@ -145,7 +156,7 @@ function SSM(props) {
               </li>
               <li>
                 <Typography variant="body">
-                  Served over <b>11,000+</b> users world wide and created over <b>25,000+</b> stickers.
+                  Served <b>&gt; 16,000</b> users world wide and created <b>&gt; 25,000</b> stickers.
                 </Typography>
               </li>
             </ul>
@@ -156,12 +167,12 @@ function SSM(props) {
               spacing={1}
             >
               <Grid item>
-                <a href="https://apps.apple.com/bm/app/sigicker-sticker-maker/id1550885981" target="_blank" rel="noreferrer">
+                <a href={appStoreURL} target="_blank" rel="noreferrer">
                   <img src={AppStore_download} alt="link to AppStore" height={downloadButtonHeight}/>
                 </a>
               </Grid>
               <Grid item>
-                <a href="https://play.google.com/store/apps/details?id=com.app.signalstickermaker" target="_blank" rel="noreferrer">
+                <a href={playStoreURL} target="_blank" rel="noreferrer">
                   <img src={Playstore_download} alt="Download in Google Play Store" height={downloadButtonHeight}/>
                 </a>
               </Grid>
@@ -199,30 +210,21 @@ function SSM(props) {
       <DialogContent>
         <Description />
         <Divider style={{marginBottom: 10, marginTop: 10}}/>    
-        <Grid xs={12}>
+        <Grid container xs={12} spacing={3}>
           {components.map((component, index) => (
-            <Accordion
-              expanded
-            >
-            <AccordionSummary
-              expandIcon={<ExpandMoreIcon />}
-            >
-              <div style={{display: 'flex', alignItems: 'center', spacing: 2}}>
-                <Typography
-                  variant="h5"
-                  style={{
-                    marginRight: 10,
-                  }}
-                >
-                  {component.title}
-                </Typography>
-                {component.icons}
-              </div>
-            </AccordionSummary>
-            <AccordionDetails>
-              {component.content}
-            </AccordionDetails>
-          </Accordion>
+              <Grid item>
+                <div style={{display: 'flex', alignItems: 'center', spacing: 2}}>
+                  <Typography
+                    variant="h5"
+                    style={{
+                      marginRight: 10,
+                    }}
+                  >
+                    {component.title}
+                  </Typography>
+                </div>
+                {component.content}
+              </Grid>
           ))}
           
         </Grid>

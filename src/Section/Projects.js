@@ -25,7 +25,7 @@ function Projects(){
     createDataForProjects(
       createDataForIcon(SSMIcon, "Signal Sticker Maker icon"),
       "SignalStickerMaker.com",
-      "A Web/Mobile app for making sticker for the Signal app, reached over 10,000 users world wide and created over 25,000 stickers.",
+      "A Web/Mobile app for making sticker for the Signal app, served over 16,000 users world wide and created over 25,000 stickers.",
       ["2 Developers", "Released"],
       "signal-sticker-maker",
       3,
