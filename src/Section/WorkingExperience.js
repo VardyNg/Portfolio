@@ -105,7 +105,10 @@ function WorkingExperience(){
                 <Typography variant="h6" sx={{textAlign: 'left', fontWeight: '' }}>
                   {durationString}
                 </Typography>
-                <Typography variant="h5" sx={{textAlign: 'left', fontWeight: 'bold'}}>
+                <Typography variant="h5" sx={{textAlign: 'left', fontWeight: 'bold' }}>
+                  {step.position}
+                </Typography>
+                <Typography variant="h6" sx={{textAlign: 'left', fontWeight: 'bold'}}>
                   {step.url ? 
                     <Link 
                       href={step.url}
