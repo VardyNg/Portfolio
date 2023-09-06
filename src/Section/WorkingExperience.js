@@ -81,6 +81,16 @@ function WorkingExperience(){
           Working Experiences
         </Typography>
       </div>
+      <div>
+        <Typography variant="h5">
+          Open to work in Toronto, ON 🇨🇦
+        </Typography>
+      </div>
+      <div style={{alignContent: "left"}}>
+        <Typography variant="body">
+          Please checkout my full experience on my <Link href="https://www.linkedin.com/in/vardyng" target="_blank">LinkedIn</Link>
+        </Typography>
+      </div>
       <Timeline position="left" style={{marginLeft: 25}}>
         {steps.map((step, index) => {
           let durationString = ""
