@@ -113,13 +113,6 @@ function SSM(props) {
   const fullScreen = useMediaQuery(theme.breakpoints.down('md'));
   const navigate = useNavigate()
   ReactGA.send({ hitType: "pageview", page: window.location.pathname });
-  const IOSHeader = () => {
-    return(
-      <>
-        <ReactNativeIcon/>
-      </>
-    )
-  }
   
   const components = [
     createDataForComponent('Mobile', <Mobile />, <></>),
