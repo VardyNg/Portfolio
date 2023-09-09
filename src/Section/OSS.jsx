@@ -10,6 +10,7 @@ const repos = [
   createDataForRepo('binwiederhier', 'ntfy'),
   createDataForRepo('xtekky', 'chatgpt-clone'),
   createDataForRepo('VardyNg', 'hkid-utils-js'),
+  createDataForRepo('VardyNg', 'short-url-reverser-js'),
   createDataForRepo('VardyNg', 'K8S-On-Cloud'),
 ]
 function OSS() {
