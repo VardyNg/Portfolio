@@ -19,6 +19,15 @@ function createDataForWorkingExperience(startTime, endTime, label, position, dep
 }
 const steps = [
   createDataForWorkingExperience(
+    moment("2023-12-01"),
+    null,
+    "Amazon Web Services (AWS)",
+    "Cloud Support Engineer",
+    null,
+    [],
+    "https://aws.amazon.com/"
+  ),
+  createDataForWorkingExperience(
     moment("2022-05-01"),
     moment("2023-07-01").endOf('month'),
     "eCloudValley",
