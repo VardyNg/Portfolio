@@ -92,7 +92,7 @@ function WorkingExperience(){
       </div>
       <div style={{alignContent: "left"}}>
         <Typography variant="body">
-          Please checkout my full experience on my <Link href="https://www.linkedin.com/in/vardyng" target="_blank">LinkedIn</Link>
+          Please checkout my full experience on <Link href="https://www.linkedin.com/in/vardyng" target="_blank">LinkedIn</Link>
         </Typography>
       </div>
       <Timeline position="left" style={{marginLeft: 25}}>
