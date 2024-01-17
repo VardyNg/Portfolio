@@ -13,15 +13,15 @@ jobs:
     - name: Checkout Repository
       uses: actions/checkout@v2
 
-    - name: Set up Node.js (if your project needs it)
+    - name: Set up Node.js
       uses: actions/setup-node@v1
       with:
         node-version: '16'
 
-    - name: Install Dependencies (if your project needs it)
+    - name: Install Dependencies
       run: npm install
 
-    - name: Build (if your project needs a build step)
+    - name: Build Project
       run: npm run build
 
     - name: Deploy to S3
