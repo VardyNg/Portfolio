@@ -1,4 +1,4 @@
-FROM node:16.20.1 as build 
+FROM --platform=$BUILDPLATFORM node:16.20.1 as build 
 # Create a app directory, copy package.json into it and run npm install
 # since package.json doesn't change frequenctly, this layer will be cached because docker will check if package.json has any changes
 # if app directory is not used, the whole step (npm install) will be executed for every build
