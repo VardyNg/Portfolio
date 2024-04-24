@@ -49,6 +49,8 @@ function Main() {
     createDataForSections(<WorkingExperience/>,  {backgroundColor: '#ffffff'}, 20, 'workingExperience'),
     createDataForSections(<Education/>,  {}, 20, 'education'),
     createDataForSections(<Footer/>,{backgroundColor: '#677886'}, 0, ''),
+    createDataForSections(<div style={{padding: 25}}> </div>,{backgroundColor: '#677886'}, 20, ''),
+    
   ]
 
   const MenuItems = [
