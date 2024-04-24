@@ -19,6 +19,15 @@ function createDataForWorkingExperience(startTime, endTime, label, position, dep
 }
 const steps = [
   createDataForWorkingExperience(
+    moment("2023-12-01"),
+    null,
+    "Amazon Web Services (AWS)",
+    "Cloud Support Engineer",
+    null,
+    [],
+    "https://aws.amazon.com/"
+  ),
+  createDataForWorkingExperience(
     moment("2022-05-01"),
     moment("2023-07-01").endOf('month'),
     "eCloudValley",
@@ -81,14 +90,9 @@ function WorkingExperience(){
           Working Experiences
         </Typography>
       </div>
-      <div>
-        <Typography variant="h5">
-          Open to work in Toronto, ON 🇨🇦
-        </Typography>
-      </div>
       <div style={{alignContent: "left"}}>
         <Typography variant="body">
-          Please checkout my full experience on my <Link href="https://www.linkedin.com/in/vardyng" target="_blank">LinkedIn</Link>
+          Please checkout my full experience on <Link href="https://www.linkedin.com/in/vardyng" target="_blank">LinkedIn</Link>
         </Typography>
       </div>
       <Timeline position="left" style={{marginLeft: 25}}>
