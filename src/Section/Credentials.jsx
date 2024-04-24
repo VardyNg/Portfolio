@@ -135,7 +135,7 @@ const certs = [
     "AZ-204",
     <AZ204 style={{height: 100, width: 100}}/>,
     "2023-02-10",
-    "2024-02-10",
+    "2025-02-10",
     "https://www.credly.com/badges/1554db9d-2081-41cd-b832-a103b5d311a2/public_url",
     ["all", "csp"],
     "Microsoft Azure"

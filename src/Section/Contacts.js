@@ -56,7 +56,7 @@ function Contacts(){
       <IconButton
         onClick={() => {
           gaEvent(GA_CATEGORY_BUTTON_CLICK, "linkedin profile")
-          window.open("https://www.linkedin.com/in/nghoiwa/", "_blank").focus()
+          window.open("https://www.linkedin.com/in/vardyng/", "_blank").focus()
         }}
         color="white"
         size="large"
