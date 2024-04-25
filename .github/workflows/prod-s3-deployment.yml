@@ -23,7 +23,10 @@ jobs:
 
     - name: Build Project
       run: |
-        REACT_APP_LAST_UPDATE_TIME_STAMP=$(date +%s) npm run build
+        REACT_APP_LAST_UPDATE_TIME_STAMP=$(date +%s) \
+        REACT_APP_GOOGLE_ANAYTICS_MEASUREMENT_ID=${{ secrets.ANAYTICS_MEASUREMENT_ID }} \
+        REACT_APP_GITHUB_TOKEN=${{ secrets.PAT_GITHUB }} \
+        npm run build
 
     - name: Deploy to S3
       run: |
