@@ -14,8 +14,8 @@ import Typography from '@mui/material/Typography';
 import moment from 'moment';
 import Link from '@mui/material/Link';
 import { useNavigate } from 'react-router-dom';
-function createDataForWorkingExperience(startTime, endTime, label, position, department, description, url){
-  return {startTime, endTime, label, position, department, description, url};
+function createDataForWorkingExperience(startTime, endTime, label, position, department, description, url, location){
+  return {startTime, endTime, label, position, department, description, url, location};
 }
 const steps = [
   createDataForWorkingExperience(
@@ -25,7 +25,8 @@ const steps = [
     "Cloud Support Engineer",
     null,
     [],
-    "https://aws.amazon.com/"
+    "https://aws.amazon.com/",
+    "Toronto ON 🇨🇦"
   ),
   createDataForWorkingExperience(
     moment("2022-05-01"),
@@ -39,7 +40,8 @@ const steps = [
       "Developed backend applications for a global supply-chain client using NestJS and ORM, integrated with Azure resources, deployed as Docker container on K8S.",
       "Participated in cloud infrastructure designs and provisions using Terraform.",
     ],
-    "https://www.ecloudvalley.com/"
+    "https://www.ecloudvalley.com/",
+    null
   ),
   createDataForWorkingExperience(
     moment("2022-01-01"),
@@ -51,7 +53,8 @@ const steps = [
       "Participated in frontend application development using ReactJS, communicate with client to revise the systems, optimized application to reduce loading time by 30%.",
       "Implemented automated pipelines for Continuous Delivery using GitLab-CI."
     ],
-    "https://www.armitage.com.hk/"
+    "https://www.armitage.com.hk/",
+    null
   ),
   createDataForWorkingExperience(
     moment("2021-09-01"),
@@ -63,7 +66,8 @@ const steps = [
       "Setup and installed over 500 docker based systems.",
       "Developed and optimized scripts for maintaining network machines.",
     ],
-    "https://www.banclogix.com/"
+    "https://www.banclogix.com/",
+    null
   ),
   createDataForWorkingExperience(
     moment("2021-06-01"),
@@ -77,11 +81,19 @@ const steps = [
       "Setup and maintained Linux server to host the services.",
       "Implemented automated pipelines for Continuous Delivery using GitHub Actions"
     ],
+    null,
     null
   )
 ];
 
 function WorkingExperience(){
+
+  const FormatCompanyString = (companyName, location) => {
+    if (location) {
+      return `${companyName}, ${location}`;
+    }
+    return companyName
+  }
 
   return(
     <div style={{marginTop: 20}}>      
@@ -124,10 +136,10 @@ function WorkingExperience(){
                         flexWrap: 'wrap',
                       }}
                     >
-                      {step.label}
+                      {FormatCompanyString(step.label, step.location)}
                       <LinkIcon style={{marginLeft: 5}}/>
                     </Link> 
-                    : step.label
+                    : FormatCompanyString(step.label, step.location)
                   }
                 </Typography>
               </TimelineContent>
