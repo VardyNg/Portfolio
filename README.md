@@ -22,4 +22,4 @@ The infrastructure repo will be made public soon :)
 Install NodeJS, run `npm install` to install dependencies, then `npm run start` to start it locally!
 
 ### Deployment
-Refer to the [s3](/.github/workflows/prod-s3-deployment.yml) and [docker](/.github/workflows/prod-docker-deployment.yml) for the detailed implementation
+Refer to the [s3](/.github/workflows/prod-s3-deployment.yml) and [docker](/.github/workflows/prod-docker-deployment.yml) scripts for the detailed implementation
