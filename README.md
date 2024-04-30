@@ -1,74 +1,25 @@
-[![Build Status](https://jenkins.wadeenghoiwa.com/buildStatus/icon?job=Portfolio-Deploy%2Fprod)](https://jenkins.wadeenghoiwa.com/view/Portfolio/job/Portfolio-Deploy/job/prod/)
-[![Build Status](https://jenkins.wadeenghoiwa.com/buildStatus/icon?job=Portfolio-Codescan)](https://jenkins.wadeenghoiwa.com/view/Portfolio/job/Portfolio-Codescan/)
-[![Quality Gate Status](https://sonarqube.wadeenghoiwa.com/api/project_badges/measure?project=Portfolio&metric=alert_status)](https://sonarqube.wadeenghoiwa.com/dashboard?id=Portfolio)
-[![Build Status](https://jenkins.wadeenghoiwa.com/buildStatus/icon?job=Portfolio-Docker-Image)](https://jenkins.wadeenghoiwa.com/job/Portfolio-Docker-Image/)
+# My Portfolio Website
+![Website Preview](./doc/preview.png)
+> Screen Cap updated on 2024-04-29
 
-# Getting Started with Create React App
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)![AWS](https://img.shields.io/badge/AWS-%23FF9900.svg?style=for-the-badge&logo=amazon-aws&logoColor=white)![GitHub Actions](https://img.shields.io/badge/github%20actions-%232671E5.svg?style=for-the-badge&logo=githubactions&logoColor=white)![Jenkins](https://img.shields.io/badge/jenkins-%232C5263.svg?style=for-the-badge&logo=jenkins&logoColor=white)![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white)![Cloudflare](https://img.shields.io/badge/Cloudflare-F38020?style=for-the-badge&logo=Cloudflare&logoColor=white)![SonarQube](https://img.shields.io/badge/SonarQube-black?style=for-the-badge&logo=sonarqube&logoColor=4E9BCD)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-## Available Scripts
+### What is this?
+This is the source code of my Portfolio Website, available at [VardyNg.com](vardyng.com).
 
-In the project directory, you can run:
+It contains all my projects, certs, educations, work history ...etc
 
-### `yarn start`
+Made by ReactJS, hosted on AWS S3 bucket static hosting, use Cloudflare as DNS
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+The infrastructure repo will be made public soon :)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### What is included?
+- ReactJS code for the website
+- GitHub Actions for deploying to S3 and [DockerHub ](https://hub.docker.com/r/vardyng/portfolio)
+- Jenkins pipeline (deprecated)
 
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### Start the project
+Install NodeJS, run `npm install` to install dependencies, then `npm run start` to start it locally!
 
 ### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Refer to the [s3](/.github/workflows/prod-s3-deployment.yml) and [docker](/.github/workflows/prod-docker-deployment.yml) for the detailed implementation
