@@ -10,17 +10,21 @@ import Typography from '@mui/material/Typography';
 import { useNavigate } from "react-router-dom";
 import LinkIcon from '@mui/icons-material/Link';
 import SSMIcon from '../Images/SSM/App_Icon.png';
+import EKKIcon from '../Images/EKK/icon.png';
 import {
   AppStoreButton,
   PlayStoreButton,
   WebButton,
 } from './Projects/SSM/index.js';
+import {
+  AppStoreButton as EKKAppStoreButton,
+} from './Projects/EKK/index.ts'
 
 function createDataForIcon(path, alt) {
   return {path, alt}
 }
-function createDataForProjects(icon, title, description, chip, link, start, url, customComponent){
-  return {icon, title, description, chip, link, start, url, customComponent}
+function createDataForProjects(icon, title, description, chip, link, star, url, customComponent){
+  return {icon, title, description, chip, link, star, url, customComponent}
 }
 
 function Projects(){
@@ -41,6 +45,18 @@ function Projects(){
         <WebButton height={40}/>
       </Stack>
     ),
+    createDataForProjects(
+      createDataForIcon(EKKIcon, "Emoji Kitchen Keyboard icon"),
+      "Emoji Kitchen Keyboard",
+      "An iOS app that let you mix and send emojis on keyboard",
+      ["Released"],
+      "emoji-kitchen-keyboard",
+      3,
+      "https://apps.apple.com/us/app/emoji-kitchen-keyboard/id6467653793",
+      <Stack direction='row' spacing={1}>
+        <EKKAppStoreButton height={40} />
+      </Stack>
+    )
   ]
 
   const Project = (props) => {
@@ -67,7 +83,7 @@ function Projects(){
                     >
                       <div>
                         {
-                          Array.from(Array(project.start).keys()).map((item, i) => (
+                          Array.from(Array(project.star).keys()).map((item, i) => (
                             <Rating
                               key={i}
                               value={1}
