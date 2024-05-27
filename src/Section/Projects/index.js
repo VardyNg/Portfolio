@@ -7,6 +7,8 @@ import TCPIP from './TCPIP';
 import TV from './TV/index';
 import TVChecker from "./TVChecker";
 import VR3D from './VR3D';
+import EKK from './EKK/Project.tsx'
+
 function ProjectRoute(props){
   console.log("ProjectRoute")
   return(
@@ -19,6 +21,7 @@ function ProjectRoute(props){
       <Route path="tcp-ip-game" element={<TCPIP />}/>
       <Route path="techvision" element={<TV/>}/>
       <Route path="tv-checker" element={<TVChecker />}/>
+      <Route path="emoji-kitchen-keyboard" element={<EKK />}/>
     </Routes>
   )
 }
