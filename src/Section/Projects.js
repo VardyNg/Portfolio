@@ -19,8 +19,8 @@ import {
 function createDataForIcon(path, alt) {
   return {path, alt}
 }
-function createDataForProjects(icon, title, description, chip, link, start, url, customComponent){
-  return {icon, title, description, chip, link, start, url, customComponent}
+function createDataForProjects(icon, title, description, chip, link, star, url, customComponent){
+  return {icon, title, description, chip, link, star, url, customComponent}
 }
 
 function Projects(){
@@ -67,7 +67,7 @@ function Projects(){
                     >
                       <div>
                         {
-                          Array.from(Array(project.start).keys()).map((item, i) => (
+                          Array.from(Array(project.star).keys()).map((item, i) => (
                             <Rating
                               key={i}
                               value={1}
