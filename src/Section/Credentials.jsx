@@ -14,6 +14,7 @@ import { useState } from 'react';
 import { GA_CATEGORY_BUTTON_CLICK } from '../constants';
 import { gaEvent } from "../functions";
 import { ReactComponent as AWSDOP } from '../Images/Certs/AWS-DOP.svg';
+import { ReactComponent as AWSSAP } from '../Images/Certs/AWS-SAP.svg';
 import { ReactComponent as AWSDVA } from '../Images/Certs/AWS-DVA.svg';
 import { ReactComponent as AWSSAA } from '../Images/Certs/AWS-SAA.svg';
 import { ReactComponent as AWSSOA } from '../Images/Certs/AWS-SOA.svg';
@@ -71,11 +72,21 @@ const certs = [
     "Amazon Web Service"
   ),
   createDataForCerts(
+    "AWS Certified Solution Architect – Professional",
+    "SAP-C02",
+    <AWSSAP style={{height: 100, width: 100}}/>,
+    "2024-10-28",
+    "2027-10-28",
+    "https://www.credly.com/badges/38d95101-4155-4065-b76b-2b749bfb2216/public_url",
+    ["all", "csp"],
+    "Amazon Web Service"
+  ),
+  createDataForCerts(
     "AWS Certified Solutions Architect – Associate",
     "SAA-C02",
     <AWSSAA style={{height: 100}}/>,
     "2022-04-03",
-    "2025-04-03",
+    "2027-10-28",
     "https://www.credly.com/badges/7794c6a8-5d2d-487d-992a-7beb697ce65e",
     ["all", "csp"],
     "Amazon Web Service"
