@@ -86,7 +86,7 @@ const certs = [
     "SAA-C02",
     <AWSSAA style={{height: 100}}/>,
     "2022-04-03",
-    "2025-04-03",
+    "2027-10-28",
     "https://www.credly.com/badges/7794c6a8-5d2d-487d-992a-7beb697ce65e",
     ["all", "csp"],
     "Amazon Web Service"
