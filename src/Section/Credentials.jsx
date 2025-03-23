@@ -18,7 +18,6 @@ import { ReactComponent as AWSSAP } from '../Images/Certs/AWS-SAP.svg';
 import { ReactComponent as AWSDVA } from '../Images/Certs/AWS-DVA.svg';
 import { ReactComponent as AWSSAA } from '../Images/Certs/AWS-SAA.svg';
 import { ReactComponent as AWSSOA } from '../Images/Certs/AWS-SOA.svg';
-import { ReactComponent as AZ204 } from '../Images/Certs/AZ-204.svg';
 import { ReactComponent as K8SCKAD } from '../Images/Certs/K8S-CKAD.svg';
 import { ReactComponent as K8SCKA } from '../Images/Certs/K8S-CKA.svg';
 
@@ -32,8 +31,6 @@ const tabs = [
     issuers: [
       "Amazon Web Service",
       "Cloud Native Computing Foundation (CNCF)",
-      "Microsoft Azure",
-      "HashiCorp",
     ]
   },
   { value: 'csp', 
@@ -129,16 +126,6 @@ const certs = [
     "https://www.credly.com/badges/f929e2d3-42f6-473d-9e1a-766a0f8b8185",
     ["all", "csp"],
     "Amazon Web Service"
-  ),
-  createDataForCerts(
-    "Microsoft Certified: Azure Developer Associate",
-    "AZ-204",
-    <AZ204 style={{height: 100, width: 100}}/>,
-    "2023-02-10",
-    "2025-02-10",
-    "https://www.credly.com/badges/1554db9d-2081-41cd-b832-a103b5d311a2/public_url",
-    ["all", "csp"],
-    "Microsoft Azure"
   ),
 ]
 
