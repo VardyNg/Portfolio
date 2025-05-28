@@ -13,7 +13,6 @@ import { ReactComponent as DynamoDBIcon } from '../Images/dynamodb.svg';
 import { ReactComponent as GitHubActionIcon } from '../Images/github-action.svg';
 import { ReactComponent as GitLabIcon } from '../Images/gitlab.svg';
 import { ReactComponent as HTML5Icon } from '../Images/HTML5Icon.svg';
-import { ReactComponent as JenkinsIcon } from '../Images/jenkins.svg';
 import { ReactComponent as JSIcon } from '../Images/JSIcon.svg';
 import { ReactComponent as K8SIcon } from '../Images/k8s.svg';
 import { ReactComponent as NodeJsIcon } from '../Images/NodeJsIcon.svg';
@@ -95,7 +94,6 @@ const skills = [
     ]),
     createDataForSkill("DevOps & Container Technology",
     [
-      createDataForItem("Jenkins",JenkinsIcon, true),
       createDataForItem("GitHub Actions",GitHubActionIcon, true),
       createDataForItem("GitLab",GitLabIcon, true),
       createDataForItem("SonarQube",SonarqubeIcon, true),
