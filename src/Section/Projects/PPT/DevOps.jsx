@@ -6,13 +6,11 @@ import Tabs from '@mui/material/Tabs'
 import Typography from '@mui/material/Typography'
 import React from 'react'
 import { ReactComponent as GitHubIcon } from '../../../Images/github.svg'
-import { ReactComponent as JenkinsIcon } from '../../../Images/jenkins.svg'
 import { ReactComponent as APIDevOps } from '../../../Images/PPT/API-DevOps.svg'
 import { ReactComponent as DatabaseDevOps } from '../../../Images/PPT/Database-DevOps.svg'
 import { ReactComponent as FrontEndDevOps } from '../../../Images/PPT/Front-End-DevOps.svg'
 import { ReactComponent as Branching } from '../../../Images/PPT/GitBranching.svg'
 import SonarqubeExample from "../../../Images/PPT/SonarqubeExample.png"
-import { ReactComponent as SonarqubeJenkins } from '../../../Images/PPT/Sonarqube_Jenkins.svg'
 import { ReactComponent as SonarqubeIcon } from '../../../Images/sonarqube.svg'
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -134,16 +132,14 @@ function CodeAnalysis(props){
       spacing={2}
     >
       <Typography variant="h5" style={{display: 'flex', alignItems: 'center'}}>
-        <JenkinsIcon style={{height: 75, width: 75, marginRight: 5}}/>
         <SonarqubeIcon style={{height: 150, width: 150, marginRight: 5}}/>
       </Typography>
       <Typography variant="body">
-        <b>SonarQube</b> are deployed on an on-perm server to provide code analysis. 
+        <b>SonarQube</b> is deployed to provide code analysis. 
       </Typography>
       <Typography variant="body">
-        In particular, the Jenkins is triggered via GitHub webhook, and it will command SnoarQube to do code scanning. 
+        SonarQube provides static code analysis to identify bugs, code smells, and security vulnerabilities.
       </Typography>
-      <SonarqubeJenkins style={{width: "100%"}}/>
       <img src={SonarqubeExample} style={{width: "100%"}}/>
     </Stack>
   )
