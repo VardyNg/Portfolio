@@ -62,7 +62,7 @@ const certs = [
     "DOP-C01",
     <AWSDOP style={{height: 100, width: 100}}/>,
     "2022-12-13",
-    "2025-12-13",
+    "2028-12-13",
     "https://www.credly.com/badges/d808da6c-93f2-4fe3-84ec-e7932cb121ed/public_url",
     ["all", "csp"],
     "Amazon Web Service"
@@ -92,7 +92,7 @@ const certs = [
     "DVA-C01",
     <AWSDVA style={{height: 100}}/>,
     "2022-06-17",
-    "2025-12-13",
+    "2028-12-13",
     "https://www.credly.com/badges/610618a2-e827-48a0-9a9a-b80f7bc7cbcb",
     ["all", "csp"],
     "Amazon Web Service"
@@ -122,7 +122,7 @@ const certs = [
     "SOA-C02",
     <AWSSOA style={{height: 100, width: 100}}/>,
     "2022-10-14",
-    "2025-12-13",
+    "2028-12-13",
     "https://www.credly.com/badges/f929e2d3-42f6-473d-9e1a-766a0f8b8185",
     ["all", "csp"],
     "Amazon Web Service"
